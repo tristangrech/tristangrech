@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface: 250 250 250;
+    --surface-alt: 240 242 245;
+    --surface-card: 255 255 255;
+    --surface-elevated: 245 247 250;
+    --surface-nav: 255 255 255;
+    --on-surface: 15 20 30;
+    --on-surface-secondary: 60 70 90;
+    --on-surface-muted: 120 130 145;
+    --outline: 210 215 225;
+    --outline-faint: 225 228 235;
+  }
+
+  .dark {
+    --surface: 10 13 18;
+    --surface-alt: 15 19 24;
+    --surface-card: 18 22 30;
+    --surface-elevated: 22 27 36;
+    --surface-nav: 12 16 22;
+    --on-surface: 235 237 242;
+    --on-surface-secondary: 180 185 195;
+    --on-surface-muted: 130 138 150;
+    --outline: 38 45 58;
+    --outline-faint: 30 36 48;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body antialiased;
+    background-color: rgb(var(--surface));
+    color: rgb(var(--on-surface));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(var(--on-surface), 0.08);
+  }
+  .dark .card-hover:hover {
+    box-shadow: 0 12px 40px hsl(220 90% 60% / 0.15);
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(rgb(var(--outline)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(220, 90%, 50%), #0da6f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--outline));
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: hsl(220, 90%, 50%);
+  color: white;
+}
