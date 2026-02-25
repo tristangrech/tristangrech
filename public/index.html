@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    var lang = (navigator.language || '').toLowerCase();
+    var dest = '/en';
+    if (lang.startsWith('ar')) dest = '/ar';
+    else if (lang.startsWith('zh')) dest = '/zh';
+    else if (lang.startsWith('ru')) dest = '/ru';
+    window.location.replace(dest);
+  </script>
+  <meta http-equiv="refresh" content="0;url=/en">
+</head>
+<body></body>
+</html>
