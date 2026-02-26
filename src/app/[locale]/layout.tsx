@@ -52,6 +52,8 @@ const metadataByLocale: Record<
       'Fullink',
       'SwimForm',
       'FULLHAURA',
+      'Geo-Front',
+      'geopolitical monitoring',
       'China consulting',
       'France China business',
       'international business',
@@ -156,11 +158,22 @@ export async function generateMetadata({
       alternateLocale: ['en_US', 'ru_RU', 'zh_CN', 'ar_SA'].filter(
         (l) => l !== ogLocale
       ),
+      images: [
+        {
+          url: `${BASE_URL}/images/tristan-homepage.jpg`,
+          width: 1200,
+          height: 630,
+          alt: 'Tristan Grech — Entrepreneur, Developer, China Business',
+          type: 'image/jpeg',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [`${BASE_URL}/images/tristan-homepage.jpg`],
+      creator: '@fullhaura',
     },
     robots: {
       index: true,
@@ -186,61 +199,177 @@ export async function generateStaticParams() {
 
 function JsonLd({ locale }: { locale: Locale }) {
   const { title, description } = metadataByLocale[locale];
+  const currentDate = new Date().toISOString().split('T')[0];
 
-  const personSchema = {
+  const graphSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Tristan Grech',
-    url: BASE_URL,
-    jobTitle: 'Entrepreneur & Full-Stack Developer',
-    description,
-    nationality: {
-      '@type': 'Country',
-      name: 'France',
-    },
-    workLocation: {
-      '@type': 'Place',
-      name: 'China',
-    },
-    knowsLanguage: ['French', 'English', 'Portuguese', 'Russian'],
-    sameAs: [
-      'https://wa.me/33678496126',
-      'https://t.me/Fullhaura',
-      'https://www.linkedin.com/in/fullhaura/',
-      'https://sumera.io',
-      'https://www.fullink.io',
+    '@graph': [
+      // Person schema (enhanced)
+      {
+        '@type': 'Person',
+        '@id': `${BASE_URL}/#person`,
+        name: 'Tristan Grech',
+        url: BASE_URL,
+        jobTitle: 'Entrepreneur & Full-Stack Developer',
+        description,
+        image: `${BASE_URL}/images/tristan-homepage.jpg`,
+        nationality: {
+          '@type': 'Country',
+          name: 'France',
+        },
+        workLocation: {
+          '@type': 'Place',
+          name: 'China',
+        },
+        knowsLanguage: ['French', 'English', 'Portuguese', 'Russian'],
+        knowsAbout: [
+          'Full-Stack Web Development',
+          'Artificial Intelligence',
+          'SaaS Development',
+          'China Business Consulting',
+          'International Trade',
+          'AI Automation',
+          'Europe-Asia Business',
+        ],
+        alumniOf: {
+          '@type': 'SportsTeam',
+          name: 'French National Swimming Team',
+        },
+        sameAs: [
+          'https://wa.me/33678496126',
+          'https://t.me/Fullhaura',
+          'https://www.linkedin.com/in/fullhaura/',
+          'https://sumera.io',
+          'https://www.fullink.io',
+          'https://geo-front.com',
+        ],
+      },
+      // WebSite schema
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        name: title,
+        url: BASE_URL,
+        description,
+        publisher: { '@id': `${BASE_URL}/#person` },
+        inLanguage: [
+          { '@type': 'Language', name: 'English', alternateName: 'en' },
+          { '@type': 'Language', name: 'Russian', alternateName: 'ru' },
+          { '@type': 'Language', name: 'Chinese', alternateName: 'zh' },
+          { '@type': 'Language', name: 'Arabic', alternateName: 'ar' },
+        ],
+      },
+      // WebPage schema with SpeakableSpecification
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${locale}#webpage`,
+        url: `${BASE_URL}/${locale}`,
+        name: title,
+        description,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+        about: { '@id': `${BASE_URL}/#person` },
+        datePublished: '2026-01-15',
+        dateModified: currentDate,
+        inLanguage: locale,
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', 'h2', '.text-lg', '.text-on-surface-muted'],
+        },
+      },
+      // Organization schema (FULLHAURA)
+      {
+        '@type': 'Organization',
+        '@id': `${BASE_URL}/#organization`,
+        name: 'FULLHAURA',
+        url: BASE_URL,
+        logo: `${BASE_URL}/images/fullhaura-logo.png`,
+        description:
+          'AI agency building digital tools, automations, and web solutions for businesses across Europe and Asia.',
+        founder: { '@id': `${BASE_URL}/#person` },
+        foundingDate: '2024',
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'CN',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'business inquiries',
+          email: 'tristangrech.nat@gmail.com',
+          availableLanguage: ['English', 'French', 'Russian', 'Chinese'],
+        },
+        sameAs: [
+          'https://www.linkedin.com/in/fullhaura/',
+          'https://sumera.io',
+          'https://www.fullink.io',
+          'https://geo-front.com',
+        ],
+      },
+      // BreadcrumbList schema
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${locale}`,
+          },
+        ],
+      },
+      // FAQPage schema (+40% AI visibility)
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Who is Tristan Grech?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Tristan Grech is a French entrepreneur with Maltese origins based in China. He is a full-stack web developer, AI specialist, and international business consultant who builds projects connecting Europe and Asia. He has 16+ years of competitive swimming experience including the French national team.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What services does Tristan Grech offer?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Tristan offers full-stack web development, AI-powered tool development, SaaS product building, and China business consulting. His agency FULLHAURA provides digital tools, automations, and web solutions for businesses across Europe and Asia. He also offers sourcing, negotiations, logistics, and market entry support for companies entering the Chinese market.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What projects has Tristan Grech built?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Tristan has built several active projects: Sumera.io (AI-powered YouTube script generator), Fullink.io (all-in-one link-in-bio platform), Geo-Front.com (live geopolitical conflict monitoring platform), SwimForm.ai (AI swimming coaching platform), and FULLHAURA (AI agency for web solutions and automation).',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How can I contact Tristan Grech?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'You can reach Tristan via WhatsApp at +33 6 78 49 61 26, Telegram at @Fullhaura, WeChat (ID: wxid_llgnw6mtfc2522), email at tristangrech.nat@gmail.com, or LinkedIn at linkedin.com/in/fullhaura. He is open to projects worldwide.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What languages does Tristan Grech speak?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Tristan speaks 4 languages fluently: French (native), English, Portuguese, and Russian. His multilingual ability combined with being based in China makes him uniquely positioned to bridge European and Asian business markets.',
+            },
+          },
+        ],
+      },
     ],
-  };
-
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: title,
-    url: BASE_URL,
-    description,
-    inLanguage: [
-      { '@type': 'Language', name: 'English', alternateName: 'en' },
-      { '@type': 'Language', name: 'Russian', alternateName: 'ru' },
-      { '@type': 'Language', name: 'Chinese', alternateName: 'zh' },
-      { '@type': 'Language', name: 'Arabic', alternateName: 'ar' },
-    ],
-    author: {
-      '@type': 'Person',
-      name: 'Tristan Grech',
-    },
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }}
+    />
   );
 }
 
