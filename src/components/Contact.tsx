@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import type { Locale } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
 
@@ -9,6 +10,13 @@ interface ContactProps {
 
 export default function Contact({ locale }: ContactProps) {
   const t = translations[locale];
+  const [wechatCopied, setWechatCopied] = useState(false);
+
+  const handleWechatCopy = () => {
+    navigator.clipboard.writeText(t.contact.wechatId);
+    setWechatCopied(true);
+    setTimeout(() => setWechatCopied(false), 2000);
+  };
 
   return (
     <section id="contact" className="py-24 bg-surface">
@@ -56,6 +64,17 @@ export default function Contact({ locale }: ContactProps) {
               </svg>
               {t.contact.buttons.telegram}
             </a>
+
+            {/* WeChat - Outlined with copy-to-clipboard */}
+            <button
+              onClick={handleWechatCopy}
+              className="inline-flex items-center gap-2.5 px-7 py-3 border border-outline hover:border-[#07C160]/50 text-on-surface-secondary hover:text-[#07C160] font-medium rounded-xl transition-colors text-sm w-full sm:w-auto justify-center"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM12.503 8.022a.882.882 0 110-1.764.882.882 0 010 1.764zm-5.803 0a.882.882 0 110-1.764.882.882 0 010 1.764zm16.56 5.685c0-3.27-3.239-5.878-6.921-5.878-3.925 0-6.922 2.608-6.922 5.878 0 3.27 2.997 5.878 6.922 5.878.715 0 1.44-.108 2.126-.324a.664.664 0 01.546.072l1.455.844a.258.258 0 00.128.042.222.222 0 00.222-.225c0-.054-.023-.109-.037-.162l-.298-1.129a.457.457 0 01.164-.51c1.506-1.09 2.615-2.8 2.615-4.486zm-9.02-.91a.694.694 0 110-1.39.694.694 0 010 1.39zm4.199 0a.694.694 0 110-1.39.694.694 0 010 1.39z" />
+              </svg>
+              {wechatCopied ? t.contact.buttons.wechatCopied : t.contact.buttons.wechat}
+            </button>
 
             {/* Email - Outlined */}
             <a

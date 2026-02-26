@@ -105,6 +105,16 @@ const translationsData = {
           image: '',
         },
         {
+          name: 'Geo-Front',
+          description:
+            'Live geopolitical monitoring platform tracking the Iran/USA conflict with real-time, accurate updates. Built for clarity in a fast-moving situation.',
+          tags: ['Geopolitics', 'Live Data', 'News'],
+          status: 'Live',
+          url: 'https://geo-front.com',
+          gradient: 'from-red-600 to-slate-800',
+          image: '',
+        },
+        {
           name: 'SwimForm.ai',
           description:
             'AI-powered swimming coaching platform. Upload your video, get elite-level technique feedback. Built on 16+ years of competitive experience.',
@@ -162,7 +172,10 @@ const translationsData = {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
         email: 'Send an Email',
+        wechat: 'WeChat',
+        wechatCopied: 'ID Copied!',
       },
+      wechatId: 'wxid_llgnw6mtfc2522',
       info: {
         location: 'China',
         email: 'tristangrech.nat@gmail.com',
@@ -358,6 +371,16 @@ const translationsData = {
           image: '',
         },
         {
+          name: 'Geo-Front',
+          description:
+            'Платформа геополитического мониторинга в реальном времени, отслеживающая конфликт Иран/США с точными и актуальными обновлениями.',
+          tags: ['Геополитика', 'Данные в реальном времени', 'Новости'],
+          status: 'Запущен',
+          url: 'https://geo-front.com',
+          gradient: 'from-red-600 to-slate-800',
+          image: '',
+        },
+        {
           name: 'SwimForm.ai',
           description:
             'ИИ-платформа для тренировок по плаванию. Загрузите видео и получите профессиональный анализ техники. Основано на 16+ летах соревновательного опыта.',
@@ -415,7 +438,10 @@ const translationsData = {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
         email: 'Написать письмо',
+        wechat: 'WeChat',
+        wechatCopied: 'ID скопирован!',
       },
+      wechatId: 'wxid_llgnw6mtfc2522',
       info: {
         location: 'Китай',
         email: 'tristangrech.nat@gmail.com',
@@ -609,6 +635,16 @@ const translationsData = {
           image: '',
         },
         {
+          name: 'Geo-Front',
+          description:
+            '实时地缘政治监控平台，追踪伊朗/美国冲突，提供实时、准确的更新。在快速变化的局势中提供清晰信息。',
+          tags: ['地缘政治', '实时数据', '新闻'],
+          status: '已上线',
+          url: 'https://geo-front.com',
+          gradient: 'from-red-600 to-slate-800',
+          image: '',
+        },
+        {
           name: 'SwimForm.ai',
           description:
             'AI游泳教练平台。上传您的视频，获取专业级别的技术反馈。基于16年以上的竞技经验打造。',
@@ -665,7 +701,10 @@ const translationsData = {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
         email: '发送邮件',
+        wechat: '微信',
+        wechatCopied: 'ID已复制！',
       },
+      wechatId: 'wxid_llgnw6mtfc2522',
       info: {
         location: '中国',
         email: 'tristangrech.nat@gmail.com',
@@ -845,6 +884,15 @@ const translationsData = {
           image: '',
         },
         {
+          name: 'Geo-Front',
+          description: 'منصة مراقبة جيوسياسية مباشرة لتتبع النزاع بين إيران والولايات المتحدة بتحديثات دقيقة وفورية. مصممة للوضوح في ظل أوضاع سريعة التغيّر.',
+          tags: ['جيوسياسة', 'بيانات مباشرة', 'أخبار'],
+          status: 'مباشر',
+          url: 'https://geo-front.com',
+          gradient: 'from-red-600 to-slate-800',
+          image: '',
+        },
+        {
           name: 'SwimForm.ai',
           description: 'منصة تدريب سباحة مدعومة بالذكاء الاصطناعي. ارفع فيديوهاتك واحصل على تقييم تقني على مستوى النخبة. مبني على أكثر من 16 عاماً من الخبرة التنافسية.',
           tags: ['تقنية رياضية', 'AI', 'تدريب'],
@@ -898,7 +946,10 @@ const translationsData = {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
         email: 'أرسل بريداً',
+        wechat: 'WeChat',
+        wechatCopied: 'تم نسخ المعرّف!',
       },
+      wechatId: 'wxid_llgnw6mtfc2522',
       info: {
         location: 'الصين',
         email: 'tristangrech.nat@gmail.com',

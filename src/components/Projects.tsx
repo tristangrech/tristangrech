@@ -12,6 +12,7 @@ const gradientMap: Record<string, string> = {
   'from-lime-400 to-emerald-500': 'linear-gradient(135deg, #a3e635, #10b981)',
   'from-violet-500 to-indigo-600': 'linear-gradient(135deg, #8b5cf6, #4f46e5)',
   'from-amber-400 to-orange-500': 'linear-gradient(135deg, #fbbf24, #f97316)',
+  'from-red-600 to-slate-800': 'linear-gradient(135deg, #dc2626, #1e293b)',
 };
 
 export default function Projects({ locale }: ProjectsProps) {
@@ -61,6 +62,15 @@ export default function Projects({ locale }: ProjectsProps) {
                   <div className="absolute inset-0 opacity-20" style={{
                     backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%)',
                   }} />
+                )}
+
+                {/* FULLHAURA logo overlay */}
+                {project.name === 'FULLHAURA' && (
+                  <img
+                    src="/images/fullhaura-logo.png"
+                    alt="FULLHAURA"
+                    className="absolute inset-0 w-full h-full object-contain p-6"
+                  />
                 )}
 
                 {/* Status Badge */}
