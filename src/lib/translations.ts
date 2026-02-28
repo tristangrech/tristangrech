@@ -160,7 +160,7 @@ const translationsData = {
         { value: '16+', label: 'Years competitive swimming' },
         { value: '4', label: 'Languages spoken' },
         { value: '6+', label: 'Active projects' },
-        { value: '31', label: 'Countries visited' },
+        { value: '33', label: 'Countries visited' },
       ],
     },
     contact: {

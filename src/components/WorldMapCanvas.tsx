@@ -8,9 +8,11 @@ const VISITED_CODES = new Set([
   276, 442, 642, 398, 360, 764, 458, 795, 704, 470,
   840, 76, 826, 616, 634, 48, 784, 512, 20,
   792, 51,
+  344, // Hong Kong
+  702, // Singapore
 ]);
 
-const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+const GEO_URL = '/countries-110m.json';
 const COLOR_VISITED   = '#3b82f6';
 const COLOR_UNVISITED = '#1e293b';
 const COLOR_STROKE    = '#0f172a';
