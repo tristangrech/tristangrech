@@ -32,7 +32,7 @@ export default function WorldMap({ locale: _locale }: WorldMapProps) {
           </div>
 
           <p className="text-sm text-on-surface-muted mt-3 text-right">
-            35 countries visited
+            36 countries visited
           </p>
         </div>
       </div>

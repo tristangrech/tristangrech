@@ -12,6 +12,7 @@ const VISITED_CODES = new Set([
   702, // Singapore
   36,  // Australia
   620, // Portugal
+  268, // Georgia
 ]);
 
 const GEO_URL = '/countries-110m.json';
