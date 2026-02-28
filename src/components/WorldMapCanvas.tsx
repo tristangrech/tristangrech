@@ -10,6 +10,7 @@ const VISITED_CODES = new Set([
   792, 51,
   344, // Hong Kong
   702, // Singapore
+  36,  // Australia
 ]);
 
 const GEO_URL = '/countries-110m.json';
