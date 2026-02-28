@@ -78,6 +78,12 @@
   }
 }
 
+/* Chinese locale: use Noto Sans SC for all text including headings */
+html[lang="zh"],
+html[lang="zh"] * {
+  font-family: var(--font-noto-sans-sc), sans-serif !important;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;

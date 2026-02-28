@@ -12,7 +12,7 @@ const notoSans = Noto_Sans({
 
 const notoSansSC = Noto_Sans_SC({
   weight: ['400', '500', '700'],
-  subsets: ['latin'],
+  subsets: ['chinese-simplified', 'latin'],
   variable: '--font-noto-sans-sc',
   display: 'swap',
   preload: false,
