@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         heading: ['Syne', 'sans-serif'],
-        body: ['var(--font-noto-sans)', 'var(--font-cairo-play)', 'var(--font-zhi-mang-xing)', 'sans-serif'],
+        body: ['var(--font-noto-sans)', 'var(--font-cairo-play)', 'var(--font-noto-sans-sc)', 'sans-serif'],
       },
       colors: {
         surface: {

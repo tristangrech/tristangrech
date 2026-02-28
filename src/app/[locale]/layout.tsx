@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Noto_Sans, Syne, Zhi_Mang_Xing, Cairo_Play } from 'next/font/google';
+import { Noto_Sans, Syne, Noto_Sans_SC, Cairo_Play } from 'next/font/google';
 import { isValidLocale, defaultLocale, rtlLocales, type Locale } from '@/lib/i18n';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import '../globals.css';
@@ -10,10 +10,10 @@ const notoSans = Noto_Sans({
   display: 'swap',
 });
 
-const zhiMangXing = Zhi_Mang_Xing({
-  weight: '400',
+const notoSansSC = Noto_Sans_SC({
+  weight: ['400', '500', '700'],
   subsets: ['latin'],
-  variable: '--font-zhi-mang-xing',
+  variable: '--font-noto-sans-sc',
   display: 'swap',
   preload: false,
 });
@@ -402,7 +402,7 @@ export default function LocaleLayout({
         <JsonLd locale={locale} />
       </head>
       <body
-        className={`${notoSans.variable} ${cairoPlay.variable} ${zhiMangXing.variable} ${syne.variable}`}
+        className={`${notoSans.variable} ${cairoPlay.variable} ${notoSansSC.variable} ${syne.variable}`}
       >
         <ThemeProvider>
           {children}
