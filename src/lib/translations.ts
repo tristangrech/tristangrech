@@ -11,7 +11,7 @@ const translationsData = {
     },
     hero: {
       badge: 'Entrepreneur · Developer · China Business',
-      bio: 'French entrepreneur with Maltese roots, building from Shenzhen and Shanghai. SaaS products, AI tools, and on-the-ground China operations — for companies serious about doing business in Asia.',
+      bio: 'French entrepreneur with Maltese roots, building from Shenzhen and Shanghai. SaaS products, AI tools, and on-the-ground China operations for companies serious about doing business in Asia.',
       cta: {
         projects: 'My Projects',
         contact: 'Get in Touch',
@@ -20,12 +20,12 @@ const translationsData = {
         {
           title: 'Web Development',
           description:
-            'Full-stack development and AI integrations — from MVPs to production-grade SaaS',
+            'Full-stack development and AI integrations, from MVPs to production-grade SaaS',
         },
         {
           title: 'China Agent',
           description:
-            'Direct ties with the Chinese market — sourcing, negotiations, logistics, and market entry',
+            'Direct ties with the Chinese market: sourcing, negotiations, logistics, and market entry',
         },
         {
           title: 'AI & Automation',
@@ -50,7 +50,7 @@ const translationsData = {
         {
           title: 'Web Dev & AI Projects',
           description:
-            'Building SaaS products and AI-powered tools — from YouTube script generators to swimming coaching platforms.',
+            'Building SaaS products and AI-powered tools: YouTube script generators, swimming coaching platforms, and more.',
         },
         {
           title: 'Based in China',
@@ -72,7 +72,7 @@ const translationsData = {
       label: 'Projects',
       title: "What I'm Building",
       description:
-        'Six active ventures — SaaS, AI tooling, geopolitics, and sports tech.',
+        'Six active ventures: SaaS, AI tooling, geopolitics, and sports tech.',
       items: [
         {
           name: 'FULLHAURA',
@@ -117,7 +117,7 @@ const translationsData = {
         {
           name: 'SwimForm.ai',
           description:
-            'AI swimming coach in your pocket. Upload your video, get elite-level technique feedback — built by a former national team swimmer.',
+            'AI swimming coach in your pocket. Upload your video, get elite-level technique feedback. Built by a former national team swimmer.',
           tags: ['Sports Tech', 'AI', 'Coaching'],
           status: 'In Development',
           url: '',
@@ -129,7 +129,7 @@ const translationsData = {
     pastProjects: {
       label: 'Other Ventures',
       title: 'Past & Side Projects',
-      description: 'Experiments that shipped — in education, travel, and creator tools.',
+      description: 'Experiments that shipped: education, travel, and creator tools.',
       items: [
         {
           name: 'MoneyLabs',
@@ -151,23 +151,23 @@ const translationsData = {
       label: 'Background',
       title: 'Discipline shapes everything.',
       paragraphs: [
-        'Born in France with Maltese roots. Sixteen years of competitive swimming — including the French national team — taught me what it takes to perform under pressure. That same mindset drives everything I build.',
+        'Born in France with Maltese roots. Sixteen years of competitive swimming, including the French national team, taught me what it takes to perform under pressure. That same mindset drives everything I build.',
         'Now based in China, I combine fluency in the local market with hands-on technical skills to ship products and help foreign companies operate in Asia without the guesswork.',
-        'French, English, Portuguese, Russian — four languages that open doors most people never reach.',
+        'French, English, Portuguese, Russian. Four languages that open doors most people never reach.',
       ],
       languages: ['Français', 'English', 'Português', 'Русский'],
       stats: [
         { value: '16+', label: 'Years competitive swimming' },
         { value: '4', label: 'Languages spoken' },
         { value: '6+', label: 'Active projects' },
-        { value: '34', label: 'Countries visited' },
+        { value: '35', label: 'Countries visited' },
       ],
     },
     contact: {
       label: 'Contact',
       title: 'Got a project in mind?',
       subtitle:
-        'Web development, AI build, or China operations — pick a channel and let\'s get into it.',
+        'Web development, AI build, or China operations. Pick a channel and let\'s get into it.',
       buttons: {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
@@ -234,8 +234,8 @@ const translationsData = {
         sectionLabel: 'Athletics',
         title: 'Trained at the highest level. Built for performance.',
         paragraphs: [
-          'Sixteen years of competitive swimming — capped by the French national team — forged the discipline and physical conditioning that define this work. Not gym-built. Pool-built.',
-          'That edge shows in fitness and athletic campaigns. The physique, the posture, the endurance — it comes from a place most models cannot reach.',
+          'Sixteen years of competitive swimming, capped by the French national team, forged the discipline and physical conditioning that define this work. Not gym-built. Pool-built.',
+          'That edge shows in fitness and athletic campaigns. The physique, the posture, the endurance. It comes from a place most models cannot reach.',
         ],
         photoPlaceholder: 'Photo',
         achievements: [
