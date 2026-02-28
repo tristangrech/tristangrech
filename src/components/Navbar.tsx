@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { locales, localeNames, Locale } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
 import ThemeToggle from './ThemeToggle';
+import { useTheme } from './ThemeProvider';
 
 interface NavbarProps {
   locale: Locale;
@@ -15,6 +16,7 @@ export default function Navbar({ locale, hideThemeToggle }: NavbarProps) {
   const t = translations[locale];
   const router = useRouter();
   const pathname = usePathname();
+  const { theme } = useTheme();
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,13 +52,12 @@ export default function Navbar({ locale, hideThemeToggle }: NavbarProps) {
       <div className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href={`/${locale}`} className="flex items-center gap-0 shrink-0">
-            <span className="font-heading font-bold text-xl md:text-2xl text-on-surface">
-              Tristan
-            </span>
-            <span className="font-heading font-bold text-xl md:text-2xl text-primary ml-1">
-              Grech
-            </span>
+          <a href={`/${locale}`} className="flex items-center shrink-0">
+            <img
+              src={theme === 'dark' ? '/images/fullhaura-logo.png' : '/images/fullhaura-logo-black.png'}
+              alt="Fullhaura"
+              className="h-8 md:h-10 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
