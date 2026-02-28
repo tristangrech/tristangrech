@@ -6,6 +6,7 @@ import RightNow from '@/components/RightNow';
 import Projects from '@/components/Projects';
 import PastProjects from '@/components/PastProjects';
 import About from '@/components/About';
+import WorldMap from '@/components/WorldMap';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -25,6 +26,7 @@ export default function HomePage({
       <Projects locale={locale} />
       <PastProjects locale={locale} />
       <About locale={locale} />
+      <WorldMap locale={locale} />
       <Contact locale={locale} />
       <Footer locale={locale} />
     </main>
