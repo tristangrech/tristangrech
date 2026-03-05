@@ -10,57 +10,57 @@ const translationsData = {
       modelling: 'Modelling',
     },
     hero: {
-      badge: 'Entrepreneur · Developer · China Business',
-      bio: 'French entrepreneur with Maltese roots, building from Shenzhen and Shanghai. SaaS products, AI tools, and on-the-ground China operations for companies serious about doing business in Asia.',
+      badge: 'AI Solutions Expert · Automation · SEO/GEO',
+      bio: 'High-end AI technician helping businesses scale through intelligent automation, search engine dominance, and conversion-driven digital strategy. Based in France, serving Europe and Asia.',
       cta: {
-        projects: 'My Projects',
-        contact: 'Get in Touch',
+        projects: 'My Services',
+        contact: 'Book a Call',
       },
       expertise: [
         {
-          title: 'Web Development',
+          title: 'AI Automation',
           description:
-            'Full-stack development and AI integrations, from MVPs to production-grade SaaS',
+            'Custom AI workflows, voice agents, and intelligent systems that eliminate manual work and scale your operations',
         },
         {
-          title: 'China Agent',
+          title: 'Website Auditing',
           description:
-            'Direct ties with the Chinese market: sourcing, negotiations, logistics, and market entry',
+            'Deep technical audits covering performance, SEO, security, and conversion — with actionable fixes',
         },
         {
-          title: 'AI & Automation',
+          title: 'SEO & GEO',
           description:
-            'Custom AI pipelines and workflow automations that cut manual work and scale fast',
+            'Search engine optimization and Generative Engine Optimization to dominate both Google and AI search results',
         },
         {
-          title: 'International Consulting',
+          title: 'Email Marketing',
           description:
-            'Market entry strategy, cross-cultural deal-making, and hands-on execution in both markets',
+            'AI-powered email sequences, deliverability optimization, and automated campaigns that convert',
         },
       ],
     },
     stats: [
-      { value: '6+', label: 'Active Projects' },
-      { value: 'China', label: 'Based in' },
+      { value: '6+', label: 'AI Products Built' },
+      { value: 'France', label: 'Based in' },
       { value: '4', label: 'Languages' },
     ],
     now: {
-      title: 'Right Now',
+      title: 'What I Do',
       cards: [
         {
-          title: 'Web Dev & AI Projects',
+          title: 'AI Automation Systems',
           description:
-            'Building SaaS products and AI-powered tools: YouTube script generators, swimming coaching platforms, and more.',
+            'Building custom AI agents, voice assistants, and automated workflows that run your business 24/7.',
         },
         {
-          title: 'Based in China',
+          title: 'SEO & GEO Expert',
           description:
-            "Living and working from China's business hubs. Deep local network and understanding of the market.",
+            'Helping businesses rank on Google and get cited by AI search engines like ChatGPT, Perplexity, and Gemini.',
         },
         {
-          title: 'China Business Partner',
+          title: 'Full-Stack Digital Strategy',
           description:
-            'Full-cycle support: sourcing, quality control, logistics, negotiations, and market entry for international businesses.',
+            'From technical website audits to email marketing automation — end-to-end digital growth for ambitious businesses.',
         },
       ],
     },
@@ -70,9 +70,9 @@ const translationsData = {
     },
     projects: {
       label: 'Projects',
-      title: "What I'm Building",
+      title: "What I've Built",
       description:
-        'Six active ventures: SaaS, AI tooling, geopolitics, and sports tech.',
+        'Production-grade AI systems, SaaS products, and automation engines.',
       items: [
         {
           name: 'FULLHAURA',
@@ -149,25 +149,25 @@ const translationsData = {
     },
     about: {
       label: 'Background',
-      title: 'Discipline shapes everything.',
+      title: 'Engineering meets execution.',
       paragraphs: [
-        'Born in France with Maltese roots. Sixteen years of competitive swimming, including the French national team, taught me what it takes to perform under pressure. That same mindset drives everything I build.',
-        'Now based in China, I combine fluency in the local market with hands-on technical skills to ship products and help foreign companies operate in Asia without the guesswork.',
-        'French, English, Portuguese, Russian. Four languages that open doors most people never reach.',
+        'French entrepreneur with Maltese roots. Sixteen years of competitive swimming — including the French national team — forged the discipline behind every system I build.',
+        'I\'ve shipped 6+ AI products, built autonomous business engines, and helped companies across Europe and Asia automate their growth. I don\'t just consult — I build and deploy.',
+        'French, English, Portuguese, Russian. Four languages, one mission: help businesses win with technology.',
       ],
       languages: ['Français', 'English', 'Português', 'Русский'],
       stats: [
-        { value: '16+', label: 'Years competitive swimming' },
+        { value: '6+', label: 'AI products shipped' },
         { value: '4', label: 'Languages spoken' },
-        { value: '6+', label: 'Active projects' },
-        { value: '36', label: 'Countries visited' },
+        { value: '100+', label: 'Businesses audited' },
+        { value: '24/7', label: 'AI systems running' },
       ],
     },
     contact: {
       label: 'Contact',
-      title: 'Got a project in mind?',
+      title: 'Ready to scale with AI?',
       subtitle:
-        'Web development, AI build, or China operations. Pick a channel and let\'s get into it.',
+        'Website audit, AI automation, SEO, or email marketing. Let\'s discuss your project.',
       buttons: {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
@@ -177,14 +177,14 @@ const translationsData = {
       },
       wechatId: 'wxid_llgnw6mtfc2522',
       info: {
-        location: 'China',
-        email: 'tristangrech.nat@gmail.com',
+        location: 'France',
+        email: 'contact@fullhaura.com',
         nationality: 'French · EU Passport',
-        availability: 'Open to projects worldwide',
+        availability: 'Serving Europe & Asia',
       },
     },
     footer: {
-      tagline: 'Entrepreneur · Developer · China',
+      tagline: 'AI Solutions · Automation · SEO/GEO',
       copyright: '© 2026 Tristan Grech. All rights reserved.',
       links: {
         about: 'About',
