@@ -156,7 +156,7 @@ function LandingContent() {
           </h1>
 
           <p className="fade-up-d2 mx-auto mb-10 max-w-2xl text-base text-neutral-400 sm:text-lg md:text-xl">
-            A private 1 on 1 coaching session where you learn to build, deploy, and monetize
+            A private one on one coaching session where you learn to build, deploy, and monetize
             AI voice agents that handle real phone calls autonomously.
           </p>
 
