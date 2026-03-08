@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 
 const STRIPE_LINK = 'https://buy.stripe.com/9B69AS61beZL6P9h0W4c80r';
 
@@ -37,43 +37,9 @@ function CheckIcon() {
   );
 }
 
-function PaymentModal({ onClose }: { onClose: () => void }) {
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]" onClick={onClose}>
-      <div className="relative w-full max-w-lg mx-4 animate-[fadeUp_0.3s_ease-out]" onClick={e => e.stopPropagation()}>
-        <button
-          onClick={onClose}
-          className="absolute -top-3 -right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 text-white transition hover:bg-neutral-700"
-        >
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <div className="overflow-hidden rounded-2xl border border-neutral-700 bg-white shadow-2xl shadow-[#FACC15]/5">
-          <iframe
-            src={STRIPE_LINK}
-            className="h-[600px] w-full border-0"
-            title="Secure Checkout"
-          />
-        </div>
-        <div className="mt-3 flex items-center justify-center gap-4 text-[11px] text-neutral-400">
-          <span className="flex items-center gap-1">
-            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-            256 bit SSL encrypted
-          </span>
-          <span>Powered by Stripe</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function LandingContent() {
   const searchParams = useSearchParams();
   const success = searchParams.get('success');
-  const [showPayment, setShowPayment] = useState(false);
 
   if (success) return <SuccessPage />;
 
@@ -93,9 +59,9 @@ function LandingContent() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-800/50 bg-[#0A0A0A]/80 backdrop-blur-lg">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <span className="text-sm font-medium text-neutral-500">AI Voice Agent Course</span>
-          <button onClick={() => setShowPayment(true)} className="rounded-full bg-[#FACC15] px-5 py-2 text-sm font-bold text-black transition hover:bg-[#EAB308]">
+          <a href={STRIPE_LINK} className="rounded-full bg-[#FACC15] px-5 py-2 text-sm font-bold text-black transition hover:bg-[#EAB308]">
             Enroll Now
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -125,15 +91,15 @@ function LandingContent() {
           </p>
 
           <div className="fade-up-d3">
-            <button
-              onClick={() => setShowPayment(true)}
+            <a
+              href={STRIPE_LINK}
               className="group inline-flex items-center gap-3 rounded-full bg-[#FACC15] px-8 py-4 text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_40px_rgba(250,204,21,0.25)] active:scale-[0.98]"
             >
               Get Started for €367
               <svg className="h-5 w-5 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </button>
+            </a>
             <p className="mt-4 text-sm text-neutral-600">One payment. No subscription. 24h refund.</p>
           </div>
 
@@ -244,13 +210,12 @@ function LandingContent() {
             <div className="px-8 py-6">
               <ul className="space-y-3 text-left text-sm text-neutral-300">
                 {[
-                  '2 hour private video session',
+                  '3 hour private video session',
                   'Your own AI voice agent, built live',
-                  'Dedicated phone number (FR or US)',
-                  'CRM integration and call routing',
+                  'Dedicated phone number (EU or US)',
+                  'Check up call +7 days after enrollment',
                   'Full session recording',
                   '30 days of WhatsApp support',
-                  'Monetization playbook included',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
@@ -261,12 +226,12 @@ function LandingContent() {
             </div>
 
             <div className="px-8 pb-8">
-              <button
-                onClick={() => setShowPayment(true)}
+              <a
+                href={STRIPE_LINK}
                 className="block w-full rounded-xl bg-[#FACC15] py-4 text-center text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] active:scale-[0.98]"
               >
                 Secure My Spot
-              </button>
+              </a>
               <div className="mt-5 flex items-center justify-center gap-4 text-[11px] text-neutral-500">
                 <span className="flex items-center gap-1.5">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -325,15 +290,15 @@ function LandingContent() {
           <p className="mb-8 text-neutral-400">
             Learn a high income skill. Build something real. Start earning from it.
           </p>
-          <button
-            onClick={() => setShowPayment(true)}
+          <a
+            href={STRIPE_LINK}
             className="inline-flex items-center gap-3 rounded-full bg-[#FACC15] px-10 py-4 text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_40px_rgba(250,204,21,0.25)] active:scale-[0.98]"
           >
             Enroll Now for €367
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </a>
         </div>
       </section>
 
@@ -344,8 +309,6 @@ function LandingContent() {
         </div>
       </footer>
 
-      {/* Payment Modal */}
-      {showPayment && <PaymentModal onClose={() => setShowPayment(false)} />}
     </div>
   );
 }
