@@ -155,7 +155,7 @@ function LandingContent() {
               </p>
               <ul className="space-y-3 text-sm">
                 {[
-                  '50+ AI systems deployed across 4 countries',
+                  '50+ AI systems deployed across 44 countries',
                   'Expert in Vapi, ElevenLabs, n8n, Claude AI',
                   'Clients in real estate, hospitality, SaaS',
                   'Building production AI since 2019',
