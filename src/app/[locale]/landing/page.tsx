@@ -38,48 +38,66 @@ function CheckIcon() {
   );
 }
 
-function LeadForm({ onSubmitted }: { onSubmitted: () => void }) {
+function CheckoutForm() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [sending, setSending] = useState(false);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!email) return;
+    if (!email || !phone) return;
     setSending(true);
     try {
       await fetch(LEAD_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, phone }),
+        body: JSON.stringify({ name, email, phone }),
       });
     } catch {}
-    onSubmitted();
-    window.location.href = STRIPE_LINK;
+    const params = new URLSearchParams({ prefilled_email: email });
+    window.location.href = STRIPE_LINK + '?' + params.toString();
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      <input
-        type="email"
-        required
-        placeholder="Your email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
-      />
-      <input
-        type="tel"
-        required
-        placeholder="WhatsApp number (e.g. +33 6 12 34 56 78)"
-        value={phone}
-        onChange={e => setPhone(e.target.value)}
-        className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
-      />
+    <form onSubmit={handleSubmit} className="space-y-3 text-left">
+      <div>
+        <label className="mb-1 block text-xs font-medium text-neutral-400">Full Name</label>
+        <input
+          type="text"
+          required
+          placeholder="John Doe"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+        />
+      </div>
+      <div>
+        <label className="mb-1 block text-xs font-medium text-neutral-400">Email</label>
+        <input
+          type="email"
+          required
+          placeholder="john@example.com"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+        />
+      </div>
+      <div>
+        <label className="mb-1 block text-xs font-medium text-neutral-400">WhatsApp Number</label>
+        <input
+          type="tel"
+          required
+          placeholder="+33 6 12 34 56 78"
+          value={phone}
+          onChange={e => setPhone(e.target.value)}
+          className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+        />
+      </div>
       <button
         type="submit"
         disabled={sending}
-        className="block w-full rounded-xl bg-[#FACC15] py-4 text-center text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] active:scale-[0.98] disabled:opacity-60"
+        className="mt-2 block w-full rounded-xl bg-[#FACC15] py-4 text-center text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] active:scale-[0.98] disabled:opacity-60"
       >
         {sending ? 'Redirecting to payment...' : 'Continue to Payment'}
       </button>
@@ -90,8 +108,6 @@ function LeadForm({ onSubmitted }: { onSubmitted: () => void }) {
 function LandingContent() {
   const searchParams = useSearchParams();
   const success = searchParams.get('success');
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
   if (success) return <SuccessPage />;
 
   return (
@@ -280,7 +296,7 @@ function LandingContent() {
             </div>
 
             <div className="px-8 pb-8">
-              <LeadForm onSubmitted={() => setFormSubmitted(true)} />
+              <CheckoutForm />
               <div className="mt-5 flex items-center justify-center gap-4 text-[11px] text-neutral-500">
                 <span className="flex items-center gap-1.5">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
