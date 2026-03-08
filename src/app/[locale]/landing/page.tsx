@@ -1,9 +1,10 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { Suspense, useState, FormEvent } from 'react';
 
 const STRIPE_LINK = 'https://buy.stripe.com/9B69AS61beZL6P9h0W4c80r';
+const LEAD_API = 'https://engine.tristangrech.com/stripe/capture-lead';
 
 function SuccessPage() {
   return (
@@ -37,9 +38,59 @@ function CheckIcon() {
   );
 }
 
+function LeadForm({ onSubmitted }: { onSubmitted: () => void }) {
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [sending, setSending] = useState(false);
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setSending(true);
+    try {
+      await fetch(LEAD_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, phone }),
+      });
+    } catch {}
+    onSubmitted();
+    window.location.href = STRIPE_LINK;
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <input
+        type="email"
+        required
+        placeholder="Your email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+      />
+      <input
+        type="tel"
+        required
+        placeholder="WhatsApp number (e.g. +33 6 12 34 56 78)"
+        value={phone}
+        onChange={e => setPhone(e.target.value)}
+        className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+      />
+      <button
+        type="submit"
+        disabled={sending}
+        className="block w-full rounded-xl bg-[#FACC15] py-4 text-center text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] active:scale-[0.98] disabled:opacity-60"
+      >
+        {sending ? 'Redirecting to payment...' : 'Continue to Payment'}
+      </button>
+    </form>
+  );
+}
+
 function LandingContent() {
   const searchParams = useSearchParams();
   const success = searchParams.get('success');
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   if (success) return <SuccessPage />;
 
@@ -58,8 +109,11 @@ function LandingContent() {
       {/* Sticky Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-800/50 bg-[#0A0A0A]/80 backdrop-blur-lg">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <span className="text-sm font-medium text-neutral-500">AI Voice Agent Course</span>
-          <a href={STRIPE_LINK} className="rounded-full bg-[#FACC15] px-5 py-2 text-sm font-bold text-black transition hover:bg-[#EAB308]">
+          <a href="https://tristangrech.com" className="flex items-center gap-2 transition hover:opacity-80">
+            <img src="/favicon-32x32.png" alt="TG" className="h-6 w-6 rounded" />
+            <span className="text-sm font-medium text-neutral-500">Tristan Grech</span>
+          </a>
+          <a href="#checkout" className="rounded-full bg-[#FACC15] px-5 py-2 text-sm font-bold text-black transition hover:bg-[#EAB308]">
             Enroll Now
           </a>
         </div>
@@ -92,7 +146,7 @@ function LandingContent() {
 
           <div className="fade-up-d3">
             <a
-              href={STRIPE_LINK}
+              href="#checkout"
               className="group inline-flex items-center gap-3 rounded-full bg-[#FACC15] px-8 py-4 text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_40px_rgba(250,204,21,0.25)] active:scale-[0.98]"
             >
               Get Started for €367
@@ -134,9 +188,9 @@ function LandingContent() {
             {[
               { num: '01', title: 'Build Your First AI Voice Agent', desc: 'We build a fully working voice agent together, live, using Vapi and ElevenLabs. You leave the session with something real.' },
               { num: '02', title: 'Smart Call Handling', desc: 'Your agent qualifies leads, books meetings, answers questions, and handles objections. All on autopilot, 24/7.' },
-              { num: '03', title: 'Live Phone Number', desc: 'French or US number connected and ready. Your AI agent starts receiving real calls the same day.' },
+              { num: '03', title: 'Live Phone Number', desc: 'European or US number connected and ready. Your AI agent starts receiving real calls the same day.' },
               { num: '04', title: 'CRM and Automation Setup', desc: 'Every call logged, every lead captured. Plugs into your tools via n8n, Zapier, or Make.' },
-              { num: '05', title: 'Full Session Recording', desc: 'Rewatch the entire 2 hour session anytime. Use it as a step by step guide to build more agents.' },
+              { num: '05', title: 'Full Session Recording', desc: 'Rewatch the entire 3 hour session anytime. Use it as a step by step guide to build more agents.' },
               { num: '06', title: 'Monetization Playbook', desc: 'Learn how to price, pitch, and close clients. Turn this skill into real recurring income.' },
             ].map((item, i) => (
               <div key={i} className="group rounded-2xl border border-neutral-800 bg-[#0D0D0D] p-6 transition-all duration-300 hover:border-[#FACC15]/30 hover:bg-[#111] hover:-translate-y-1">
@@ -188,7 +242,7 @@ function LandingContent() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing with Lead Form */}
       <section id="checkout" className="border-t border-neutral-800 px-4 py-24">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
@@ -226,12 +280,7 @@ function LandingContent() {
             </div>
 
             <div className="px-8 pb-8">
-              <a
-                href={STRIPE_LINK}
-                className="block w-full rounded-xl bg-[#FACC15] py-4 text-center text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] active:scale-[0.98]"
-              >
-                Secure My Spot
-              </a>
+              <LeadForm onSubmitted={() => setFormSubmitted(true)} />
               <div className="mt-5 flex items-center justify-center gap-4 text-[11px] text-neutral-500">
                 <span className="flex items-center gap-1.5">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -291,7 +340,7 @@ function LandingContent() {
             Learn a high income skill. Build something real. Start earning from it.
           </p>
           <a
-            href={STRIPE_LINK}
+            href="#checkout"
             className="inline-flex items-center gap-3 rounded-full bg-[#FACC15] px-10 py-4 text-lg font-bold text-black transition-all duration-300 hover:bg-[#EAB308] hover:shadow-[0_0_40px_rgba(250,204,21,0.25)] active:scale-[0.98]"
           >
             Enroll Now for €367
