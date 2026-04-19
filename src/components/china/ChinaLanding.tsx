@@ -620,23 +620,33 @@ function Offers({ lang }: Props) {
                   ))}
                 </ul>
 
-                <MagneticButton>
+                <div className="space-y-2.5">
+                  <MagneticButton>
+                    <a
+                      href={tier.stripeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group block text-center rounded-full px-6 py-3 font-medium text-sm transition-colors ${
+                        featured
+                          ? 'bg-primary text-white hover:bg-primary-light'
+                          : 'bg-primary text-white hover:bg-primary-light'
+                      }`}
+                    >
+                      <span className="inline-flex items-center gap-1.5">
+                        {tier.cta}
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </a>
+                  </MagneticButton>
                   <a
                     href={CAL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group block text-center rounded-full px-6 py-3 font-medium text-sm transition-colors ${
-                      featured
-                        ? 'bg-primary text-white hover:bg-primary-light'
-                        : 'border border-outline text-on-surface-secondary hover:border-primary hover:text-on-surface'
-                    }`}
+                    className="block text-center text-xs text-on-surface-muted hover:text-primary transition-colors"
                   >
-                    <span className="inline-flex items-center gap-1.5">
-                      {tier.cta}
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                    {tier.ctaAlt} →
                   </a>
-                </MagneticButton>
+                </div>
               </motion.div>
             );
           })}

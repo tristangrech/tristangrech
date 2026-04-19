@@ -10,6 +10,11 @@ export const OTHER_PATH: Record<ChinaLang, string> = { fr: '/china', en: '/chine
 // Cal.com booking URL — swap to the real slug once Cal is set up.
 export const CAL_URL = 'https://cal.com/tristangrech/china-discovery';
 
+// Stripe Payment Links (live, created via API on fullhaura Stripe account).
+export const STRIPE_LINK_DISCOVERY = 'https://buy.stripe.com/28E7sK89j04Ra1lh0W4c80s';
+export const STRIPE_LINK_BUILDER = 'https://buy.stripe.com/eVq8wOdtD6tfc9t2624c80t';
+export const STRIPE_LINK_FULL = 'https://buy.stripe.com/fZuaEW61b7xj2yTh0W4c80u';
+
 // Partner is not named publicly — generic label is intentional.
 export const PARTNER_LABEL_FR = 'Associé franco-chinois';
 export const PARTNER_LABEL_EN = 'Franco-Chinese partner';
@@ -30,6 +35,8 @@ export interface TierCopy {
   priceNote: string;
   secondPerson: string;
   cta: string;
+  ctaAlt: string;
+  stripeUrl: string;
   ribbon?: string;
 }
 
@@ -287,7 +294,9 @@ const fr: ChinaDict = {
         price: '1 490',
         priceNote: 'hors vol et hôtel',
         secondPerson: '+30% / personne supplémentaire',
-        cta: 'Réserver un appel',
+        cta: 'Réserver ma place',
+        ctaAlt: 'ou prendre un appel avant',
+        stripeUrl: STRIPE_LINK_DISCOVERY,
       },
       {
         id: 'builder',
@@ -306,7 +315,9 @@ const fr: ChinaDict = {
         price: '3 490',
         priceNote: 'hors vol et hôtel',
         secondPerson: '+30% / personne supplémentaire',
-        cta: 'Réserver un appel',
+        cta: 'Réserver ma place',
+        ctaAlt: 'ou prendre un appel avant',
+        stripeUrl: STRIPE_LINK_BUILDER,
         ribbon: 'Le plus choisi',
       },
       {
@@ -323,9 +334,11 @@ const fr: ChinaDict = {
           'Accès à notre réseau d\'agents, transitaires, packaging',
         ],
         price: '6 990',
-        priceNote: 'site web inclus (valeur €3-5K)',
+        priceNote: 'site web inclus (valeur €3 à 5K)',
         secondPerson: '+30% / personne supplémentaire',
-        cta: 'Réserver un appel',
+        cta: 'Réserver ma place',
+        ctaAlt: 'ou prendre un appel avant',
+        stripeUrl: STRIPE_LINK_FULL,
       },
     ],
   },
@@ -616,9 +629,11 @@ const en: ChinaDict = {
           'WhatsApp support 7 days post-trip',
         ],
         price: '1,490',
-        priceNote: 'flight & hotel not included',
+        priceNote: 'flight and hotel not included',
         secondPerson: '+30% / extra person',
-        cta: 'Book a call',
+        cta: 'Book my spot',
+        ctaAlt: 'or book a call first',
+        stripeUrl: STRIPE_LINK_DISCOVERY,
       },
       {
         id: 'builder',
@@ -635,9 +650,11 @@ const en: ChinaDict = {
           '30-day WhatsApp support',
         ],
         price: '3,490',
-        priceNote: 'flight & hotel not included',
+        priceNote: 'flight and hotel not included',
         secondPerson: '+30% / extra person',
-        cta: 'Book a call',
+        cta: 'Book my spot',
+        ctaAlt: 'or book a call first',
+        stripeUrl: STRIPE_LINK_BUILDER,
         ribbon: 'Most chosen',
       },
       {
@@ -654,9 +671,11 @@ const en: ChinaDict = {
           'Access to our network of agents, freight, packaging',
         ],
         price: '6,990',
-        priceNote: 'website included (€3-5K value)',
+        priceNote: 'website included (€3 to 5K value)',
         secondPerson: '+30% / extra person',
-        cta: 'Book a call',
+        cta: 'Book my spot',
+        ctaAlt: 'or book a call first',
+        stripeUrl: STRIPE_LINK_FULL,
       },
     ],
   },
