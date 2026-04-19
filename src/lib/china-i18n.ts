@@ -178,9 +178,9 @@ export interface ChinaDict {
 
 const fr: ChinaDict = {
   meta: {
-    title: 'Venez en Chine avec un Français qui y vit — Tristan Grech',
+    title: 'Venez en Chine avec un Français qui y vit | Tristan Grech',
     description:
-      'Voyages business guidés en Chine (Guangzhou · Foshan · Shenzhen) pour entrepreneurs français. Un Français sur place + un associé bilingue français-chinois. Repartez avec vos fournisseurs.',
+      'Voyages business guidés en Chine (Guangzhou · Foshan · Shenzhen) pour entrepreneurs français. Un Français sur place, un associé bilingue français-chinois. Repartez avec vos fournisseurs.',
   },
   nav: {
     offers: 'Formules',
@@ -190,7 +190,7 @@ const fr: ChinaDict = {
     langSwitch: 'EN',
   },
   hero: {
-    badge: 'Nouvelles dates ouvertes — places limitées',
+    badge: 'Nouvelles dates ouvertes. Places limitées.',
     headline1: 'Venez en Chine avec un Français qui y vit.',
     headline2: 'Repartez avec vos fournisseurs.',
     subhead:
@@ -260,7 +260,7 @@ const fr: ChinaDict = {
         bullets: [
           'Natif français ET mandarin',
           'Basé en Chine, réseau usines direct',
-          'Négociateur — conditions, MOQ, timing',
+          'Négociateur. Conditions, MOQ, timing.',
           'Traducteur culturel, pas seulement linguistique',
         ],
       },
@@ -270,7 +270,7 @@ const fr: ChinaDict = {
     eyebrow: 'Les 3 formules',
     title: 'Choisis ton format selon ton ambition.',
     subtitle:
-      'Vol et hôtel non inclus — on te recommande des options précises. Un seul appel de découverte pour caler la bonne formule. Deuxième personne : +30%.',
+      'Vol et hôtel non inclus. On te recommande des options précises. Un seul appel de découverte pour caler la bonne formule. Deuxième personne : +30%.',
     tiers: [
       {
         id: 'discovery',
@@ -298,7 +298,7 @@ const fr: ChinaDict = {
         bullets: [
           'Marchés Guangzhou en profondeur',
           'District usines de Foshan (meuble, luminaire, céramique)',
-          'Shenzhen — électronique & Huaqiangbei',
+          'Shenzhen, électronique et Huaqiangbei',
           '4 à 6 visites d\'usines + coaching négociation en direct',
           'Shortlist fournisseurs écrite post-voyage',
           'Support WhatsApp 30 jours',
@@ -338,18 +338,18 @@ const fr: ChinaDict = {
       {
         day: 'Jour 1',
         title: 'Marchés de Guangzhou',
-        body: 'Yide Lu, Shi San Hang, One Link Plaza — panorama complet. On relève prix, qualités, fournisseurs de gros.',
+        body: 'Yide Lu, Shi San Hang, One Link Plaza. Panorama complet. On relève prix, qualités, fournisseurs de gros.',
         image: '/images/china/market.jpg',
       },
       {
         day: 'Jour 2',
-        title: 'Foshan — district usines',
+        title: 'Foshan, district usines',
         body: 'Meuble, luminaire, céramique. Deux usines visitées, rencontre directe avec les patrons.',
         image: '/images/china/foshan.jpg',
       },
       {
         day: 'Jour 3',
-        title: 'Shenzhen — Huaqiangbei',
+        title: 'Shenzhen, Huaqiangbei',
         body: 'Plus grand marché d\'électronique au monde. Composants, prototypage, OEM.',
         image: '/images/china/shenzhen.jpg',
       },
@@ -393,12 +393,12 @@ const fr: ChinaDict = {
     ],
   },
   included: {
-    eyebrow: 'Ce qui est inclus — et ce qui ne l\'est pas',
+    eyebrow: 'Ce qui est inclus, et ce qui ne l\'est pas',
     title: 'Zéro surprise. Zéro commission cachée.',
     included: [
       { label: 'Accompagnement 7j/7', body: 'On est avec toi du matin au dîner, chaque jour.' },
       { label: 'Traduction en direct', body: 'Français ↔ chinois ↔ anglais, sur place, tout le voyage.' },
-      { label: 'Accès aux marchés & usines', body: 'Entrées, contacts, tours complets — tout organisé.' },
+      { label: 'Accès aux marchés et usines', body: 'Entrées, contacts, tours complets. Tout est organisé.' },
       { label: 'Négociation', body: 'Mon associé négocie en mandarin natif, tu apprends en regardant.' },
       { label: 'Shortlist fournisseurs', body: 'Document écrit post-voyage avec contacts et conditions.' },
       { label: 'Support WhatsApp', body: '7 / 30 / 90 jours selon la formule.' },
@@ -414,12 +414,12 @@ const fr: ChinaDict = {
     note: 'Un voyage Builder complet coûte entre €5 000 et €6 500 tout compris pour 6 jours sur place.',
   },
   testimonials: {
-    eyebrow: 'Early-bird — places réservées',
+    eyebrow: 'Early-bird, places réservées',
     title: 'Les 3 premiers témoignages sont les tiens.',
     items: [
-      { quote: 'Place #1 — À venir. -30% early-bird.', name: 'Place disponible', role: 'Formule au choix', placeholder: true },
-      { quote: 'Place #2 — À venir. -30% early-bird.', name: 'Place disponible', role: 'Formule au choix', placeholder: true },
-      { quote: 'Place #3 — À venir. -30% early-bird.', name: 'Place disponible', role: 'Formule au choix', placeholder: true },
+      { quote: 'Place #1. À venir. 30% de réduction early-bird.', name: 'Place disponible', role: 'Formule au choix', placeholder: true },
+      { quote: 'Place #2. À venir. 30% de réduction early-bird.', name: 'Place disponible', role: 'Formule au choix', placeholder: true },
+      { quote: 'Place #3. À venir. 30% de réduction early-bird.', name: 'Place disponible', role: 'Formule au choix', placeholder: true },
     ],
   },
   leadMagnet: {
@@ -437,11 +437,11 @@ const fr: ChinaDict = {
     items: [
       {
         q: 'Je ne parle pas chinois, je vais être perdu ?',
-        a: 'Non. On est avec toi 100% du temps — marchés, usines, dîners, taxis. Mon associé parle chinois natif, moi je traduis en français à la volée. Tu ne lances pas une phrase chinoise seul si tu ne veux pas.',
+        a: 'Non. On est avec toi 100% du temps. Marchés, usines, dîners, taxis. Mon associé parle chinois natif, moi je traduis en français à la volée. Tu ne lances pas une phrase chinoise seul si tu ne veux pas.',
       },
       {
         q: 'Vous venez tous les deux à chaque voyage ?',
-        a: 'Oui — c\'est la différence. Chaque voyage est co-piloté par Tristan (confiance, codes, cadre) et son associé franco-chinois (négociation native, réseau usines). Tu paies pour deux cerveaux, pas un.',
+        a: 'Oui. C\'est la différence. Chaque voyage est co-piloté par Tristan (confiance, codes, cadre) et son associé franco-chinois (négociation native, réseau usines). Tu paies pour deux cerveaux, pas un.',
       },
       {
         q: 'Visa pour la Chine ?',
@@ -457,7 +457,7 @@ const fr: ChinaDict = {
       },
       {
         q: 'Les vols et l\'hôtel sont inclus ?',
-        a: 'Non — on te recommande des options précises (hôtels testés, quartiers, budgets) mais tu réserves toi-même. Ça garde le prix transparent.',
+        a: 'Non. On te recommande des options précises (hôtels testés, quartiers, budgets) mais tu réserves toi-même. Ça garde le prix transparent.',
       },
       {
         q: 'C\'est un service d\'agent de sourcing classique ?',
@@ -496,22 +496,22 @@ const fr: ChinaDict = {
     tagline: 'Deux associés à Guangzhou. On accompagne les entrepreneurs français en Chine.',
     otherVentures: 'Nos autres projets',
     ventures: [
-      { name: 'Fullhaura — agence IA', href: 'https://fullhaura.com' },
-      { name: 'Geo-Front — monitoring géopolitique', href: 'https://geo-front.com' },
+      { name: 'Fullhaura · agence IA', href: 'https://fullhaura.com' },
+      { name: 'Geo-Front · monitoring géopolitique', href: 'https://geo-front.com' },
     ],
     legal: [
       { label: 'Mentions légales', href: '/legal' },
       { label: 'Confidentialité', href: '/privacy' },
     ],
-    copyright: '© 2026 Tristan Grech — Tous droits réservés.',
+    copyright: '© 2026 Tristan Grech. Tous droits réservés.',
   },
 };
 
 const en: ChinaDict = {
   meta: {
-    title: 'Come to China with a Frenchman who lives here — Tristan Grech',
+    title: 'Come to China with a Frenchman who lives here | Tristan Grech',
     description:
-      'Guided 3–7 day business trips to China (Guangzhou · Foshan · Shenzhen). A Frenchman on the ground + a bilingual FR/ZH partner. Leave with your suppliers.',
+      'Guided 3 to 7-day business trips to China (Guangzhou · Foshan · Shenzhen). A Frenchman on the ground, a bilingual FR/ZH partner. Leave with your suppliers.',
   },
   nav: {
     offers: 'Packages',
@@ -521,7 +521,7 @@ const en: ChinaDict = {
     langSwitch: 'FR',
   },
   hero: {
-    badge: 'New dates open — limited spots',
+    badge: 'New dates open. Limited spots.',
     headline1: 'Come to China with a Frenchman who lives here.',
     headline2: 'Leave with your suppliers.',
     subhead:
@@ -561,7 +561,7 @@ const en: ChinaDict = {
       },
       {
         title: 'You don\'t know the codes',
-        body: 'Hierarchy, trust, rhythm, meals, the "polite" price. You don\'t invent this — you live it.',
+        body: 'Hierarchy, trust, rhythm, meals, the "polite" price. You don\'t invent this. You live it.',
       },
     ],
   },
@@ -591,7 +591,7 @@ const en: ChinaDict = {
         bullets: [
           'Native French AND native Mandarin',
           'Based in China, direct factory network',
-          'Negotiator — terms, MOQ, timing',
+          'Negotiator. Terms, MOQ, timing.',
           'Cultural translator, not just linguistic',
         ],
       },
@@ -601,7 +601,7 @@ const en: ChinaDict = {
     eyebrow: 'The 3 packages',
     title: 'Pick your format by ambition.',
     subtitle:
-      'Flight and hotel not included — we recommend specific options. One discovery call to pick the right tier. Second person: +30%.',
+      'Flight and hotel not included. We recommend specific options. One discovery call to pick the right tier. Second person: +30%.',
     tiers: [
       {
         id: 'discovery',
@@ -668,18 +668,18 @@ const en: ChinaDict = {
       {
         day: 'Day 1',
         title: 'Guangzhou markets',
-        body: 'Yide Lu, Shi San Hang, One Link Plaza — full sweep. We log prices, quality, wholesale suppliers.',
+        body: 'Yide Lu, Shi San Hang, One Link Plaza. Full sweep. We log prices, quality, wholesale suppliers.',
         image: '/images/china/market.jpg',
       },
       {
         day: 'Day 2',
-        title: 'Foshan — factory district',
+        title: 'Foshan, factory district',
         body: 'Furniture, lighting, ceramics. Two factories visited, direct meeting with owners.',
         image: '/images/china/foshan.jpg',
       },
       {
         day: 'Day 3',
-        title: 'Shenzhen — Huaqiangbei',
+        title: 'Shenzhen, Huaqiangbei',
         body: 'World\'s largest electronics market. Components, prototyping, OEM partners.',
         image: '/images/china/shenzhen.jpg',
       },
@@ -700,7 +700,7 @@ const en: ChinaDict = {
   map: {
     eyebrow: 'On the ground',
     title: 'Three cities, one manufacturing triangle.',
-    subtitle: 'Guangzhou for markets, Foshan for furniture & ceramics, Shenzhen for electronics. 2h by train between each — all done within a week.',
+    subtitle: 'Guangzhou for markets, Foshan for furniture and ceramics, Shenzhen for electronics. 2h by train between each. All done within a week.',
     cities: [
       {
         name: 'Guangzhou',
@@ -723,12 +723,12 @@ const en: ChinaDict = {
     ],
   },
   included: {
-    eyebrow: 'What\'s in — and what\'s not',
+    eyebrow: 'What\'s in, and what\'s not',
     title: 'Zero surprises. Zero hidden commissions.',
     included: [
       { label: '7/7 on-the-ground support', body: 'We\'re with you from morning to dinner, every day.' },
       { label: 'Live translation', body: 'French ↔ Chinese ↔ English, on-site, the whole trip.' },
-      { label: 'Market & factory access', body: 'Entries, contacts, full tours — all handled.' },
+      { label: 'Market and factory access', body: 'Entries, contacts, full tours. All handled.' },
       { label: 'Negotiation', body: 'My partner negotiates in native Mandarin, you learn by watching.' },
       { label: 'Supplier shortlist', body: 'Written document post-trip with contacts and terms.' },
       { label: 'WhatsApp support', body: '7 / 30 / 90 days depending on package.' },
@@ -744,12 +744,12 @@ const en: ChinaDict = {
     note: 'A full Builder trip lands between €5,000 and €6,500 all-in for 6 days on the ground.',
   },
   testimonials: {
-    eyebrow: 'Early-bird — spots reserved',
+    eyebrow: 'Early-bird, spots reserved',
     title: 'The first 3 testimonials are yours.',
     items: [
-      { quote: 'Spot #1 — Coming soon. -30% early-bird.', name: 'Open spot', role: 'Package of your choice', placeholder: true },
-      { quote: 'Spot #2 — Coming soon. -30% early-bird.', name: 'Open spot', role: 'Package of your choice', placeholder: true },
-      { quote: 'Spot #3 — Coming soon. -30% early-bird.', name: 'Open spot', role: 'Package of your choice', placeholder: true },
+      { quote: 'Spot #1. Coming soon. 30% early-bird discount.', name: 'Open spot', role: 'Package of your choice', placeholder: true },
+      { quote: 'Spot #2. Coming soon. 30% early-bird discount.', name: 'Open spot', role: 'Package of your choice', placeholder: true },
+      { quote: 'Spot #3. Coming soon. 30% early-bird discount.', name: 'Open spot', role: 'Package of your choice', placeholder: true },
     ],
   },
   leadMagnet: {
@@ -767,11 +767,11 @@ const en: ChinaDict = {
     items: [
       {
         q: 'I don\'t speak Chinese, will I be lost?',
-        a: 'No. We\'re with you 100% of the time — markets, factories, dinners, taxis. My partner speaks native Chinese, I translate to French/English on the fly. You never throw a Chinese sentence solo if you don\'t want to.',
+        a: 'No. We\'re with you 100% of the time. Markets, factories, dinners, taxis. My partner speaks native Chinese, I translate to French or English on the fly. You never throw a Chinese sentence solo if you don\'t want to.',
       },
       {
         q: 'Do both of you come on every trip?',
-        a: 'Yes — that\'s the difference. Every trip is co-piloted by Tristan (trust, codes, framework) and the Franco-Chinese partner (native negotiation, factory network). You pay for two brains, not one.',
+        a: 'Yes. That\'s the difference. Every trip is co-piloted by Tristan (trust, codes, framework) and the Franco-Chinese partner (native negotiation, factory network). You pay for two brains, not one.',
       },
       {
         q: 'Visa for China?',
@@ -787,7 +787,7 @@ const en: ChinaDict = {
       },
       {
         q: 'Flights and hotel included?',
-        a: 'No — we recommend specific options (tested hotels, neighborhoods, budgets) but you book yourself. Keeps pricing transparent.',
+        a: 'No. We recommend specific options (tested hotels, neighborhoods, budgets) but you book yourself. Keeps pricing transparent.',
       },
       {
         q: 'Is this a sourcing-agent service?',
@@ -826,14 +826,14 @@ const en: ChinaDict = {
     tagline: 'Two partners in Guangzhou. We take European founders into China.',
     otherVentures: 'Our other ventures',
     ventures: [
-      { name: 'Fullhaura — AI agency', href: 'https://fullhaura.com' },
-      { name: 'Geo-Front — geopolitical monitoring', href: 'https://geo-front.com' },
+      { name: 'Fullhaura · AI agency', href: 'https://fullhaura.com' },
+      { name: 'Geo-Front · geopolitical monitoring', href: 'https://geo-front.com' },
     ],
     legal: [
       { label: 'Legal notice', href: '/legal' },
       { label: 'Privacy', href: '/privacy' },
     ],
-    copyright: '© 2026 Tristan Grech — All rights reserved.',
+    copyright: '© 2026 Tristan Grech. All rights reserved.',
   },
 };
 
