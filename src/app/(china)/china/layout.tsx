@@ -1,12 +1,12 @@
-import { Newsreader, Inter } from 'next/font/google';
+import { Fraunces, Inter } from 'next/font/google';
 import ChinaShell from '@/components/china/ChinaShell';
 import '../../globals.css';
 
-const newsreader = Newsreader({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   style: ['normal', 'italic'],
-  variable: '--font-newsreader',
+  variable: '--font-fraunces',
   display: 'swap',
 });
 
@@ -19,7 +19,7 @@ const inter = Inter({
 
 export default function ChinaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ChinaShell lang="en" fontClassName={`${inter.variable} ${newsreader.variable}`}>
+    <ChinaShell lang="en" fontClassName={`${inter.variable} ${fraunces.variable}`}>
       {children}
     </ChinaShell>
   );

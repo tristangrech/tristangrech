@@ -88,7 +88,7 @@ body.china-page h1,
 body.china-page h2,
 body.china-page h3,
 body.china-page h4 {
-  font-family: var(--font-newsreader), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-fraunces), Georgia, 'Times New Roman', serif;
   font-optical-sizing: auto;
   letter-spacing: -0.015em;
 }
