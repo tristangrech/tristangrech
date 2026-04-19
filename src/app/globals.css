@@ -78,6 +78,21 @@
   }
 }
 
+/* China landing pages (/chine, /china): Fraunces + Inter */
+body.china-page {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+}
+body.china-page .font-heading,
+body.china-page h1,
+body.china-page h2,
+body.china-page h3,
+body.china-page h4 {
+  font-family: var(--font-newsreader), Georgia, 'Times New Roman', serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
 /* Chinese locale: use Noto Sans SC for all text including headings */
 html[lang="zh"],
 html[lang="zh"] * {
