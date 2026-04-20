@@ -7,9 +7,15 @@ export type ChinaLang = 'fr' | 'en';
 export const OTHER_LANG: Record<ChinaLang, ChinaLang> = { fr: 'en', en: 'fr' };
 export const OTHER_PATH: Record<ChinaLang, string> = { fr: '/china', en: '/chine' };
 
-// Cal.eu booking URL — dedicated China discovery event with intake fields
-// (WhatsApp, country, offer_interest, budget_band, travel_window).
+// Cal.eu booking — dedicated china-discovery event with intake fields.
+// CAL_URL is the fallback (href) that opens in a new tab if JS fails.
+// CAL_LINK is the user/slug format used by Cal's embed SDK.
+// CAL_ORIGIN points at the EU region datacenter.
+// CAL_NAMESPACE isolates this event's embed instance on the page.
 export const CAL_URL = 'https://cal.eu/tristan-grech-bkirnq/china-discovery';
+export const CAL_LINK = 'tristan-grech-bkirnq/china-discovery';
+export const CAL_ORIGIN = 'https://cal.eu';
+export const CAL_NAMESPACE = 'china-discovery';
 
 // Stripe Payment Links (live, created via API on fullhaura Stripe account).
 export const STRIPE_LINK_DISCOVERY = 'https://buy.stripe.com/28E7sK89j04Ra1lh0W4c80s';

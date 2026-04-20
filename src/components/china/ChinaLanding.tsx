@@ -31,7 +31,26 @@ import {
   Download,
   CheckCircle2,
 } from 'lucide-react';
-import { chinaDict, type ChinaLang, OTHER_PATH, CAL_URL } from '@/lib/china-i18n';
+import { getCalApi } from '@calcom/embed-react';
+import {
+  chinaDict,
+  type ChinaLang,
+  OTHER_PATH,
+  CAL_URL,
+  CAL_LINK,
+  CAL_ORIGIN,
+  CAL_NAMESPACE,
+} from '@/lib/china-i18n';
+
+// Data attributes applied to every booking CTA — Cal's global click
+// listener intercepts clicks and opens an in-page modal. href is kept
+// as a graceful fallback for no-JS or embed-load-failure.
+const calAttrs = {
+  'data-cal-link': CAL_LINK,
+  'data-cal-namespace': CAL_NAMESPACE,
+  'data-cal-origin': CAL_ORIGIN,
+  'data-cal-config': JSON.stringify({ layout: 'month_view', theme: 'dark' }),
+} as const;
 
 // Map is browser-only (Leaflet needs window)
 const ChinaMap = dynamic(() => import('./ChinaMap'), {
@@ -62,6 +81,37 @@ const reveal = {
 };
 
 export default function ChinaLanding({ lang }: Props) {
+  // Initialize the Cal embed once per page load. Brand color matches our
+  // primary token (hsl(220 90% 50%)). cssVarsPerTheme lets us theme the
+  // iframe's inner Cal UI to match the dark landing page.
+  useEffect(() => {
+    (async () => {
+      try {
+        const cal = await getCalApi({
+          namespace: CAL_NAMESPACE,
+          embedJsUrl: `${CAL_ORIGIN}/embed/embed.js`,
+        });
+        cal('ui', {
+          theme: 'dark',
+          hideEventTypeDetails: false,
+          layout: 'month_view',
+          cssVarsPerTheme: {
+            dark: {
+              'cal-brand': '#2E6AE5',
+              'cal-brand-emphasis': '#4D82EC',
+            },
+            light: {
+              'cal-brand': '#2E6AE5',
+            },
+          },
+        });
+      } catch (err) {
+        // Silent fallback: CTAs still work via their href to cal.eu
+        console.warn('Cal embed init failed:', err);
+      }
+    })();
+  }, []);
+
   return (
     <main className="min-h-screen bg-surface overflow-x-clip relative">
       <ScrollProgress />
@@ -204,7 +254,8 @@ function Navbar({ lang }: Props) {
             href={CAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-light text-white text-sm font-medium rounded-full px-4 py-1.5 transition-colors"
+            {...calAttrs}
+            className="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-light text-white text-sm font-medium rounded-full px-4 py-1.5 transition-colors cursor-pointer"
           >
             {t.nav.bookCta}
           </a>
@@ -285,7 +336,8 @@ function Hero({ lang }: Props) {
                 href={CAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20"
+                {...calAttrs}
+                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 cursor-pointer"
               >
                 {t.hero.ctaPrimary}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -619,7 +671,8 @@ function Offers({ lang }: Props) {
                     href={CAL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center text-xs text-on-surface-muted hover:text-primary transition-colors"
+                    {...calAttrs}
+                    className="block text-center text-xs text-on-surface-muted hover:text-primary transition-colors cursor-pointer"
                   >
                     {tier.ctaAlt} →
                   </a>
@@ -1020,7 +1073,8 @@ function Social({ lang }: Props) {
               href={CAL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 flex-shrink-0"
+              {...calAttrs}
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 flex-shrink-0 cursor-pointer"
             >
               {t.finalCta.cta}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -1084,7 +1138,8 @@ function FinalCta({ lang }: Props) {
             href={CAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:bg-primary-light transition-colors shadow-xl shadow-primary/25"
+            {...calAttrs}
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:bg-primary-light transition-colors shadow-xl shadow-primary/25 cursor-pointer"
           >
             {t.finalCta.cta}
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -1213,7 +1268,8 @@ function StickyMobileCta({ lang }: Props) {
               href={CAL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 bg-primary text-white text-sm font-medium rounded-full px-4 py-2.5 flex-shrink-0"
+              {...calAttrs}
+              className="inline-flex items-center gap-1.5 bg-primary text-white text-sm font-medium rounded-full px-4 py-2.5 flex-shrink-0 cursor-pointer"
             >
               {t.stickyMobile.cta}
               <ArrowRight className="w-4 h-4" />
