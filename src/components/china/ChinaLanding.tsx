@@ -11,6 +11,7 @@ import {
   useSpring,
   AnimatePresence,
   useMotionValue,
+  useReducedMotion,
 } from 'framer-motion';
 import NumberFlow from '@number-flow/react';
 import {
@@ -63,7 +64,6 @@ const reveal = {
 export default function ChinaLanding({ lang }: Props) {
   return (
     <main className="min-h-screen bg-surface overflow-x-clip relative">
-      <GrainOverlay />
       <ScrollProgress />
       <SideDotNav lang={lang} />
       <Navbar lang={lang} />
@@ -95,22 +95,6 @@ function ScrollProgress() {
     <motion.div
       style={{ scaleX }}
       className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-primary-light to-primary origin-left z-[60] pointer-events-none"
-    />
-  );
-}
-
-/* ————————————————————————————————————— Grain ————————————————————————————————————— */
-
-function GrainOverlay() {
-  return (
-    <div
-      aria-hidden
-      className="fixed inset-0 pointer-events-none z-[1] opacity-[0.035] mix-blend-overlay"
-      style={{
-        backgroundImage:
-          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
-        backgroundSize: '160px 160px',
-      }}
     />
   );
 }
@@ -216,16 +200,14 @@ function Navbar({ lang }: Props) {
           >
             {t.nav.langSwitch}
           </Link>
-          <MagneticButton>
-            <a
-              href={CAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-light text-white text-sm font-medium rounded-full px-4 py-1.5 transition-colors"
-            >
-              {t.nav.bookCta}
-            </a>
-          </MagneticButton>
+          <a
+            href={CAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-light text-white text-sm font-medium rounded-full px-4 py-1.5 transition-colors"
+          >
+            {t.nav.bookCta}
+          </a>
         </div>
       </div>
     </nav>
@@ -268,8 +250,9 @@ function MagneticButton({ children, strength = 0.25 }: { children: React.ReactNo
 
 function Hero({ lang }: Props) {
   const t = chinaDict[lang];
+  const prefersReduced = useReducedMotion();
   const { scrollY } = useScroll();
-  const heroImageY = useTransform(scrollY, [0, 400], [0, 60]);
+  const heroImageY = useTransform(scrollY, [0, 400], prefersReduced ? [0, 0] : [0, 60]);
 
   return (
     <section id="top" className="relative pt-28 md:pt-36 pb-16 md:pb-24 dot-bg overflow-hidden">
@@ -621,23 +604,17 @@ function Offers({ lang }: Props) {
                 </ul>
 
                 <div className="space-y-2.5">
-                  <MagneticButton>
-                    <a
-                      href={tier.stripeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`group block text-center rounded-full px-6 py-3 font-medium text-sm transition-colors ${
-                        featured
-                          ? 'bg-primary text-white hover:bg-primary-light'
-                          : 'bg-primary text-white hover:bg-primary-light'
-                      }`}
-                    >
-                      <span className="inline-flex items-center gap-1.5">
-                        {tier.cta}
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      </span>
-                    </a>
-                  </MagneticButton>
+                  <a
+                    href={tier.stripeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block text-center rounded-full px-6 py-3 font-medium text-sm bg-primary text-white hover:bg-primary-light transition-colors"
+                  >
+                    <span className="inline-flex items-center gap-1.5">
+                      {tier.cta}
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </a>
                   <a
                     href={CAL_URL}
                     target="_blank"
@@ -748,8 +725,9 @@ function Itinerary({ lang }: Props) {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={stop.image}
-                  alt={stop.title}
+                  alt={stop.imageAlt || stop.title}
                   fill
+                  quality={70}
                   sizes="(max-width: 1024px) 50vw, 20vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -1038,17 +1016,15 @@ function Social({ lang }: Props) {
               </h2>
               <p className="text-on-surface-muted leading-relaxed">{t.social.earlyBird}</p>
             </div>
-            <MagneticButton>
-              <a
-                href={CAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 flex-shrink-0"
-              >
-                {t.finalCta.cta}
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </MagneticButton>
+            <a
+              href={CAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 flex-shrink-0"
+            >
+              {t.finalCta.cta}
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
 
@@ -1066,6 +1042,7 @@ function Social({ lang }: Props) {
                 src={img.src}
                 alt={img.alt}
                 fill
+                quality={70}
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />

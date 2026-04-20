@@ -45,6 +45,7 @@ export interface ItineraryStop {
   title: string;
   body: string;
   image: string;
+  imageAlt?: string; // description of the photo (fallback: title)
 }
 
 export interface FaqItem {
@@ -187,7 +188,7 @@ const fr: ChinaDict = {
   meta: {
     title: 'Venez en Chine avec un Français qui y vit | Tristan Grech',
     description:
-      'Voyages business guidés en Chine (Guangzhou · Foshan · Shenzhen) pour entrepreneurs français. Un Français sur place, un associé bilingue français-chinois. Repartez avec vos fournisseurs.',
+      'Voyages business guidés à Guangzhou, Foshan, Shenzhen pour entrepreneurs français. Un Français sur place, un associé franco-chinois natif.',
   },
   nav: {
     offers: 'Formules',
@@ -374,9 +375,10 @@ const fr: ChinaDict = {
       },
       {
         day: 'Jour 5',
-        title: 'Shortlist & départ',
+        title: 'Shortlist, départ',
         body: 'Document écrit des fournisseurs retenus, conditions, prochains pas. Tu rentres avec un plan.',
         image: '/images/china/shortlist.jpg',
+        imageAlt: 'Atelier de production en Chine, visite de fin de voyage',
       },
     ],
   },
@@ -522,9 +524,9 @@ const fr: ChinaDict = {
 
 const en: ChinaDict = {
   meta: {
-    title: 'Come to China with a Frenchman who lives here | Tristan Grech',
+    title: 'China business trips with a Frenchman who lives here',
     description:
-      'Guided 3 to 7-day business trips to China (Guangzhou · Foshan · Shenzhen). A Frenchman on the ground, a bilingual FR/ZH partner. Leave with your suppliers.',
+      'Guided 3 to 7-day trips to Guangzhou, Foshan, Shenzhen. A Frenchman on the ground plus a native Franco-Chinese partner. Leave with suppliers.',
   },
   nav: {
     offers: 'Packages',
@@ -710,9 +712,10 @@ const en: ChinaDict = {
       },
       {
         day: 'Day 5',
-        title: 'Shortlist & departure',
+        title: 'Shortlist, departure',
         body: 'Written document of selected suppliers, terms, next steps. You leave with a plan.',
         image: '/images/china/shortlist.jpg',
+        imageAlt: 'Production workshop in China, end-of-trip visit',
       },
     ],
   },

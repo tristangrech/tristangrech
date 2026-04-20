@@ -31,5 +31,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return pages;
+  // China landing page (FR + EN top-level routes, not part of the locale system)
+  const chinaPages = [
+    {
+      url: `${BASE_URL}/chine`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+      alternates: {
+        languages: {
+          fr: `${BASE_URL}/chine`,
+          en: `${BASE_URL}/china`,
+          'x-default': `${BASE_URL}/chine`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/china`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}/china`,
+          fr: `${BASE_URL}/chine`,
+          'x-default': `${BASE_URL}/chine`,
+        },
+      },
+    },
+  ];
+
+  return [...pages, ...chinaPages];
 }
