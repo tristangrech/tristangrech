@@ -7,8 +7,11 @@ export type ChinaLang = 'fr' | 'en';
 export const OTHER_LANG: Record<ChinaLang, ChinaLang> = { fr: 'en', en: 'fr' };
 export const OTHER_PATH: Record<ChinaLang, string> = { fr: '/china', en: '/chine' };
 
-// Cal.com booking URL — swap to the real slug once Cal is set up.
-export const CAL_URL = 'https://cal.com/tristangrech/china-discovery';
+// Cal.com booking URL. Currently pointing at the generic 30-min event under
+// the fullhaura account. Once a dedicated "china-discovery" event exists with
+// the intake custom fields (WhatsApp, country, offer_interest, budget_band,
+// travel_window), swap to e.g. 'https://cal.com/fullhaura/china-discovery'.
+export const CAL_URL = 'https://cal.com/fullhaura/30min';
 
 // Stripe Payment Links (live, created via API on fullhaura Stripe account).
 export const STRIPE_LINK_DISCOVERY = 'https://buy.stripe.com/28E7sK89j04Ra1lh0W4c80s';
