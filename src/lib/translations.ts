@@ -124,6 +124,16 @@ const translationsData = {
           gradient: 'from-amber-400 to-orange-500',
           image: '',
         },
+        {
+          name: "Rêves d'élite",
+          description:
+            "Private luxury concierge on the French Riviera and Caribbean. Yacht charters, villa rentals, VIP event access and bespoke lifestyle experiences for ultra-high-net-worth clients.",
+          tags: ['Luxury', 'Concierge', 'Lifestyle'],
+          status: 'Live',
+          url: 'https://revesdelite.com',
+          gradient: 'from-rose-300 to-amber-200',
+          image: '',
+        },
       ],
     },
     pastProjects: {
@@ -390,6 +400,16 @@ const translationsData = {
           gradient: 'from-amber-400 to-orange-500',
           image: '',
         },
+        {
+          name: "Rêves d'élite",
+          description:
+            'Частный люкс-консьерж на Лазурном берегу и Карибах. Аренда яхт и вилл, доступ к VIP-мероприятиям и индивидуальные lifestyle-впечатления для самых требовательных клиентов.',
+          tags: ['Люкс', 'Консьерж', 'Lifestyle'],
+          status: 'Активен',
+          url: 'https://revesdelite.com',
+          gradient: 'from-rose-300 to-amber-200',
+          image: '',
+        },
       ],
     },
     pastProjects: {
@@ -654,6 +674,15 @@ const translationsData = {
           gradient: 'from-amber-400 to-orange-500',
           image: '',
         },
+        {
+          name: "Rêves d'élite",
+          description: '蔚蓝海岸与加勒比海的私人奢华礼宾服务。游艇与别墅租赁、VIP活动通行，以及为超高净值客户定制的生活方式体验。',
+          tags: ['奢华', '礼宾', '生活方式'],
+          status: '运营中',
+          url: 'https://revesdelite.com',
+          gradient: 'from-rose-300 to-amber-200',
+          image: '',
+        },
       ],
     },
     pastProjects: {
@@ -899,6 +928,15 @@ const translationsData = {
           status: 'قيد التطوير',
           url: '',
           gradient: 'from-amber-400 to-orange-500',
+          image: '',
+        },
+        {
+          name: "Rêves d'élite",
+          description: 'كونسيرج فاخر خاص على الريفييرا الفرنسية ومنطقة الكاريبي. تأجير اليخوت والفيلات، الوصول إلى الفعاليات الحصرية، وتجارب نمط الحياة المخصصة للعملاء من فئة الثروات الفائقة.',
+          tags: ['فخامة', 'كونسيرج', 'نمط الحياة'],
+          status: 'نشط',
+          url: 'https://revesdelite.com',
+          gradient: 'from-rose-300 to-amber-200',
           image: '',
         },
       ],

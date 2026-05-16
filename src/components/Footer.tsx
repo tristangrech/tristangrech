@@ -18,7 +18,7 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             <a
               href={`/${locale}`}
-              className="font-heading text-2xl font-bold text-on-surface hover:text-blue-400 transition-colors"
+              className="font-heading text-2xl font-bold text-on-surface hover:text-primary transition-colors"
             >
               TG
             </a>

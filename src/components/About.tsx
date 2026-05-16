@@ -15,8 +15,8 @@ export default function About({ locale }: AboutProps) {
       <div className="section-container">
         {/* Section Label */}
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-2 h-2 rounded-full bg-blue-500" />
-          <span className="text-sm font-medium text-blue-500 tracking-wide uppercase">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+          <span className="eyebrow">
             {t.about.label}
           </span>
         </div>
@@ -44,7 +44,7 @@ export default function About({ locale }: AboutProps) {
               {t.about.languages.map((lang, index) => (
                 <span
                   key={index}
-                  className="px-4 py-1.5 text-sm font-medium rounded-full border border-outline text-on-surface-secondary bg-surface-elevated hover:border-blue-500/50 hover:text-blue-400 transition-colors cursor-default"
+                  className="px-4 py-1.5 text-sm font-medium rounded-full border border-outline text-on-surface-secondary bg-surface-elevated hover:border-primary/60 hover:text-primary transition-colors cursor-default"
                 >
                   {lang}
                 </span>

@@ -16,8 +16,8 @@ export default function WorldMap({ locale: _locale }: WorldMapProps) {
         <div className="rounded-2xl border border-outline bg-surface-card p-6">
           {/* Section Label */}
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-2 h-2 rounded-full bg-blue-500" />
-            <span className="text-sm font-medium text-blue-500 tracking-wide uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <span className="eyebrow">
               Travels
             </span>
           </div>

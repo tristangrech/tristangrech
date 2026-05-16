@@ -1,34 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Claude design language — warm paper, ink type, coral accent */
 @layer base {
   :root {
-    --surface: 250 250 250;
-    --surface-alt: 240 242 245;
-    --surface-card: 255 255 255;
-    --surface-elevated: 245 247 250;
-    --surface-nav: 255 255 255;
-    --on-surface: 15 20 30;
-    --on-surface-secondary: 60 70 90;
-    --on-surface-muted: 120 130 145;
-    --outline: 210 215 225;
-    --outline-faint: 225 228 235;
+    /* Light: faded cream paper */
+    --surface: 240 238 229;          /* #F0EEE5 — claude cream */
+    --surface-alt: 232 229 218;      /* #E8E5DA */
+    --surface-card: 250 249 245;     /* #FAF9F5 — warm white card */
+    --surface-elevated: 245 243 234; /* #F5F3EA */
+    --surface-nav: 240 238 229;
+    --on-surface: 31 30 29;          /* #1F1E1D — warm ink */
+    --on-surface-secondary: 74 72 68;
+    --on-surface-muted: 135 133 127;
+    --outline: 221 217 206;          /* #DDD9CE */
+    --outline-faint: 232 229 218;
+    --accent: 204 120 92;            /* #cc785c */
+    --accent-soft: 235 199 184;      /* #ebc7b8 */
   }
 
   .dark {
-    --surface: 10 13 18;
-    --surface-alt: 15 19 24;
-    --surface-card: 18 22 30;
-    --surface-elevated: 22 27 36;
-    --surface-nav: 12 16 22;
-    --on-surface: 235 237 242;
-    --on-surface-secondary: 180 185 195;
-    --on-surface-muted: 130 138 150;
-    --outline: 38 45 58;
-    --outline-faint: 30 36 48;
+    /* Dark: deep warm */
+    --surface: 26 25 22;             /* #1A1916 */
+    --surface-alt: 33 31 28;
+    --surface-card: 38 38 36;        /* #262624 */
+    --surface-elevated: 45 44 41;
+    --surface-nav: 26 25 22;
+    --on-surface: 240 238 229;
+    --on-surface-secondary: 192 190 179;
+    --on-surface-muted: 142 139 130;
+    --outline: 58 56 51;             /* #3A3833 */
+    --outline-faint: 45 44 41;
+    --accent: 217 119 87;            /* #d97757 — slightly warmer on dark */
+    --accent-soft: 76 50 39;
   }
 
   html {
@@ -41,6 +46,12 @@
     color: rgb(var(--on-surface));
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  /* Editorial heading defaults */
+  .font-heading {
+    font-feature-settings: 'ss01', 'ss02', 'ss03';
+    font-optical-sizing: auto;
+  }
 }
 
 @layer components {
@@ -48,20 +59,24 @@
     @apply transition-all duration-300 ease-out;
   }
   .card-hover:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(var(--on-surface), 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px -16px rgb(var(--on-surface) / 0.18);
   }
   .dark .card-hover:hover {
-    box-shadow: 0 12px 40px hsl(220 90% 60% / 0.15);
+    box-shadow: 0 16px 40px -12px rgb(var(--accent) / 0.18);
   }
 
+  /* Subtle paper grain pattern instead of dots */
   .dot-bg {
-    background-image: radial-gradient(rgb(var(--outline)) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-image:
+      radial-gradient(rgb(var(--on-surface) / 0.05) 1px, transparent 1px),
+      linear-gradient(rgb(var(--surface)) 0%, rgb(var(--surface-alt)) 100%);
+    background-size: 28px 28px, 100% 100%;
   }
 
+  /* Coral inkwash gradient for display type */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(220, 90%, 50%), #0da6f2);
+    background: linear-gradient(110deg, rgb(var(--accent)) 0%, #b85842 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -69,6 +84,17 @@
 
   .section-container {
     @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  /* Hairline ink divider, Claude-style */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgb(var(--outline)) 20%, rgb(var(--outline)) 80%, transparent);
+  }
+
+  /* Eyebrow caption — small caps, mono, with leading dot */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-on-surface-muted;
   }
 }
 
@@ -78,7 +104,7 @@
   }
 }
 
-/* China landing pages (/chine, /china): Fraunces + Inter */
+/* China landing pages (/chine, /china): keep Inter+Montserrat overrides */
 body.china-page {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-feature-settings: 'cv11', 'ss01', 'ss03';
@@ -92,13 +118,13 @@ body.china-page h4 {
   letter-spacing: -0.02em;
 }
 
-/* Chinese locale: use Noto Sans SC for all text including headings */
+/* Chinese locale: Noto Sans SC for all (no serif headings in CJK) */
 html[lang="zh"],
 html[lang="zh"] * {
   font-family: var(--font-noto-sans-sc), sans-serif !important;
 }
 
-/* Scrollbar styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -110,8 +136,8 @@ html[lang="zh"] * {
   border-radius: 3px;
 }
 
-/* Selection */
+/* Coral selection */
 ::selection {
-  background: hsl(220, 90%, 50%);
-  color: white;
+  background: rgb(var(--accent) / 0.85);
+  color: #fffdf7;
 }

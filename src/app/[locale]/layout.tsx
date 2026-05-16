@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Noto_Sans, Syne, Noto_Sans_SC, Cairo_Play } from 'next/font/google';
+import { Noto_Sans, Fraunces, Noto_Sans_SC, Cairo_Play } from 'next/font/google';
 import { isValidLocale, defaultLocale, rtlLocales, type Locale } from '@/lib/i18n';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import '../globals.css';
@@ -24,10 +24,11 @@ const cairoPlay = Cairo_Play({
   display: 'swap',
 });
 
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-syne',
+  variable: '--font-fraunces',
   display: 'swap',
+  axes: ['opsz', 'SOFT'],
 });
 
 const BASE_URL = 'https://tristangrech.com';
@@ -393,7 +394,8 @@ export default function LocaleLayout({
         <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#0a0d12" />
+        <meta name="theme-color" content="#1a1916" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#f0eee5" media="(prefers-color-scheme: light)" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||(!t&&window.matchMedia('(prefers-color-scheme:light)').matches)){document.documentElement.classList.remove('dark')}}catch(e){}})()`,
@@ -402,7 +404,7 @@ export default function LocaleLayout({
         <JsonLd locale={locale} />
       </head>
       <body
-        className={`${notoSans.variable} ${cairoPlay.variable} ${notoSansSC.variable} ${syne.variable}`}
+        className={`${notoSans.variable} ${cairoPlay.variable} ${notoSansSC.variable} ${fraunces.variable}`}
       >
         <ThemeProvider>
           {children}

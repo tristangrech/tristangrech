@@ -8,8 +8,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['Syne', 'sans-serif'],
+        heading: ['var(--font-fraunces)', 'Cormorant Garamond', 'Georgia', 'serif'],
         body: ['var(--font-noto-sans)', 'var(--font-cairo-play)', 'var(--font-noto-sans-sc)', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       colors: {
         surface: {
@@ -29,10 +30,13 @@ const config: Config = {
           faint: 'rgb(var(--outline-faint) / <alpha-value>)',
         },
         primary: {
-          DEFAULT: 'hsl(220, 90%, 50%)',
-          light: 'hsl(220, 90%, 60%)',
-          dark: 'hsl(220, 90%, 40%)',
+          DEFAULT: '#cc785c',
+          light: '#d97757',
+          dark: '#b8694f',
         },
+      },
+      letterSpacing: {
+        'tight-display': '-0.02em',
       },
       animation: {
         'pulse-slow': 'pulse 3s ease-in-out infinite',

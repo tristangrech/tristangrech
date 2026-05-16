@@ -13,6 +13,7 @@ const gradientMap: Record<string, string> = {
   'from-violet-500 to-indigo-600': 'linear-gradient(135deg, #8b5cf6, #4f46e5)',
   'from-amber-400 to-orange-500': 'linear-gradient(135deg, #fbbf24, #f97316)',
   'from-red-600 to-slate-800': 'linear-gradient(135deg, #dc2626, #1e293b)',
+  'from-rose-300 to-amber-200': 'linear-gradient(135deg, #fda4af, #fde68a)',
 };
 
 export default function Projects({ locale }: ProjectsProps) {
@@ -23,8 +24,8 @@ export default function Projects({ locale }: ProjectsProps) {
       <div className="section-container">
         {/* Section Label */}
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-2 h-2 rounded-full bg-blue-500" />
-          <span className="text-sm font-medium text-blue-500 tracking-wide uppercase">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+          <span className="eyebrow">
             {t.projects.label}
           </span>
         </div>
@@ -109,7 +110,7 @@ export default function Projects({ locale }: ProjectsProps) {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
                   >
                     {t.common.visitWebsite}
                     <svg
