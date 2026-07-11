@@ -1,0 +1,5 @@
+# Dropped locales (old China-era identity) → English homepage
+/zh /en 302
+/ar /en 302
+/zh/* /en 302
+/ar/* /en 302

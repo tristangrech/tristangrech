@@ -15,25 +15,21 @@ const metadataByLocale: Record<Locale, { title: string; description: string }> =
   {
     en: {
       title:
-        'Tristan Grech — Model · Athlete | 186cm · Based in China · Asia-wide',
+        'Tristan Grech — Model · Athlete | 186cm · Based in Nice, France',
       description:
-        'French model and former national swim team athlete. 186cm, based in China. Available for commercial, fitness, editorial, and fashion campaigns across Asia. Agencies and brands welcome.',
+        'French model and former national swim team athlete. 186cm, based in Nice, France. Available for commercial, fitness, editorial, and fashion campaigns across Europe and Asia. Agencies and brands welcome.',
+    },
+    fr: {
+      title:
+        'Tristan Grech — Modèle · Athlète | 186cm · Basé à Nice, France',
+      description:
+        'Modèle français et ancien membre de l\'équipe de France de natation. 186 cm, basé à Nice. Disponible pour campagnes commerciales, fitness, éditoriales et mode en Europe et en Asie.',
     },
     ru: {
       title:
-        'Тристан Греч — Модель · Спортсмен | 186см · Базируется в Китае',
+        'Тристан Греч — Модель · Спортсмен | 186см · Ницца, Франция',
       description:
-        'Французская модель и бывший член сборной по плаванию. 186 см, базируется в Китае. Доступен для коммерческих, фитнес-, редакционных и модных кампаний по всей Азии.',
-    },
-    zh: {
-      title: 'Tristan Grech — 模特 · 运动员 | 186cm · 常驻中国 · 亚洲全境',
-      description:
-        '法国模特及前国家游泳队运动员。186cm，常驻中国。可接受亚洲范围内的商业、健身、编辑和时尚广告。欢迎经纪公司和品牌联系。',
-    },
-    ar: {
-      title: 'Tristan Grech — عارض أزياء · رياضي | 186سم · مقيم في الصين',
-      description:
-        'عارض أزياء فرنسي ورياضي سباحة سابق في المنتخب الوطني. 186 سم، مقيم في الصين. متاح للحملات التجارية واللياقة والتحريرية والأزياء في جميع أنحاء آسيا.',
+        'Французская модель и бывший член сборной по плаванию. 186 см, база в Ницце. Доступен для коммерческих, фитнес-, редакционных и модных кампаний в Европе и Азии.',
     },
   };
 
@@ -49,9 +45,8 @@ export async function generateMetadata({
   const canonicalUrl = `${BASE_URL}/${locale}/modelling`;
   const ogLocaleMap: Record<Locale, string> = {
     en: 'en_US',
+    fr: 'fr_FR',
     ru: 'ru_RU',
-    zh: 'zh_CN',
-    ar: 'ar_SA',
   };
   const ogLocale = ogLocaleMap[locale];
 
@@ -72,9 +67,8 @@ export async function generateMetadata({
       canonical: canonicalUrl,
       languages: {
         en: `${BASE_URL}/en/modelling`,
+        fr: `${BASE_URL}/fr/modelling`,
         ru: `${BASE_URL}/ru/modelling`,
-        zh: `${BASE_URL}/zh/modelling`,
-        ar: `${BASE_URL}/ar/modelling`,
       },
     },
     openGraph: {

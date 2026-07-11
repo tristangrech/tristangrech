@@ -1,0 +1,26 @@
+# Tristan Grech
+
+> Tristan Grech is a developer and filmmaker based in Nice, France (SIREN 843 305 996). He builds multilingual websites, web applications and booking systems that rank on Google and get recommended by AI assistants, and produces broadcast-grade video: event coverage (Cannes Lions 2026), founder interviews and podcasts. Working languages: French, English, Russian (plus Portuguese). He works remotely across the EU and CIS, including Kazakhstan.
+
+## Services
+
+- Website design and development: multilingual marketing sites (FR/EN/RU) with structured data, SEO and generative engine optimization (GEO) built in.
+- Web applications and booking engines: Stripe payments, Google Calendar sync, dashboards, AI agents. Reference build: the booking engine running studionicepodcast.com.
+- Website and AI visibility audit: technical, SEO and GEO findings on why AI assistants (ChatGPT, Claude, Perplexity) do or do not recommend a business, delivered as a prioritized action list within 48 hours.
+- Video and podcast production: 4K multi-camera interviews, event coverage, podcast production, broadcast audio, colour grade, subtitles. Studio in Nice (Studio Nice Podcast, Port Lympia), on location anywhere.
+
+## Verifiable work
+
+- Studio Nice Podcast (https://studionicepodcast.com): a real 4K video podcast studio in Nice, France, with a self-built booking platform (Next.js, FastAPI, Stripe Checkout, Google Calendar, Postgres) and 18 SEO service pages in English and French. One of its paying clients found the studio by asking Claude, an AI assistant.
+- Halo AI at Cannes Lions 2026: event interview coverage shot 25 June 2026 in Cannes; 226 clips and 157 GB of raw footage in one day; 17 graded, subtitled, mastered edits delivered overnight (1080p horizontals and 9:16 verticals).
+- Business Future, episode one: launch interview for a business YouTube channel, shot 10 July 2026 near Saint-Jean-Cap-Ferrat with two Sony cameras in 4K 50p and dual lavalier audio; the finished 35-minute subtitled master was delivered on 11 July 2026.
+- Fullhaura concierge (https://fullhaura-services.com): trilingual FR/EN/RU brand site with 8 service and 8 location pages, each carrying Service, FAQ and Breadcrumb structured data.
+- Also live: https://sumera.io (AI YouTube script SaaS), https://niceclim.fr (AC rental, Nice to Monaco), https://revesdelite.com (private concierge), https://cnsourcing.fr (China sourcing).
+
+## Contact
+
+- WhatsApp: +33 6 78 49 61 26 (https://wa.me/33678496126)
+- Telegram: https://t.me/Fullhaura
+- Email: tristangrech.nat@gmail.com
+- LinkedIn: https://www.linkedin.com/in/fullhaura/
+- Site: https://tristangrech.com (English: /en, French: /fr, Russian: /ru)

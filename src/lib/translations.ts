@@ -4,203 +4,227 @@ const translationsData = {
   en: {
     nav: {
       home: 'Home',
-      about: 'About',
-      projects: 'Projects',
+      services: 'Services',
+      work: 'Work',
+      faq: 'FAQ',
       contact: 'Contact',
-      modelling: 'Modelling',
+      cta: 'WhatsApp',
     },
     hero: {
-      badge: 'AI Solutions Expert · Automation · SEO/GEO',
-      bio: 'High-end AI technician helping businesses scale through intelligent automation, search engine dominance, and conversion-driven digital strategy. Based in France, serving Europe and Asia.',
-      cta: {
-        projects: 'My Services',
-        contact: 'Book a Call',
-      },
-      expertise: [
-        {
-          title: 'AI Automation',
-          description:
-            'Custom AI workflows, voice agents, and intelligent systems that eliminate manual work and scale your operations',
-        },
-        {
-          title: 'Website Auditing',
-          description:
-            'Deep technical audits covering performance, SEO, security, and conversion, with actionable fixes',
-        },
-        {
-          title: 'SEO & GEO',
-          description:
-            'Search engine optimization and Generative Engine Optimization to dominate both Google and AI search results',
-        },
-        {
-          title: 'Email Marketing',
-          description:
-            'AI-powered email sequences, deliverability optimization, and automated campaigns that convert',
-        },
-      ],
+      slateProject: 'TRISTAN GRECH · SHOWREEL 2026',
+      slateLocation: 'NICE · FRANCE',
+      rec: 'REC',
+      standby: 'STBY',
+      awaiting: 'A-CAM · 4K',
+      h1a: 'Websites, web apps and film.',
+      h1b: 'Built to be found.',
+      entity:
+        'I am Tristan Grech, a developer and filmmaker in Nice, France. I build multilingual websites and booking systems that Google ranks and AI assistants recommend, and I shoot broadcast-grade video, from Cannes Lions coverage to founder interviews. I work in French, English and Russian, remotely from Paris to Almaty.',
+      ctaPrimary: 'Message me on WhatsApp',
+      ctaSecondary: 'See the work',
     },
-    stats: [
-      { value: '6+', label: 'AI Products Built' },
-      { value: 'France', label: 'Based in' },
-      { value: '4', label: 'Languages' },
+    proof: [
+      { value: '17', label: 'finished edits delivered overnight at Cannes Lions 2026' },
+      { value: '24h', label: 'from interview shoot to delivered, subtitled episode' },
+      { value: '6', label: 'sites live in production right now, all linked below' },
+      { value: '3', label: 'working languages: French, English, Russian' },
     ],
-    now: {
-      title: 'What I Do',
-      cards: [
+    services: {
+      scene: 'SCENE 02',
+      label: 'SERVICES',
+      title: 'Four things, done properly.',
+      sub: 'Fixed scope, clear deliverables, and a site you can verify against the work below.',
+      items: [
         {
-          title: 'AI Automation Systems',
-          description:
-            'Building custom AI agents, voice assistants, and automated workflows that run your business 24/7.',
+          id: 'website',
+          title: 'Website build',
+          desc: 'Multilingual marketing sites with structured data, SEO and AI visibility built in from the first commit. Design system, copy in up to three languages, analytics wired.',
+          proof: 'Proof: fullhaura-services.com, 16 schema-rich pages in French, English and Russian.',
         },
         {
-          title: 'SEO & GEO Expert',
-          description:
-            'Helping businesses rank on Google and get cited by AI search engines like ChatGPT, Perplexity, and Gemini.',
+          id: 'webapp',
+          title: 'Web apps & booking engines',
+          desc: 'Stripe payments, calendar sync, dashboards, AI agents. Software that takes bookings and money while you sleep.',
+          proof: 'Proof: the Studio Nice Podcast engine. Stripe Checkout, Google Calendar and Postgres, running a real studio daily.',
         },
         {
-          title: 'Full-Stack Digital Strategy',
-          description:
-            'From technical website audits to email marketing automation: full digital growth support for ambitious businesses.',
+          id: 'audit',
+          title: 'Website & AI visibility audit',
+          desc: 'Where you rank, why AI assistants never mention you, and exactly what to fix. Technical, SEO and GEO findings delivered as a prioritized action list within 48 hours.',
+          proof: 'Proof: this site practices what the audit preaches. Ask your AI assistant about it.',
+        },
+        {
+          id: 'video',
+          title: 'Video & studio production',
+          desc: 'Interviews, events and podcasts. 4K multi-camera, broadcast audio, colour grade, subtitles, platform-ready cuts. Studio in Nice, on location anywhere.',
+          proof: 'Proof: Cannes Lions 2026 coverage and a founder interview delivered the next day, both below.',
         },
       ],
     },
-    common: {
-      visitWebsite: 'Visit Website',
-      inDevelopment: 'In Development',
-    },
-    projects: {
-      label: 'Projects',
-      title: "What I've Built",
-      description:
-        'Production-grade AI systems, SaaS products, and automation engines.',
-      items: [
+    work: {
+      scene: 'SCENE 03',
+      label: 'SELECTED WORK',
+      title: 'Recent productions.',
+      sub: 'Real clients, verifiable facts, dates included.',
+      linkLabel: 'Open the live site',
+      clips: [
         {
-          name: 'FULLHAURA',
-          description:
-            'AI agency building digital tools, automations, and web solutions for businesses across Europe and Asia. From API integrations to full-stack web development.',
-          tags: ['AI Agency', 'Web Dev', 'Automation'],
-          status: 'Active',
-          url: '#',
-          gradient: 'from-cyan-500 to-blue-600',
-          image: '',
+          id: 'CLIP 01',
+          client: 'Studio Nice Podcast',
+          title: 'Built the product. Run the business on it.',
+          facts: [
+            'A real 4K video podcast studio at Port Lympia, Nice, with its own booking platform',
+            'Next.js front end on Cloudflare, FastAPI booking engine, Stripe Checkout, Google Calendar sync, Postgres',
+            '18 SEO service pages in English and French, from Cannes Lions coverage to yacht and villa shoots',
+            'Booked and paid by real clients, one of whom found the studio by asking Claude, an AI assistant',
+          ],
+          tags: ['Web app', 'Stripe', 'SEO/GEO', 'Studio'],
+          url: 'https://studionicepodcast.com',
+          image: '/images/work/snp-home.jpg',
+          imageAlt: 'Studio Nice Podcast homepage',
         },
         {
-          name: 'Sumera.io',
-          description:
-            'AI-powered YouTube script generator with a proprietary 5-stage pipeline. Turns video ideas into production-ready scripts in 10 minutes.',
-          tags: ['SaaS', 'AI', 'Creator Tools'],
-          status: 'Live',
-          url: 'https://sumera.io',
-          gradient: 'from-lime-400 to-emerald-500',
-          image: '/images/sumera-cover.png',
-        },
-        {
-          name: 'Fullink.io',
-          description:
-            'All-in-one link-in-bio platform for creators. Beautiful themes, analytics, payment integration via Stripe, and blazing-fast performance. Free forever.',
-          tags: ['SaaS', 'Creator Tools', 'Link-in-Bio'],
-          status: 'Live',
-          url: 'https://www.fullink.io',
-          gradient: 'from-violet-500 to-indigo-600',
-          image: '',
-        },
-        {
-          name: 'Geo-Front',
-          description:
-            'Live geopolitical monitoring platform tracking the Iran/USA conflict with real-time, accurate updates. Built for clarity in a fast-moving situation.',
-          tags: ['Geopolitics', 'Live Data', 'News'],
-          status: 'Live',
-          url: 'https://geo-front.com',
-          gradient: 'from-red-600 to-slate-800',
-          image: '',
-        },
-        {
-          name: 'SwimForm.ai',
-          description:
-            'AI swimming coach in your pocket. Upload your video, get elite-level technique feedback. Built by a former national team swimmer.',
-          tags: ['Sports Tech', 'AI', 'Coaching'],
-          status: 'In Development',
+          id: 'CLIP 02',
+          client: 'Halo AI × Cannes Lions 2026',
+          title: 'One shoot day. 17 finished edits by morning.',
+          facts: [
+            'Event interview coverage at Cannes Lions 2026 for Halo AI, shot 25 June in Cannes',
+            '226 clips and 157 GB of raw footage from one day on the Croisette',
+            '17 graded, subtitled, mastered pieces: 1080p horizontals plus 9:16 verticals, audio at broadcast loudness',
+            'The edit run started at 3 a.m. and the full set was ready the morning after the shoot',
+          ],
+          tags: ['Event coverage', 'Interviews', 'Overnight edit'],
           url: '',
-          gradient: 'from-amber-400 to-orange-500',
           image: '',
+          imageAlt: '',
         },
         {
-          name: "Rêves d'élite",
-          description:
-            "Private luxury concierge on the French Riviera and Caribbean. Yacht charters, villa rentals, VIP event access and bespoke lifestyle experiences for ultra-high-net-worth clients.",
-          tags: ['Luxury', 'Concierge', 'Lifestyle'],
-          status: 'Live',
-          url: 'https://revesdelite.com',
-          gradient: 'from-rose-300 to-amber-200',
+          id: 'CLIP 03',
+          client: 'Business Future · Episode one',
+          title: 'Shot Thursday. Delivered Friday.',
+          facts: [
+            'Launch episode for a business YouTube channel, filmed on location near Saint-Jean-Cap-Ferrat',
+            'Two Sony cameras in 4K 50p, dual lavalier audio recorded clean',
+            'A 35-minute master: two-camera edit, shot-matched colour grade, dialogue at broadcast loudness',
+            'Word-level English subtitles, thumbnails and upload checklist, delivered the day after the shoot',
+          ],
+          tags: ['Interview', '4K multi-cam', '24h delivery'],
+          url: '',
           image: '',
+          imageAlt: '',
+        },
+        {
+          id: 'CLIP 04',
+          client: 'Fullhaura · Concierge brand',
+          title: 'A brand system in three languages.',
+          facts: [
+            'Marketing site for a Saint-Tropez concierge service, designed and written end to end',
+            'French, English and Russian throughout, every page in all three languages',
+            '8 service pages and 8 location pages, each with Service, FAQ and Breadcrumb structured data',
+            'Owned illustration set and a documented design system, shipped on Vercel with Next.js 15',
+          ],
+          tags: ['Website', 'FR/EN/RU', 'Local SEO', 'Brand'],
+          url: 'https://fullhaura-services.com',
+          image: '/images/work/fullhaura-services.jpg',
+          imageAlt: 'Fullhaura concierge website homepage',
         },
       ],
     },
-    pastProjects: {
-      label: 'Other Ventures',
-      title: 'Past & Side Projects',
-      description: 'Experiments that shipped: education, travel, and creator tools.',
+    liveSites: {
+      scene: 'SCENE 04',
+      label: 'LIVE SITES',
+      title: 'Six sites you can open right now.',
+      sub: 'Every one is in production today. Click and check.',
+      status: 'LIVE',
+      sites: [
+        { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Video podcast studio in Nice with end-to-end online booking' },
+        { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Trilingual concierge brand for the Saint-Tropez peninsula' },
+        { name: 'sumera.io', url: 'https://sumera.io', desc: 'AI YouTube script generator, a SaaS with live Stripe billing' },
+        { name: 'niceclim.fr', url: 'https://niceclim.fr', desc: 'Portable air conditioner rental, delivered and installed, Nice to Monaco' },
+        { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Private concierge brand for Cannes, Monaco and Saint-Tropez' },
+        { name: 'cnsourcing.fr', url: 'https://cnsourcing.fr', desc: 'China sourcing service, an animated two-page pitch site' },
+      ],
+    },
+    aiProof: {
+      scene: 'SCENE 05',
+      label: 'THE AI ANGLE',
+      title: 'Ask your AI who builds websites in Nice.',
+      paragraphs: [
+        'AI assistants now answer buying questions directly. They quote pages that are static, entity-clear and full of verifiable facts. Everything else is invisible to them.',
+        'This is not theory: one of Studio Nice Podcast\'s recent paying bookings came from a client who found the studio by asking Claude. Every site I ship carries the same layer: structured data, open access for AI crawlers, concrete facts with dates and prices that an assistant can quote.',
+        'Want to know how your site scores? That is exactly what the audit answers.',
+      ],
+      cta: 'Request an audit on WhatsApp',
+    },
+    faq: {
+      scene: 'SCENE 06',
+      label: 'FAQ',
+      title: 'Straight answers.',
       items: [
         {
-          name: 'MoneyLabs',
-          description:
-            'Online course teaching AI voice generation for passive income. Practical, monetization-focused education.',
-          tags: ['Education', 'AI'],
-          gradient: 'from-violet-500 to-purple-600',
+          q: 'What exactly do you build?',
+          a: 'Three things on the web: multilingual marketing websites, web applications with payments and booking flows, and audits of existing sites. Plus professional video: interviews, event coverage and podcast production, in the studio in Nice or on location.',
         },
         {
-          name: 'Bali Girls Trip',
-          description:
-            'Premium women\'s travel concierge service for Bali. Curated itineraries and group travel experiences.',
-          tags: ['Travel', 'Lifestyle'],
-          gradient: 'from-pink-400 to-rose-500',
+          q: 'Where are you based, and do you work remotely?',
+          a: 'I am based in Nice, France, and work remotely for clients across France, Europe and the CIS, including Kazakhstan. Web projects run entirely online: brief, build, review, launch. I work in French, English and Russian, and also speak Portuguese.',
+        },
+        {
+          q: 'What is an AI visibility audit?',
+          a: 'A review of how your site performs in classic search and in AI assistants like ChatGPT, Claude and Perplexity. You get a prioritized action list covering technical issues, structured data, content gaps and the specific reasons assistants do or do not recommend your business, delivered within 48 hours.',
+        },
+        {
+          q: 'How fast do you deliver?',
+          a: 'Recent, verifiable numbers: a founder interview was shot on 10 July 2026 and the finished, subtitled episode was delivered on 11 July. At Cannes Lions 2026, 17 finished edits were ready the morning after the shoot day. Websites typically ship in a few weeks depending on scope.',
+        },
+        {
+          q: 'How do payments and invoicing work?',
+          a: 'I invoice as a registered French sole proprietorship (SIREN 843 305 996) in euros, with card payment via Stripe or bank transfer. Cross-border invoicing for EU and non-EU clients is standard practice, with contracts in English, French or Russian.',
+        },
+        {
+          q: 'Can you make my business visible to AI assistants?',
+          a: 'Yes. The method is concrete: server-rendered pages AI crawlers can read, structured data that defines your business, visible facts, prices and locations assistants can quote, and open crawler access. Then monthly checks of what ChatGPT, Claude and Perplexity actually say about you.',
         },
       ],
     },
     about: {
-      label: 'Background',
-      title: 'Engineering meets execution.',
+      scene: 'SCENE 07',
+      label: 'ABOUT',
+      title: 'Discipline is the product.',
       paragraphs: [
-        'French entrepreneur with Maltese roots. Sixteen years of competitive swimming, including time on the French national team, forged the discipline behind every system I build.',
-        'I\'ve shipped 6+ AI products, built autonomous business engines, and helped companies across Europe and Asia automate their growth. I don\'t just consult, I build and deploy.',
-        'French, English, Portuguese, Russian. Four languages, one mission: help businesses win with technology.',
+        'French, with Maltese roots. Sixteen years of competitive swimming, including time on the French national team, built the way I work: show up, ship, verify.',
+        'I build and run my own products on the same stack I sell, so every claim on this page links to something live you can open. Based in Nice, working from Paris to Almaty, in four languages.',
       ],
-      languages: ['Français', 'English', 'Português', 'Русский'],
-      stats: [
-        { value: '6+', label: 'AI products shipped' },
-        { value: '4', label: 'Languages spoken' },
-        { value: 'EU · Asia', label: 'Businesses served' },
-        { value: '24/7', label: 'AI systems running' },
+      meta: [
+        { k: 'Base', v: 'Nice, France' },
+        { k: 'Range', v: 'Remote, EU and CIS' },
+        { k: 'Languages', v: 'FR · EN · RU · PT' },
+        { k: 'Countries visited', v: '36' },
       ],
     },
     contact: {
-      label: 'Contact',
-      title: 'Ready to scale with AI?',
-      subtitle:
-        'Website audit, AI automation, SEO, or email marketing. Let\'s discuss your project.',
-      buttons: {
-        whatsapp: 'WhatsApp',
-        telegram: 'Telegram',
-        email: 'Send an Email',
-        wechat: 'WeChat',
-        wechatCopied: 'ID Copied!',
-      },
-      wechatId: 'wxid_llgnw6mtfc2522',
+      scene: 'SCENE 08',
+      label: 'CONTACT',
+      title: 'One message starts it.',
+      sub: 'Send a WhatsApp with one line about your project. You will get a reply the same day.',
+      whatsapp: 'Message on WhatsApp',
+      telegram: 'Telegram',
+      email: 'Send an email',
+      linkedin: 'LinkedIn',
       info: {
-        location: 'France',
-        email: 'tristangrech.nat@gmail.com',
-        nationality: 'French · EU Passport',
-        availability: 'Serving Europe & Asia',
+        location: 'Nice, France',
+        availability: 'Remote worldwide · EU & CIS',
       },
     },
     footer: {
-      tagline: 'AI Solutions · Automation · SEO/GEO',
+      tagline: 'Websites · Web apps · Audits · Film',
+      legal: 'GRECH Tristan (EI) · SIREN 843 305 996 · Nice, France',
       copyright: '© 2026 Tristan Grech. All rights reserved.',
       links: {
-        about: 'About',
-        projects: 'Projects',
+        services: 'Services',
+        work: 'Work',
+        faq: 'FAQ',
         contact: 'Contact',
-        modelling: 'Modelling',
       },
     },
     modelling: {
@@ -209,7 +233,7 @@ const translationsData = {
         firstName: 'Tristan',
         lastName: 'Grech',
         description:
-          'French · Maltese origins\n186 cm · Based in China\nFormer French national swim team',
+          'French · Maltese origins\n186 cm · Based in Nice, France\nFormer French national swim team',
         photoPlaceholder: 'Photo',
         scrollHint: 'Scroll',
       },
@@ -223,15 +247,15 @@ const translationsData = {
           { key: 'Shoe', value: 'EU 45' },
           { key: 'Tattoos', value: 'None' },
           { key: 'Nationality', value: 'French' },
-          { key: 'Based', value: 'China' },
-          { key: 'Available', value: 'Asia-wide · Open to travel' },
+          { key: 'Based', value: 'Nice, France' },
+          { key: 'Available', value: 'Europe & Asia · Open to travel' },
         ],
       },
       portfolio: {
         sectionLabel: 'Portfolio',
         title: 'Work',
         description:
-          'Commercial, fitness, editorial, lifestyle. Built for versatility across Asian markets.',
+          'Commercial, fitness, editorial, lifestyle. Built for versatility across markets.',
         items: [
           { label: 'Editorial', category: 'Editorial' },
           { label: 'Commercial', category: 'Commercial' },
@@ -260,17 +284,317 @@ const translationsData = {
         eyebrow: 'Open for bookings',
         title: "Let's make something real.",
         subtitle:
-          'Agencies, casting directors, photographers, brands. Asia-wide. Ready now.',
+          'Agencies, casting directors, photographers, brands. Ready now.',
         emailButton: 'Send an Email',
         instagramButton: 'Instagram',
         email: 'tristangrech.nat@gmail.com',
         info: {
-          location: { label: 'Location', value: 'China' },
+          location: { label: 'Location', value: 'Nice, France' },
           email: { label: 'Email', value: 'tristangrech.nat@gmail.com' },
           nationality: { label: 'Nationality', value: 'French · EU Passport' },
           availability: {
             label: 'Availability',
-            value: 'Asia-wide · Open to travel',
+            value: 'Europe & Asia · Open to travel',
+          },
+        },
+      },
+    },
+  },
+
+  fr: {
+    nav: {
+      home: 'Accueil',
+      services: 'Services',
+      work: 'Réalisations',
+      faq: 'FAQ',
+      contact: 'Contact',
+      cta: 'WhatsApp',
+    },
+    hero: {
+      slateProject: 'TRISTAN GRECH · SHOWREEL 2026',
+      slateLocation: 'NICE · FRANCE',
+      rec: 'REC',
+      standby: 'STBY',
+      awaiting: 'A-CAM · 4K',
+      h1a: 'Sites, applications et vidéo.',
+      h1b: 'Conçus pour être trouvés.',
+      entity:
+        'Je suis Tristan Grech, développeur et vidéaste à Nice. Je construis des sites multilingues et des systèmes de réservation que Google référence et que les assistants IA recommandent, et je filme en qualité broadcast, de la couverture des Cannes Lions aux interviews de fondateurs. Je travaille en français, en anglais et en russe, à distance de Paris à Almaty.',
+      ctaPrimary: 'Écrivez-moi sur WhatsApp',
+      ctaSecondary: 'Voir les réalisations',
+    },
+    proof: [
+      { value: '17', label: 'montages finalisés livrés en une nuit aux Cannes Lions 2026' },
+      { value: '24h', label: 'entre le tournage d\'une interview et la livraison de l\'épisode sous-titré' },
+      { value: '6', label: 'sites en production en ce moment, tous accessibles plus bas' },
+      { value: '3', label: 'langues de travail : français, anglais, russe' },
+    ],
+    services: {
+      scene: 'SCÈNE 02',
+      label: 'SERVICES',
+      title: 'Quatre métiers, faits sérieusement.',
+      sub: 'Périmètre fixe, livrables clairs, et des preuves vérifiables juste en dessous.',
+      items: [
+        {
+          id: 'website',
+          title: 'Création de site web',
+          desc: 'Des sites vitrines multilingues avec données structurées, SEO et visibilité IA intégrés dès le premier commit. Système de design, textes en trois langues, analytics en place.',
+          proof: 'Preuve : fullhaura-services.com, 16 pages riches en données structurées, en français, anglais et russe.',
+        },
+        {
+          id: 'webapp',
+          title: 'Applications web & réservation',
+          desc: 'Paiements Stripe, synchronisation calendrier, tableaux de bord, agents IA. Des outils qui encaissent des réservations pendant que vous dormez.',
+          proof: 'Preuve : le moteur de Studio Nice Podcast. Stripe Checkout, Google Calendar et Postgres, au service d\'un vrai studio chaque jour.',
+        },
+        {
+          id: 'audit',
+          title: 'Audit de site & visibilité IA',
+          desc: 'Où vous vous situez sur Google, pourquoi les assistants IA ne vous citent jamais, et quoi corriger exactement. Constats techniques, SEO et GEO livrés en liste d\'actions priorisées sous 48 heures.',
+          proof: 'Preuve : ce site applique ce que l\'audit recommande. Demandez à votre assistant IA.',
+        },
+        {
+          id: 'video',
+          title: 'Vidéo & production studio',
+          desc: 'Interviews, événements, podcasts. Multicam 4K, son broadcast, étalonnage, sous-titres, formats prêts à publier. Studio à Nice, tournage partout.',
+          proof: 'Preuve : la couverture des Cannes Lions 2026 et une interview de fondateur livrée le lendemain, ci-dessous.',
+        },
+      ],
+    },
+    work: {
+      scene: 'SCÈNE 03',
+      label: 'RÉALISATIONS',
+      title: 'Productions récentes.',
+      sub: 'De vrais clients, des faits vérifiables, dates comprises.',
+      linkLabel: 'Ouvrir le site',
+      clips: [
+        {
+          id: 'CLIP 01',
+          client: 'Studio Nice Podcast',
+          title: 'Le produit est construit. Le business tourne dessus.',
+          facts: [
+            'Un vrai studio de podcast vidéo 4K au Port Lympia, à Nice, avec sa propre plateforme de réservation',
+            'Front Next.js sur Cloudflare, moteur de réservation FastAPI, Stripe Checkout, synchronisation Google Calendar, Postgres',
+            '18 pages de services SEO en anglais et en français, de la couverture Cannes Lions aux tournages yacht et villa',
+            'Réservé et payé par de vrais clients, dont un qui a trouvé le studio en interrogeant Claude, un assistant IA',
+          ],
+          tags: ['Web app', 'Stripe', 'SEO/GEO', 'Studio'],
+          url: 'https://studionicepodcast.com',
+          image: '/images/work/snp-home.jpg',
+          imageAlt: 'Page d\'accueil de Studio Nice Podcast',
+        },
+        {
+          id: 'CLIP 02',
+          client: 'Halo AI × Cannes Lions 2026',
+          title: 'Une journée de tournage. 17 montages au matin.',
+          facts: [
+            'Couverture d\'interviews aux Cannes Lions 2026 pour Halo AI, tournée le 25 juin à Cannes',
+            '226 clips et 157 Go de rushes en une seule journée sur la Croisette',
+            '17 pièces étalonnées, sous-titrées et masterisées : horizontales 1080p et verticales 9:16, son au niveau broadcast',
+            'Le montage a démarré à 3 heures du matin, la série complète était prête au lever du jour',
+          ],
+          tags: ['Événementiel', 'Interviews', 'Montage de nuit'],
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          id: 'CLIP 03',
+          client: 'Business Future · Épisode un',
+          title: 'Tourné jeudi. Livré vendredi.',
+          facts: [
+            'Épisode de lancement d\'une chaîne YouTube business, filmé en extérieur près de Saint-Jean-Cap-Ferrat',
+            'Deux caméras Sony en 4K 50p, double micro-cravate enregistré proprement',
+            'Un master de 35 minutes : montage deux caméras, étalonnage raccordé plan par plan, dialogues au niveau broadcast',
+            'Sous-titres anglais au mot près, miniatures et checklist de mise en ligne, livrés le lendemain du tournage',
+          ],
+          tags: ['Interview', 'Multicam 4K', 'Livraison 24h'],
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          id: 'CLIP 04',
+          client: 'Fullhaura · Marque de conciergerie',
+          title: 'Un système de marque en trois langues.',
+          facts: [
+            'Site vitrine d\'une conciergerie de la presqu\'île de Saint-Tropez, conçu et rédigé de bout en bout',
+            'Français, anglais et russe partout, chaque page existe dans les trois langues',
+            '8 pages de services et 8 pages de lieux, chacune avec données structurées Service, FAQ et fil d\'Ariane',
+            'Jeu d\'illustrations original et système de design documenté, déployé sur Vercel avec Next.js 15',
+          ],
+          tags: ['Site web', 'FR/EN/RU', 'SEO local', 'Marque'],
+          url: 'https://fullhaura-services.com',
+          image: '/images/work/fullhaura-services.jpg',
+          imageAlt: 'Page d\'accueil du site de conciergerie Fullhaura',
+        },
+      ],
+    },
+    liveSites: {
+      scene: 'SCÈNE 04',
+      label: 'SITES EN LIGNE',
+      title: 'Six sites à ouvrir tout de suite.',
+      sub: 'Tous en production aujourd\'hui. Cliquez et vérifiez.',
+      status: 'LIVE',
+      sites: [
+        { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Studio de podcast vidéo à Nice avec réservation en ligne de bout en bout' },
+        { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Marque de conciergerie trilingue pour la presqu\'île de Saint-Tropez' },
+        { name: 'sumera.io', url: 'https://sumera.io', desc: 'Générateur de scripts YouTube par IA, un SaaS avec facturation Stripe active' },
+        { name: 'niceclim.fr', url: 'https://niceclim.fr', desc: 'Location de climatiseurs mobiles, livrés et installés, de Nice à Monaco' },
+        { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Marque de conciergerie privée pour Cannes, Monaco et Saint-Tropez' },
+        { name: 'cnsourcing.fr', url: 'https://cnsourcing.fr', desc: 'Service de sourcing en Chine, site de présentation animé en deux pages' },
+      ],
+    },
+    aiProof: {
+      scene: 'SCÈNE 05',
+      label: 'L\'ANGLE IA',
+      title: 'Demandez à votre IA qui crée des sites à Nice.',
+      paragraphs: [
+        'Les assistants IA répondent désormais directement aux questions d\'achat. Ils citent les pages statiques, claires sur leur identité et pleines de faits vérifiables. Le reste leur est invisible.',
+        'Ce n\'est pas de la théorie : une des réservations payées récentes de Studio Nice Podcast vient d\'un client qui a trouvé le studio en posant la question à Claude. Chaque site que je livre embarque la même couche : données structurées, accès ouvert aux robots IA, faits concrets avec dates et prix qu\'un assistant peut citer.',
+        'Envie de savoir comment votre site s\'en sort ? C\'est exactement ce que l\'audit mesure.',
+      ],
+      cta: 'Demander un audit sur WhatsApp',
+    },
+    faq: {
+      scene: 'SCÈNE 06',
+      label: 'FAQ',
+      title: 'Réponses directes.',
+      items: [
+        {
+          q: 'Que construisez-vous exactement ?',
+          a: 'Trois choses côté web : des sites vitrines multilingues, des applications web avec paiement et réservation, et des audits de sites existants. Et de la vidéo professionnelle : interviews, couverture d\'événements et production de podcasts, au studio à Nice ou en déplacement.',
+        },
+        {
+          q: 'Où êtes-vous basé, travaillez-vous à distance ?',
+          a: 'Je suis basé à Nice et je travaille à distance pour des clients en France, en Europe et dans la CEI, Kazakhstan compris. Les projets web se déroulent entièrement en ligne : brief, construction, revue, mise en ligne. Je travaille en français, anglais et russe, et je parle aussi portugais.',
+        },
+        {
+          q: 'Qu\'est-ce qu\'un audit de visibilité IA ?',
+          a: 'Une analyse de la performance de votre site dans la recherche classique et dans les assistants IA comme ChatGPT, Claude et Perplexity. Vous recevez une liste d\'actions priorisées : problèmes techniques, données structurées, manques de contenu, et les raisons précises pour lesquelles les assistants recommandent ou non votre entreprise. Livrée sous 48 heures.',
+        },
+        {
+          q: 'À quelle vitesse livrez-vous ?',
+          a: 'Des chiffres récents et vérifiables : une interview de fondateur tournée le 10 juillet 2026 a été livrée sous-titrée le 11 juillet. Aux Cannes Lions 2026, 17 montages finalisés étaient prêts au lendemain du tournage. Un site web se livre en général en quelques semaines selon le périmètre.',
+        },
+        {
+          q: 'Comment fonctionnent la facturation et le paiement ?',
+          a: 'Je facture en tant qu\'entreprise individuelle française (SIREN 843 305 996), en euros, par carte via Stripe ou par virement. La facturation transfrontalière pour clients UE et hors UE est une pratique courante, avec contrats en français, anglais ou russe.',
+        },
+        {
+          q: 'Pouvez-vous rendre mon entreprise visible pour les assistants IA ?',
+          a: 'Oui. La méthode est concrète : des pages lisibles par les robots IA, des données structurées qui définissent votre activité, des faits, prix et lieux visibles qu\'un assistant peut citer, et un accès ouvert aux robots. Puis un contrôle mensuel de ce que ChatGPT, Claude et Perplexity disent réellement de vous.',
+        },
+      ],
+    },
+    about: {
+      scene: 'SCÈNE 07',
+      label: 'À PROPOS',
+      title: 'La discipline, c\'est le produit.',
+      paragraphs: [
+        'Français, racines maltaises. Seize ans de natation de compétition, dont un passage en équipe de France, ont forgé ma façon de travailler : être là, livrer, vérifier.',
+        'Je construis et j\'exploite mes propres produits sur la même stack que je vends. Chaque affirmation de cette page renvoie vers quelque chose de vivant que vous pouvez ouvrir. Basé à Nice, actif de Paris à Almaty, en quatre langues.',
+      ],
+      meta: [
+        { k: 'Base', v: 'Nice, France' },
+        { k: 'Rayon d\'action', v: 'À distance, UE et CEI' },
+        { k: 'Langues', v: 'FR · EN · RU · PT' },
+        { k: 'Pays visités', v: '36' },
+      ],
+    },
+    contact: {
+      scene: 'SCÈNE 08',
+      label: 'CONTACT',
+      title: 'Tout commence par un message.',
+      sub: 'Envoyez un WhatsApp avec une ligne sur votre projet. Réponse le jour même.',
+      whatsapp: 'Écrire sur WhatsApp',
+      telegram: 'Telegram',
+      email: 'Envoyer un email',
+      linkedin: 'LinkedIn',
+      info: {
+        location: 'Nice, France',
+        availability: 'À distance · UE & CEI',
+      },
+    },
+    footer: {
+      tagline: 'Sites web · Applications · Audits · Vidéo',
+      legal: 'GRECH Tristan (EI) · SIREN 843 305 996 · Nice, France',
+      copyright: '© 2026 Tristan Grech. Tous droits réservés.',
+      links: {
+        services: 'Services',
+        work: 'Réalisations',
+        faq: 'FAQ',
+        contact: 'Contact',
+      },
+    },
+    modelling: {
+      hero: {
+        label: 'Modèle · Athlète',
+        firstName: 'Tristan',
+        lastName: 'Grech',
+        description:
+          'Français · Origines maltaises\n186 cm · Basé à Nice, France\nAncien membre de l\'équipe de France de natation',
+        photoPlaceholder: 'Photo',
+        scrollHint: 'Défiler',
+      },
+      specs: {
+        sectionLabel: 'Mensurations',
+        items: [
+          { key: 'Taille', value: '186 cm' },
+          { key: 'Poids', value: '87 à 100 kg' },
+          { key: 'Cheveux', value: 'Brun foncé' },
+          { key: 'Yeux', value: 'Marron' },
+          { key: 'Pointure', value: 'EU 45' },
+          { key: 'Tatouages', value: 'Aucun' },
+          { key: 'Nationalité', value: 'Française' },
+          { key: 'Base', value: 'Nice, France' },
+          { key: 'Disponibilité', value: 'Europe & Asie · Ouvert aux déplacements' },
+        ],
+      },
+      portfolio: {
+        sectionLabel: 'Portfolio',
+        title: 'Travaux',
+        description:
+          'Commercial, fitness, éditorial, lifestyle. Une polyvalence pensée pour tous les marchés.',
+        items: [
+          { label: 'Éditorial', category: 'Éditorial' },
+          { label: 'Commercial', category: 'Commercial' },
+          { label: 'Fitness', category: 'Fitness' },
+          { label: 'Lifestyle', category: 'Lifestyle' },
+          { label: 'Mode', category: 'Mode' },
+        ],
+      },
+      swimming: {
+        sectionLabel: 'Sport',
+        title: 'Formé au plus haut niveau. Taillé pour la performance.',
+        paragraphs: [
+          'Seize ans de natation de compétition, couronnés par l\'équipe de France, ont forgé la discipline et la condition physique qui définissent ce travail. Pas un corps de salle de sport. Un corps de bassin.',
+          'Cet avantage se voit dans les campagnes fitness et athlétiques. Le physique, la posture, l\'endurance. Cela vient d\'un endroit que la plupart des modèles ne peuvent pas atteindre.',
+        ],
+        photoPlaceholder: 'Photo',
+        achievements: [
+          'Plus de 16 ans de natation de compétition',
+          'Représentant de l\'équipe de France',
+          'Endurance et condition physique de niveau élite',
+          'Poids modulable : 87 à 100 kg selon les besoins de la campagne',
+          'Disponible pour campagnes fitness, sportswear et marques athlétiques',
+        ],
+      },
+      contact: {
+        eyebrow: 'Ouvert aux bookings',
+        title: 'Créons quelque chose de vrai.',
+        subtitle:
+          'Agences, directeurs de casting, photographes, marques. Prêt maintenant.',
+        emailButton: 'Envoyer un email',
+        instagramButton: 'Instagram',
+        email: 'tristangrech.nat@gmail.com',
+        info: {
+          location: { label: 'Localisation', value: 'Nice, France' },
+          email: { label: 'Email', value: 'tristangrech.nat@gmail.com' },
+          nationality: { label: 'Nationalité', value: 'Française · Passeport UE' },
+          availability: {
+            label: 'Disponibilité',
+            value: 'Europe & Asie · Ouvert aux déplacements',
           },
         },
       },
@@ -280,203 +604,227 @@ const translationsData = {
   ru: {
     nav: {
       home: 'Главная',
-      about: 'Обо мне',
-      projects: 'Проекты',
-      contact: 'Контакты',
-      modelling: 'Моделинг',
+      services: 'Услуги',
+      work: 'Работы',
+      faq: 'Вопросы',
+      contact: 'Контакт',
+      cta: 'WhatsApp',
     },
     hero: {
-      badge: 'Предприниматель · Разработчик · Бизнес в Китае',
-      bio: 'Французский предприниматель с мальтийскими корнями, базирующийся в Китае. Создаю международные проекты, связывающие Европу и Азию через технологии, веб-разработку и практический подход к бизнесу.',
-      cta: {
-        projects: 'Мои проекты',
-        contact: 'Связаться',
-      },
-      expertise: [
-        {
-          title: 'Веб-разработка',
-          description:
-            'Фулл-стек разработка, интеграция ИИ и современные веб-решения для бизнеса по всему миру',
-        },
-        {
-          title: 'Бизнес в Китае',
-          description:
-            'Прямые связи с китайским рынком: сорсинг, переговоры, логистика и выход на рынок',
-        },
-        {
-          title: 'ИИ и автоматизация',
-          description:
-            'Создание интеллектуальных инструментов и автоматизаций, оптимизирующих бизнес-процессы',
-        },
-        {
-          title: 'Международный консалтинг',
-          description:
-            'Мост между европейскими и азиатскими рынками с практическим бизнес-консалтингом',
-        },
-      ],
+      slateProject: 'TRISTAN GRECH · SHOWREEL 2026',
+      slateLocation: 'NICE · FRANCE',
+      rec: 'REC',
+      standby: 'STBY',
+      awaiting: 'A-CAM · 4K',
+      h1a: 'Сайты, веб-приложения и видео.',
+      h1b: 'Сделаны так, чтобы вас находили.',
+      entity:
+        'Меня зовут Тристан Греч, я разработчик и видеограф из Ниццы. Я создаю многоязычные сайты и системы бронирования, которые находит Google и рекомендуют ИИ-ассистенты, и снимаю видео вещательного качества: от репортажей с Cannes Lions до интервью с основателями. Работаю на французском, английском и русском, удалённо от Парижа до Алматы.',
+      ctaPrimary: 'Написать в WhatsApp',
+      ctaSecondary: 'Смотреть работы',
     },
-    stats: [
-      { value: '6+', label: 'Активных проектов' },
-      { value: 'Китай', label: 'Базируюсь в' },
-      { value: '4', label: 'Языка' },
+    proof: [
+      { value: '17', label: 'готовых монтажей сдано за одну ночь на Cannes Lions 2026' },
+      { value: '24ч', label: 'от съёмки интервью до сдачи серии с субтитрами' },
+      { value: '6', label: 'сайтов в продакшене прямо сейчас, все по ссылкам ниже' },
+      { value: '3', label: 'рабочих языка: французский, английский, русский' },
     ],
-    now: {
-      title: 'Сейчас',
-      cards: [
+    services: {
+      scene: 'СЦЕНА 02',
+      label: 'УСЛУГИ',
+      title: 'Четыре направления, сделанные как следует.',
+      sub: 'Фиксированный объём, понятные результаты и доказательства чуть ниже.',
+      items: [
         {
-          title: 'Веб-разработка и ИИ-проекты',
-          description:
-            'Создаю SaaS-продукты и инструменты на базе ИИ, от генераторов сценариев для YouTube до платформ для тренеров по плаванию.',
+          id: 'website',
+          title: 'Создание сайта',
+          desc: 'Многоязычные маркетинговые сайты со структурированными данными, SEO и видимостью для ИИ с первого коммита. Дизайн-система, тексты на трёх языках, подключённая аналитика.',
+          proof: 'Доказательство: fullhaura-services.com, 16 страниц со схемами на французском, английском и русском.',
         },
         {
-          title: 'Базируюсь в Китае',
-          description:
-            'Живу и работаю в деловых центрах Китая. Глубокая локальная сеть контактов и понимание рынка.',
+          id: 'webapp',
+          title: 'Веб-приложения и бронирование',
+          desc: 'Платежи Stripe, синхронизация календаря, панели управления, ИИ-агенты. Софт, который принимает брони и деньги, пока вы спите.',
+          proof: 'Доказательство: движок Studio Nice Podcast. Stripe Checkout, Google Calendar и Postgres обслуживают настоящую студию каждый день.',
         },
         {
-          title: 'Партнёр по бизнесу в Китае',
-          description:
-            'Полный цикл поддержки: сорсинг, контроль качества, логистика, переговоры и выход на рынок для международного бизнеса.',
+          id: 'audit',
+          title: 'Аудит сайта и видимости в ИИ',
+          desc: 'Где вы в поиске, почему ИИ-ассистенты вас не упоминают и что именно исправить. Технические, SEO и GEO выводы в виде списка приоритетных действий за 48 часов.',
+          proof: 'Доказательство: этот сайт построен по правилам аудита. Спросите о нём своего ИИ-ассистента.',
+        },
+        {
+          id: 'video',
+          title: 'Видео и студийный продакшн',
+          desc: 'Интервью, мероприятия, подкасты. Мультикамера 4K, звук вещательного уровня, цветокоррекция, субтитры, форматы под все платформы. Студия в Ницце, выезд куда угодно.',
+          proof: 'Доказательство: репортаж с Cannes Lions 2026 и интервью с основателем, сданное на следующий день. Оба ниже.',
         },
       ],
     },
-    common: {
-      visitWebsite: 'Посетить сайт',
-      inDevelopment: 'В разработке',
-    },
-    projects: {
-      label: 'Проекты',
-      title: 'Над чем я работаю',
-      description:
-        'Активные проекты в области ИИ, веб-разработки, образования и лайфстайла.',
-      items: [
+    work: {
+      scene: 'СЦЕНА 03',
+      label: 'ИЗБРАННЫЕ РАБОТЫ',
+      title: 'Недавние проекты.',
+      sub: 'Настоящие клиенты, проверяемые факты, с датами.',
+      linkLabel: 'Открыть сайт',
+      clips: [
         {
-          name: 'FULLHAURA',
-          description:
-            'ИИ-агентство, создающее цифровые инструменты, автоматизации и веб-решения для бизнеса в Европе и Азии. От API-интеграций до полноценной веб-разработки.',
-          tags: ['ИИ-агентство', 'Веб-разработка', 'Автоматизация'],
-          status: 'Активен',
-          url: '#',
-          gradient: 'from-cyan-500 to-blue-600',
-          image: '',
+          id: 'CLIP 01',
+          client: 'Studio Nice Podcast',
+          title: 'Продукт построен. Бизнес работает на нём.',
+          facts: [
+            'Настоящая студия видеоподкастов 4K в порту Лимпия в Ницце со своей платформой бронирования',
+            'Фронтенд Next.js на Cloudflare, движок бронирования FastAPI, Stripe Checkout, синхронизация Google Calendar, Postgres',
+            '18 SEO-страниц услуг на английском и французском: от Cannes Lions до съёмок на яхтах и виллах',
+            'Студию бронируют и оплачивают реальные клиенты, один из них нашёл её, спросив у Claude, ИИ-ассистента',
+          ],
+          tags: ['Веб-приложение', 'Stripe', 'SEO/GEO', 'Студия'],
+          url: 'https://studionicepodcast.com',
+          image: '/images/work/snp-home.jpg',
+          imageAlt: 'Главная страница Studio Nice Podcast',
         },
         {
-          name: 'Sumera.io',
-          description:
-            'ИИ-генератор сценариев для YouTube с авторским 5-этапным конвейером. Превращает идеи для видео в готовые сценарии за 10 минут.',
-          tags: ['SaaS', 'ИИ', 'Инструменты для креаторов'],
-          status: 'Запущен',
-          url: 'https://sumera.io',
-          gradient: 'from-lime-400 to-emerald-500',
-          image: '/images/sumera-cover.png',
-        },
-        {
-          name: 'Fullink.io',
-          description:
-            'Платформа «ссылка в био» для креаторов. Красивые темы, аналитика, оплата через Stripe и молниеносная скорость. Бесплатно навсегда.',
-          tags: ['SaaS', 'Инструменты для креаторов', 'Link-in-Bio'],
-          status: 'Запущен',
-          url: 'https://www.fullink.io',
-          gradient: 'from-violet-500 to-indigo-600',
-          image: '',
-        },
-        {
-          name: 'Geo-Front',
-          description:
-            'Платформа геополитического мониторинга в реальном времени, отслеживающая конфликт Иран/США с точными и актуальными обновлениями.',
-          tags: ['Геополитика', 'Данные в реальном времени', 'Новости'],
-          status: 'Запущен',
-          url: 'https://geo-front.com',
-          gradient: 'from-red-600 to-slate-800',
-          image: '',
-        },
-        {
-          name: 'SwimForm.ai',
-          description:
-            'ИИ-платформа для тренировок по плаванию. Загрузите видео и получите профессиональный анализ техники. Основано на 16+ летах соревновательного опыта.',
-          tags: ['Спортивные технологии', 'ИИ', 'Коучинг'],
-          status: 'В разработке',
+          id: 'CLIP 02',
+          client: 'Halo AI × Cannes Lions 2026',
+          title: 'Один съёмочный день. 17 монтажей к утру.',
+          facts: [
+            'Съёмка интервью на Cannes Lions 2026 для Halo AI, 25 июня, Канны',
+            '226 клипов и 157 ГБ исходников за один день на Круазетт',
+            '17 откорректированных по цвету, субтитрованных и отмастеренных роликов: горизонтальные 1080p и вертикальные 9:16, звук на вещательном уровне',
+            'Монтаж стартовал в 3 часа ночи, весь пакет был готов утром после съёмки',
+          ],
+          tags: ['Репортаж', 'Интервью', 'Ночной монтаж'],
           url: '',
-          gradient: 'from-amber-400 to-orange-500',
           image: '',
+          imageAlt: '',
         },
         {
-          name: "Rêves d'élite",
-          description:
-            'Частный люкс-консьерж на Лазурном берегу и Карибах. Аренда яхт и вилл, доступ к VIP-мероприятиям и индивидуальные lifestyle-впечатления для самых требовательных клиентов.',
-          tags: ['Люкс', 'Консьерж', 'Lifestyle'],
-          status: 'Активен',
-          url: 'https://revesdelite.com',
-          gradient: 'from-rose-300 to-amber-200',
+          id: 'CLIP 03',
+          client: 'Business Future · Первый выпуск',
+          title: 'Снято в четверг. Сдано в пятницу.',
+          facts: [
+            'Дебютный выпуск бизнес-канала на YouTube, съёмка на локации рядом с Сен-Жан-Кап-Ферра',
+            'Две камеры Sony в 4K 50p, два петличных микрофона с чистой записью',
+            'Мастер на 35 минут: монтаж с двух камер, согласованная цветокоррекция, диалоги на вещательной громкости',
+            'Английские субтитры с точностью до слова, обложки и чек-лист публикации, сдано на следующий день после съёмки',
+          ],
+          tags: ['Интервью', 'Мультикам 4K', 'Сдача за 24ч'],
+          url: '',
           image: '',
+          imageAlt: '',
+        },
+        {
+          id: 'CLIP 04',
+          client: 'Fullhaura · Консьерж-бренд',
+          title: 'Система бренда на трёх языках.',
+          facts: [
+            'Сайт консьерж-сервиса полуострова Сен-Тропе, спроектирован и написан от и до',
+            'Французский, английский и русский повсюду, каждая страница есть на трёх языках',
+            '8 страниц услуг и 8 страниц локаций, у каждой структурированные данные Service, FAQ и хлебные крошки',
+            'Собственный набор иллюстраций и задокументированная дизайн-система, задеплоено на Vercel с Next.js 15',
+          ],
+          tags: ['Сайт', 'FR/EN/RU', 'Локальное SEO', 'Бренд'],
+          url: 'https://fullhaura-services.com',
+          image: '/images/work/fullhaura-services.jpg',
+          imageAlt: 'Главная страница сайта консьерж-сервиса Fullhaura',
         },
       ],
     },
-    pastProjects: {
-      label: 'Другие проекты',
-      title: 'Прошлые и побочные проекты',
-      description: 'Другие проекты и эксперименты на этом пути.',
+    liveSites: {
+      scene: 'СЦЕНА 04',
+      label: 'ЖИВЫЕ САЙТЫ',
+      title: 'Шесть сайтов, которые можно открыть прямо сейчас.',
+      sub: 'Все в продакшене сегодня. Кликните и проверьте.',
+      status: 'LIVE',
+      sites: [
+        { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Студия видеоподкастов в Ницце с полным онлайн-бронированием' },
+        { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Трёхъязычный консьерж-бренд полуострова Сен-Тропе' },
+        { name: 'sumera.io', url: 'https://sumera.io', desc: 'ИИ-генератор сценариев для YouTube, SaaS с работающим биллингом Stripe' },
+        { name: 'niceclim.fr', url: 'https://niceclim.fr', desc: 'Аренда мобильных кондиционеров с доставкой и установкой, от Ниццы до Монако' },
+        { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Частный консьерж-бренд для Канн, Монако и Сен-Тропе' },
+        { name: 'cnsourcing.fr', url: 'https://cnsourcing.fr', desc: 'Сервис закупок в Китае, анимированный сайт-презентация на две страницы' },
+      ],
+    },
+    aiProof: {
+      scene: 'СЦЕНА 05',
+      label: 'ИИ-УГОЛ',
+      title: 'Спросите свой ИИ, кто делает сайты в Ницце.',
+      paragraphs: [
+        'ИИ-ассистенты теперь напрямую отвечают на вопросы о покупке. Они цитируют страницы, которые отдаются статикой, ясно определяют, кто вы, и полны проверяемых фактов. Всё остальное для них невидимо.',
+        'Это не теория: одно из недавних оплаченных бронирований Studio Nice Podcast пришло от клиента, который нашёл студию, задав вопрос Claude. Каждый сайт, который я сдаю, несёт тот же слой: структурированные данные, открытый доступ для ИИ-краулеров, конкретные факты с датами и ценами, которые ассистент может процитировать.',
+        'Хотите узнать, как ваш сайт выглядит для ИИ? Именно на это отвечает аудит.',
+      ],
+      cta: 'Запросить аудит в WhatsApp',
+    },
+    faq: {
+      scene: 'СЦЕНА 06',
+      label: 'ВОПРОСЫ',
+      title: 'Прямые ответы.',
       items: [
         {
-          name: 'MoneyLabs',
-          description:
-            'Онлайн-курс по ИИ-генерации голоса для пассивного дохода. Практическое обучение, направленное на монетизацию.',
-          tags: ['Образование', 'ИИ'],
-          gradient: 'from-violet-500 to-purple-600',
+          q: 'Что именно вы делаете?',
+          a: 'Три вещи в вебе: многоязычные маркетинговые сайты, веб-приложения с оплатой и бронированием, аудиты существующих сайтов. Плюс профессиональное видео: интервью, съёмка мероприятий и продакшн подкастов, в студии в Ницце или с выездом.',
         },
         {
-          name: 'Bali Girls Trip',
-          description:
-            'Премиальный консьерж-сервис женских путешествий на Бали. Кураторские маршруты и групповые туры.',
-          tags: ['Путешествия', 'Лайфстайл'],
-          gradient: 'from-pink-400 to-rose-500',
+          q: 'Где вы находитесь и работаете ли удалённо?',
+          a: 'Я живу в Ницце и работаю удалённо с клиентами во Франции, Европе и СНГ, включая Казахстан. Веб-проекты идут полностью онлайн: бриф, разработка, ревью, запуск. Работаю на французском, английском и русском, также говорю по-португальски.',
+        },
+        {
+          q: 'Что такое аудит видимости в ИИ?',
+          a: 'Разбор того, как ваш сайт выглядит в классическом поиске и в ИИ-ассистентах вроде ChatGPT, Claude и Perplexity. Вы получаете список приоритетных действий: технические проблемы, структурированные данные, пробелы в контенте и конкретные причины, почему ассистенты рекомендуют или не рекомендуют ваш бизнес. Срок: 48 часов.',
+        },
+        {
+          q: 'Как быстро вы сдаёте работу?',
+          a: 'Свежие проверяемые цифры: интервью с основателем сняли 10 июля 2026 года, готовую серию с субтитрами сдали 11 июля. На Cannes Lions 2026 семнадцать готовых монтажей были готовы утром после съёмочного дня. Сайты обычно занимают несколько недель в зависимости от объёма.',
+        },
+        {
+          q: 'Как устроены оплата и документы?',
+          a: 'Я выставляю счета как зарегистрированный французский индивидуальный предприниматель (SIREN 843 305 996), в евро, с оплатой картой через Stripe или банковским переводом. Работа с клиентами из ЕС и вне ЕС стандартна, договоры на русском, английском или французском.',
+        },
+        {
+          q: 'Вы можете сделать мой бизнес видимым для ИИ-ассистентов?',
+          a: 'Да. Метод конкретный: страницы, которые читают ИИ-краулеры, структурированные данные, определяющие ваш бизнес, видимые факты, цены и адреса, которые ассистент может процитировать, и открытый доступ для роботов. Затем ежемесячная проверка того, что ChatGPT, Claude и Perplexity реально о вас говорят.',
         },
       ],
     },
     about: {
-      label: 'Обо мне',
-      title: 'Дисциплина определяет всё.',
+      scene: 'СЦЕНА 07',
+      label: 'ОБО МНЕ',
+      title: 'Дисциплина и есть продукт.',
       paragraphs: [
-        'Родился во Франции, корни на Мальте. Всю жизнь я строю на стыке физического совершенства и предпринимательского драйва. Шестнадцать лет соревновательного плавания, включая сборную Франции, заложили фундамент, который я приношу в каждый проект.',
-        'Сейчас я базируюсь в Китае и сочетаю глубокое знание локального рынка с техническими навыками в веб-разработке и ИИ, чтобы создавать продукты и помогать бизнесу наводить мосты между Европой и Азией.',
-        'Мультилингвальный, адаптивный и всегда создающий что-то новое.',
+        'Француз с мальтийскими корнями. Шестнадцать лет спортивного плавания, включая сборную Франции, сформировали мой способ работать: прийти, сдать, проверить.',
+        'Я строю и веду собственные продукты на том же стеке, который продаю, поэтому каждое утверждение на этой странице ведёт к чему-то живому, что можно открыть. База в Ницце, работаю от Парижа до Алматы, на четырёх языках.',
       ],
-      languages: ['Français', 'English', 'Português', 'Русский'],
-      stats: [
-        { value: '16+', label: 'Лет соревновательного плавания' },
-        { value: '4', label: 'Языка' },
-        { value: '6+', label: 'Активных проектов' },
-        { value: '∞', label: 'Трудовая этика' },
+      meta: [
+        { k: 'База', v: 'Ницца, Франция' },
+        { k: 'География', v: 'Удалённо, ЕС и СНГ' },
+        { k: 'Языки', v: 'FR · EN · RU · PT' },
+        { k: 'Стран посещено', v: '36' },
       ],
     },
     contact: {
-      label: 'Контакты',
-      title: 'Есть проект?',
-      subtitle:
-        'Веб-разработка, ИИ-решения или бизнес в Китае: я готов обсудить.',
-      buttons: {
-        whatsapp: 'WhatsApp',
-        telegram: 'Telegram',
-        email: 'Написать письмо',
-        wechat: 'WeChat',
-        wechatCopied: 'ID скопирован!',
-      },
-      wechatId: 'wxid_llgnw6mtfc2522',
+      scene: 'СЦЕНА 08',
+      label: 'КОНТАКТ',
+      title: 'Всё начинается с одного сообщения.',
+      sub: 'Напишите в WhatsApp одну строку о вашем проекте. Ответ придёт в тот же день.',
+      whatsapp: 'Написать в WhatsApp',
+      telegram: 'Telegram',
+      email: 'Написать письмо',
+      linkedin: 'LinkedIn',
       info: {
-        location: 'Китай',
-        email: 'tristangrech.nat@gmail.com',
-        nationality: 'Франция · Паспорт ЕС',
-        availability: 'Открыт к проектам по всему миру',
+        location: 'Ницца, Франция',
+        availability: 'Удалённо · ЕС и СНГ',
       },
     },
     footer: {
-      tagline: 'Предприниматель · Разработчик · Китай',
+      tagline: 'Сайты · Веб-приложения · Аудиты · Видео',
+      legal: 'GRECH Tristan (EI) · SIREN 843 305 996 · Ницца, Франция',
       copyright: '© 2026 Tristan Grech. Все права защищены.',
       links: {
-        about: 'Обо мне',
-        projects: 'Проекты',
-        contact: 'Контакты',
-        modelling: 'Моделинг',
+        services: 'Услуги',
+        work: 'Работы',
+        faq: 'Вопросы',
+        contact: 'Контакт',
       },
     },
     modelling: {
@@ -485,7 +833,7 @@ const translationsData = {
         firstName: 'Tristan',
         lastName: 'Grech',
         description:
-          'Франция · Мальтийские корни\n186 см · Базируется в Китае\nБывший член сборной Франции по плаванию',
+          'Франция · Мальтийские корни\n186 см · База: Ницца, Франция\nБывший член сборной Франции по плаванию',
         photoPlaceholder: 'Фото',
         scrollHint: 'Листать',
       },
@@ -499,15 +847,15 @@ const translationsData = {
           { key: 'Обувь', value: 'EU 45' },
           { key: 'Татуировки', value: 'Нет' },
           { key: 'Гражданство', value: 'Франция' },
-          { key: 'Базируется', value: 'Китай' },
-          { key: 'Доступность', value: 'Вся Азия · Открыт к поездкам' },
+          { key: 'База', value: 'Ницца, Франция' },
+          { key: 'Доступность', value: 'Европа и Азия · Открыт к поездкам' },
         ],
       },
       portfolio: {
         sectionLabel: 'Портфолио',
         title: 'Работы',
         description:
-          'Коммерческая, фитнес-, редакционная, лайфстайл-съёмка. Универсальность для азиатских рынков.',
+          'Коммерческая, фитнес-, редакционная, лайфстайл-съёмка. Универсальность для любых рынков.',
         items: [
           { label: 'Редакционное', category: 'Редакционное' },
           { label: 'Коммерческое', category: 'Коммерческое' },
@@ -536,12 +884,12 @@ const translationsData = {
         eyebrow: 'Открыт для букинга',
         title: 'Давайте создадим что-то настоящее.',
         subtitle:
-          'Агентства, кастинг-директора, фотографы, бренды. Вся Азия. Готов сейчас.',
+          'Агентства, кастинг-директора, фотографы, бренды. Готов сейчас.',
         emailButton: 'Написать письмо',
         instagramButton: 'Instagram',
         email: 'tristangrech.nat@gmail.com',
         info: {
-          location: { label: 'Местоположение', value: 'Китай' },
+          location: { label: 'Местоположение', value: 'Ницца, Франция' },
           email: { label: 'Эл. почта', value: 'tristangrech.nat@gmail.com' },
           nationality: {
             label: 'Гражданство',
@@ -555,523 +903,9 @@ const translationsData = {
       },
     },
   },
+} as const;
 
-  zh: {
-    nav: {
-      home: '首页',
-      about: '关于',
-      projects: '项目',
-      contact: '联系',
-      modelling: '模特',
-    },
-    hero: {
-      badge: '创业者 · 开发者 · 中国商务',
-      bio: '法国创业者，马耳他血统，常驻中国。通过技术、网站开发和务实的商业方法，打造连接欧洲与亚洲的国际项目。',
-      cta: {
-        projects: '我的项目',
-        contact: '联系我',
-      },
-      expertise: [
-        {
-          title: '网站开发',
-          description: '全栈开发、AI集成以及面向全球企业的现代网络解决方案',
-        },
-        {
-          title: '中国商务',
-          description: '与中国市场的直接联系：采购、谈判、物流和市场进入',
-        },
-        {
-          title: 'AI与自动化',
-          description: '构建智能工具和自动化流程，优化企业运营效率',
-        },
-        {
-          title: '国际咨询',
-          description: '以实战商业咨询连接欧洲和亚洲市场',
-        },
-      ],
-    },
-    stats: [
-      { value: '6+', label: '活跃项目' },
-      { value: '中国', label: '常驻地' },
-      { value: '4', label: '语言' },
-    ],
-    now: {
-      title: '当前动态',
-      cards: [
-        {
-          title: '网站开发与AI项目',
-          description:
-            '正在开发SaaS产品和AI驱动的工具，从YouTube脚本生成器到游泳教练平台。',
-        },
-        {
-          title: '常驻中国',
-          description:
-            '在中国商业中心工作和生活。拥有深厚的本地人脉网络和对市场的深入了解。',
-        },
-        {
-          title: '中国商务合作伙伴',
-          description:
-            '全流程支持：采购、质量控制、物流、谈判以及为国际企业提供市场进入服务。',
-        },
-      ],
-    },
-    common: {
-      visitWebsite: '访问网站',
-      inDevelopment: '开发中',
-    },
-    projects: {
-      label: '项目',
-      title: '我正在做什么',
-      description: '涉及AI、网站开发、教育和生活方式的活跃项目。',
-      items: [
-        {
-          name: 'FULLHAURA',
-          description:
-            'AI代理机构，为欧洲和亚洲的企业打造数字工具、自动化流程和网络解决方案。从API集成到全栈网站开发。',
-          tags: ['AI代理', '网站开发', '自动化'],
-          status: '活跃中',
-          url: '#',
-          gradient: 'from-cyan-500 to-blue-600',
-          image: '',
-        },
-        {
-          name: 'Sumera.io',
-          description:
-            'AI驱动的YouTube脚本生成器，拥有独创的5阶段流水线。10分钟内将视频创意转化为可以直接拍摄的脚本。',
-          tags: ['SaaS', 'AI', '创作者工具'],
-          status: '已上线',
-          url: 'https://sumera.io',
-          gradient: 'from-lime-400 to-emerald-500',
-          image: '/images/sumera-cover.png',
-        },
-        {
-          name: 'Fullink.io',
-          description:
-            '面向创作者的一站式链接聚合平台。精美主题、数据分析、Stripe支付集成和极速性能。永久免费。',
-          tags: ['SaaS', '创作者工具', 'Link-in-Bio'],
-          status: '已上线',
-          url: 'https://www.fullink.io',
-          gradient: 'from-violet-500 to-indigo-600',
-          image: '',
-        },
-        {
-          name: 'Geo-Front',
-          description:
-            '实时地缘政治监控平台，追踪伊朗/美国冲突，提供实时、准确的更新。在快速变化的局势中提供清晰信息。',
-          tags: ['地缘政治', '实时数据', '新闻'],
-          status: '已上线',
-          url: 'https://geo-front.com',
-          gradient: 'from-red-600 to-slate-800',
-          image: '',
-        },
-        {
-          name: 'SwimForm.ai',
-          description:
-            'AI游泳教练平台。上传您的视频，获取专业级别的技术反馈。基于16年以上的竞技经验打造。',
-          tags: ['体育科技', 'AI', '教练'],
-          status: '开发中',
-          url: '',
-          gradient: 'from-amber-400 to-orange-500',
-          image: '',
-        },
-        {
-          name: "Rêves d'élite",
-          description: '蔚蓝海岸与加勒比海的私人奢华礼宾服务。游艇与别墅租赁、VIP活动通行，以及为超高净值客户定制的生活方式体验。',
-          tags: ['奢华', '礼宾', '生活方式'],
-          status: '运营中',
-          url: 'https://revesdelite.com',
-          gradient: 'from-rose-300 to-amber-200',
-          image: '',
-        },
-      ],
-    },
-    pastProjects: {
-      label: '其他项目',
-      title: '过往与副业项目',
-      description: '其他探索与尝试。',
-      items: [
-        {
-          name: 'MoneyLabs',
-          description:
-            'AI语音生成在线课程，教授如何实现被动收入。注重实践、以变现为导向的教育。',
-          tags: ['教育', 'AI'],
-          gradient: 'from-violet-500 to-purple-600',
-        },
-        {
-          name: 'Bali Girls Trip',
-          description:
-            '巴厘岛高端女性旅行管家服务。精心策划的行程和组团旅行体验。',
-          tags: ['旅行', '生活方式'],
-          gradient: 'from-pink-400 to-rose-500',
-        },
-      ],
-    },
-    about: {
-      label: '个人背景',
-      title: '自律塑造一切。',
-      paragraphs: [
-        '生于法国，拥有马耳他血统。我的人生始终建立在体育卓越与创业动力的交汇点上。十六年的竞技游泳，包括法国国家队的经历，为我每一个项目奠定了坚实的基础。',
-        '现常驻中国，我将深厚的本地市场知识与网站开发和AI的技术能力相结合，打造产品并帮助企业弥合欧洲与亚洲之间的差距。',
-        '精通多语言，适应力强，始终在创造新事物。',
-      ],
-      languages: ['Français', 'English', 'Português', 'Русский'],
-      stats: [
-        { value: '16+', label: '年竞技游泳经历' },
-        { value: '4', label: '种语言' },
-        { value: '6+', label: '个活跃项目' },
-        { value: '∞', label: '职业精神' },
-      ],
-    },
-    contact: {
-      label: '联系方式',
-      title: '有项目想法？',
-      subtitle: '无论是网站开发、AI解决方案还是中国商务，我随时准备沟通。',
-      buttons: {
-        whatsapp: 'WhatsApp',
-        telegram: 'Telegram',
-        email: '发送邮件',
-        wechat: '微信',
-        wechatCopied: 'ID已复制！',
-      },
-      wechatId: 'wxid_llgnw6mtfc2522',
-      info: {
-        location: '中国',
-        email: 'tristangrech.nat@gmail.com',
-        nationality: '法国 · 欧盟护照',
-        availability: '接受全球项目合作',
-      },
-    },
-    footer: {
-      tagline: '创业者 · 开发者 · 中国',
-      copyright: '© 2026 Tristan Grech。保留所有权利。',
-      links: {
-        about: '关于',
-        projects: '项目',
-        contact: '联系',
-        modelling: '模特',
-      },
-    },
-    modelling: {
-      hero: {
-        label: '模特 · 运动员',
-        firstName: 'Tristan',
-        lastName: 'Grech',
-        description:
-          '法国 · 马耳他血统\n186 cm · 常驻中国\n前法国国家游泳队成员',
-        photoPlaceholder: '照片',
-        scrollHint: '滚动',
-      },
-      specs: {
-        sectionLabel: '模特参数',
-        items: [
-          { key: '身高', value: '186 cm' },
-          { key: '体重', value: '87至100 kg' },
-          { key: '发色', value: '深棕色' },
-          { key: '瞳色', value: '棕色' },
-          { key: '鞋码', value: 'EU 45' },
-          { key: '纹身', value: '无' },
-          { key: '国籍', value: '法国' },
-          { key: '常驻地', value: '中国' },
-          { key: '可用性', value: '亚洲范围 · 可出差' },
-        ],
-      },
-      portfolio: {
-        sectionLabel: '作品集',
-        title: '作品',
-        description: '商业、健身、编辑、生活方式。为亚洲市场打造的多功能性。',
-        items: [
-          { label: '编辑', category: '编辑' },
-          { label: '商业', category: '商业' },
-          { label: '健身', category: '健身' },
-          { label: '生活方式', category: '生活方式' },
-          { label: '时尚', category: '时尚' },
-        ],
-      },
-      swimming: {
-        sectionLabel: '体育背景',
-        title: '在最高水平训练。为表现而生。',
-        paragraphs: [
-          '十六年的竞技游泳塑造了我对一切事物的态度：自律、坚持以及对细微进步的执着。其物理成果是一个为耐力和力量而打造的体魄。',
-          '这样的背景在健身模特和运动广告中提供了大多数模特无法复制的优势。',
-        ],
-        photoPlaceholder: '照片',
-        achievements: [
-          '16年以上竞技游泳经历',
-          '法国国家队代表',
-          '精英级别的耐力与体能训练',
-          '体重灵活：87至100公斤，可根据活动需求调整',
-          '可接受健身、运动装备和体育品牌广告',
-        ],
-      },
-      contact: {
-        eyebrow: '开放预约',
-        title: '让我们创造真实的作品。',
-        subtitle:
-          '经纪公司、选角导演、摄影师、品牌。覆盖亚洲全境。随时准备就绪。',
-        emailButton: '发送邮件',
-        instagramButton: 'Instagram',
-        email: 'tristangrech.nat@gmail.com',
-        info: {
-          location: { label: '位置', value: '中国' },
-          email: { label: '邮箱', value: 'tristangrech.nat@gmail.com' },
-          nationality: { label: '国籍', value: '法国 · 欧盟护照' },
-          availability: { label: '可用性', value: '亚洲范围 · 可出差' },
-        },
-      },
-    },
-  },
-  ar: {
-    nav: {
-      home: 'الرئيسية',
-      about: 'عنّي',
-      projects: 'المشاريع',
-      contact: 'تواصل',
-      modelling: 'عارض أزياء',
-    },
-    hero: {
-      badge: 'رائد أعمال · مطوّر · أعمال في الصين',
-      bio: 'رائد أعمال فرنسي من أصول مالطية مقيم في الصين. أبني مشاريع دولية تربط أوروبا وآسيا من خلال التكنولوجيا وتطوير الويب ونهج عملي في الأعمال.',
-      cta: {
-        projects: 'مشاريعي',
-        contact: 'تواصل معي',
-      },
-      expertise: [
-        {
-          title: 'تطوير الويب',
-          description: 'تطوير متكامل، تكامل الذكاء الاصطناعي، وحلول ويب حديثة للشركات حول العالم',
-        },
-        {
-          title: 'الأعمال في الصين',
-          description: 'روابط مباشرة مع السوق الصيني: التوريد، المفاوضات، اللوجستيات، ودخول السوق',
-        },
-        {
-          title: 'الذكاء الاصطناعي والأتمتة',
-          description: 'بناء أدوات ذكية وأتمتة تُبسّط عمليات الأعمال',
-        },
-        {
-          title: 'الاستشارات الدولية',
-          description: 'ربط الأسواق الأوروبية والآسيوية من خلال استشارات أعمال عملية',
-        },
-      ],
-    },
-    stats: [
-      { value: '+6', label: 'مشاريع نشطة' },
-      { value: 'الصين', label: 'مقيم في' },
-      { value: '4', label: 'لغات' },
-    ],
-    now: {
-      title: 'حالياً',
-      cards: [
-        {
-          title: 'تطوير الويب ومشاريع الذكاء الاصطناعي',
-          description: 'بناء منتجات SaaS وأدوات مدعومة بالذكاء الاصطناعي، من مولّدات نصوص يوتيوب إلى منصات تدريب السباحة.',
-        },
-        {
-          title: 'مقيم في الصين',
-          description: 'أعيش وأعمل من مراكز الأعمال في الصين. شبكة محلية عميقة وفهم شامل للسوق.',
-        },
-        {
-          title: 'شريك أعمال في الصين',
-          description: 'دعم شامل: التوريد، مراقبة الجودة، اللوجستيات، المفاوضات، ودخول السوق للشركات الدولية.',
-        },
-      ],
-    },
-    common: {
-      visitWebsite: 'زيارة الموقع',
-      inDevelopment: 'قيد التطوير',
-    },
-    projects: {
-      label: 'المشاريع',
-      title: 'ماذا أبني',
-      description: 'مشاريع نشطة تشمل الذكاء الاصطناعي وتطوير الويب والتعليم ونمط الحياة.',
-      items: [
-        {
-          name: 'FULLHAURA',
-          description: 'وكالة ذكاء اصطناعي تبني أدوات رقمية وأتمتة وحلول ويب للشركات في أوروبا وآسيا. من تكامل API إلى تطوير ويب متكامل.',
-          tags: ['وكالة AI', 'تطوير ويب', 'أتمتة'],
-          status: 'نشط',
-          url: '#',
-          gradient: 'from-cyan-500 to-blue-600',
-          image: '',
-        },
-        {
-          name: 'Sumera.io',
-          description: 'مولّد نصوص يوتيوب مدعوم بالذكاء الاصطناعي بخط إنتاج خماسي المراحل. يحوّل أفكار الفيديو إلى نصوص جاهزة للإنتاج في 10 دقائق.',
-          tags: ['SaaS', 'AI', 'أدوات المبدعين'],
-          status: 'مباشر',
-          url: 'https://sumera.io',
-          gradient: 'from-lime-400 to-emerald-500',
-          image: '/images/sumera-cover.png',
-        },
-        {
-          name: 'Fullink.io',
-          description: 'منصة رابط في البايو شاملة للمبدعين. سمات جميلة، تحليلات، تكامل دفع عبر Stripe، وأداء فائق السرعة. مجاني للأبد.',
-          tags: ['SaaS', 'أدوات المبدعين', 'Link-in-Bio'],
-          status: 'مباشر',
-          url: 'https://www.fullink.io',
-          gradient: 'from-violet-500 to-indigo-600',
-          image: '',
-        },
-        {
-          name: 'Geo-Front',
-          description: 'منصة مراقبة جيوسياسية مباشرة لتتبع النزاع بين إيران والولايات المتحدة بتحديثات دقيقة وفورية. مصممة للوضوح في ظل أوضاع سريعة التغيّر.',
-          tags: ['جيوسياسة', 'بيانات مباشرة', 'أخبار'],
-          status: 'مباشر',
-          url: 'https://geo-front.com',
-          gradient: 'from-red-600 to-slate-800',
-          image: '',
-        },
-        {
-          name: 'SwimForm.ai',
-          description: 'منصة تدريب سباحة مدعومة بالذكاء الاصطناعي. ارفع فيديوهاتك واحصل على تقييم تقني على مستوى النخبة. مبني على أكثر من 16 عاماً من الخبرة التنافسية.',
-          tags: ['تقنية رياضية', 'AI', 'تدريب'],
-          status: 'قيد التطوير',
-          url: '',
-          gradient: 'from-amber-400 to-orange-500',
-          image: '',
-        },
-        {
-          name: "Rêves d'élite",
-          description: 'كونسيرج فاخر خاص على الريفييرا الفرنسية ومنطقة الكاريبي. تأجير اليخوت والفيلات، الوصول إلى الفعاليات الحصرية، وتجارب نمط الحياة المخصصة للعملاء من فئة الثروات الفائقة.',
-          tags: ['فخامة', 'كونسيرج', 'نمط الحياة'],
-          status: 'نشط',
-          url: 'https://revesdelite.com',
-          gradient: 'from-rose-300 to-amber-200',
-          image: '',
-        },
-      ],
-    },
-    pastProjects: {
-      label: 'مشاريع أخرى',
-      title: 'مشاريع سابقة وجانبية',
-      description: 'مشاريع واستكشافات أخرى على طول الطريق.',
-      items: [
-        {
-          name: 'MoneyLabs',
-          description: 'دورة تعليمية عبر الإنترنت لتعليم توليد الصوت بالذكاء الاصطناعي للدخل السلبي. تعليم عملي يركز على تحقيق الأرباح.',
-          tags: ['تعليم', 'AI'],
-          gradient: 'from-violet-500 to-purple-600',
-        },
-        {
-          name: 'Bali Girls Trip',
-          description: 'خدمة سفر فاخرة للنساء إلى بالي. رحلات منسّقة وتجارب سفر جماعية.',
-          tags: ['سفر', 'نمط حياة'],
-          gradient: 'from-pink-400 to-rose-500',
-        },
-      ],
-    },
-    about: {
-      label: 'نبذة عنّي',
-      title: 'الانضباط يصنع كل شيء.',
-      paragraphs: [
-        'وُلدت في فرنسا بجذور مالطية. بنيت حياتي عند تقاطع التميّز البدني والدافع الريادي. ستة عشر عاماً من السباحة التنافسية، بما في ذلك المنتخب الفرنسي، أسست القاعدة التي أحملها لكل مشروع.',
-        'الآن مقيم في الصين، أجمع بين المعرفة العميقة بالسوق المحلي والمهارات التقنية في تطوير الويب والذكاء الاصطناعي لبناء المنتجات ومساعدة الشركات على سد الفجوة بين أوروبا وآسيا.',
-        'متعدد اللغات، قادر على التكيّف، ودائماً أبني شيئاً جديداً.',
-      ],
-      languages: ['Français', 'English', 'Português', 'Русский'],
-      stats: [
-        { value: '+16', label: 'سنة سباحة تنافسية' },
-        { value: '4', label: 'لغات' },
-        { value: '+6', label: 'مشاريع نشطة' },
-        { value: '∞', label: 'أخلاقيات العمل' },
-      ],
-    },
-    contact: {
-      label: 'تواصل',
-      title: 'لديك مشروع في ذهنك؟',
-      subtitle: 'سواء كان تطوير ويب أو حلول ذكاء اصطناعي أو أعمال في الصين، أنا جاهز للحديث.',
-      buttons: {
-        whatsapp: 'WhatsApp',
-        telegram: 'Telegram',
-        email: 'أرسل بريداً',
-        wechat: 'WeChat',
-        wechatCopied: 'تم نسخ المعرّف!',
-      },
-      wechatId: 'wxid_llgnw6mtfc2522',
-      info: {
-        location: 'الصين',
-        email: 'tristangrech.nat@gmail.com',
-        nationality: 'فرنسي · جواز سفر أوروبي',
-        availability: 'متاح لمشاريع حول العالم',
-      },
-    },
-    footer: {
-      tagline: 'رائد أعمال · مطوّر · الصين',
-      copyright: '© 2026 Tristan Grech. جميع الحقوق محفوظة.',
-      links: {
-        about: 'عنّي',
-        projects: 'المشاريع',
-        contact: 'تواصل',
-        modelling: 'عارض أزياء',
-      },
-    },
-    modelling: {
-      hero: {
-        label: 'عارض أزياء · رياضي',
-        firstName: 'Tristan',
-        lastName: 'Grech',
-        description: 'فرنسي · أصول مالطية\n186 سم · مقيم في الصين\nعضو سابق في المنتخب الفرنسي للسباحة',
-        photoPlaceholder: 'صورة',
-        scrollHint: 'مرّر',
-      },
-      specs: {
-        sectionLabel: 'مواصفات العارض',
-        items: [
-          { key: 'الطول', value: '186 سم' },
-          { key: 'الوزن', value: '87 إلى 100 كغ' },
-          { key: 'الشعر', value: 'بني داكن' },
-          { key: 'العيون', value: 'بنّية' },
-          { key: 'الحذاء', value: 'EU 45' },
-          { key: 'الوشوم', value: 'لا يوجد' },
-          { key: 'الجنسية', value: 'فرنسي' },
-          { key: 'مقيم في', value: 'الصين' },
-          { key: 'متاح في', value: 'عموم آسيا · مستعد للسفر' },
-        ],
-      },
-      portfolio: {
-        sectionLabel: 'معرض الأعمال',
-        title: 'الأعمال',
-        description: 'تجاري، لياقة، تحريري، نمط حياة. مُصمّم للتنوع في الأسواق الآسيوية.',
-        items: [
-          { label: 'تحريري', category: 'تحريري' },
-          { label: 'تجاري', category: 'تجاري' },
-          { label: 'لياقة', category: 'لياقة' },
-          { label: 'نمط حياة', category: 'نمط حياة' },
-          { label: 'أزياء', category: 'أزياء' },
-        ],
-      },
-      swimming: {
-        sectionLabel: 'الرياضة',
-        title: 'تدرّبت على أعلى مستوى. مبني للأداء.',
-        paragraphs: [
-          'ستة عشر عاماً من السباحة التنافسية شكّلت نهجي في كل شيء: الانضباط والاتساق والهوس بالتحسين المستمر. النتيجة البدنية هي جسم مبني للتحمّل والقوة.',
-          'هذه الخلفية تمنح ميزة في عروض اللياقة والحملات الرياضية لا يستطيع معظم العارضين تكرارها.',
-        ],
-        photoPlaceholder: 'صورة',
-        achievements: [
-          'أكثر من 16 عاماً من السباحة التنافسية',
-          'ممثل المنتخب الفرنسي',
-          'لياقة بدنية وتكييف على مستوى النخبة',
-          'مرونة في الوزن: 87 إلى 100 كغ حسب متطلبات الحملة',
-          'متاح لحملات اللياقة والملابس الرياضية والعلامات التجارية الرياضية',
-        ],
-      },
-      contact: {
-        eyebrow: 'متاح للحجوزات',
-        title: 'لنصنع شيئاً حقيقياً.',
-        subtitle: 'وكالات، مخرجو اختيار الممثلين، مصوّرون، علامات تجارية. عموم آسيا. جاهز الآن.',
-        emailButton: 'أرسل بريداً',
-        instagramButton: 'Instagram',
-        email: 'tristangrech.nat@gmail.com',
-        info: {
-          location: { label: 'الموقع', value: 'الصين' },
-          email: { label: 'البريد', value: 'tristangrech.nat@gmail.com' },
-          nationality: { label: 'الجنسية', value: 'فرنسي · جواز سفر أوروبي' },
-          availability: { label: 'متاح في', value: 'عموم آسيا · مستعد للسفر' },
-        },
-      },
-    },
-  },
-};
+export type Translation = (typeof translationsData)['en'];
 
-export const translations = translationsData;
+export const translations: Record<Locale, Translation> =
+  translationsData as unknown as Record<Locale, Translation>;

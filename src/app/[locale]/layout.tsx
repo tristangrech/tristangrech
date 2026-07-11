@@ -1,117 +1,94 @@
 import type { Metadata } from 'next';
-import { Noto_Sans, Fraunces, Noto_Sans_SC, Cairo_Play } from 'next/font/google';
-import { isValidLocale, defaultLocale, rtlLocales, type Locale } from '@/lib/i18n';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { Unbounded, Golos_Text, IBM_Plex_Mono } from 'next/font/google';
+import { isValidLocale, defaultLocale, type Locale } from '@/lib/i18n';
+import { translations } from '@/lib/translations';
+import { site } from '@/lib/site';
 import '../globals.css';
 
-const notoSans = Noto_Sans({
+const unbounded = Unbounded({
   subsets: ['latin', 'cyrillic'],
-  variable: '--font-noto-sans',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-unbounded',
   display: 'swap',
 });
 
-const notoSansSC = Noto_Sans_SC({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-noto-sans-sc',
-  display: 'swap',
-  preload: false,
-});
-
-const cairoPlay = Cairo_Play({
-  subsets: ['arabic', 'latin'],
-  variable: '--font-cairo-play',
+const golos = Golos_Text({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-golos',
   display: 'swap',
 });
 
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
   display: 'swap',
-  axes: ['opsz', 'SOFT'],
 });
 
-const BASE_URL = 'https://tristangrech.com';
+const BASE_URL = site.baseUrl;
 
 const metadataByLocale: Record<
   Locale,
   { title: string; description: string; keywords: string[] }
 > = {
   en: {
-    title: 'Tristan Grech — Entrepreneur · Developer · China Business',
+    title: 'Tristan Grech — Websites, Web Apps & Video Production · Nice, France',
     description:
-      'French entrepreneur based in China. Full-stack web development, AI solutions, SaaS products, and China business consulting. Building international projects connecting Europe and Asia.',
+      'Tristan Grech is a developer and filmmaker in Nice, France. Multilingual websites and booking systems that Google ranks and AI assistants recommend, plus broadcast-grade video: Cannes Lions 2026 coverage, founder interviews, podcast production. Working in French, English and Russian, remotely from Paris to Almaty.',
     keywords: [
       'Tristan Grech',
-      'entrepreneur',
-      'web developer',
-      'China business',
-      'AI',
-      'fullstack developer',
-      'SaaS',
-      'Sumera',
-      'Fullink',
-      'SwimForm',
-      'FULLHAURA',
-      'Geo-Front',
-      'geopolitical monitoring',
-      'China consulting',
-      'France China business',
-      'international business',
-      'web development agency',
-      'AI automation',
+      'web developer Nice',
+      'website developer France',
+      'web app developer',
+      'booking system developer',
+      'website audit',
+      'AI visibility audit',
+      'GEO generative engine optimization',
+      'SEO Nice',
+      'video production Nice',
+      'Cannes Lions video production',
+      'podcast studio Nice',
+      'interview filming French Riviera',
+      'веб разработчик Ницца',
+      'разработка сайтов Алматы',
+    ],
+  },
+  fr: {
+    title: 'Tristan Grech — Sites web, applications & production vidéo · Nice',
+    description:
+      'Tristan Grech est développeur et vidéaste à Nice. Sites multilingues et systèmes de réservation référencés par Google et recommandés par les assistants IA, plus de la vidéo qualité broadcast : couverture des Cannes Lions 2026, interviews de fondateurs, production de podcasts. En français, anglais et russe, à distance de Paris à Almaty.',
+    keywords: [
+      'Tristan Grech',
+      'développeur web Nice',
+      'création site internet Nice',
+      'application web réservation',
+      'audit de site web',
+      'audit visibilité IA',
+      'GEO optimisation moteurs génératifs',
+      'SEO Nice',
+      'production vidéo Nice',
+      'vidéo Cannes Lions',
+      'studio podcast Nice',
+      'tournage interview Côte d\'Azur',
     ],
   },
   ru: {
-    title: 'Тристан Греч — Предприниматель · Разработчик · Бизнес с Китаем',
+    title: 'Тристан Греч — Сайты, веб-приложения и видеопродакшн · Ницца',
     description:
-      'Французский предприниматель в Китае. Веб-разработка, решения на базе ИИ, SaaS-продукты и консультации по бизнесу с Китаем. Международные проекты, связывающие Европу и Азию.',
+      'Тристан Греч, разработчик и видеограф из Ниццы. Многоязычные сайты и системы бронирования, которые находит Google и рекомендуют ИИ-ассистенты, плюс видео вещательного качества: репортажи с Cannes Lions 2026, интервью с основателями, продакшн подкастов. На французском, английском и русском, удалённо от Парижа до Алматы.',
     keywords: [
       'Тристан Греч',
       'Tristan Grech',
-      'предприниматель',
-      'веб-разработчик',
-      'бизнес в Китае',
-      'ИИ',
-      'фулстек разработчик',
-      'SaaS',
-      'международный бизнес',
-      'консалтинг Китай',
-      'Франция Китай',
-    ],
-  },
-  zh: {
-    title: 'Tristan Grech — 创业者 · 开发者 · 中国商务',
-    description:
-      '驻中国的法国创业者。全栈网站开发、人工智能解决方案、SaaS产品与中国商务咨询。构建连接欧洲与亚洲的国际项目。',
-    keywords: [
-      'Tristan Grech',
-      '创业者',
-      '网站开发',
-      '中国商务',
-      '人工智能',
-      '全栈开发',
-      'SaaS',
-      '国际商务',
-      '法国中国',
-      'AI自动化',
-    ],
-  },
-  ar: {
-    title: 'Tristan Grech — رائد أعمال · مطوّر · أعمال في الصين',
-    description:
-      'رائد أعمال فرنسي مقيم في الصين. تطوير ويب متكامل، حلول ذكاء اصطناعي، منتجات SaaS، واستشارات أعمال في الصين. بناء مشاريع دولية تربط أوروبا وآسيا.',
-    keywords: [
-      'Tristan Grech',
-      'رائد أعمال',
-      'مطور ويب',
-      'أعمال الصين',
-      'ذكاء اصطناعي',
-      'تطوير ويب',
-      'SaaS',
-      'استشارات الصين',
-      'أعمال دولية',
-      'أتمتة',
+      'разработка сайтов',
+      'веб разработчик Ницца',
+      'создание сайта Алматы',
+      'аудит сайта',
+      'видимость в ИИ',
+      'GEO оптимизация',
+      'видеопродакшн Ницца',
+      'студия подкастов',
+      'съёмка интервью',
+      'сайт для бизнеса Казахстан',
     ],
   },
 };
@@ -128,9 +105,8 @@ export async function generateMetadata({
   const canonicalUrl = `${BASE_URL}/${locale}`;
   const ogLocaleMap: Record<Locale, string> = {
     en: 'en_US',
+    fr: 'fr_FR',
     ru: 'ru_RU',
-    zh: 'zh_CN',
-    ar: 'ar_SA',
   };
   const ogLocale = ogLocaleMap[locale];
 
@@ -143,9 +119,8 @@ export async function generateMetadata({
       canonical: canonicalUrl,
       languages: {
         en: `${BASE_URL}/en`,
+        fr: `${BASE_URL}/fr`,
         ru: `${BASE_URL}/ru`,
-        zh: `${BASE_URL}/zh`,
-        ar: `${BASE_URL}/ar`,
         'x-default': `${BASE_URL}/en`,
       },
     },
@@ -156,15 +131,13 @@ export async function generateMetadata({
       siteName: 'Tristan Grech',
       type: 'website',
       locale: ogLocale,
-      alternateLocale: ['en_US', 'ru_RU', 'zh_CN', 'ar_SA'].filter(
-        (l) => l !== ogLocale
-      ),
+      alternateLocale: ['en_US', 'fr_FR', 'ru_RU'].filter((l) => l !== ogLocale),
       images: [
         {
           url: `${BASE_URL}/images/tristan-homepage.jpg`,
           width: 1200,
           height: 630,
-          alt: 'Tristan Grech — Entrepreneur, Developer, China Business',
+          alt: 'Tristan Grech, developer and filmmaker in Nice, France',
           type: 'image/jpeg',
         },
       ],
@@ -195,57 +168,140 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'ru' }, { locale: 'zh' }, { locale: 'ar' }];
+  return [{ locale: 'en' }, { locale: 'fr' }, { locale: 'ru' }];
 }
 
 function JsonLd({ locale }: { locale: Locale }) {
   const { title, description } = metadataByLocale[locale];
+  const t = translations[locale];
   const currentDate = new Date().toISOString().split('T')[0];
+
+  const services = [
+    {
+      '@type': 'Service',
+      name: 'Website design and development',
+      description:
+        'Multilingual marketing websites with structured data, SEO and AI visibility (GEO) built in. French, English and Russian.',
+      provider: { '@id': `${BASE_URL}/#business` },
+      areaServed: ['France', 'Monaco', 'European Union', 'Kazakhstan', 'Worldwide (remote)'],
+    },
+    {
+      '@type': 'Service',
+      name: 'Web applications and booking engines',
+      description:
+        'Custom web applications with Stripe payments, calendar sync, dashboards and AI agents, like the booking engine running Studio Nice Podcast.',
+      provider: { '@id': `${BASE_URL}/#business` },
+      areaServed: ['Worldwide (remote)'],
+    },
+    {
+      '@type': 'Service',
+      name: 'Website and AI visibility audit',
+      description:
+        'A 48-hour audit of technical health, SEO and AI assistant visibility (ChatGPT, Claude, Perplexity), delivered as a prioritized action list.',
+      provider: { '@id': `${BASE_URL}/#business` },
+      areaServed: ['Worldwide (remote)'],
+    },
+    {
+      '@type': 'Service',
+      name: 'Video and podcast production',
+      description:
+        '4K multi-camera interviews, event coverage and podcast production with broadcast audio, colour grading and subtitles. Studio in Nice, on location anywhere. Cannes Lions 2026 event coverage delivered overnight.',
+      provider: { '@id': `${BASE_URL}/#business` },
+      areaServed: ['Nice', 'Cannes', 'Monaco', 'French Riviera', 'On location worldwide'],
+    },
+  ];
 
   const graphSchema = {
     '@context': 'https://schema.org',
     '@graph': [
-      // Person schema (enhanced)
       {
         '@type': 'Person',
         '@id': `${BASE_URL}/#person`,
         name: 'Tristan Grech',
         url: BASE_URL,
-        jobTitle: 'Entrepreneur & Full-Stack Developer',
+        jobTitle: 'Developer & Filmmaker',
         description,
         image: `${BASE_URL}/images/tristan-homepage.jpg`,
-        nationality: {
-          '@type': 'Country',
-          name: 'France',
-        },
-        workLocation: {
+        nationality: { '@type': 'Country', name: 'France' },
+        homeLocation: {
           '@type': 'Place',
-          name: 'China',
+          name: 'Nice, France',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Nice',
+            addressCountry: 'FR',
+          },
         },
-        knowsLanguage: ['French', 'English', 'Portuguese', 'Russian'],
+        knowsLanguage: ['French', 'English', 'Russian', 'Portuguese'],
         knowsAbout: [
-          'Full-Stack Web Development',
-          'Artificial Intelligence',
-          'SaaS Development',
-          'China Business Consulting',
-          'International Trade',
-          'AI Automation',
-          'Europe-Asia Business',
+          'Web development',
+          'Web applications and booking systems',
+          'Search engine optimization (SEO)',
+          'Generative engine optimization (GEO)',
+          'AI assistant visibility',
+          'Video production',
+          'Podcast production',
+          'Stripe payment integration',
         ],
         alumniOf: {
           '@type': 'SportsTeam',
           name: 'French National Swimming Team',
         },
         sameAs: [
-          'https://wa.me/33678496126',
-          'https://t.me/Fullhaura',
-          'https://www.linkedin.com/in/fullhaura/',
+          site.linkedin,
+          site.whatsapp,
+          site.telegram,
+          'https://studionicepodcast.com',
+          'https://fullhaura-services.com',
           'https://sumera.io',
-          'https://www.fullink.io',
-          'https://geo-front.com',
         ],
       },
-      // WebSite schema
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${BASE_URL}/#business`,
+        name: 'Tristan Grech',
+        legalName: site.legalName,
+        identifier: {
+          '@type': 'PropertyValue',
+          propertyID: 'SIREN',
+          value: '843305996',
+        },
+        url: BASE_URL,
+        description:
+          'Web development and video production studio in Nice, France: multilingual websites, web apps with payments and booking, website and AI visibility audits, and 4K video production. Remote work across the EU and CIS, in French, English and Russian.',
+        founder: { '@id': `${BASE_URL}/#person` },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Nice',
+          addressCountry: 'FR',
+        },
+        areaServed: [
+          { '@type': 'City', name: 'Nice' },
+          { '@type': 'City', name: 'Cannes' },
+          { '@type': 'City', name: 'Monaco' },
+          { '@type': 'Country', name: 'France' },
+          { '@type': 'Country', name: 'Kazakhstan' },
+          { '@type': 'AdministrativeArea', name: 'European Union (remote)' },
+        ],
+        availableLanguage: ['French', 'English', 'Russian'],
+        priceRange: '€€',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'business inquiries',
+          email: site.email,
+          telephone: '+33678496126',
+          availableLanguage: ['French', 'English', 'Russian'],
+        },
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Services',
+          itemListElement: services.map((s) => ({
+            '@type': 'Offer',
+            itemOffered: s,
+          })),
+        },
+        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://fullhaura-services.com'],
+      },
       {
         '@type': 'WebSite',
         '@id': `${BASE_URL}/#website`,
@@ -255,12 +311,10 @@ function JsonLd({ locale }: { locale: Locale }) {
         publisher: { '@id': `${BASE_URL}/#person` },
         inLanguage: [
           { '@type': 'Language', name: 'English', alternateName: 'en' },
+          { '@type': 'Language', name: 'French', alternateName: 'fr' },
           { '@type': 'Language', name: 'Russian', alternateName: 'ru' },
-          { '@type': 'Language', name: 'Chinese', alternateName: 'zh' },
-          { '@type': 'Language', name: 'Arabic', alternateName: 'ar' },
         ],
       },
-      // WebPage schema with SpeakableSpecification
       {
         '@type': 'WebPage',
         '@id': `${BASE_URL}/${locale}#webpage`,
@@ -274,38 +328,67 @@ function JsonLd({ locale }: { locale: Locale }) {
         inLanguage: locale,
         speakable: {
           '@type': 'SpeakableSpecification',
-          cssSelector: ['h1', 'h2', '.text-lg', '.text-on-surface-muted'],
+          cssSelector: ['h1', 'h2'],
         },
       },
-      // Organization schema (FULLHAURA)
+      ...(site.showreel.available
+        ? [
+            {
+              '@type': 'VideoObject',
+              name: 'Tristan Grech — Showreel 2026',
+              description:
+                'Showreel: websites, web apps and video production by Tristan Grech, Nice, France.',
+              contentUrl: `${BASE_URL}${site.showreel.src}`,
+              thumbnailUrl: `${BASE_URL}${site.showreel.poster}`,
+              uploadDate: currentDate,
+            },
+          ]
+        : []),
       {
-        '@type': 'Organization',
-        '@id': `${BASE_URL}/#organization`,
-        name: 'FULLHAURA',
-        url: BASE_URL,
-        logo: `${BASE_URL}/images/fullhaura-logo.png`,
-        description:
-          'AI agency building digital tools, automations, and web solutions for businesses across Europe and Asia.',
-        founder: { '@id': `${BASE_URL}/#person` },
-        foundingDate: '2024',
-        address: {
-          '@type': 'PostalAddress',
-          addressCountry: 'CN',
-        },
-        contactPoint: {
-          '@type': 'ContactPoint',
-          contactType: 'business inquiries',
-          email: 'tristangrech.nat@gmail.com',
-          availableLanguage: ['English', 'French', 'Russian', 'Chinese'],
-        },
-        sameAs: [
-          'https://www.linkedin.com/in/fullhaura/',
-          'https://sumera.io',
-          'https://www.fullink.io',
-          'https://geo-front.com',
+        '@type': 'ItemList',
+        '@id': `${BASE_URL}/#portfolio`,
+        name: 'Selected work',
+        itemListElement: [
+          {
+            '@type': 'CreativeWork',
+            position: 1,
+            name: 'Studio Nice Podcast, studio and booking platform',
+            url: 'https://studionicepodcast.com',
+            description:
+              'A real 4K video podcast studio in Nice with a self-built booking platform: Next.js, FastAPI, Stripe Checkout, Google Calendar sync, 18 SEO service pages in English and French.',
+            dateCreated: '2026',
+            creator: { '@id': `${BASE_URL}/#person` },
+          },
+          {
+            '@type': 'CreativeWork',
+            position: 2,
+            name: 'Halo AI at Cannes Lions 2026, event interview coverage',
+            description:
+              'Event interview coverage at Cannes Lions 2026 for Halo AI: 226 clips shot in one day, 17 graded and subtitled edits delivered overnight in horizontal and vertical formats.',
+            dateCreated: '2026-06-25',
+            creator: { '@id': `${BASE_URL}/#person` },
+          },
+          {
+            '@type': 'CreativeWork',
+            position: 3,
+            name: 'Business Future, episode one interview production',
+            description:
+              'Launch episode for a business YouTube channel: two-camera 4K 50p on-location shoot, 35-minute graded master with word-level subtitles, delivered the day after the shoot.',
+            dateCreated: '2026-07-10',
+            creator: { '@id': `${BASE_URL}/#person` },
+          },
+          {
+            '@type': 'CreativeWork',
+            position: 4,
+            name: 'Fullhaura concierge, trilingual brand site',
+            url: 'https://fullhaura-services.com',
+            description:
+              'Trilingual (French, English, Russian) marketing site for a Saint-Tropez concierge brand: 8 service and 8 location pages with Service, FAQ and Breadcrumb structured data, custom illustration set, Next.js 15.',
+            dateCreated: '2026',
+            creator: { '@id': `${BASE_URL}/#person` },
+          },
         ],
       },
-      // BreadcrumbList schema
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -317,51 +400,16 @@ function JsonLd({ locale }: { locale: Locale }) {
           },
         ],
       },
-      // FAQPage schema (+40% AI visibility)
       {
         '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'Who is Tristan Grech?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Tristan Grech is a French entrepreneur with Maltese origins based in China. He is a full-stack web developer, AI specialist, and international business consultant who builds projects connecting Europe and Asia. He has 16+ years of competitive swimming experience including the French national team.',
-            },
+        mainEntity: t.faq.items.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
           },
-          {
-            '@type': 'Question',
-            name: 'What services does Tristan Grech offer?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Tristan offers full-stack web development, AI-powered tool development, SaaS product building, and China business consulting. His agency FULLHAURA provides digital tools, automations, and web solutions for businesses across Europe and Asia. He also offers sourcing, negotiations, logistics, and market entry support for companies entering the Chinese market.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What projects has Tristan Grech built?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Tristan has built several active projects: Sumera.io (AI-powered YouTube script generator), Fullink.io (all-in-one link-in-bio platform), Geo-Front.com (live geopolitical conflict monitoring platform), SwimForm.ai (AI swimming coaching platform), and FULLHAURA (AI agency for web solutions and automation).',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'How can I contact Tristan Grech?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'You can reach Tristan via WhatsApp at +33 6 78 49 61 26, Telegram at @Fullhaura, WeChat (ID: wxid_llgnw6mtfc2522), email at tristangrech.nat@gmail.com, or LinkedIn at linkedin.com/in/fullhaura. He is open to projects worldwide.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What languages does Tristan Grech speak?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Tristan speaks 4 languages fluently: French (native), English, Portuguese, and Russian. His multilingual ability combined with being based in China makes him uniquely positioned to bridge European and Asian business markets.',
-            },
-          },
-        ],
+        })),
       },
     ],
   };
@@ -384,31 +432,22 @@ export default function LocaleLayout({
   const locale: Locale = isValidLocale(params.locale)
     ? params.locale
     : defaultLocale;
-  const dir = rtlLocales.includes(locale) ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} dir={dir} className="dark" suppressHydrationWarning>
+    <html lang={locale} dir="ltr" className="dark" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#1a1916" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#f0eee5" media="(prefers-color-scheme: light)" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||(!t&&window.matchMedia('(prefers-color-scheme:light)').matches)){document.documentElement.classList.remove('dark')}}catch(e){}})()`,
-          }}
-        />
+        <meta name="theme-color" content="#0A0C10" />
         <JsonLd locale={locale} />
       </head>
       <body
-        className={`${notoSans.variable} ${cairoPlay.variable} ${notoSansSC.variable} ${fraunces.variable}`}
+        className={`${unbounded.variable} ${golos.variable} ${plexMono.variable} tg-monitor antialiased`}
       >
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

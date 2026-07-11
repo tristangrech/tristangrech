@@ -1,14 +1,15 @@
 import { isValidLocale, defaultLocale, type Locale } from '@/lib/i18n';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import StatsBar from '@/components/StatsBar';
-import RightNow from '@/components/RightNow';
-import Projects from '@/components/Projects';
-import PastProjects from '@/components/PastProjects';
-import About from '@/components/About';
-import WorldMap from '@/components/WorldMap';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/monitor/Navbar';
+import Hero from '@/components/monitor/Hero';
+import ProofBar from '@/components/monitor/ProofBar';
+import Services from '@/components/monitor/Services';
+import Work from '@/components/monitor/Work';
+import LiveSites from '@/components/monitor/LiveSites';
+import AiProof from '@/components/monitor/AiProof';
+import Faq from '@/components/monitor/Faq';
+import About from '@/components/monitor/About';
+import Contact from '@/components/monitor/Contact';
+import Footer from '@/components/monitor/Footer';
 
 export default function HomePage({
   params,
@@ -18,15 +19,16 @@ export default function HomePage({
   const locale: Locale = isValidLocale(params.locale) ? params.locale : defaultLocale;
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen grain">
       <Navbar locale={locale} />
       <Hero locale={locale} />
-      <StatsBar locale={locale} />
-      <RightNow locale={locale} />
-      <Projects locale={locale} />
-      <PastProjects locale={locale} />
+      <ProofBar locale={locale} />
+      <Services locale={locale} />
+      <Work locale={locale} />
+      <LiveSites locale={locale} />
+      <AiProof locale={locale} />
+      <Faq locale={locale} />
       <About locale={locale} />
-      <WorldMap locale={locale} />
       <Contact locale={locale} />
       <Footer locale={locale} />
     </main>

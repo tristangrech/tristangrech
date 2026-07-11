@@ -11,8 +11,26 @@ const config: Config = {
         heading: ['var(--font-fraunces)', 'Cormorant Garamond', 'Georgia', 'serif'],
         body: ['var(--font-noto-sans)', 'var(--font-cairo-play)', 'var(--font-noto-sans-sc)', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+        // Monitor design system (main site)
+        display: ['var(--font-unbounded)', 'system-ui', 'sans-serif'],
+        golos: ['var(--font-golos)', 'system-ui', 'sans-serif'],
+        plex: ['var(--font-plex-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
+        // Monitor design system (main site): screening-room palette
+        ink: '#0A0C10',
+        panel: {
+          DEFAULT: '#12151B',
+          raised: '#171B22',
+        },
+        line: {
+          DEFAULT: '#242A34',
+          faint: '#1A1F27',
+        },
+        bone: '#EFECE3',
+        dim: '#98A0AC',
+        rec: '#F23D30',
+        ambr: '#E3A84E',
         surface: {
           DEFAULT: 'rgb(var(--surface) / <alpha-value>)',
           alt: 'rgb(var(--surface-alt) / <alpha-value>)',
