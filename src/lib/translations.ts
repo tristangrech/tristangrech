@@ -1,5 +1,24 @@
 import type { Locale } from './i18n';
 
+// Published client reels (locale-independent), keyed by clip id.
+// Halo AI's own public Instagram posts from the Cannes Lions 2026 coverage.
+export const clipReels: Record<string, { url: string; image: string }[]> = {
+  'CLIP 02': [
+    {
+      url: 'https://www.instagram.com/p/DaSxoi0o8l0/',
+      image: '/images/work/halo-reel-1.jpg',
+    },
+    {
+      url: 'https://www.instagram.com/p/DaNm1DFtqi2/',
+      image: '/images/work/halo-reel-2.jpg',
+    },
+    {
+      url: 'https://www.instagram.com/p/DaK6ci9jtLS/',
+      image: '/images/work/halo-reel-3.jpg',
+    },
+  ],
+};
+
 const translationsData = {
   en: {
     nav: {
@@ -67,6 +86,7 @@ const translationsData = {
       title: 'Recent productions.',
       sub: 'Real clients, verifiable facts, dates included.',
       linkLabel: 'Open the live site',
+      reelsNote: "Published on the client's Instagram.",
       clips: [
         {
           id: 'CLIP 01',
@@ -367,6 +387,7 @@ const translationsData = {
       title: 'Productions récentes.',
       sub: 'De vrais clients, des faits vérifiables, dates comprises.',
       linkLabel: 'Ouvrir le site',
+      reelsNote: "Publiés sur l'Instagram du client.",
       clips: [
         {
           id: 'CLIP 01',
@@ -667,6 +688,7 @@ const translationsData = {
       title: 'Недавние проекты.',
       sub: 'Настоящие клиенты, проверяемые факты, с датами.',
       linkLabel: 'Открыть сайт',
+      reelsNote: 'Опубликовано в Instagram клиента.',
       clips: [
         {
           id: 'CLIP 01',

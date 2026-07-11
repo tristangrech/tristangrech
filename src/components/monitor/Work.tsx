@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { Locale } from '@/lib/i18n';
-import { translations } from '@/lib/translations';
+import { translations, clipReels } from '@/lib/translations';
 import Scene from './Scene';
 
 export default function Work({ locale }: { locale: Locale }) {
@@ -10,11 +10,13 @@ export default function Work({ locale }: { locale: Locale }) {
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <Scene scene={t.work.scene} label={t.work.label} title={t.work.title} sub={t.work.sub} />
         <div className="space-y-16 md:space-y-24">
-          {t.work.clips.map((clip, i) => (
+          {t.work.clips.map((clip, i) => {
+            const reels = clipReels[clip.id] ?? [];
+            return (
             <article
               key={clip.id}
               className={`grid gap-8 lg:gap-14 items-start ${
-                clip.image ? 'lg:grid-cols-2' : 'lg:grid-cols-[1fr_1.2fr]'
+                clip.image || reels.length ? 'lg:grid-cols-2' : 'lg:grid-cols-[1fr_1.2fr]'
               }`}
             >
               {/* Slate + facts */}
@@ -57,9 +59,40 @@ export default function Work({ locale }: { locale: Locale }) {
                 ) : null}
               </div>
 
-              {/* Visual: screenshot in a monitor frame, or a typographic slate */}
-              <div className={i % 2 === 1 && clip.image ? 'lg:order-1' : ''}>
-                {clip.image ? (
+              {/* Visual: published reels, a screenshot in a monitor frame, or a typographic slate */}
+              <div className={i % 2 === 1 && (clip.image || reels.length) ? 'lg:order-1' : ''}>
+                {reels.length ? (
+                  <div>
+                    <div className="grid grid-cols-3 gap-2 md:gap-3">
+                      {reels.map((reel, r) => (
+                        <a
+                          key={reel.url}
+                          href={reel.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/reel block border border-line bg-panel hover:border-rec transition-colors"
+                        >
+                          <div className="aspect-[9/16] overflow-hidden">
+                            <Image
+                              src={reel.image}
+                              alt={`${clip.client} · Instagram reel ${r + 1}`}
+                              width={540}
+                              height={960}
+                              className="w-full h-full object-cover group-hover/reel:scale-[1.03] transition-transform duration-500"
+                            />
+                          </div>
+                          <div className="flex justify-between items-center px-2 py-1.5">
+                            <span className="tg-label !text-[9px]">REEL {String(r + 1).padStart(2, '0')}</span>
+                            <span className="tg-label !text-[9px] text-ambr">IG ↗</span>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                    <p className="tg-label !text-[10px] mt-3 normal-case !tracking-normal">
+                      {t.work.reelsNote}
+                    </p>
+                  </div>
+                ) : clip.image ? (
                   <div className="tg-brackets border border-line bg-panel p-3">
                     <Image
                       src={clip.image}
@@ -84,7 +117,8 @@ export default function Work({ locale }: { locale: Locale }) {
                 )}
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
