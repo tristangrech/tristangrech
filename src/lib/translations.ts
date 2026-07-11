@@ -45,7 +45,7 @@ const translationsData = {
     proof: [
       { value: '17', label: 'finished edits delivered overnight at Cannes Lions 2026' },
       { value: '24h', label: 'from interview shoot to delivered, subtitled episode' },
-      { value: '7', label: 'sites live in production right now, all linked below' },
+      { value: '5', label: 'sites live in production right now, all linked below' },
       { value: '3', label: 'working languages: French, English, Russian' },
     ],
     services: {
@@ -153,7 +153,7 @@ const translationsData = {
     liveSites: {
       scene: 'SCENE 04',
       label: 'LIVE SITES',
-      title: 'Seven sites you can open right now.',
+      title: 'Five sites you can open right now.',
       sub: 'Every one is in production today. Click and check.',
       status: 'LIVE',
       sites: [
@@ -161,9 +161,7 @@ const translationsData = {
         { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Trilingual concierge brand for the Saint-Tropez peninsula' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'AI YouTube script generator, a SaaS with live Stripe billing' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Link-in-bio platform for creators: themes, analytics, Stripe payments' },
-        { name: 'niceclim.fr', url: 'https://niceclim.fr', desc: 'Portable air conditioner rental, delivered and installed, Nice to Monaco' },
         { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Private concierge brand for Cannes, Monaco and Saint-Tropez' },
-        { name: 'cnsourcing.fr', url: 'https://cnsourcing.fr', desc: 'China sourcing service, an animated two-page pitch site' },
       ],
     },
     aiProof: {
@@ -347,7 +345,7 @@ const translationsData = {
     proof: [
       { value: '17', label: 'montages finalisés livrés en une nuit aux Cannes Lions 2026' },
       { value: '24h', label: 'entre le tournage d\'une interview et la livraison de l\'épisode sous-titré' },
-      { value: '7', label: 'sites en production en ce moment, tous accessibles plus bas' },
+      { value: '5', label: 'sites en production en ce moment, tous accessibles plus bas' },
       { value: '3', label: 'langues de travail : français, anglais, russe' },
     ],
     services: {
@@ -455,7 +453,7 @@ const translationsData = {
     liveSites: {
       scene: 'SCÈNE 04',
       label: 'SITES EN LIGNE',
-      title: 'Sept sites à ouvrir tout de suite.',
+      title: 'Cinq sites à ouvrir tout de suite.',
       sub: 'Tous en production aujourd\'hui. Cliquez et vérifiez.',
       status: 'LIVE',
       sites: [
@@ -463,9 +461,7 @@ const translationsData = {
         { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Marque de conciergerie trilingue pour la presqu\'île de Saint-Tropez' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'Générateur de scripts YouTube par IA, un SaaS avec facturation Stripe active' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Plateforme link-in-bio pour créateurs : thèmes, statistiques, paiements Stripe' },
-        { name: 'niceclim.fr', url: 'https://niceclim.fr', desc: 'Location de climatiseurs mobiles, livrés et installés, de Nice à Monaco' },
         { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Marque de conciergerie privée pour Cannes, Monaco et Saint-Tropez' },
-        { name: 'cnsourcing.fr', url: 'https://cnsourcing.fr', desc: 'Service de sourcing en Chine, site de présentation animé en deux pages' },
       ],
     },
     aiProof: {
@@ -649,7 +645,7 @@ const translationsData = {
     proof: [
       { value: '17', label: 'готовых монтажей сдано за одну ночь на Cannes Lions 2026' },
       { value: '24ч', label: 'от съёмки интервью до сдачи серии с субтитрами' },
-      { value: '7', label: 'сайтов в продакшене прямо сейчас, все по ссылкам ниже' },
+      { value: '5', label: 'сайтов в продакшене прямо сейчас, все по ссылкам ниже' },
       { value: '3', label: 'рабочих языка: французский, английский, русский' },
     ],
     services: {
@@ -757,7 +753,7 @@ const translationsData = {
     liveSites: {
       scene: 'СЦЕНА 04',
       label: 'ЖИВЫЕ САЙТЫ',
-      title: 'Семь сайтов, которые можно открыть прямо сейчас.',
+      title: 'Пять сайтов, которые можно открыть прямо сейчас.',
       sub: 'Все в продакшене сегодня. Кликните и проверьте.',
       status: 'LIVE',
       sites: [
@@ -765,9 +761,7 @@ const translationsData = {
         { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Трёхъязычный консьерж-бренд полуострова Сен-Тропе' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'ИИ-генератор сценариев для YouTube, SaaS с работающим биллингом Stripe' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Link-in-bio платформа для авторов: темы, аналитика, платежи Stripe' },
-        { name: 'niceclim.fr', url: 'https://niceclim.fr', desc: 'Аренда мобильных кондиционеров с доставкой и установкой, от Ниццы до Монако' },
         { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Частный консьерж-бренд для Канн, Монако и Сен-Тропе' },
-        { name: 'cnsourcing.fr', url: 'https://cnsourcing.fr', desc: 'Сервис закупок в Китае, анимированный сайт-презентация на две страницы' },
       ],
     },
     aiProof: {
