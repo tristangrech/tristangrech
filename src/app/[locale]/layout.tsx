@@ -254,6 +254,8 @@ function JsonLd({ locale }: { locale: Locale }) {
           'https://studionicepodcast.com',
           'https://fullhaura-services.com',
           'https://sumera.io',
+          'https://www.fullink.io',
+          'https://revesdelite.com',
         ],
       },
       {
