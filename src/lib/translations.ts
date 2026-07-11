@@ -25,7 +25,7 @@ const translationsData = {
         {
           title: 'Website Auditing',
           description:
-            'Deep technical audits covering performance, SEO, security, and conversion — with actionable fixes',
+            'Deep technical audits covering performance, SEO, security, and conversion, with actionable fixes',
         },
         {
           title: 'SEO & GEO',
@@ -60,7 +60,7 @@ const translationsData = {
         {
           title: 'Full-Stack Digital Strategy',
           description:
-            'From technical website audits to email marketing automation — end-to-end digital growth for ambitious businesses.',
+            'From technical website audits to email marketing automation: full digital growth support for ambitious businesses.',
         },
       ],
     },
@@ -161,15 +161,15 @@ const translationsData = {
       label: 'Background',
       title: 'Engineering meets execution.',
       paragraphs: [
-        'French entrepreneur with Maltese roots. Sixteen years of competitive swimming — including the French national team — forged the discipline behind every system I build.',
-        'I\'ve shipped 6+ AI products, built autonomous business engines, and helped companies across Europe and Asia automate their growth. I don\'t just consult — I build and deploy.',
+        'French entrepreneur with Maltese roots. Sixteen years of competitive swimming, including time on the French national team, forged the discipline behind every system I build.',
+        'I\'ve shipped 6+ AI products, built autonomous business engines, and helped companies across Europe and Asia automate their growth. I don\'t just consult, I build and deploy.',
         'French, English, Portuguese, Russian. Four languages, one mission: help businesses win with technology.',
       ],
       languages: ['Français', 'English', 'Português', 'Русский'],
       stats: [
         { value: '6+', label: 'AI products shipped' },
         { value: '4', label: 'Languages spoken' },
-        { value: '100+', label: 'Businesses audited' },
+        { value: 'EU · Asia', label: 'Businesses served' },
         { value: '24/7', label: 'AI systems running' },
       ],
     },
@@ -188,7 +188,7 @@ const translationsData = {
       wechatId: 'wxid_llgnw6mtfc2522',
       info: {
         location: 'France',
-        email: 'contact@fullhaura.com',
+        email: 'tristangrech.nat@gmail.com',
         nationality: 'French · EU Passport',
         availability: 'Serving Europe & Asia',
       },
@@ -217,7 +217,7 @@ const translationsData = {
         sectionLabel: 'Model Specs',
         items: [
           { key: 'Height', value: '186 cm' },
-          { key: 'Weight', value: '87–100 kg' },
+          { key: 'Weight', value: '87 to 100 kg' },
           { key: 'Hair', value: 'Dark Brown' },
           { key: 'Eyes', value: 'Brown' },
           { key: 'Shoe', value: 'EU 45' },
@@ -301,7 +301,7 @@ const translationsData = {
         {
           title: 'Бизнес в Китае',
           description:
-            'Прямые связи с китайским рынком — сорсинг, переговоры, логистика и выход на рынок',
+            'Прямые связи с китайским рынком: сорсинг, переговоры, логистика и выход на рынок',
         },
         {
           title: 'ИИ и автоматизация',
@@ -326,7 +326,7 @@ const translationsData = {
         {
           title: 'Веб-разработка и ИИ-проекты',
           description:
-            'Создаю SaaS-продукты и инструменты на базе ИИ — от генераторов сценариев для YouTube до платформ для тренеров по плаванию.',
+            'Создаю SaaS-продукты и инструменты на базе ИИ, от генераторов сценариев для YouTube до платформ для тренеров по плаванию.',
         },
         {
           title: 'Базируюсь в Китае',
@@ -437,7 +437,7 @@ const translationsData = {
       label: 'Обо мне',
       title: 'Дисциплина определяет всё.',
       paragraphs: [
-        'Родился во Франции, корни — на Мальте. Всю жизнь я строю на стыке физического совершенства и предпринимательского драйва. Шестнадцать лет соревновательного плавания — включая сборную Франции — заложили фундамент, который я приношу в каждый проект.',
+        'Родился во Франции, корни на Мальте. Всю жизнь я строю на стыке физического совершенства и предпринимательского драйва. Шестнадцать лет соревновательного плавания, включая сборную Франции, заложили фундамент, который я приношу в каждый проект.',
         'Сейчас я базируюсь в Китае и сочетаю глубокое знание локального рынка с техническими навыками в веб-разработке и ИИ, чтобы создавать продукты и помогать бизнесу наводить мосты между Европой и Азией.',
         'Мультилингвальный, адаптивный и всегда создающий что-то новое.',
       ],
@@ -453,7 +453,7 @@ const translationsData = {
       label: 'Контакты',
       title: 'Есть проект?',
       subtitle:
-        'Веб-разработка, ИИ-решения или бизнес в Китае — я готов обсудить.',
+        'Веб-разработка, ИИ-решения или бизнес в Китае: я готов обсудить.',
       buttons: {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
@@ -493,7 +493,7 @@ const translationsData = {
         sectionLabel: 'Параметры модели',
         items: [
           { key: 'Рост', value: '186 см' },
-          { key: 'Вес', value: '87–100 кг' },
+          { key: 'Вес', value: 'от 87 до 100 кг' },
           { key: 'Волосы', value: 'Тёмно-каштановые' },
           { key: 'Глаза', value: 'Карие' },
           { key: 'Обувь', value: 'EU 45' },
@@ -520,7 +520,7 @@ const translationsData = {
         sectionLabel: 'Спорт',
         title: 'Тренирован на высшем уровне. Создан для результатов.',
         paragraphs: [
-          'Шестнадцать лет соревновательного плавания сформировали мой подход ко всему — дисциплина, последовательность и одержимость маргинальными улучшениями. Физический результат — тело, созданное для выносливости и силы.',
+          'Шестнадцать лет соревновательного плавания сформировали мой подход ко всему: дисциплина, последовательность и одержимость маргинальными улучшениями. Физический результат: тело, созданное для выносливости и силы.',
           'Этот бэкграунд даёт преимущество в фитнес-моделинге и спортивных кампаниях, которое большинство моделей просто не могут повторить.',
         ],
         photoPlaceholder: 'Фото',
@@ -578,7 +578,7 @@ const translationsData = {
         },
         {
           title: '中国商务',
-          description: '与中国市场的直接联系——采购、谈判、物流和市场进入',
+          description: '与中国市场的直接联系：采购、谈判、物流和市场进入',
         },
         {
           title: 'AI与自动化',
@@ -601,7 +601,7 @@ const translationsData = {
         {
           title: '网站开发与AI项目',
           description:
-            '正在开发SaaS产品和AI驱动的工具——从YouTube脚本生成器到游泳教练平台。',
+            '正在开发SaaS产品和AI驱动的工具，从YouTube脚本生成器到游泳教练平台。',
         },
         {
           title: '常驻中国',
@@ -710,7 +710,7 @@ const translationsData = {
       label: '个人背景',
       title: '自律塑造一切。',
       paragraphs: [
-        '生于法国，拥有马耳他血统。我的人生始终建立在体育卓越与创业动力的交汇点上。十六年的竞技游泳——包括法国国家队的经历——为我每一个项目奠定了坚实的基础。',
+        '生于法国，拥有马耳他血统。我的人生始终建立在体育卓越与创业动力的交汇点上。十六年的竞技游泳，包括法国国家队的经历，为我每一个项目奠定了坚实的基础。',
         '现常驻中国，我将深厚的本地市场知识与网站开发和AI的技术能力相结合，打造产品并帮助企业弥合欧洲与亚洲之间的差距。',
         '精通多语言，适应力强，始终在创造新事物。',
       ],
@@ -725,7 +725,7 @@ const translationsData = {
     contact: {
       label: '联系方式',
       title: '有项目想法？',
-      subtitle: '无论是网站开发、AI解决方案还是中国商务——我随时准备沟通。',
+      subtitle: '无论是网站开发、AI解决方案还是中国商务，我随时准备沟通。',
       buttons: {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
@@ -765,7 +765,7 @@ const translationsData = {
         sectionLabel: '模特参数',
         items: [
           { key: '身高', value: '186 cm' },
-          { key: '体重', value: '87–100 kg' },
+          { key: '体重', value: '87至100 kg' },
           { key: '发色', value: '深棕色' },
           { key: '瞳色', value: '棕色' },
           { key: '鞋码', value: 'EU 45' },
@@ -791,7 +791,7 @@ const translationsData = {
         sectionLabel: '体育背景',
         title: '在最高水平训练。为表现而生。',
         paragraphs: [
-          '十六年的竞技游泳塑造了我对一切事物的态度——自律、坚持以及对细微进步的执着。其物理成果是一个为耐力和力量而打造的体魄。',
+          '十六年的竞技游泳塑造了我对一切事物的态度：自律、坚持以及对细微进步的执着。其物理成果是一个为耐力和力量而打造的体魄。',
           '这样的背景在健身模特和运动广告中提供了大多数模特无法复制的优势。',
         ],
         photoPlaceholder: '照片',
@@ -842,7 +842,7 @@ const translationsData = {
         },
         {
           title: 'الأعمال في الصين',
-          description: 'روابط مباشرة مع السوق الصيني — التوريد، المفاوضات، اللوجستيات، ودخول السوق',
+          description: 'روابط مباشرة مع السوق الصيني: التوريد، المفاوضات، اللوجستيات، ودخول السوق',
         },
         {
           title: 'الذكاء الاصطناعي والأتمتة',
@@ -864,7 +864,7 @@ const translationsData = {
       cards: [
         {
           title: 'تطوير الويب ومشاريع الذكاء الاصطناعي',
-          description: 'بناء منتجات SaaS وأدوات مدعومة بالذكاء الاصطناعي — من مولّدات نصوص يوتيوب إلى منصات تدريب السباحة.',
+          description: 'بناء منتجات SaaS وأدوات مدعومة بالذكاء الاصطناعي، من مولّدات نصوص يوتيوب إلى منصات تدريب السباحة.',
         },
         {
           title: 'مقيم في الصين',
@@ -964,7 +964,7 @@ const translationsData = {
       label: 'نبذة عنّي',
       title: 'الانضباط يصنع كل شيء.',
       paragraphs: [
-        'وُلدت في فرنسا بجذور مالطية. بنيت حياتي عند تقاطع التميّز البدني والدافع الريادي. ستة عشر عاماً من السباحة التنافسية — بما في ذلك المنتخب الفرنسي — أسست القاعدة التي أحملها لكل مشروع.',
+        'وُلدت في فرنسا بجذور مالطية. بنيت حياتي عند تقاطع التميّز البدني والدافع الريادي. ستة عشر عاماً من السباحة التنافسية، بما في ذلك المنتخب الفرنسي، أسست القاعدة التي أحملها لكل مشروع.',
         'الآن مقيم في الصين، أجمع بين المعرفة العميقة بالسوق المحلي والمهارات التقنية في تطوير الويب والذكاء الاصطناعي لبناء المنتجات ومساعدة الشركات على سد الفجوة بين أوروبا وآسيا.',
         'متعدد اللغات، قادر على التكيّف، ودائماً أبني شيئاً جديداً.',
       ],
@@ -979,7 +979,7 @@ const translationsData = {
     contact: {
       label: 'تواصل',
       title: 'لديك مشروع في ذهنك؟',
-      subtitle: 'سواء كان تطوير ويب أو حلول ذكاء اصطناعي أو أعمال في الصين — أنا جاهز للحديث.',
+      subtitle: 'سواء كان تطوير ويب أو حلول ذكاء اصطناعي أو أعمال في الصين، أنا جاهز للحديث.',
       buttons: {
         whatsapp: 'WhatsApp',
         telegram: 'Telegram',
@@ -1018,7 +1018,7 @@ const translationsData = {
         sectionLabel: 'مواصفات العارض',
         items: [
           { key: 'الطول', value: '186 سم' },
-          { key: 'الوزن', value: '87–100 كغ' },
+          { key: 'الوزن', value: '87 إلى 100 كغ' },
           { key: 'الشعر', value: 'بني داكن' },
           { key: 'العيون', value: 'بنّية' },
           { key: 'الحذاء', value: 'EU 45' },
@@ -1044,7 +1044,7 @@ const translationsData = {
         sectionLabel: 'الرياضة',
         title: 'تدرّبت على أعلى مستوى. مبني للأداء.',
         paragraphs: [
-          'ستة عشر عاماً من السباحة التنافسية شكّلت نهجي في كل شيء — الانضباط والاتساق والهوس بالتحسين المستمر. النتيجة البدنية هي جسم مبني للتحمّل والقوة.',
+          'ستة عشر عاماً من السباحة التنافسية شكّلت نهجي في كل شيء: الانضباط والاتساق والهوس بالتحسين المستمر. النتيجة البدنية هي جسم مبني للتحمّل والقوة.',
           'هذه الخلفية تمنح ميزة في عروض اللياقة والحملات الرياضية لا يستطيع معظم العارضين تكرارها.',
         ],
         photoPlaceholder: 'صورة',

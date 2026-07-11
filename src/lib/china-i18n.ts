@@ -518,7 +518,7 @@ const fr: ChinaDict = {
     tagline: 'Deux associés à Guangzhou. On accompagne les entrepreneurs français en Chine.',
     otherVentures: 'Nos autres projets',
     ventures: [
-      { name: 'Fullhaura · agence IA', href: 'https://fullhaura.com' },
+      { name: 'Fullhaura · agence IA', href: 'https://tristangrech.com' },
       { name: 'Geo-Front · monitoring géopolitique', href: 'https://geo-front.com' },
     ],
     legal: [
@@ -855,7 +855,7 @@ const en: ChinaDict = {
     tagline: 'Two partners in Guangzhou. We take European founders into China.',
     otherVentures: 'Our other ventures',
     ventures: [
-      { name: 'Fullhaura · AI agency', href: 'https://fullhaura.com' },
+      { name: 'Fullhaura · AI agency', href: 'https://tristangrech.com' },
       { name: 'Geo-Front · geopolitical monitoring', href: 'https://geo-front.com' },
     ],
     legal: [

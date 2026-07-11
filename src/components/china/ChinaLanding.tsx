@@ -1197,7 +1197,7 @@ function Footer({ lang }: Props) {
               <MessageCircle className="w-5 h-5" />
             </a>
             <a
-              href="mailto:tristan@fullhaura.com"
+              href="mailto:tristangrech.nat@gmail.com"
               aria-label="Email"
               className="text-on-surface-secondary hover:text-on-surface transition-colors"
             >
