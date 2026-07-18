@@ -207,7 +207,7 @@ function JsonLd({ locale }: { locale: Locale }) {
       description:
         '4K multi-camera interviews, event coverage and podcast production with broadcast audio, colour grading and subtitles. Studio in Nice, on location anywhere. Cannes Lions 2026 event coverage delivered overnight.',
       provider: { '@id': `${BASE_URL}/#business` },
-      areaServed: ['Nice', 'Cannes', 'Monaco', 'French Riviera', 'On location worldwide'],
+      areaServed: ['Nice', 'Cannes', 'Monaco', 'French Riviera', 'Almaty', 'Astana', 'On location worldwide'],
     },
   ];
 
@@ -252,6 +252,7 @@ function JsonLd({ locale }: { locale: Locale }) {
           site.whatsapp,
           site.telegram,
           'https://studionicepodcast.com',
+          'https://almatypodcast.com',
           'https://fullhaura-services.com',
           'https://sumera.io',
           'https://www.fullink.io',
@@ -302,7 +303,7 @@ function JsonLd({ locale }: { locale: Locale }) {
             itemOffered: s,
           })),
         },
-        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://fullhaura-services.com'],
+        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://almatypodcast.com', 'https://fullhaura-services.com'],
       },
       {
         '@type': 'WebSite',

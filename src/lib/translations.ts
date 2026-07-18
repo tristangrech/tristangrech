@@ -45,7 +45,7 @@ const translationsData = {
     proof: [
       { value: '17', label: 'finished edits delivered overnight at Cannes Lions 2026' },
       { value: '24h', label: 'from interview shoot to delivered, subtitled episode' },
-      { value: '5', label: 'sites live in production right now, all linked below' },
+      { value: '6', label: 'sites live in production right now, all linked below' },
       { value: '3', label: 'working languages: French, English, Russian' },
     ],
     services: {
@@ -153,11 +153,12 @@ const translationsData = {
     liveSites: {
       scene: 'SCENE 04',
       label: 'LIVE SITES',
-      title: 'Five sites you can open right now.',
+      title: 'Six sites you can open right now.',
       sub: 'Every one is in production today. Click and check.',
       status: 'LIVE',
       sites: [
         { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Video podcast studio in Nice with end-to-end online booking' },
+        { name: 'almatypodcast.com', url: 'https://almatypodcast.com', desc: 'On-location podcast recording in Almaty, the Kazakh sister of the Nice studio' },
         { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Trilingual concierge brand for the Saint-Tropez peninsula' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'AI YouTube script generator, a SaaS with live Stripe billing' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Link-in-bio platform for creators: themes, analytics, Stripe payments' },
@@ -345,7 +346,7 @@ const translationsData = {
     proof: [
       { value: '17', label: 'montages finalisés livrés en une nuit aux Cannes Lions 2026' },
       { value: '24h', label: 'entre le tournage d\'une interview et la livraison de l\'épisode sous-titré' },
-      { value: '5', label: 'sites en production en ce moment, tous accessibles plus bas' },
+      { value: '6', label: 'sites en production en ce moment, tous accessibles plus bas' },
       { value: '3', label: 'langues de travail : français, anglais, russe' },
     ],
     services: {
@@ -453,11 +454,12 @@ const translationsData = {
     liveSites: {
       scene: 'SCÈNE 04',
       label: 'SITES EN LIGNE',
-      title: 'Cinq sites à ouvrir tout de suite.',
+      title: 'Six sites à ouvrir tout de suite.',
       sub: 'Tous en production aujourd\'hui. Cliquez et vérifiez.',
       status: 'LIVE',
       sites: [
         { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Studio de podcast vidéo à Nice avec réservation en ligne de bout en bout' },
+        { name: 'almatypodcast.com', url: 'https://almatypodcast.com', desc: 'Enregistrement de podcasts en déplacement à Almaty, petit frère kazakh du studio niçois' },
         { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Marque de conciergerie trilingue pour la presqu\'île de Saint-Tropez' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'Générateur de scripts YouTube par IA, un SaaS avec facturation Stripe active' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Plateforme link-in-bio pour créateurs : thèmes, statistiques, paiements Stripe' },
@@ -645,7 +647,7 @@ const translationsData = {
     proof: [
       { value: '17', label: 'готовых монтажей сдано за одну ночь на Cannes Lions 2026' },
       { value: '24ч', label: 'от съёмки интервью до сдачи серии с субтитрами' },
-      { value: '5', label: 'сайтов в продакшене прямо сейчас, все по ссылкам ниже' },
+      { value: '6', label: 'сайтов в продакшене прямо сейчас, все по ссылкам ниже' },
       { value: '3', label: 'рабочих языка: французский, английский, русский' },
     ],
     services: {
@@ -753,11 +755,12 @@ const translationsData = {
     liveSites: {
       scene: 'СЦЕНА 04',
       label: 'ЖИВЫЕ САЙТЫ',
-      title: 'Пять сайтов, которые можно открыть прямо сейчас.',
+      title: 'Шесть сайтов, которые можно открыть прямо сейчас.',
       sub: 'Все в продакшене сегодня. Кликните и проверьте.',
       status: 'LIVE',
       sites: [
         { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Студия видеоподкастов в Ницце с полным онлайн-бронированием' },
+        { name: 'almatypodcast.com', url: 'https://almatypodcast.com', desc: 'Выездная запись подкастов в Алматы, казахстанский брат студии в Ницце' },
         { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Трёхъязычный консьерж-бренд полуострова Сен-Тропе' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'ИИ-генератор сценариев для YouTube, SaaS с работающим биллингом Stripe' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Link-in-bio платформа для авторов: темы, аналитика, платежи Stripe' },
