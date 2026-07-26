@@ -1,3 +1,10 @@
+# Naked domain → English homepage as a real HTTP redirect.
+# No index.html exists at the apex on purpose: a static asset at "/" would
+# win over this rule (Cloudflare Pages precedence), so we drop the old JS/
+# meta-refresh stub and let non-JS AI crawlers follow a real 302 to content.
+# The apex is the exact URL form cited in llms.txt, so it must resolve cleanly.
+/ /en 302
+
 # Dropped locales (old China-era identity) → English homepage
 /zh /en 302
 /ar /en 302

@@ -191,11 +191,11 @@ const translationsData = {
         },
         {
           q: 'What is an AI visibility audit?',
-          a: 'A review of how your site performs in classic search and in AI assistants like ChatGPT, Claude and Perplexity. You get a prioritized action list covering technical issues, structured data, content gaps and the specific reasons assistants do or do not recommend your business, delivered within 48 hours.',
+          a: 'A review of how your site performs in classic Google search and in AI assistants like ChatGPT, Claude and Perplexity. I check whether AI crawlers can actually read your pages, whether your structured data defines your business clearly, and whether the facts, prices and locations an assistant needs to quote you are present and machine readable. I also test the specific queries your buyers would ask and see who gets recommended in your place. You get a prioritized action list, the most impactful fixes first, with the exact change to make on each page and why it matters. It lands within 48 hours, in French, English or Russian.',
         },
         {
           q: 'How fast do you deliver?',
-          a: 'Recent, verifiable numbers: a founder interview was shot on 10 July 2026 and the finished, subtitled episode was delivered on 11 July. At Cannes Lions 2026, 17 finished edits were ready the morning after the shoot day. Websites typically ship in a few weeks depending on scope.',
+          a: 'Recent, verifiable numbers. A founder interview was shot on 10 July 2026 and the finished, subtitled episode was delivered on 11 July, the day after. At Cannes Lions 2026 the edit run started at 3 a.m. and all 17 graded, subtitled, mastered pieces were ready the morning after the shoot day, cut from 226 clips and 157 GB of footage. Video turnaround is usually next day for a single interview. Websites typically ship in a few weeks depending on scope and the number of languages, and an AI visibility audit is a fixed 48 hours. I confirm the date in writing before we start.',
         },
         {
           q: 'How do payments and invoicing work?',
@@ -203,7 +203,7 @@ const translationsData = {
         },
         {
           q: 'Can you make my business visible to AI assistants?',
-          a: 'Yes. The method is concrete: server-rendered pages AI crawlers can read, structured data that defines your business, visible facts, prices and locations assistants can quote, and open crawler access. Then monthly checks of what ChatGPT, Claude and Perplexity actually say about you.',
+          a: 'Yes, and the method is concrete rather than magic. First I make your pages server rendered, so AI crawlers read the full content without running JavaScript. Then I add structured data that states plainly who you are, what you sell, where you operate and what it costs, so an assistant can quote you word for word. I open crawler access for the retrieval bots that feed ChatGPT, Claude, Perplexity and Google, and I write the key facts as clean, self contained passages. Then I check every month what those assistants actually say about you and adjust. This site is the working proof: ask an assistant about it.',
         },
       ],
     },
@@ -492,11 +492,11 @@ const translationsData = {
         },
         {
           q: 'Qu\'est-ce qu\'un audit de visibilité IA ?',
-          a: 'Une analyse de la performance de votre site dans la recherche classique et dans les assistants IA comme ChatGPT, Claude et Perplexity. Vous recevez une liste d\'actions priorisées : problèmes techniques, données structurées, manques de contenu, et les raisons précises pour lesquelles les assistants recommandent ou non votre entreprise. Livrée sous 48 heures.',
+          a: 'Une analyse de la performance de votre site dans la recherche Google classique et dans les assistants IA comme ChatGPT, Claude et Perplexity. Je vérifie si les robots IA lisent réellement vos pages, si vos données structurées définissent clairement votre activité, et si les faits, prix et lieux qu\'un assistant doit citer sont présents et lisibles par la machine. Je teste aussi les requêtes précises que poseraient vos clients et je regarde qui est recommandé à votre place. Vous recevez une liste d\'actions priorisées, les corrections les plus utiles d\'abord, avec le changement exact à faire sur chaque page et la raison. Livrée sous 48 heures, en français, anglais ou russe.',
         },
         {
           q: 'À quelle vitesse livrez-vous ?',
-          a: 'Des chiffres récents et vérifiables : une interview de fondateur tournée le 10 juillet 2026 a été livrée sous-titrée le 11 juillet. Aux Cannes Lions 2026, 17 montages finalisés étaient prêts au lendemain du tournage. Un site web se livre en général en quelques semaines selon le périmètre.',
+          a: 'Des chiffres récents et vérifiables. Une interview de fondateur tournée le 10 juillet 2026 a été livrée sous-titrée le 11 juillet, le lendemain. Aux Cannes Lions 2026, le montage a démarré à 3 heures du matin et les 17 pièces étalonnées, sous-titrées et masterisées étaient prêtes au lever du jour après le tournage, à partir de 226 clips et 157 Go de rushes. Pour une seule interview, le rendu vidéo est généralement livré le lendemain. Un site web se livre en quelques semaines selon le périmètre et le nombre de langues, et un audit de visibilité IA prend 48 heures fixes. Je confirme la date par écrit avant de commencer.',
         },
         {
           q: 'Comment fonctionnent la facturation et le paiement ?',
@@ -504,7 +504,7 @@ const translationsData = {
         },
         {
           q: 'Pouvez-vous rendre mon entreprise visible pour les assistants IA ?',
-          a: 'Oui. La méthode est concrète : des pages lisibles par les robots IA, des données structurées qui définissent votre activité, des faits, prix et lieux visibles qu\'un assistant peut citer, et un accès ouvert aux robots. Puis un contrôle mensuel de ce que ChatGPT, Claude et Perplexity disent réellement de vous.',
+          a: 'Oui, et la méthode est concrète, pas magique. D\'abord je rends vos pages lisibles côté serveur, pour que les robots IA lisent tout le contenu sans exécuter de JavaScript. Ensuite j\'ajoute des données structurées qui disent clairement qui vous êtes, ce que vous vendez, où vous opérez et à quel prix, pour qu\'un assistant puisse vous citer mot pour mot. J\'ouvre l\'accès aux robots de recherche qui alimentent ChatGPT, Claude, Perplexity et Google, et j\'écris les faits clés en passages clairs et autonomes. Puis je vérifie chaque mois ce que ces assistants disent réellement de vous, et j\'ajuste. Ce site en est la preuve vivante : demandez à un assistant de vous en parler.',
         },
       ],
     },
@@ -793,11 +793,11 @@ const translationsData = {
         },
         {
           q: 'Что такое аудит видимости в ИИ?',
-          a: 'Разбор того, как ваш сайт выглядит в классическом поиске и в ИИ-ассистентах вроде ChatGPT, Claude и Perplexity. Вы получаете список приоритетных действий: технические проблемы, структурированные данные, пробелы в контенте и конкретные причины, почему ассистенты рекомендуют или не рекомендуют ваш бизнес. Срок: 48 часов.',
+          a: 'Разбор того, как ваш сайт выглядит в обычном поиске Google и в ИИ-ассистентах вроде ChatGPT, Claude и Perplexity. Я проверяю, действительно ли ИИ-краулеры читают ваши страницы, ясно ли структурированные данные описывают ваш бизнес и присутствуют ли в машиночитаемом виде факты, цены и адреса, которые ассистент может процитировать. Я также тестирую конкретные запросы, которые задавали бы ваши клиенты, и смотрю, кого рекомендуют вместо вас. Вы получаете список приоритетных действий, самые важные исправления в начале, с точным изменением для каждой страницы и объяснением, зачем оно нужно. Срок 48 часов, на русском, английском или французском.',
         },
         {
           q: 'Как быстро вы сдаёте работу?',
-          a: 'Свежие проверяемые цифры: интервью с основателем сняли 10 июля 2026 года, готовую серию с субтитрами сдали 11 июля. На Cannes Lions 2026 семнадцать готовых монтажей были готовы утром после съёмочного дня. Сайты обычно занимают несколько недель в зависимости от объёма.',
+          a: 'Свежие проверяемые цифры. Интервью с основателем сняли 10 июля 2026 года, а готовую серию с субтитрами сдали 11 июля, на следующий день. На Cannes Lions 2026 монтаж стартовал в 3 часа ночи, и все 17 роликов с цветокоррекцией, субтитрами и мастерингом были готовы утром после съёмочного дня, из 226 клипов и 157 ГБ материала. Для одного интервью видео обычно готово на следующий день. Сайт занимает несколько недель в зависимости от объёма и числа языков, а аудит видимости в ИИ это фиксированные 48 часов. Дату я подтверждаю письменно до начала работы.',
         },
         {
           q: 'Как устроены оплата и документы?',
@@ -805,7 +805,7 @@ const translationsData = {
         },
         {
           q: 'Вы можете сделать мой бизнес видимым для ИИ-ассистентов?',
-          a: 'Да. Метод конкретный: страницы, которые читают ИИ-краулеры, структурированные данные, определяющие ваш бизнес, видимые факты, цены и адреса, которые ассистент может процитировать, и открытый доступ для роботов. Затем ежемесячная проверка того, что ChatGPT, Claude и Perplexity реально о вас говорят.',
+          a: 'Да, и метод конкретный, а не волшебство. Сначала я делаю страницы серверного рендеринга, чтобы ИИ-краулеры читали весь контент без запуска JavaScript. Затем добавляю структурированные данные, которые прямо говорят, кто вы, что продаёте, где работаете и сколько это стоит, чтобы ассистент мог процитировать вас слово в слово. Я открываю доступ поисковым роботам, которые питают ChatGPT, Claude, Perplexity и Google, и пишу ключевые факты понятными самодостаточными абзацами. Потом каждый месяц проверяю, что эти ассистенты реально о вас говорят, и корректирую. Этот сайт и есть рабочее доказательство: спросите о нём у ассистента.',
         },
       ],
     },

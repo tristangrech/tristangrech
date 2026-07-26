@@ -243,7 +243,7 @@ function JsonLd({ locale }: { locale: Locale }) {
           'Podcast production',
           'Stripe payment integration',
         ],
-        alumniOf: {
+        memberOf: {
           '@type': 'SportsTeam',
           name: 'French National Swimming Team',
         },
