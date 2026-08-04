@@ -361,6 +361,7 @@ function JsonLd({ locale }: { locale: Locale }) {
           { '@type': 'WebSite', position: 5, name: 'Almaty Podcast', url: 'https://almatypodcast.com', description: 'Podcast studio in Almaty, in three languages.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 6, name: 'Polytaipe', url: 'https://polytaipe.com', description: 'Typing trainer for any keyboard layout.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 7, name: 'Fullhaura Services', url: 'https://fullhaura-services.com', description: 'Trilingual private concierge on the French Riviera.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 8, name: 'Source Canton', url: 'https://sourcecanton.com', description: 'Guided China sourcing trips and buying across Guangzhou, Foshan and Shenzhen.', creator: { '@id': `${BASE_URL}/#person` } },
         ],
       },
       {

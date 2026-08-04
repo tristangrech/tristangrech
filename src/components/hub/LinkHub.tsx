@@ -19,6 +19,7 @@ const ICON: Record<string, ReactNode> = {
   waves: svg(<><circle cx="12" cy="12" r="2" /><path d="M8.6 8.6a5 5 0 0 0 0 6.8" /><path d="M15.4 8.6a5 5 0 0 1 0 6.8" /><path d="M6 6a9 9 0 0 0 0 12" /><path d="M18 6a9 9 0 0 1 0 12" /></>),
   keyboard: svg(<><rect x="3" y="6" width="18" height="12" rx="2" /><path d="M7 10h.01M11 10h.01M15 10h.01M8 14h8" /></>),
   bell: svg(<><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z" /><path d="M10 20a2 2 0 0 0 4 0" /></>),
+  box: svg(<><path d="M12 3l8 4v10l-8 4-8-4V7l8-4z" /><path d="M4 7l8 4 8-4" /><path d="M12 11v10" /></>),
   arrow: svg(<><path d="M7 17L17 7" /><path d="M8 7h9v9" /></>),
   whatsapp: svg(<path d="M4 20l1.4-4.1A8 8 0 1 1 8.5 18.4L4 20z" />),
   mail: svg(<><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3.5 7l8.5 6 8.5-6" /></>),
@@ -42,8 +43,10 @@ const PROJECTS: {
     desc: { fr: 'Studio de podcast à Almaty, en trois langues.', en: 'Podcast studio in Almaty, in three languages.', ru: 'Студия подкастов в Алматы, на трёх языках.' } },
   { name: 'Polytaipe', url: 'https://polytaipe.com', domain: 'polytaipe.com', tag: 'Web app', icon: 'keyboard', accent: '#818CF8',
     desc: { fr: 'Entraîneur de frappe pour toute disposition clavier.', en: 'Typing trainer for any keyboard layout.', ru: 'Тренажёр печати для любой раскладки.' } },
-  { name: 'Fullhaura Services', url: 'https://fullhaura-services.com', domain: 'fullhaura-services.com', tag: 'Conciergerie', icon: 'bell', accent: '#E3A84E', wide: true,
+  { name: 'Fullhaura Services', url: 'https://fullhaura-services.com', domain: 'fullhaura-services.com', tag: 'Conciergerie', icon: 'bell', accent: '#E3A84E',
     desc: { fr: 'Conciergerie privée sur la Côte d’Azur, trilingue.', en: 'Private concierge on the French Riviera, trilingual.', ru: 'Частный консьерж на Лазурном берегу, на трёх языках.' } },
+  { name: 'Source Canton', url: 'https://sourcecanton.com', domain: 'sourcecanton.com', tag: 'Sourcing', icon: 'box', accent: '#E11D48',
+    desc: { fr: 'Voyages de sourcing et achats accompagnés en Chine du Sud.', en: 'Guided sourcing trips and buying in South China.', ru: 'Байер-туры и закупки в Южном Китае под сопровождением.' } },
 ];
 
 const C: Record<Locale, { role: string; tagline: string; loc: string; live: string; work: string; note: string; contact: string }> = {
