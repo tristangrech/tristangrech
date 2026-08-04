@@ -65,6 +65,10 @@ const LOCALES: Locale[] = ['fr', 'en', 'ru'];
 export default function LinkHub({ locale }: { locale: Locale }) {
   const t = C[locale] ?? C.en;
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLImageElement>(null);
+  const subjRef = useRef<HTMLImageElement>(null);
+  const nameRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -104,6 +108,21 @@ export default function LinkHub({ locale }: { locale: Locale }) {
   };
   const onLeave = (e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = ''; };
 
+  const onHero = (e: React.MouseEvent<HTMLElement>) => {
+    const r = heroRef.current?.getBoundingClientRect();
+    if (!r) return;
+    const cx = (e.clientX - r.left) / r.width - 0.5;
+    const cy = (e.clientY - r.top) / r.height - 0.5;
+    if (bgRef.current) bgRef.current.style.transform = `translate3d(${cx * -16}px, ${cy * -12}px, 0) scale(1.06)`;
+    if (subjRef.current) subjRef.current.style.transform = `translate3d(${cx * 30}px, ${cy * 18}px, 0)`;
+    if (nameRef.current) nameRef.current.style.transform = `translate3d(${cx * 10}px, ${cy * 6}px, 0)`;
+  };
+  const onHeroLeave = () => {
+    if (bgRef.current) bgRef.current.style.transform = 'scale(1.06)';
+    if (subjRef.current) subjRef.current.style.transform = '';
+    if (nameRef.current) nameRef.current.style.transform = '';
+  };
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#050506] text-bone grain">
       <style dangerouslySetInnerHTML={{ __html: `
@@ -137,14 +156,25 @@ export default function LinkHub({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <header className="flex flex-col items-start py-12 md:py-16">
-          <div className="hub-in relative mb-7 h-20 w-20" style={{ animationDelay: '40ms' }}>
-            <span aria-hidden="true" className="hub-ring absolute inset-0 rounded-full" style={{ background: 'conic-gradient(from 0deg, #F23D30, #E3A84E, #5E6AD2, #F23D30)', animation: 'hubRing 8s linear infinite', opacity: 0.9 }} />
-            <span className="absolute inset-[2px] flex items-center justify-center rounded-full bg-[#0a0a0c] font-display text-2xl font-semibold text-bone">TG</span>
+        <header ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave} className="relative flex min-h-[80vh] items-center py-6">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <img ref={bgRef} src="/images/hero/hero-bg.jpg" alt="" aria-hidden="true"
+              style={{ transform: 'scale(1.06)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
+              className="absolute right-0 top-1/2 h-[118%] w-auto max-w-none -translate-y-1/2 object-cover opacity-45 sm:opacity-60" />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#050506] via-[#050506]/85 to-transparent" />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-transparent" />
+            <img ref={subjRef} src="/images/hero/hero-subject.png" alt="Tristan Grech" loading="eager"
+              style={{ transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
+              className="absolute bottom-0 right-[-8%] h-[72%] w-auto max-w-none opacity-90 drop-shadow-[0_24px_48px_rgba(0,0,0,0.65)] sm:right-[2%] sm:h-[94%] sm:opacity-100 lg:right-[8%]" />
           </div>
-          <p className="hub-in font-plex text-xs tracking-[0.25em] text-ambr" style={{ animationDelay: '90ms' }}>{t.role.toUpperCase()} · {t.loc}</p>
-          <h1 className="hub-in hub-name font-display font-semibold uppercase leading-[0.9] tracking-tight text-6xl sm:text-7xl lg:text-8xl mt-4" style={{ animationDelay: '150ms' }}>Tristan<br />Grech</h1>
-          <p className="hub-in mt-6 max-w-md text-base text-dim md:text-lg" style={{ animationDelay: '230ms' }}>{t.tagline}</p>
+          <div className="relative z-20 max-w-lg">
+            <p className="hub-in font-plex text-xs tracking-[0.25em] text-ambr" style={{ animationDelay: '60ms' }}>{t.role.toUpperCase()}</p>
+            <h1 ref={nameRef} className="hub-in hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}>Tristan<br />Grech</h1>
+            <p className="hub-in mt-5 max-w-xs text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
+            <span className="hub-in mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-plex text-[10px] tracking-[0.2em] text-dim backdrop-blur" style={{ animationDelay: '260ms' }}>
+              <span className="h-1.5 w-1.5 rounded-full bg-[#3ED07A]" style={{ boxShadow: '0 0 8px #3ED07A' }} />{t.live} · {t.loc}
+            </span>
+          </div>
         </header>
 
         <section aria-label={t.work} className="flex-1">

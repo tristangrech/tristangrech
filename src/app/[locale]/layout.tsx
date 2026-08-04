@@ -1,26 +1,28 @@
 import type { Metadata } from 'next';
-import { Unbounded, Golos_Text, IBM_Plex_Mono } from 'next/font/google';
+import { Outfit, Inter, JetBrains_Mono } from 'next/font/google';
 import { isValidLocale, defaultLocale, type Locale } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
 import { site } from '@/lib/site';
 import '../globals.css';
 
-const unbounded = Unbounded({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600', '700'],
+// Fonts reworked 2026-08-04: Outfit (display) + Inter (body) + JetBrains Mono (labels).
+// Const/variable names kept stable so Tailwind display/golos/plex classes update automatically.
+const unbounded = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-unbounded',
   display: 'swap',
 });
 
-const golos = Golos_Text({
+const golos = Inter({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-golos',
   display: 'swap',
 });
 
-const plexMono = IBM_Plex_Mono({
+const plexMono = JetBrains_Mono({
   subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '700'],
   variable: '--font-plex-mono',
   display: 'swap',
 });
