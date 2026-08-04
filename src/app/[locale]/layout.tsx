@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Outfit, Inter, JetBrains_Mono } from 'next/font/google';
 import { isValidLocale, defaultLocale, type Locale } from '@/lib/i18n';
-import { translations } from '@/lib/translations';
 import { site } from '@/lib/site';
 import '../globals.css';
 
@@ -175,7 +174,6 @@ export async function generateStaticParams() {
 
 function JsonLd({ locale }: { locale: Locale }) {
   const { title, description } = metadataByLocale[locale];
-  const t = translations[locale];
   const currentDate = new Date().toISOString().split('T')[0];
 
   const services = [
@@ -374,17 +372,6 @@ function JsonLd({ locale }: { locale: Locale }) {
             item: `${BASE_URL}/${locale}`,
           },
         ],
-      },
-      {
-        '@type': 'FAQPage',
-        mainEntity: t.faq.items.map((item) => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.a,
-          },
-        })),
       },
     ],
   };

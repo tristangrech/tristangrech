@@ -63,6 +63,23 @@ const CONTACT: { icon: string; label: string; href: string }[] = [
   { icon: 'mail', label: 'Email', href: 'mailto:tristangrech.nat@gmail.com' },
 ];
 
+const SERVICES: { title: Record<Locale, string>; desc: Record<Locale, string> }[] = [
+  { title: { fr: 'Sites web', en: 'Websites', ru: 'Сайты' },
+    desc: { fr: 'Sites multilingues avec SEO et visibilité IA intégrés dès le départ.', en: 'Multilingual sites with SEO and AI visibility built in from the start.', ru: 'Многоязычные сайты с SEO и видимостью в ИИ с самого начала.' } },
+  { title: { fr: 'Applications et réservation', en: 'Web apps and booking', ru: 'Веб-приложения и бронирование' },
+    desc: { fr: 'Paiements Stripe, synchronisation calendrier, tableaux de bord, agents IA.', en: 'Stripe payments, calendar sync, dashboards, AI agents.', ru: 'Платежи Stripe, синхронизация календаря, панели, ИИ-агенты.' } },
+  { title: { fr: 'Audit de visibilité IA', en: 'AI visibility audit', ru: 'Аудит видимости в ИИ' },
+    desc: { fr: 'Pourquoi les assistants IA ne vous citent pas, et quoi corriger, sous 48 heures.', en: 'Why AI assistants skip you, and exactly what to fix, within 48 hours.', ru: 'Почему ИИ вас не упоминает и что именно исправить, за 48 часов.' } },
+  { title: { fr: 'Vidéo et podcast', en: 'Video and podcast', ru: 'Видео и подкасты' },
+    desc: { fr: 'Interviews 4K, événements, podcasts. Studio à Nice, tournage partout.', en: '4K interviews, events, podcasts. Studio in Nice, on location anywhere.', ru: 'Интервью 4K, съёмки, подкасты. Студия в Ницце, выезд куда угодно.' } },
+];
+
+const SERVICES_TEXT: Record<Locale, { title: string; intro: string }> = {
+  fr: { title: 'Ce que je fais', intro: 'Je conçois et je construis les sites, applications et vidéos derrière ces projets. Ouvert à quelques missions choisies.' },
+  en: { title: 'What I do', intro: 'I design and build the sites, apps and video behind these projects. Open to a few select projects.' },
+  ru: { title: 'Чем я занимаюсь', intro: 'Я проектирую и создаю сайты, приложения и видео за этими проектами. Открыт для отдельных проектов.' },
+};
+
 const LOCALES: Locale[] = ['fr', 'en', 'ru'];
 
 export default function LinkHub({ locale }: { locale: Locale }) {
@@ -222,6 +239,21 @@ export default function LinkHub({ locale }: { locale: Locale }) {
                 <p className="relative mt-2 text-[15px] leading-relaxed text-dim">{p.desc[locale] ?? p.desc.en}</p>
                 <span className="relative mt-5 font-plex text-[11px] text-dim/70 transition-colors group-hover:text-bone">{p.domain}</span>
               </a>
+            ))}
+          </div>
+        </section>
+
+        <section aria-label={SERVICES_TEXT[locale]?.title ?? SERVICES_TEXT.en.title} className="hub-in mt-16" style={{ animationDelay: '840ms' }}>
+          <div className="mb-6 border-b border-white/10 pb-3">
+            <h2 className="font-display text-xl font-semibold text-bone/90">{SERVICES_TEXT[locale]?.title ?? SERVICES_TEXT.en.title}</h2>
+          </div>
+          <p className="max-w-2xl text-base leading-relaxed text-dim md:text-lg">{SERVICES_TEXT[locale]?.intro ?? SERVICES_TEXT.en.intro}</p>
+          <div className="mt-7 grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
+            {SERVICES.map((s, i) => (
+              <div key={i} className="border-t border-white/[0.07] pt-4">
+                <h3 className="text-base font-semibold text-bone">{s.title[locale] ?? s.title.en}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-dim">{s.desc[locale] ?? s.desc.en}</p>
+              </div>
             ))}
           </div>
         </section>
