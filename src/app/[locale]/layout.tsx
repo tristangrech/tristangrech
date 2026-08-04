@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Outfit, Inter, JetBrains_Mono } from 'next/font/google';
+import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
 import { isValidLocale, defaultLocale, type Locale } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
 import { site } from '@/lib/site';
@@ -7,9 +7,10 @@ import '../globals.css';
 
 // Fonts reworked 2026-08-04: Outfit (display) + Inter (body) + JetBrains Mono (labels).
 // Const/variable names kept stable so Tailwind display/golos/plex classes update automatically.
-const unbounded = Outfit({
+const unbounded = Instrument_Serif({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
   variable: '--font-unbounded',
   display: 'swap',
 });

@@ -105,10 +105,11 @@ export default function LinkHub({ locale }: { locale: Locale }) {
     let listening = false;
     const onOrient = (e: DeviceOrientationEvent) => {
       if (e.gamma == null || e.beta == null) return;
-      const gx = Math.max(-1, Math.min(1, e.gamma / 28));
-      const gy = Math.max(-1, Math.min(1, (e.beta - 45) / 28));
-      if (bgRef.current) bgRef.current.style.transform = `translate3d(${gx * -14}px, ${gy * -10}px, 0) scale(1.08)`;
-      if (subjRef.current) subjRef.current.style.transform = `translate3d(calc(-50% + ${gx * 24}px), ${gy * 16}px, 0)`;
+      const gx = Math.max(-1, Math.min(1, e.gamma / 30));
+      // Vertical (front/back tilt) kept small: too much made the subject float and reveal edges.
+      const gy = Math.max(-1, Math.min(1, (e.beta - 45) / 34));
+      if (bgRef.current) bgRef.current.style.transform = `translate3d(${gx * -12}px, ${gy * -4}px, 0) scale(1.08)`;
+      if (subjRef.current) subjRef.current.style.transform = `translate3d(calc(-50% + ${gx * 18}px), ${gy * 6}px, 0)`;
     };
     const start = () => { if (!listening) { listening = true; window.addEventListener('deviceorientation', onOrient); } };
     const DOE = window.DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> } | undefined;
@@ -173,25 +174,18 @@ export default function LinkHub({ locale }: { locale: Locale }) {
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col px-5 py-8 md:px-8 md:py-12">
         <div className="hub-in flex items-center justify-between">
-          <span className="font-plex text-xs tracking-[0.25em] text-dim">TRISTAN GRECH</span>
-          <div className="flex items-center gap-5">
-            <span className="flex items-center gap-2 font-plex text-[10px] tracking-[0.2em] text-dim">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#3ED07A]" style={{ boxShadow: '0 0 8px #3ED07A' }} />{t.live}
-            </span>
-            <nav className="flex items-center gap-2 font-plex text-[11px]">
-              {LOCALES.map((l) => (<a key={l} href={`/${l}`} className={`uppercase transition-colors ${l === locale ? 'text-ambr' : 'text-dim hover:text-bone'}`}>{l}</a>))}
-            </nav>
-          </div>
+          <span className="font-display text-xl italic text-bone/90">Tristan Grech</span>
+          <nav className="flex items-center gap-3 text-[13px] uppercase text-dim">
+            {LOCALES.map((l) => (<a key={l} href={`/${l}`} className={`transition-colors ${l === locale ? 'text-bone' : 'hover:text-bone'}`}>{l}</a>))}
+          </nav>
         </div>
 
         <header className="relative grid min-h-[84svh] grid-cols-1 items-center gap-8 py-6 lg:min-h-[78svh] lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative z-10 order-2 lg:order-1">
-            <p className="hub-in font-plex text-xs tracking-[0.25em] text-ambr" style={{ animationDelay: '60ms' }}>{t.role.toUpperCase()}</p>
-            <h1 className="hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
-            <p className="hub-in mt-5 max-w-sm text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
-            <span className="hub-in mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-plex text-[10px] tracking-[0.2em] text-dim backdrop-blur" style={{ animationDelay: '260ms' }}>
-              <span className="h-1.5 w-1.5 rounded-full bg-[#3ED07A]" style={{ boxShadow: '0 0 8px #3ED07A' }} />{t.live} · {t.loc}
-            </span>
+            <p className="hub-in text-sm text-ambr/90" style={{ animationDelay: '60ms' }}>{t.role}</p>
+            <h1 className="hub-in font-display text-7xl leading-[0.95] tracking-tight text-bone mt-3 sm:text-8xl lg:text-[7.5rem]" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
+            <p className="hub-in mt-6 max-w-sm text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
+            <p className="hub-in mt-5 text-sm text-dim/70" style={{ animationDelay: '260ms' }}>{t.loc}</p>
           </div>
           <div ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave}
             className="hub-in order-1 relative mx-auto aspect-[3/4] w-full max-w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:order-2 lg:max-w-none lg:aspect-[4/5]"
@@ -207,9 +201,9 @@ export default function LinkHub({ locale }: { locale: Locale }) {
         </header>
 
         <section aria-label={t.work} className="flex-1">
-          <div className="hub-in mb-5 flex items-baseline justify-between border-b border-white/10 pb-3" style={{ animationDelay: '270ms' }}>
-            <h2 className="font-plex text-xs tracking-[0.25em] text-dim">{t.work.toUpperCase()}</h2>
-            <span className="hidden font-plex text-[11px] text-dim sm:block">{t.note}</span>
+          <div className="hub-in mb-6 flex items-baseline justify-between border-b border-white/10 pb-3" style={{ animationDelay: '270ms' }}>
+            <h2 className="font-display text-2xl italic text-bone/90">{t.work}</h2>
+            <span className="hidden text-[13px] text-dim/70 sm:block">{t.note}</span>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {PROJECTS.map((p, i) => (
@@ -221,20 +215,17 @@ export default function LinkHub({ locale }: { locale: Locale }) {
                   <span className="hub-icon flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] p-2.5 text-dim transition-all duration-300">{ICON[p.icon]}</span>
                   <span aria-hidden="true" className="h-4 w-4 text-dim transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-bone">{ICON.arrow}</span>
                 </div>
-                <div className="relative mt-5 flex items-center gap-2">
-                  <span className="font-plex text-[10px] tracking-[0.2em]" style={{ color: p.accent }}>{String(i + 1).padStart(2, '0')}</span>
-                  <span className="font-plex text-[10px] tracking-[0.2em] text-dim">{p.tag}</span>
-                </div>
-                <h3 className="relative mt-1.5 font-display text-xl font-medium uppercase tracking-tight text-bone md:text-2xl">{p.name}</h3>
+                <span className="relative mt-5 text-xs font-medium" style={{ color: p.accent }}>{p.tag}</span>
+                <h3 className="relative mt-1.5 text-xl font-semibold tracking-tight text-bone md:text-2xl">{p.name}</h3>
                 <p className="relative mt-2 text-[15px] leading-relaxed text-dim">{p.desc[locale] ?? p.desc.en}</p>
-                <span className="relative mt-5 font-plex text-[11px] text-dim/80 transition-colors group-hover:text-bone">{p.domain}</span>
+                <span className="relative mt-5 font-plex text-[11px] text-dim/70 transition-colors group-hover:text-bone">{p.domain}</span>
               </a>
             ))}
           </div>
         </section>
 
         <footer className="hub-in mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between" style={{ animationDelay: '880ms' }}>
-          <span className="font-plex text-[11px] tracking-[0.15em] text-dim">{t.contact.toUpperCase()}</span>
+          <span className="font-display text-lg italic text-bone/80">{t.contact}</span>
           <div className="flex flex-wrap items-center gap-2.5">
             {CONTACT.map((c) => (
               <a key={c.label} href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" aria-label={c.label} title={c.label}
