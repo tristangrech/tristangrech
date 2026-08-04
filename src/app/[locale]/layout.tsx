@@ -350,46 +350,15 @@ function JsonLd({ locale }: { locale: Locale }) {
       {
         '@type': 'ItemList',
         '@id': `${BASE_URL}/#portfolio`,
-        name: 'Selected work',
+        name: 'Live projects',
         itemListElement: [
-          {
-            '@type': 'CreativeWork',
-            position: 1,
-            name: 'Studio Nice Podcast, studio and booking platform',
-            url: 'https://studionicepodcast.com',
-            description:
-              'A real 4K video podcast studio in Nice with a self-built booking platform: Next.js, FastAPI, Stripe Checkout, Google Calendar sync, 18 SEO service pages in English and French.',
-            dateCreated: '2026',
-            creator: { '@id': `${BASE_URL}/#person` },
-          },
-          {
-            '@type': 'CreativeWork',
-            position: 2,
-            name: 'Halo AI at Cannes Lions 2026, event interview coverage',
-            description:
-              'Event interview coverage at Cannes Lions 2026 for Halo AI: 226 clips shot in one day, 17 graded and subtitled edits delivered overnight in horizontal and vertical formats.',
-            dateCreated: '2026-06-25',
-            creator: { '@id': `${BASE_URL}/#person` },
-          },
-          {
-            '@type': 'CreativeWork',
-            position: 3,
-            name: 'Business Future, episode one interview production',
-            description:
-              'Launch episode for a business YouTube channel: two-camera 4K 50p on-location shoot, 35-minute graded master with word-level subtitles, delivered the day after the shoot.',
-            dateCreated: '2026-07-10',
-            creator: { '@id': `${BASE_URL}/#person` },
-          },
-          {
-            '@type': 'CreativeWork',
-            position: 4,
-            name: 'Fullhaura concierge, trilingual brand site',
-            url: 'https://fullhaura-services.com',
-            description:
-              'Trilingual (French, English, Russian) marketing site for a Saint-Tropez concierge brand: 8 service and 8 location pages with Service, FAQ and Breadcrumb structured data, custom illustration set, Next.js 15.',
-            dateCreated: '2026',
-            creator: { '@id': `${BASE_URL}/#person` },
-          },
+          { '@type': 'WebSite', position: 1, name: 'Sumera', url: 'https://sumera.io', description: 'AI YouTube script generator with live Stripe billing.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 2, name: 'Fullink', url: 'https://www.fullink.io', description: 'Link in bio platform for creators.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 3, name: 'Feu France', url: 'https://feufrance.fr', description: 'Live wildfire map and alerts for France.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 4, name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', description: '4K video podcast studio in Nice with online booking.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 5, name: 'Almaty Podcast', url: 'https://almatypodcast.com', description: 'Podcast studio in Almaty, in three languages.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 6, name: 'Polytaipe', url: 'https://polytaipe.com', description: 'Typing trainer for any keyboard layout.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 7, name: 'Fullhaura Services', url: 'https://fullhaura-services.com', description: 'Trilingual private concierge on the French Riviera.', creator: { '@id': `${BASE_URL}/#person` } },
         ],
       },
       {

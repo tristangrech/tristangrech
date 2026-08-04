@@ -27,9 +27,7 @@ export const PARTNER_LABEL_FR = 'Associé franco-chinois';
 export const PARTNER_LABEL_EN = 'Franco-Chinese partner';
 export const PARTNER_PHOTO = '/images/china/partner.jpg'; // falls back to gradient initial in UI
 
-// First-trip month placeholder (urgency copy) — replace with real month.
-export const FIRST_TRIP_MONTH_FR = '{FIRST_TRIP_MONTH_FR}';
-export const FIRST_TRIP_MONTH_EN = '{FIRST_TRIP_MONTH_EN}';
+// (First-trip-month placeholders removed — cohort dates are set on the call.)
 
 export interface TierCopy {
   id: 'discovery' | 'builder' | 'full';
@@ -193,7 +191,7 @@ export interface ChinaDict {
 
 const fr: ChinaDict = {
   meta: {
-    title: 'Venez en Chine avec un Français qui y vit | Tristan Grech',
+    title: 'Venez en Chine avec un Français qui connaît le terrain | Tristan Grech',
     description:
       'Voyages business guidés à Guangzhou, Foshan, Shenzhen pour entrepreneurs français. Un Français sur place, un associé franco-chinois natif.',
   },
@@ -206,7 +204,7 @@ const fr: ChinaDict = {
   },
   hero: {
     badge: 'Nouvelles dates ouvertes. Places limitées.',
-    headline1: 'Venez en Chine avec un Français qui y vit.',
+    headline1: 'Venez en Chine avec un Français qui connaît le terrain.',
     headline2: 'Repartez avec vos fournisseurs.',
     subhead:
       'Voyages guidés de 3 à 7 jours entre Guangzhou, Foshan et Shenzhen. Un Français sur place, un associé bilingue français-chinois. Marchés, usines, négociation en direct.',
@@ -215,7 +213,7 @@ const fr: ChinaDict = {
     credentials: [
       'Équipe 100% bilingue',
       'Français · Chinois · Anglais',
-      '4 ans à Guangzhou',
+      'Négociateur natif sur place',
       'Accompagnement quotidien',
     ],
   },
@@ -223,7 +221,7 @@ const fr: ChinaDict = {
     eyebrow: 'Ce qui nous rend uniques',
     title: 'Un Français de confiance + un natif chinois. La combinaison que les autres programmes n\'offrent pas.',
     body:
-      'Les autres programmes te donnent soit un Français qui fait des tours touristiques, soit un agent de sourcing chinois qui travaille pour la commission. Nous, tu as les deux à ta table : un Français installé ici pour te rassurer et t\'expliquer les codes, et un associé franco-chinois qui négocie en mandarin natif avec les patrons d\'usine. Tu n\'es jamais celui qui parle "à l\'aveugle".',
+      'Les autres programmes te donnent soit un Français qui fait des tours touristiques, soit un agent de sourcing chinois qui travaille pour la commission. Nous, tu as les deux à ta table : un Français qui connaît les codes et fait le voyage avec toi pour te les expliquer, et un associé franco-chinois qui négocie en mandarin natif avec les patrons d\'usine. Tu n\'es jamais celui qui parle "à l\'aveugle".',
     stats: [
       { value: '2', label: 'Associés sur place' },
       { value: '4', label: 'Langues parlées' },
@@ -257,14 +255,14 @@ const fr: ChinaDict = {
     members: [
       {
         name: 'Tristan Grech',
-        role: 'Français · Guangzhou · Fondateur',
+        role: 'Français · Fondateur · Chef de voyage',
         photo: '/images/china/portrait.jpg',
         fallbackInitial: 'T',
         bullets: [
-          'Français installé à Guangzhou',
+          'Français, il conduit chaque voyage en personne',
           'Français, anglais, portugais, russe',
-          'Fondateur de Fullhaura (agence IA & web)',
-          '4 ans en Asie, réseau business sur place',
+          'Fondateur de Fullhaura, studio web & vidéo à Nice',
+          'Réseau d\'usines et d\'agents dans le delta de la rivière des Perles',
         ],
       },
       {
@@ -495,7 +493,7 @@ const fr: ChinaDict = {
     eyebrow: 'Early-bird',
     title: 'Les 5 premières places : -30% contre un témoignage vidéo complet.',
     earlyBird:
-      'On lance ce programme officiellement ce mois-ci. Les 5 premiers entrepreneurs qui partent avec nous bénéficient de -30% sur la formule de leur choix, en échange d\'un témoignage vidéo filmé pendant le voyage.',
+      'On ouvre les premières sessions maintenant. Les 5 premiers entrepreneurs qui partent avec nous bénéficient de -30% sur la formule de leur choix, en échange d\'un témoignage vidéo filmé pendant le voyage.',
     gallery: [
       { src: '/images/china/negotiation.jpg', alt: 'Rencontre avec un patron d\'usine chinois' },
       { src: '/images/china/foshan.jpg', alt: 'Usine de meuble à Foshan' },
@@ -506,7 +504,7 @@ const fr: ChinaDict = {
     ],
   },
   finalCta: {
-    title: 'Une seule question : tu veux faire ça seul, ou avec deux associés installés sur place ?',
+    title: 'Une seule question : tu veux faire ça seul, ou avec deux opérateurs qui font le voyage avec toi ?',
     subtitle: '20 minutes au téléphone. Tu nous racontes ton projet, on te dit si on peut aider.',
     cta: 'Réserver mon appel découverte',
   },
@@ -515,11 +513,11 @@ const fr: ChinaDict = {
     cta: 'Réserver un appel',
   },
   footer: {
-    tagline: 'Deux associés à Guangzhou. On accompagne les entrepreneurs français en Chine.',
+    tagline: 'On emmène les entrepreneurs européens dans le triangle manufacturier de Chine du Sud.',
     otherVentures: 'Nos autres projets',
     ventures: [
-      { name: 'Fullhaura · agence IA', href: 'https://tristangrech.com' },
-      { name: 'Geo-Front · monitoring géopolitique', href: 'https://geo-front.com' },
+      { name: 'Tristan Grech · studio web & vidéo', href: 'https://tristangrech.com' },
+      { name: 'Studio Nice Podcast', href: 'https://studionicepodcast.com' },
     ],
     legal: [
       { label: 'Mentions légales', href: '/legal' },
@@ -531,7 +529,7 @@ const fr: ChinaDict = {
 
 const en: ChinaDict = {
   meta: {
-    title: 'China business trips with a Frenchman who lives here',
+    title: 'China buying trips led by a Frenchman who knows the ground',
     description:
       'Guided 3 to 7-day trips to Guangzhou, Foshan, Shenzhen. A Frenchman on the ground plus a native Franco-Chinese partner. Leave with suppliers.',
   },
@@ -544,7 +542,7 @@ const en: ChinaDict = {
   },
   hero: {
     badge: 'New dates open. Limited spots.',
-    headline1: 'Come to China with a Frenchman who lives here.',
+    headline1: 'Come to China with a Frenchman who knows the ground.',
     headline2: 'Leave with your suppliers.',
     subhead:
       'Guided 3 to 7-day trips across Guangzhou, Foshan and Shenzhen. A Frenchman on the ground plus a native French-Chinese partner. Markets, factories, live negotiation.',
@@ -553,7 +551,7 @@ const en: ChinaDict = {
     credentials: [
       '100% bilingual team',
       'French · Chinese · English',
-      '4 years in Guangzhou',
+      'Native negotiator on the ground',
       'Daily on-the-ground support',
     ],
   },
@@ -561,7 +559,7 @@ const en: ChinaDict = {
     eyebrow: 'What makes us different',
     title: 'A French friend you trust + a native Chinese negotiator. A combination other programs don\'t offer.',
     body:
-      'Other programs give you either a Frenchman running tourist tours, or a Chinese sourcing agent working for hidden commissions. With us you get both at your table: a Frenchman based here to reassure you and explain the codes, plus a Franco-Chinese partner who negotiates with factory owners in native Mandarin. You\'re never the one guessing in the dark.',
+      'Other programs give you either a Frenchman running tourist tours, or a Chinese sourcing agent working for hidden commissions. With us you get both at your table: a Frenchman who knows the codes and travels with you to explain them, plus a Franco-Chinese partner who negotiates with factory owners in native Mandarin. You\'re never the one guessing in the dark.',
     stats: [
       { value: '2', label: 'Partners on the ground' },
       { value: '4', label: 'Languages spoken' },
@@ -595,14 +593,14 @@ const en: ChinaDict = {
     members: [
       {
         name: 'Tristan Grech',
-        role: 'Frenchman · Guangzhou · Founder',
+        role: 'French · Founder · Trip lead',
         photo: '/images/china/portrait.jpg',
         fallbackInitial: 'T',
         bullets: [
-          'French national living in Guangzhou',
+          'French, leads every trip in person',
           'French, English, Portuguese, Russian',
-          'Founder of Fullhaura (AI & web agency)',
-          '4 years in Asia, direct business network',
+          'Founder of Fullhaura, web & video studio in Nice',
+          'Factory and agent network across the Pearl River Delta',
         ],
       },
       {
@@ -832,7 +830,7 @@ const en: ChinaDict = {
     eyebrow: 'Early-bird',
     title: 'First 5 spots: -30% in exchange for a full video testimonial.',
     earlyBird:
-      'Launching this program officially this month. The first 5 founders who travel with us get -30% on the package of their choice, in exchange for a video testimonial filmed during the trip.',
+      'We\'re opening the first trips now. The first 5 founders who travel with us get -30% on the package of their choice, in exchange for a video testimonial filmed during the trip.',
     gallery: [
       { src: '/images/china/negotiation.jpg', alt: 'Meeting with a Chinese factory owner' },
       { src: '/images/china/foshan.jpg', alt: 'Foshan furniture factory' },
@@ -843,7 +841,7 @@ const en: ChinaDict = {
     ],
   },
   finalCta: {
-    title: 'One question: do this alone, or with two partners already based here?',
+    title: 'One question: do this alone, or with two operators who make the trip with you?',
     subtitle: '20 minutes on the phone. Tell us your project, we tell you if we can help.',
     cta: 'Book my discovery call',
   },
@@ -852,11 +850,11 @@ const en: ChinaDict = {
     cta: 'Book a call',
   },
   footer: {
-    tagline: 'Two partners in Guangzhou. We take European founders into China.',
+    tagline: 'We take European founders into South China\'s manufacturing triangle.',
     otherVentures: 'Our other ventures',
     ventures: [
-      { name: 'Fullhaura · AI agency', href: 'https://tristangrech.com' },
-      { name: 'Geo-Front · geopolitical monitoring', href: 'https://geo-front.com' },
+      { name: 'Tristan Grech · web & video studio', href: 'https://tristangrech.com' },
+      { name: 'Studio Nice Podcast', href: 'https://studionicepodcast.com' },
     ],
     legal: [
       { label: 'Legal notice', href: '/legal' },
