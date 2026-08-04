@@ -9,7 +9,7 @@ import '../globals.css';
 // Const/variable names kept stable so Tailwind display/golos/plex classes update automatically.
 const unbounded = Outfit({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '700', '900'],
   variable: '--font-unbounded',
   display: 'swap',
 });

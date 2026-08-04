@@ -54,7 +54,7 @@ const C: Record<Locale, { role: string; tagline: string; loc: string; live: stri
 
 const CONTACT: { icon: string; label: string; href: string }[] = [
   { icon: 'whatsapp', label: 'WhatsApp', href: 'https://wa.me/33678496126' },
-  // Instagram: add once Tristan confirms the exact handle (do not guess the URL).
+  { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/tristangrch/' },
   { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/fullhaura/' },
   { icon: 'telegram', label: 'Telegram', href: 'https://t.me/Fullhaura' },
   { icon: 'mail', label: 'Email', href: 'mailto:tristangrech.nat@gmail.com' },
@@ -158,12 +158,12 @@ export default function LinkHub({ locale }: { locale: Locale }) {
 
         <header ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave} className="relative flex min-h-[80vh] items-center py-6">
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <img ref={bgRef} src="/images/hero/hero-bg.jpg" alt="" aria-hidden="true"
+            <img ref={bgRef} src="/images/hero/hero-bg.webp" alt="" aria-hidden="true" fetchPriority="high"
               style={{ transform: 'scale(1.06)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
               className="absolute right-0 top-1/2 h-[118%] w-auto max-w-none -translate-y-1/2 object-cover opacity-45 sm:opacity-60" />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#050506] via-[#050506]/85 to-transparent" />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-transparent" />
-            <img ref={subjRef} src="/images/hero/hero-subject.png" alt="Tristan Grech" loading="eager"
+            <img ref={subjRef} src="/images/hero/hero-subject.webp" alt="Tristan Grech" loading="eager"
               style={{ transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
               className="absolute bottom-0 right-[-8%] h-[72%] w-auto max-w-none opacity-90 drop-shadow-[0_24px_48px_rgba(0,0,0,0.65)] sm:right-[2%] sm:h-[94%] sm:opacity-100 lg:right-[8%]" />
           </div>
