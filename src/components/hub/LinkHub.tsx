@@ -174,7 +174,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col px-5 py-8 md:px-8 md:py-12">
         <div className="hub-in flex items-center justify-between">
-          <span className="font-display text-xl italic text-bone/90">Tristan Grech</span>
+          <span className="font-display text-lg font-semibold tracking-tight text-bone/90">Tristan Grech</span>
           <nav className="flex items-center gap-3 text-[13px] uppercase text-dim">
             {LOCALES.map((l) => (<a key={l} href={`/${l}`} className={`transition-colors ${l === locale ? 'text-bone' : 'hover:text-bone'}`}>{l}</a>))}
           </nav>
@@ -183,7 +183,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
         <header className="relative grid min-h-[84svh] grid-cols-1 items-center gap-8 py-6 lg:min-h-[78svh] lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative z-10 order-2 lg:order-1">
             <p className="hub-in text-sm text-ambr/90" style={{ animationDelay: '60ms' }}>{t.role}</p>
-            <h1 className="hub-in font-display text-7xl leading-[0.95] tracking-tight text-bone mt-3 sm:text-8xl lg:text-[7.5rem]" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
+            <h1 className="hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
             <p className="hub-in mt-6 max-w-sm text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
             <p className="hub-in mt-5 text-sm text-dim/70" style={{ animationDelay: '260ms' }}>{t.loc}</p>
           </div>
@@ -202,7 +202,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
 
         <section aria-label={t.work} className="flex-1">
           <div className="hub-in mb-6 flex items-baseline justify-between border-b border-white/10 pb-3" style={{ animationDelay: '270ms' }}>
-            <h2 className="font-display text-2xl italic text-bone/90">{t.work}</h2>
+            <h2 className="font-display text-xl font-semibold text-bone/90">{t.work}</h2>
             <span className="hidden text-[13px] text-dim/70 sm:block">{t.note}</span>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
@@ -225,7 +225,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
         </section>
 
         <footer className="hub-in mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between" style={{ animationDelay: '880ms' }}>
-          <span className="font-display text-lg italic text-bone/80">{t.contact}</span>
+          <span className="font-display text-base font-semibold text-bone/80">{t.contact}</span>
           <div className="flex flex-wrap items-center gap-2.5">
             {CONTACT.map((c) => (
               <a key={c.label} href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" aria-label={c.label} title={c.label}
