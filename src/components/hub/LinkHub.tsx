@@ -49,10 +49,10 @@ const PROJECTS: {
     desc: { fr: 'Voyages de sourcing et achats accompagnés en Chine du Sud.', en: 'Guided sourcing trips and buying in South China.', ru: 'Байер-туры и закупки в Южном Китае под сопровождением.' } },
 ];
 
-const C: Record<Locale, { role: string; tagline: string; loc: string; live: string; work: string; note: string; contact: string }> = {
-  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', loc: 'Nice → Almaty', live: 'EN LIGNE', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter' },
-  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', loc: 'Nice → Almaty', live: 'ONLINE', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch' },
-  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', loc: 'Ницца → Алматы', live: 'ОНЛАЙН', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться' },
+const C: Record<Locale, { role: string; tagline: string; work: string; note: string; contact: string }> = {
+  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter' },
+  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch' },
+  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться' },
 };
 
 const CONTACT: { icon: string; label: string; href: string }[] = [

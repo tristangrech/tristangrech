@@ -256,6 +256,7 @@ function JsonLd({ locale }: { locale: Locale }) {
           'https://fullhaura-services.com',
           'https://sumera.io',
           'https://www.fullink.io',
+          'https://sourcecanton.com',
           'https://revesdelite.com',
         ],
       },
@@ -303,7 +304,7 @@ function JsonLd({ locale }: { locale: Locale }) {
             itemOffered: s,
           })),
         },
-        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://almatypodcast.com', 'https://fullhaura-services.com'],
+        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://almatypodcast.com', 'https://fullhaura-services.com', 'https://sourcecanton.com'],
       },
       {
         '@type': 'WebSite',
