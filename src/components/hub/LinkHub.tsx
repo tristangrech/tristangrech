@@ -65,10 +65,9 @@ const LOCALES: Locale[] = ['fr', 'en', 'ru'];
 export default function LinkHub({ locale }: { locale: Locale }) {
   const t = C[locale] ?? C.en;
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const heroRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLImageElement>(null);
   const subjRef = useRef<HTMLImageElement>(null);
-  const nameRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -108,35 +107,34 @@ export default function LinkHub({ locale }: { locale: Locale }) {
   };
   const onLeave = (e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = ''; };
 
-  const onHero = (e: React.MouseEvent<HTMLElement>) => {
+  const onHero = (e: React.MouseEvent<HTMLDivElement>) => {
     const r = heroRef.current?.getBoundingClientRect();
     if (!r) return;
     const cx = (e.clientX - r.left) / r.width - 0.5;
     const cy = (e.clientY - r.top) / r.height - 0.5;
-    if (bgRef.current) bgRef.current.style.transform = `translate3d(${cx * -16}px, ${cy * -12}px, 0) scale(1.06)`;
-    if (subjRef.current) subjRef.current.style.transform = `translate3d(${cx * 30}px, ${cy * 18}px, 0)`;
-    if (nameRef.current) nameRef.current.style.transform = `translate3d(${cx * 10}px, ${cy * 6}px, 0)`;
+    // bg drifts a little; subject drifts more (keeps its -50% centering) for depth.
+    if (bgRef.current) bgRef.current.style.transform = `translate3d(${cx * -12}px, ${cy * -9}px, 0) scale(1.08)`;
+    if (subjRef.current) subjRef.current.style.transform = `translate3d(calc(-50% + ${cx * 20}px), ${cy * 13}px, 0)`;
   };
   const onHeroLeave = () => {
-    if (bgRef.current) bgRef.current.style.transform = 'scale(1.06)';
-    if (subjRef.current) subjRef.current.style.transform = '';
-    if (nameRef.current) nameRef.current.style.transform = '';
+    if (bgRef.current) bgRef.current.style.transform = 'scale(1.08)';
+    if (subjRef.current) subjRef.current.style.transform = 'translateX(-50%)';
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#050506] text-bone grain">
+    <main className="relative min-h-[100svh] overflow-hidden bg-[#050506] text-bone grain">
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes hubUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
         @keyframes hubShimmer { to { background-position: 200% center; } }
         @keyframes hubBlob { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(5%, -4%) scale(1.1); } }
         @keyframes hubRing { to { transform: rotate(360deg); } }
         .hub-in { opacity: 0; animation: hubUp .8s cubic-bezier(.16,1,.3,1) forwards; }
-        .hub-name { background: linear-gradient(100deg,#EFECE3 18%,#E3A84E 42%,#F23D30 58%,#EFECE3 82%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: hubShimmer 7s linear infinite; }
+        .hub-name { opacity: 0; background: linear-gradient(100deg,#EFECE3 18%,#E3A84E 42%,#F23D30 58%,#EFECE3 82%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: hubUp .8s cubic-bezier(.16,1,.3,1) forwards, hubShimmer 7s linear infinite; }
         .hub-card { transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .35s, background-color .35s, box-shadow .35s; transform-style: preserve-3d; will-change: transform; }
         .hub-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: 0 20px 50px -20px color-mix(in srgb, var(--accent) 45%, transparent); }
         .hub-card:hover .hub-icon { color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); box-shadow: 0 0 26px -6px color-mix(in srgb, var(--accent) 60%, transparent); }
         .hub-glow { background: radial-gradient(280px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--accent) 22%, transparent), transparent 62%); }
-        @media (prefers-reduced-motion: reduce) { .hub-in { animation: none; opacity: 1; } .hub-name,.hub-ring { animation: none; } .hub-card { transition: none; } }
+        @media (prefers-reduced-motion: reduce) { .hub-in { animation: none; opacity: 1; } .hub-name { animation: none; opacity: 1; } .hub-card { transition: none; } }
       `}} />
       <canvas ref={canvasRef} aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full opacity-70" />
       <div aria-hidden="true" className="pointer-events-none absolute -top-40 -left-24 h-[44rem] w-[44rem] rounded-full bg-[#F23D30]/10 blur-[130px]" style={{ animation: 'hubBlob 15s ease-in-out infinite' }} />
@@ -156,24 +154,25 @@ export default function LinkHub({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <header ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave} className="relative flex min-h-[80vh] items-center py-6">
-          <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <img ref={bgRef} src="/images/hero/hero-bg.webp" alt="" aria-hidden="true" fetchPriority="high"
-              style={{ transform: 'scale(1.06)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
-              className="absolute right-0 top-1/2 h-[118%] w-auto max-w-none -translate-y-1/2 object-cover opacity-45 sm:opacity-60" />
-            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#050506] via-[#050506]/85 to-transparent" />
-            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-transparent" />
-            <img ref={subjRef} src="/images/hero/hero-subject.webp" alt="Tristan Grech" loading="eager"
-              style={{ transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
-              className="absolute bottom-0 right-[-8%] h-[72%] w-auto max-w-none opacity-90 drop-shadow-[0_24px_48px_rgba(0,0,0,0.65)] sm:right-[2%] sm:h-[94%] sm:opacity-100 lg:right-[8%]" />
-          </div>
-          <div className="relative z-20 max-w-lg">
+        <header className="relative grid min-h-[84svh] grid-cols-1 items-center gap-8 py-6 lg:min-h-[78svh] lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="relative z-10 order-2 lg:order-1">
             <p className="hub-in font-plex text-xs tracking-[0.25em] text-ambr" style={{ animationDelay: '60ms' }}>{t.role.toUpperCase()}</p>
-            <h1 ref={nameRef} className="hub-in hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}>Tristan<br />Grech</h1>
-            <p className="hub-in mt-5 max-w-xs text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
+            <h1 className="hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
+            <p className="hub-in mt-5 max-w-sm text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
             <span className="hub-in mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-plex text-[10px] tracking-[0.2em] text-dim backdrop-blur" style={{ animationDelay: '260ms' }}>
               <span className="h-1.5 w-1.5 rounded-full bg-[#3ED07A]" style={{ boxShadow: '0 0 8px #3ED07A' }} />{t.live} · {t.loc}
             </span>
+          </div>
+          <div ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave}
+            className="hub-in order-1 relative mx-auto aspect-[3/4] w-full max-w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:order-2 lg:max-w-none lg:aspect-[4/5]"
+            style={{ animationDelay: '160ms' }}>
+            <img ref={bgRef} src="/images/hero/hero-bg.webp" alt="" aria-hidden="true" fetchPriority="high"
+              style={{ transform: 'scale(1.08)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
+              className="absolute inset-0 h-full w-full object-cover object-center opacity-85" />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-[#050506]/20" />
+            <img ref={subjRef} src="/images/hero/hero-subject.webp" alt="Tristan Grech" loading="eager"
+              style={{ transform: 'translateX(-50%)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
+              className="absolute bottom-0 left-1/2 h-[97%] w-auto max-w-none drop-shadow-[0_18px_36px_rgba(0,0,0,0.55)]" />
           </div>
         </header>
 
