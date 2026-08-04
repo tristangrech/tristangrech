@@ -98,6 +98,36 @@ export default function LinkHub({ locale }: { locale: Locale }) {
     return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', onResize); };
   }, []);
 
+  // Gyroscope parallax on phones: tilt the iPhone to move the hero layers.
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+    let listening = false;
+    const onOrient = (e: DeviceOrientationEvent) => {
+      if (e.gamma == null || e.beta == null) return;
+      const gx = Math.max(-1, Math.min(1, e.gamma / 28));
+      const gy = Math.max(-1, Math.min(1, (e.beta - 45) / 28));
+      if (bgRef.current) bgRef.current.style.transform = `translate3d(${gx * -14}px, ${gy * -10}px, 0) scale(1.08)`;
+      if (subjRef.current) subjRef.current.style.transform = `translate3d(calc(-50% + ${gx * 24}px), ${gy * 16}px, 0)`;
+    };
+    const start = () => { if (!listening) { listening = true; window.addEventListener('deviceorientation', onOrient); } };
+    const DOE = window.DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> } | undefined;
+    const needsPermission = !!DOE && typeof DOE.requestPermission === 'function';
+    const onFirstTap = () => {
+      if (needsPermission) {
+        DOE!.requestPermission!().then((s) => { if (s === 'granted') start(); }).catch(() => {});
+      } else {
+        start();
+      }
+    };
+    if (needsPermission) window.addEventListener('touchend', onFirstTap, { once: true });
+    else start();
+    return () => {
+      window.removeEventListener('deviceorientation', onOrient);
+      window.removeEventListener('touchend', onFirstTap);
+    };
+  }, []);
+
   const onMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const el = e.currentTarget; const r = el.getBoundingClientRect();
     const mx = e.clientX - r.left, my = e.clientY - r.top;
