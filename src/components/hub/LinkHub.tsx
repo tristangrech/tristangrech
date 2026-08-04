@@ -185,7 +185,6 @@ export default function LinkHub({ locale }: { locale: Locale }) {
             <p className="hub-in text-sm text-ambr/90" style={{ animationDelay: '60ms' }}>{t.role}</p>
             <h1 className="hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
             <p className="hub-in mt-6 max-w-sm text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
-            <p className="hub-in mt-5 text-sm text-dim/70" style={{ animationDelay: '260ms' }}>{t.loc}</p>
           </div>
           <div ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave}
             className="hub-in order-1 relative mx-auto aspect-[3/4] w-full max-w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:order-2 lg:max-w-none lg:aspect-[4/5]"
