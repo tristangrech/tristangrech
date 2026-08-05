@@ -135,10 +135,10 @@ export async function generateMetadata({
       alternateLocale: ['en_US', 'fr_FR', 'ru_RU'].filter((l) => l !== ogLocale),
       images: [
         {
-          url: `${BASE_URL}/images/tristan-homepage.jpg`,
+          url: `${BASE_URL}/images/og-card.jpg`,
           width: 1200,
           height: 630,
-          alt: 'Tristan Grech, developer and filmmaker in Nice, France',
+          alt: 'Tristan Grech — developer and filmmaker, Nice, France',
           type: 'image/jpeg',
         },
       ],
@@ -147,7 +147,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [`${BASE_URL}/images/tristan-homepage.jpg`],
+      images: [`${BASE_URL}/images/og-card.jpg`],
       creator: '@fullhaura',
     },
     robots: {
