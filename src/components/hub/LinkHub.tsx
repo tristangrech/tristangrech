@@ -29,23 +29,23 @@ const ICON: Record<string, ReactNode> = {
 };
 
 const PROJECTS: {
-  name: string; url: string; domain: string; tag: string; icon: string; accent: string; desc: Desc; wide?: boolean;
+  name: string; url: string; domain: string; tag: string; icon: string; accent: string; cover: string; desc: Desc; wide?: boolean;
 }[] = [
-  { name: 'Sumera', url: 'https://sumera.io', domain: 'sumera.io', tag: 'AI · SaaS', icon: 'sparkle', accent: '#F23D30', wide: true,
+  { name: 'Sumera', url: 'https://sumera.io', domain: 'sumera.io', tag: 'AI · SaaS', icon: 'sparkle', accent: '#F23D30', cover: '/images/covers/sumera.webp', wide: true,
     desc: { fr: 'Générateur de scripts YouTube par IA, avec facturation Stripe.', en: 'AI YouTube script generator, with live Stripe billing.', ru: 'ИИ-генератор сценариев для YouTube с оплатой через Stripe.' } },
-  { name: 'Fullink', url: 'https://www.fullink.io', domain: 'fullink.io', tag: 'Creator tool', icon: 'link', accent: '#38BDF8',
+  { name: 'Fullink', url: 'https://www.fullink.io', domain: 'fullink.io', tag: 'Creator tool', icon: 'link', accent: '#38BDF8', cover: '/images/covers/fullink.webp',
     desc: { fr: 'Plateforme link in bio pour créateurs.', en: 'Link in bio platform for creators.', ru: 'Link in bio платформа для авторов.' } },
-  { name: 'Feu France', url: 'https://feufrance.fr', domain: 'feufrance.fr', tag: 'Service public', icon: 'flame', accent: '#FB923C',
+  { name: 'Feu France', url: 'https://feufrance.fr', domain: 'feufrance.fr', tag: 'Service public', icon: 'flame', accent: '#FB923C', cover: '/images/covers/feufrance.webp',
     desc: { fr: 'La carte des feux de forêt en France, en direct.', en: 'Live wildfire map and alerts for France.', ru: 'Карта лесных пожаров Франции в реальном времени.' } },
-  { name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', domain: 'studionicepodcast.com', tag: 'Studio', icon: 'mic', accent: '#A78BFA',
+  { name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', domain: 'studionicepodcast.com', tag: 'Studio', icon: 'mic', accent: '#A78BFA', cover: '/images/covers/studionicepodcast.webp',
     desc: { fr: 'Studio de podcast vidéo 4K à Nice, réservation en ligne.', en: '4K video podcast studio in Nice, online booking.', ru: 'Студия видеоподкастов 4K в Ницце, онлайн-бронирование.' } },
-  { name: 'Almaty Podcast', url: 'https://almatypodcast.com', domain: 'almatypodcast.com', tag: 'Studio', icon: 'waves', accent: '#34D399',
+  { name: 'Almaty Podcast', url: 'https://almatypodcast.com', domain: 'almatypodcast.com', tag: 'Studio', icon: 'waves', accent: '#34D399', cover: '/images/covers/almaty.webp',
     desc: { fr: 'Studio de podcast à Almaty, en trois langues.', en: 'Podcast studio in Almaty, in three languages.', ru: 'Студия подкастов в Алматы, на трёх языках.' } },
-  { name: 'Polytaipe', url: 'https://polytaipe.com', domain: 'polytaipe.com', tag: 'Web app', icon: 'keyboard', accent: '#818CF8',
+  { name: 'Polytaipe', url: 'https://polytaipe.com', domain: 'polytaipe.com', tag: 'Web app', icon: 'keyboard', accent: '#818CF8', cover: '/images/covers/polytaipe.webp',
     desc: { fr: 'Entraîneur de frappe pour toute disposition clavier.', en: 'Typing trainer for any keyboard layout.', ru: 'Тренажёр печати для любой раскладки.' } },
-  { name: 'Fullhaura Services', url: 'https://fullhaura-services.com', domain: 'fullhaura-services.com', tag: 'Conciergerie', icon: 'bell', accent: '#E3A84E',
+  { name: 'Fullhaura Services', url: 'https://fullhaura-services.com', domain: 'fullhaura-services.com', tag: 'Conciergerie', icon: 'bell', accent: '#E3A84E', cover: '/images/covers/fullhaura.webp',
     desc: { fr: 'Conciergerie privée sur la Côte d’Azur, trilingue.', en: 'Private concierge on the French Riviera, trilingual.', ru: 'Частный консьерж на Лазурном берегу, на трёх языках.' } },
-  { name: 'Source Canton', url: 'https://sourcecanton.com', domain: 'sourcecanton.com', tag: 'Sourcing', icon: 'box', accent: '#E11D48',
+  { name: 'Source Canton', url: 'https://sourcecanton.com', domain: 'sourcecanton.com', tag: 'Sourcing', icon: 'box', accent: '#E11D48', cover: '/images/covers/sourcecanton.webp',
     desc: { fr: 'Voyages de sourcing et achats accompagnés en Chine du Sud.', en: 'Guided sourcing trips and buying in South China.', ru: 'Байер-туры и закупки в Южном Китае под сопровождением.' } },
 ];
 
@@ -88,6 +88,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
   const heroRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLImageElement>(null);
   const subjRef = useRef<HTMLImageElement>(null);
+  const videoRefs = useRef<HTMLVideoElement[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -147,6 +148,34 @@ export default function LinkHub({ locale }: { locale: Locale }) {
       window.removeEventListener('deviceorientation', onOrient);
       window.removeEventListener('touchend', onFirstTap);
     };
+  }, []);
+
+  // Cover videos: nothing downloads until a card nears the viewport, clips play only while
+  // on screen (light on CPU/battery/data), pause off-screen, and stay a static poster for
+  // reduced-motion or data-saver users.
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const conn = (navigator as unknown as { connection?: { saveData?: boolean } }).connection;
+    if (conn?.saveData) return;
+    if (!('IntersectionObserver' in window)) return;
+    const vids = videoRefs.current.filter(Boolean);
+    if (!vids.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          const v = e.target as HTMLVideoElement;
+          if (e.isIntersecting) {
+            if (!v.getAttribute('src') && v.dataset.src) v.setAttribute('src', v.dataset.src);
+            v.play().catch(() => {});
+          } else {
+            v.pause();
+          }
+        }
+      },
+      { threshold: 0.2, rootMargin: '150px 0px' },
+    );
+    vids.forEach((v) => io.observe(v));
+    return () => io.disconnect();
   }, []);
 
   const onMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -227,17 +256,29 @@ export default function LinkHub({ locale }: { locale: Locale }) {
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {PROJECTS.map((p, i) => (
               <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" onMouseMove={onMove} onMouseLeave={onLeave}
-                className={`hub-card hub-in group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 backdrop-blur-md ${p.wide ? 'sm:col-span-2 lg:col-span-2' : ''}`}
+                className={`hub-card hub-in group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md ${p.wide ? 'sm:col-span-2 lg:col-span-2' : ''}`}
                 style={{ '--accent': p.accent, animationDelay: `${330 + i * 70}ms` } as React.CSSProperties}>
-                <span aria-hidden="true" className="hub-glow pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="relative flex items-start justify-between">
-                  <span className="hub-icon flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] p-2.5 text-dim transition-all duration-300">{ICON[p.icon]}</span>
-                  <span aria-hidden="true" className="h-4 w-4 text-dim transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-bone">{ICON.arrow}</span>
+                <div className="relative aspect-video w-full overflow-hidden">
+                  <video
+                    ref={(el) => { if (el) videoRefs.current[i] = el; }}
+                    poster={p.cover}
+                    data-src={p.cover.replace('/images/covers/', '/videos/covers/').replace('.webp', '.mp4')}
+                    muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} disablePictureInPicture
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0a0b0d] via-transparent to-[#0a0b0d]/10" />
                 </div>
-                <span className="relative mt-5 text-xs font-medium" style={{ color: p.accent }}>{p.tag}</span>
-                <h3 className="relative mt-1.5 text-xl font-semibold tracking-tight text-bone md:text-2xl">{p.name}</h3>
-                <p className="relative mt-2 text-[15px] leading-relaxed text-dim">{p.desc[locale] ?? p.desc.en}</p>
-                <span className="relative mt-5 font-plex text-[11px] text-dim/70 transition-colors group-hover:text-bone">{p.domain}</span>
+                <span aria-hidden="true" className="hub-glow pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative flex flex-1 flex-col p-5 pt-4">
+                  <div className="flex items-start justify-between">
+                    <span className="hub-icon flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] p-2.5 text-dim transition-all duration-300">{ICON[p.icon]}</span>
+                    <span aria-hidden="true" className="h-4 w-4 text-dim transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-bone">{ICON.arrow}</span>
+                  </div>
+                  <span className="mt-4 text-xs font-medium" style={{ color: p.accent }}>{p.tag}</span>
+                  <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-bone md:text-2xl">{p.name}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-dim">{p.desc[locale] ?? p.desc.en}</p>
+                  <span className="mt-5 font-plex text-[11px] text-dim/70 transition-colors group-hover:text-bone">{p.domain}</span>
+                </div>
               </a>
             ))}
           </div>
