@@ -35,7 +35,7 @@ const metadataByLocale: Record<
   en: {
     title: 'Tristan Grech — Websites, Web Apps & Video Production · Nice, France',
     description:
-      'Tristan Grech is a developer and filmmaker in Nice, France. Multilingual websites and booking systems that Google ranks and AI assistants recommend, plus broadcast-grade video: Cannes Lions 2026 coverage, founder interviews, podcast production. Working in French, English and Russian, remotely from Paris to Almaty.',
+      'Tristan Grech is a developer and filmmaker based in Guangzhou, China. Multilingual websites and booking systems that Google ranks and AI assistants recommend, plus broadcast-grade video: Cannes Lions 2026 coverage, founder interviews, podcast production. Working in French, English and Russian, remotely from Guangzhou to the French Riviera.',
     keywords: [
       'Tristan Grech',
       'web developer Nice',
@@ -57,7 +57,7 @@ const metadataByLocale: Record<
   fr: {
     title: 'Tristan Grech — Sites web, applications & production vidéo · Nice',
     description:
-      'Tristan Grech est développeur et vidéaste à Nice. Sites multilingues et systèmes de réservation référencés par Google et recommandés par les assistants IA, plus de la vidéo qualité broadcast : couverture des Cannes Lions 2026, interviews de fondateurs, production de podcasts. En français, anglais et russe, à distance de Paris à Almaty.',
+      'Tristan Grech est développeur et vidéaste basé à Canton, en Chine. Sites multilingues et systèmes de réservation référencés par Google et recommandés par les assistants IA, plus de la vidéo qualité broadcast : couverture des Cannes Lions 2026, interviews de fondateurs, production de podcasts. En français, anglais et russe, à distance de Canton à la Côte d\'Azur.',
     keywords: [
       'Tristan Grech',
       'développeur web Nice',
@@ -76,7 +76,7 @@ const metadataByLocale: Record<
   ru: {
     title: 'Тристан Греч — Сайты, веб-приложения и видеопродакшн · Ницца',
     description:
-      'Тристан Греч, разработчик и видеограф из Ниццы. Многоязычные сайты и системы бронирования, которые находит Google и рекомендуют ИИ-ассистенты, плюс видео вещательного качества: репортажи с Cannes Lions 2026, интервью с основателями, продакшн подкастов. На французском, английском и русском, удалённо от Парижа до Алматы.',
+      'Тристан Греч, разработчик и видеограф из Гуанчжоу. Многоязычные сайты и системы бронирования, которые находит Google и рекомендуют ИИ-ассистенты, плюс видео вещательного качества: репортажи с Cannes Lions 2026, интервью с основателями, продакшн подкастов. На французском, английском и русском, удалённо из Гуанчжоу на Лазурный берег.',
     keywords: [
       'Тристан Греч',
       'Tristan Grech',
@@ -148,7 +148,7 @@ export async function generateMetadata({
       title,
       description,
       images: [`${BASE_URL}/images/og-card.jpg`],
-      creator: '@fullhaura',
+      creator: '@tristangrch',
     },
     robots: {
       index: true,
@@ -183,7 +183,7 @@ function JsonLd({ locale }: { locale: Locale }) {
       description:
         'Multilingual marketing websites with structured data, SEO and AI visibility (GEO) built in. French, English and Russian.',
       provider: { '@id': `${BASE_URL}/#business` },
-      areaServed: ['France', 'Monaco', 'European Union', 'Kazakhstan', 'Worldwide (remote)'],
+      areaServed: ['France', 'Monaco', 'European Union', 'China', 'Worldwide (remote)'],
     },
     {
       '@type': 'Service',
@@ -207,7 +207,7 @@ function JsonLd({ locale }: { locale: Locale }) {
       description:
         '4K multi-camera interviews, event coverage and podcast production with broadcast audio, colour grading and subtitles. Studio in Nice, on location anywhere. Cannes Lions 2026 event coverage delivered overnight.',
       provider: { '@id': `${BASE_URL}/#business` },
-      areaServed: ['Nice', 'Cannes', 'Monaco', 'French Riviera', 'Almaty', 'Astana', 'On location worldwide'],
+      areaServed: ['Nice', 'Cannes', 'Monaco', 'French Riviera', 'Guangzhou', 'On location worldwide'],
     },
   ];
 
@@ -228,8 +228,8 @@ function JsonLd({ locale }: { locale: Locale }) {
           name: 'Nice, France',
           address: {
             '@type': 'PostalAddress',
-            addressLocality: 'Nice',
-            addressCountry: 'FR',
+            addressLocality: 'Guangzhou',
+            addressCountry: 'CN',
           },
         },
         knowsLanguage: ['French', 'English', 'Russian', 'Portuguese'],
@@ -252,8 +252,6 @@ function JsonLd({ locale }: { locale: Locale }) {
           site.whatsapp,
           site.telegram,
           'https://studionicepodcast.com',
-          'https://almatypodcast.com',
-          'https://fullhaura-services.com',
           'https://sumera.io',
           'https://www.fullink.io',
           'https://sourcecanton.com',
@@ -276,8 +274,8 @@ function JsonLd({ locale }: { locale: Locale }) {
         founder: { '@id': `${BASE_URL}/#person` },
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Nice',
-          addressCountry: 'FR',
+          addressLocality: 'Guangzhou',
+          addressCountry: 'CN',
         },
         areaServed: [
           { '@type': 'City', name: 'Nice' },
@@ -304,7 +302,7 @@ function JsonLd({ locale }: { locale: Locale }) {
             itemOffered: s,
           })),
         },
-        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://almatypodcast.com', 'https://fullhaura-services.com', 'https://sourcecanton.com'],
+        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://sourcecanton.com'],
       },
       {
         '@type': 'WebSite',
@@ -357,9 +355,7 @@ function JsonLd({ locale }: { locale: Locale }) {
           { '@type': 'WebSite', position: 2, name: 'Fullink', url: 'https://www.fullink.io', description: 'Link in bio platform for creators.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 3, name: 'Feu France', url: 'https://feufrance.fr', description: 'Live wildfire map and alerts for France.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 4, name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', description: '4K video podcast studio in Nice with online booking.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 5, name: 'Almaty Podcast', url: 'https://almatypodcast.com', description: 'Podcast studio in Almaty, in three languages.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 6, name: 'Polytaipe', url: 'https://polytaipe.com', description: 'Typing trainer for any keyboard layout.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 7, name: 'Fullhaura Services', url: 'https://fullhaura-services.com', description: 'Trilingual private concierge on the French Riviera.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 8, name: 'Source Canton', url: 'https://sourcecanton.com', description: 'Guided China sourcing trips and buying across Guangzhou, Foshan and Shenzhen.', creator: { '@id': `${BASE_URL}/#person` } },
         ],
       },

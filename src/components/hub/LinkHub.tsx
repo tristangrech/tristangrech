@@ -39,12 +39,8 @@ const PROJECTS: {
     desc: { fr: 'La carte des feux de forêt en France, en direct.', en: 'Live wildfire map and alerts for France.', ru: 'Карта лесных пожаров Франции в реальном времени.' } },
   { name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', domain: 'studionicepodcast.com', tag: 'Studio', icon: 'mic', accent: '#A78BFA', cover: '/images/covers/studionicepodcast.webp',
     desc: { fr: 'Studio de podcast vidéo 4K à Nice, réservation en ligne.', en: '4K video podcast studio in Nice, online booking.', ru: 'Студия видеоподкастов 4K в Ницце, онлайн-бронирование.' } },
-  { name: 'Almaty Podcast', url: 'https://almatypodcast.com', domain: 'almatypodcast.com', tag: 'Studio', icon: 'waves', accent: '#34D399', cover: '/images/covers/almaty.webp',
-    desc: { fr: 'Studio de podcast à Almaty, en trois langues.', en: 'Podcast studio in Almaty, in three languages.', ru: 'Студия подкастов в Алматы, на трёх языках.' } },
   { name: 'Polytaipe', url: 'https://polytaipe.com', domain: 'polytaipe.com', tag: 'Web app', icon: 'keyboard', accent: '#818CF8', cover: '/images/covers/polytaipe.webp',
     desc: { fr: 'Entraîneur de frappe pour toute disposition clavier.', en: 'Typing trainer for any keyboard layout.', ru: 'Тренажёр печати для любой раскладки.' } },
-  { name: 'Fullhaura Services', url: 'https://fullhaura-services.com', domain: 'fullhaura-services.com', tag: 'Conciergerie', icon: 'bell', accent: '#E3A84E', cover: '/images/covers/fullhaura.webp',
-    desc: { fr: 'Conciergerie privée sur la Côte d’Azur, trilingue.', en: 'Private concierge on the French Riviera, trilingual.', ru: 'Частный консьерж на Лазурном берегу, на трёх языках.' } },
   { name: 'Source Canton', url: 'https://sourcecanton.com', domain: 'sourcecanton.com', tag: 'Sourcing', icon: 'box', accent: '#E11D48', cover: '/images/covers/sourcecanton.webp',
     desc: { fr: 'Voyages de sourcing et achats accompagnés en Chine du Sud.', en: 'Guided sourcing trips and buying in South China.', ru: 'Байер-туры и закупки в Южном Китае под сопровождением.' } },
 ];

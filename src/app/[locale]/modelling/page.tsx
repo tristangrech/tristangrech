@@ -15,21 +15,21 @@ const metadataByLocale: Record<Locale, { title: string; description: string }> =
   {
     en: {
       title:
-        'Tristan Grech — Model · Athlete | 186cm · Based in Nice, France',
+        'Tristan Grech — Model · Athlete | 186cm · Based in Guangzhou, China',
       description:
-        'French model and former national swim team athlete. 186cm, based in Nice, France. Available for commercial, fitness, editorial, and fashion campaigns across Europe and Asia. Agencies and brands welcome.',
+        'French model and former national swim team athlete. 186cm, based in Guangzhou, China. Available for commercial, fitness, editorial, and fashion campaigns across Europe and Asia. Agencies and brands welcome.',
     },
     fr: {
       title:
-        'Tristan Grech — Modèle · Athlète | 186cm · Basé à Nice, France',
+        'Tristan Grech — Modèle · Athlète | 186cm · Basé à Canton, en Chine',
       description:
-        'Modèle français et ancien membre de l\'équipe de France de natation. 186 cm, basé à Nice. Disponible pour campagnes commerciales, fitness, éditoriales et mode en Europe et en Asie.',
+        'Modèle français et ancien membre de l\'équipe de France de natation. 186 cm, basé à Canton, en Chine. Disponible pour campagnes commerciales, fitness, éditoriales et mode en Europe et en Asie.',
     },
     ru: {
       title:
         'Тристан Греч — Модель · Спортсмен | 186см · Ницца, Франция',
       description:
-        'Французская модель и бывший член сборной по плаванию. 186 см, база в Ницце. Доступен для коммерческих, фитнес-, редакционных и модных кампаний в Европе и Азии.',
+        'Французская модель и бывший член сборной по плаванию. 186 см, база в Гуанчжоу, Китай. Доступен для коммерческих, фитнес-, редакционных и модных кампаний в Европе и Азии.',
     },
   };
 

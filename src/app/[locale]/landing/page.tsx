@@ -242,7 +242,7 @@ function LandingContent() {
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#FACC15]">Your Coach</p>
               <h2 className="mb-4 text-3xl font-bold">Tristan Grech</h2>
               <p className="mb-4 text-neutral-400">
-                Founder of <strong className="text-white">Fullhaura</strong>, a B2B AI agency based in Nice, France.
+                Founder of <strong className="text-white">Fullhaura</strong>, a B2B AI agency, working from Guangzhou, China.
                 I build AI voice systems that run in production every day, handling real calls
                 for real businesses.
               </p>

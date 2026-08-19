@@ -38,7 +38,7 @@ const translationsData = {
       h1a: 'Websites, web apps and film.',
       h1b: 'Built to be found.',
       entity:
-        'I am Tristan Grech, a developer and filmmaker in Nice, France. I build multilingual websites and booking systems that Google ranks and AI assistants recommend, and I shoot broadcast-grade video, from Cannes Lions coverage to founder interviews. I work in French, English and Russian, remotely from Paris to Almaty.',
+        'I am Tristan Grech, a developer and filmmaker based in Guangzhou, China. I build multilingual websites and booking systems that Google ranks and AI assistants recommend, and I shoot broadcast-grade video, from Cannes Lions coverage to founder interviews. I work in French, English and Russian, remotely from Guangzhou to the French Riviera.',
       ctaPrimary: 'Message me on WhatsApp',
       ctaSecondary: 'See the work',
     },
@@ -58,7 +58,7 @@ const translationsData = {
           id: 'website',
           title: 'Website build',
           desc: 'Multilingual marketing sites with structured data, SEO and AI visibility built in from the first commit. Design system, copy in up to three languages, analytics wired.',
-          proof: 'Proof: fullhaura-services.com, 16 schema-rich pages in French, English and Russian.',
+          proof: 'Proof: sourcecanton.com, 40 pages with structured data. This site itself in French, English and Russian.',
         },
         {
           id: 'webapp',
@@ -133,21 +133,6 @@ const translationsData = {
           image: '',
           imageAlt: '',
         },
-        {
-          id: 'CLIP 04',
-          client: 'Fullhaura · Concierge brand',
-          title: 'A brand system in three languages.',
-          facts: [
-            'Marketing site for a Saint-Tropez concierge service, designed and written end to end',
-            'French, English and Russian throughout, every page in all three languages',
-            '8 service pages and 8 location pages, each with Service, FAQ and Breadcrumb structured data',
-            'Owned illustration set and a documented design system, shipped on Vercel with Next.js 15',
-          ],
-          tags: ['Website', 'FR/EN/RU', 'Local SEO', 'Brand'],
-          url: 'https://fullhaura-services.com',
-          image: '/images/work/fullhaura-services.jpg',
-          imageAlt: 'Fullhaura concierge website homepage',
-        },
       ],
     },
     liveSites: {
@@ -158,8 +143,6 @@ const translationsData = {
       status: 'LIVE',
       sites: [
         { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Video podcast studio in Nice with end-to-end online booking' },
-        { name: 'almatypodcast.com', url: 'https://almatypodcast.com', desc: 'On-location podcast recording in Almaty, the Kazakh sister of the Nice studio' },
-        { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Trilingual concierge brand for the Saint-Tropez peninsula' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'AI YouTube script generator, a SaaS with live Stripe billing' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Link-in-bio platform for creators: themes, analytics, Stripe payments' },
         { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Private concierge brand for Cannes, Monaco and Saint-Tropez' },
@@ -187,7 +170,7 @@ const translationsData = {
         },
         {
           q: 'Where are you based, and do you work remotely?',
-          a: 'I am based in Nice, France, and work remotely for clients across France, Europe and the CIS, including Kazakhstan. Web projects run entirely online: brief, build, review, launch. I work in French, English and Russian, and also speak Portuguese.',
+          a: 'I am based in Guangzhou, China, and work remotely for clients across France, Europe and Asia. Web projects run entirely online: brief, build, review, launch. I work in French, English and Russian, and also speak Portuguese.',
         },
         {
           q: 'What is an AI visibility audit?',
@@ -213,7 +196,7 @@ const translationsData = {
       title: 'Discipline is the product.',
       paragraphs: [
         'French, with Maltese roots. Sixteen years of competitive swimming, including time on the French national team, built the way I work: show up, ship, verify.',
-        'I build and run my own products on the same stack I sell, so every claim on this page links to something live you can open. Based in Nice, working from Paris to Almaty, in four languages.',
+        'I build and run my own products on the same stack I sell, so every claim on this page links to something live you can open. Based in Guangzhou, working from China to the French Riviera, in four languages.',
       ],
       meta: [
         { k: 'Base', v: 'Nice, France' },
@@ -253,7 +236,7 @@ const translationsData = {
         firstName: 'Tristan',
         lastName: 'Grech',
         description:
-          'French · Maltese origins\n186 cm · Based in Nice, France\nFormer French national swim team',
+          'French · Maltese origins\n186 cm · Based in Guangzhou, China\nFormer French national swim team',
         photoPlaceholder: 'Photo',
         scrollHint: 'Scroll',
       },
@@ -339,7 +322,7 @@ const translationsData = {
       h1a: 'Sites, applications et vidéo.',
       h1b: 'Conçus pour être trouvés.',
       entity:
-        'Je suis Tristan Grech, développeur et vidéaste à Nice. Je construis des sites multilingues et des systèmes de réservation que Google référence et que les assistants IA recommandent, et je filme en qualité broadcast, de la couverture des Cannes Lions aux interviews de fondateurs. Je travaille en français, en anglais et en russe, à distance de Paris à Almaty.',
+        'Je suis Tristan Grech, développeur et vidéaste basé à Canton, en Chine. Je construis des sites multilingues et des systèmes de réservation que Google référence et que les assistants IA recommandent, et je filme en qualité broadcast, de la couverture des Cannes Lions aux interviews de fondateurs. Je travaille en français, en anglais et en russe, à distance de Canton à la Côte d\'Azur.',
       ctaPrimary: 'Écrivez-moi sur WhatsApp',
       ctaSecondary: 'Voir les réalisations',
     },
@@ -359,7 +342,7 @@ const translationsData = {
           id: 'website',
           title: 'Création de site web',
           desc: 'Des sites vitrines multilingues avec données structurées, SEO et visibilité IA intégrés dès le premier commit. Système de design, textes en trois langues, analytics en place.',
-          proof: 'Preuve : fullhaura-services.com, 16 pages riches en données structurées, en français, anglais et russe.',
+          proof: 'Preuve : sourcecanton.com, 40 pages avec données structurées. Ce site même en français, anglais et russe.',
         },
         {
           id: 'webapp',
@@ -434,21 +417,6 @@ const translationsData = {
           image: '',
           imageAlt: '',
         },
-        {
-          id: 'CLIP 04',
-          client: 'Fullhaura · Marque de conciergerie',
-          title: 'Un système de marque en trois langues.',
-          facts: [
-            'Site vitrine d\'une conciergerie de la presqu\'île de Saint-Tropez, conçu et rédigé de bout en bout',
-            'Français, anglais et russe partout, chaque page existe dans les trois langues',
-            '8 pages de services et 8 pages de lieux, chacune avec données structurées Service, FAQ et fil d\'Ariane',
-            'Jeu d\'illustrations original et système de design documenté, déployé sur Vercel avec Next.js 15',
-          ],
-          tags: ['Site web', 'FR/EN/RU', 'SEO local', 'Marque'],
-          url: 'https://fullhaura-services.com',
-          image: '/images/work/fullhaura-services.jpg',
-          imageAlt: 'Page d\'accueil du site de conciergerie Fullhaura',
-        },
       ],
     },
     liveSites: {
@@ -459,8 +427,6 @@ const translationsData = {
       status: 'LIVE',
       sites: [
         { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Studio de podcast vidéo à Nice avec réservation en ligne de bout en bout' },
-        { name: 'almatypodcast.com', url: 'https://almatypodcast.com', desc: 'Enregistrement de podcasts en déplacement à Almaty, petit frère kazakh du studio niçois' },
-        { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Marque de conciergerie trilingue pour la presqu\'île de Saint-Tropez' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'Générateur de scripts YouTube par IA, un SaaS avec facturation Stripe active' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Plateforme link-in-bio pour créateurs : thèmes, statistiques, paiements Stripe' },
         { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Marque de conciergerie privée pour Cannes, Monaco et Saint-Tropez' },
@@ -514,7 +480,7 @@ const translationsData = {
       title: 'La discipline, c\'est le produit.',
       paragraphs: [
         'Français, racines maltaises. Seize ans de natation de compétition, dont un passage en équipe de France, ont forgé ma façon de travailler : être là, livrer, vérifier.',
-        'Je construis et j\'exploite mes propres produits sur la même stack que je vends. Chaque affirmation de cette page renvoie vers quelque chose de vivant que vous pouvez ouvrir. Basé à Nice, actif de Paris à Almaty, en quatre langues.',
+        'Je construis et j\'exploite mes propres produits sur la même stack que je vends. Chaque affirmation de cette page renvoie vers quelque chose de vivant que vous pouvez ouvrir. Basé à Canton, actif de la Chine à la Côte d\'Azur, en quatre langues.',
       ],
       meta: [
         { k: 'Base', v: 'Nice, France' },
@@ -554,7 +520,7 @@ const translationsData = {
         firstName: 'Tristan',
         lastName: 'Grech',
         description:
-          'Français · Origines maltaises\n186 cm · Basé à Nice, France\nAncien membre de l\'équipe de France de natation',
+          'Français · Origines maltaises\n186 cm · Basé à Canton, en Chine\nAncien membre de l\'équipe de France de natation',
         photoPlaceholder: 'Photo',
         scrollHint: 'Défiler',
       },
@@ -640,7 +606,7 @@ const translationsData = {
       h1a: 'Сайты, веб-приложения и видео.',
       h1b: 'Сделаны так, чтобы вас находили.',
       entity:
-        'Меня зовут Тристан Греч, я разработчик и видеограф из Ниццы. Я создаю многоязычные сайты и системы бронирования, которые находит Google и рекомендуют ИИ-ассистенты, и снимаю видео вещательного качества: от репортажей с Cannes Lions до интервью с основателями. Работаю на французском, английском и русском, удалённо от Парижа до Алматы.',
+        'Меня зовут Тристан Греч, я разработчик и видеограф из Гуанчжоу. Я создаю многоязычные сайты и системы бронирования, которые находит Google и рекомендуют ИИ-ассистенты, и снимаю видео вещательного качества: от репортажей с Cannes Lions до интервью с основателями. Работаю на французском, английском и русском, удалённо из Гуанчжоу на Лазурный берег.',
       ctaPrimary: 'Написать в WhatsApp',
       ctaSecondary: 'Смотреть работы',
     },
@@ -660,7 +626,7 @@ const translationsData = {
           id: 'website',
           title: 'Создание сайта',
           desc: 'Многоязычные маркетинговые сайты со структурированными данными, SEO и видимостью для ИИ с первого коммита. Дизайн-система, тексты на трёх языках, подключённая аналитика.',
-          proof: 'Доказательство: fullhaura-services.com, 16 страниц со схемами на французском, английском и русском.',
+          proof: 'Доказательство: sourcecanton.com, 40 страниц со структурированными данными. Сам этот сайт на французском, английском и русском.',
         },
         {
           id: 'webapp',
@@ -735,21 +701,6 @@ const translationsData = {
           image: '',
           imageAlt: '',
         },
-        {
-          id: 'CLIP 04',
-          client: 'Fullhaura · Консьерж-бренд',
-          title: 'Система бренда на трёх языках.',
-          facts: [
-            'Сайт консьерж-сервиса полуострова Сен-Тропе, спроектирован и написан от и до',
-            'Французский, английский и русский повсюду, каждая страница есть на трёх языках',
-            '8 страниц услуг и 8 страниц локаций, у каждой структурированные данные Service, FAQ и хлебные крошки',
-            'Собственный набор иллюстраций и задокументированная дизайн-система, задеплоено на Vercel с Next.js 15',
-          ],
-          tags: ['Сайт', 'FR/EN/RU', 'Локальное SEO', 'Бренд'],
-          url: 'https://fullhaura-services.com',
-          image: '/images/work/fullhaura-services.jpg',
-          imageAlt: 'Главная страница сайта консьерж-сервиса Fullhaura',
-        },
       ],
     },
     liveSites: {
@@ -760,8 +711,6 @@ const translationsData = {
       status: 'LIVE',
       sites: [
         { name: 'studionicepodcast.com', url: 'https://studionicepodcast.com', desc: 'Студия видеоподкастов в Ницце с полным онлайн-бронированием' },
-        { name: 'almatypodcast.com', url: 'https://almatypodcast.com', desc: 'Выездная запись подкастов в Алматы, казахстанский брат студии в Ницце' },
-        { name: 'fullhaura-services.com', url: 'https://fullhaura-services.com', desc: 'Трёхъязычный консьерж-бренд полуострова Сен-Тропе' },
         { name: 'sumera.io', url: 'https://sumera.io', desc: 'ИИ-генератор сценариев для YouTube, SaaS с работающим биллингом Stripe' },
         { name: 'fullink.io', url: 'https://www.fullink.io', desc: 'Link-in-bio платформа для авторов: темы, аналитика, платежи Stripe' },
         { name: 'revesdelite.com', url: 'https://revesdelite.com', desc: 'Частный консьерж-бренд для Канн, Монако и Сен-Тропе' },
@@ -815,7 +764,7 @@ const translationsData = {
       title: 'Дисциплина и есть продукт.',
       paragraphs: [
         'Француз с мальтийскими корнями. Шестнадцать лет спортивного плавания, включая сборную Франции, сформировали мой способ работать: прийти, сдать, проверить.',
-        'Я строю и веду собственные продукты на том же стеке, который продаю, поэтому каждое утверждение на этой странице ведёт к чему-то живому, что можно открыть. База в Ницце, работаю от Парижа до Алматы, на четырёх языках.',
+        'Я строю и веду собственные продукты на том же стеке, который продаю, поэтому каждое утверждение на этой странице ведёт к чему-то живому, что можно открыть. База в Гуанчжоу, работаю из Китая на Лазурный берег, на четырёх языках.',
       ],
       meta: [
         { k: 'База', v: 'Ницца, Франция' },
