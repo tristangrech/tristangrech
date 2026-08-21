@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       {
         url: `${BASE_URL}/images/china/hero.jpg`,
         width: 1920,
-        alt: 'Tristan Grech — China business trips',
+        alt: 'Tristan Grech, China business trips',
       },
     ],
   },

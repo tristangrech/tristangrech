@@ -34,9 +34,9 @@ const metadataByLocale: Record<
   { title: string; description: string; keywords: string[] }
 > = {
   en: {
-    title: 'Tristan Grech — Websites, Web Apps & Video Production · Nice, France',
+    title: 'Tristan Grech · Websites, Web Apps and Video · Guangzhou',
     description:
-      'Tristan Grech is a developer and filmmaker based in Guangzhou, China. Multilingual websites and booking systems that Google ranks and AI assistants recommend, plus broadcast-grade video: Cannes Lions 2026 coverage, founder interviews, podcast production. Working in French, English and Russian, remotely from Guangzhou to the French Riviera.',
+      'Developer and filmmaker in Guangzhou. Multilingual websites and booking systems that Google ranks and AI assistants recommend, plus 4K video. French, English and Russian.',
     keywords: [
       'Tristan Grech',
       'web developer Nice',
@@ -56,9 +56,9 @@ const metadataByLocale: Record<
     ],
   },
   fr: {
-    title: 'Tristan Grech — Sites web, applications & production vidéo · Nice',
+    title: 'Tristan Grech · Sites web, applications et vidéo · Canton',
     description:
-      'Tristan Grech est développeur et vidéaste basé à Canton, en Chine. Sites multilingues et systèmes de réservation référencés par Google et recommandés par les assistants IA, plus de la vidéo qualité broadcast : couverture des Cannes Lions 2026, interviews de fondateurs, production de podcasts. En français, anglais et russe, à distance de Canton à la Côte d\'Azur.',
+      'Développeur et vidéaste à Canton. Sites multilingues et systèmes de réservation référencés par Google et cités par les assistants IA, plus vidéo 4K. FR, EN, RU.',
     keywords: [
       'Tristan Grech',
       'développeur web Nice',
@@ -75,9 +75,11 @@ const metadataByLocale: Record<
     ],
   },
   ru: {
-    title: 'Тристан Греч — Сайты, веб-приложения и видеопродакшн · Ницца',
+    // Russian keeps the em dash: it is mandatory grammar in a copular
+    // construction, not a stylistic break. Do not strip it.
+    title: 'Тристан Греч — Сайты, веб-приложения и видео · Гуанчжоу',
     description:
-      'Тристан Греч, разработчик и видеограф из Гуанчжоу. Многоязычные сайты и системы бронирования, которые находит Google и рекомендуют ИИ-ассистенты, плюс видео вещательного качества: репортажи с Cannes Lions 2026, интервью с основателями, продакшн подкастов. На французском, английском и русском, удалённо из Гуанчжоу на Лазурный берег.',
+      'Разработчик и видеограф в Гуанчжоу. Многоязычные сайты и системы бронирования, которые находит Google и цитируют ИИ-ассистенты, плюс видео 4K.',
     keywords: [
       'Тристан Греч',
       'Tristan Grech',
@@ -139,7 +141,7 @@ export async function generateMetadata({
           url: `${BASE_URL}/images/og-card.jpg`,
           width: 1200,
           height: 630,
-          alt: 'Tristan Grech — developer and filmmaker, Nice, France',
+          alt: 'Tristan Grech, developer and filmmaker, Guangzhou',
           type: 'image/jpeg',
         },
       ],
@@ -338,9 +340,9 @@ function JsonLd({ locale }: { locale: Locale }) {
         ? [
             {
               '@type': 'VideoObject',
-              name: 'Tristan Grech — Showreel 2026',
+              name: 'Tristan Grech · Showreel 2026',
               description:
-                'Showreel: websites, web apps and video production by Tristan Grech, Nice, France.',
+                'Showreel: websites, web apps and video production by Tristan Grech.',
               contentUrl: `${BASE_URL}${site.showreel.src}`,
               thumbnailUrl: `${BASE_URL}${site.showreel.poster}`,
               uploadDate: currentDate,
@@ -356,19 +358,8 @@ function JsonLd({ locale }: { locale: Locale }) {
           { '@type': 'WebSite', position: 2, name: 'Fullink', url: 'https://www.fullink.io', description: 'Link in bio platform for creators.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 3, name: 'Feu France', url: 'https://feufrance.fr', description: 'Live wildfire map and alerts for France.', creator: { '@id': `${BASE_URL}/#person` } },
           { '@type': 'WebSite', position: 4, name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', description: '4K video podcast studio in Nice with online booking.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 6, name: 'Polytaipe', url: 'https://polytaipe.com', description: 'Typing trainer for any keyboard layout.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 8, name: 'Source Canton', url: 'https://sourcecanton.com', description: 'Guided China sourcing trips and buying across Guangzhou, Foshan and Shenzhen.', creator: { '@id': `${BASE_URL}/#person` } },
-        ],
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${locale}`,
-          },
+          { '@type': 'WebSite', position: 5, name: 'Polytaipe', url: 'https://polytaipe.com', description: 'Typing trainer for any keyboard layout.', creator: { '@id': `${BASE_URL}/#person` } },
+          { '@type': 'WebSite', position: 6, name: 'Source Canton', url: 'https://sourcecanton.com', description: 'Guided China sourcing trips and buying across Guangzhou, Foshan and Shenzhen.', creator: { '@id': `${BASE_URL}/#person` } },
         ],
       },
     ],

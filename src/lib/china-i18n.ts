@@ -191,7 +191,7 @@ export interface ChinaDict {
 
 const fr: ChinaDict = {
   meta: {
-    title: 'Venez en Chine avec un Français qui connaît le terrain | Tristan Grech',
+    title: 'Voyages sourcing en Chine avec un Français sur le terrain',
     description:
       'Voyages business guidés à Guangzhou, Foshan, Shenzhen pour entrepreneurs français. Un Français sur place, un associé franco-chinois natif.',
   },
@@ -231,11 +231,11 @@ const fr: ChinaDict = {
   },
   pain: {
     eyebrow: 'Pourquoi ça bloque',
-    title: 'Trois raisons pour lesquelles 9 entrepreneurs sur 10 se plantent sur la Chine.',
+    title: 'Trois raisons pour lesquelles un premier voyage en Chine tourne mal.',
     cards: [
       {
         title: 'Alibaba = roulette russe',
-        body: 'Fiche produit magnifique, usine fantôme, 40% d\'arnaques. Tu ne sauras qu\'à réception.',
+        body: 'Fiche produit magnifique, usine fantôme. Tu ne sauras qu\'à réception.',
       },
       {
         title: 'Vous ne parlez pas chinois',
@@ -290,7 +290,7 @@ const fr: ChinaDict = {
         eyebrow: 'Découverte',
         name: 'Discovery',
         duration: '3 jours',
-        hook: 'Tester la Chine sans risque.',
+        hook: 'Tester la Chine sur trois jours.',
         bullets: [
           '1 journée marchés Guangzhou (Yide Lu, Shi San Hang, One Link Plaza)',
           '2 visites d\'usines pré-qualifiées (catégorie au choix)',
@@ -306,7 +306,7 @@ const fr: ChinaDict = {
       },
       {
         id: 'builder',
-        eyebrow: 'Le plus choisi',
+        eyebrow: 'Builder',
         name: 'Builder',
         duration: '5 à 7 jours',
         hook: 'Repartez avec vos fournisseurs validés.',
@@ -324,7 +324,7 @@ const fr: ChinaDict = {
         cta: 'Réserver ma place',
         ctaAlt: 'ou prendre un appel avant',
         stripeUrl: STRIPE_LINK_BUILDER,
-        ribbon: 'Le plus choisi',
+        ribbon: 'Recommandé',
       },
       {
         id: 'full',
@@ -396,7 +396,7 @@ const fr: ChinaDict = {
         name: 'Guangzhou',
         coords: [23.1291, 113.2644],
         tag: 'Marchés de gros',
-        body: 'Yide Lu, Shi San Hang, One Link Plaza. Tu y passes 2 jours, tu as vu 80% des catégories.',
+        body: 'Yide Lu, Shi San Hang, One Link Plaza. Deux jours sur place couvrent l\'essentiel des catégories.',
       },
       {
         name: 'Foshan',
@@ -408,7 +408,7 @@ const fr: ChinaDict = {
         name: 'Shenzhen',
         coords: [22.5431, 114.0579],
         tag: 'Électronique',
-        body: 'Huaqiangbei. Le plus grand marché d\'électronique au monde. Composants, OEM, prototypage.',
+        body: 'Huaqiangbei. Des dizaines de milliers de vendeurs sur plusieurs blocs. Composants, OEM, prototypage.',
       },
     ],
   },
@@ -424,9 +424,9 @@ const fr: ChinaDict = {
       { label: 'Support WhatsApp', body: '7 / 30 / 90 jours selon la formule.' },
     ],
     notIncluded: [
-      { label: 'Vol international', body: 'Paris/Nice → Canton : ~€700-1 200 selon saison.' },
-      { label: 'Hôtel', body: '€80-150 / nuit. On te recommande 3 quartiers testés.' },
-      { label: 'Repas hors dîners d\'accueil', body: '€15-40 / jour sur place. On t\'indique les bonnes adresses.' },
+      { label: 'Vol international', body: 'Paris/Nice → Canton : ~de 700 € à 1 200 € selon saison.' },
+      { label: 'Hôtel', body: 'de 80 € à 150 € / nuit. On te recommande 3 quartiers testés.' },
+      { label: 'Repas hors dîners d\'accueil', body: 'de 15 € à 40 € / jour sur place. On t\'indique les bonnes adresses.' },
       { label: 'Visa', body: 'Exemption 30 jours pour passeports FR depuis 2024.' },
       { label: 'Logistique post-commande', body: 'On te présente des transitaires de confiance, tu négocies en direct.' },
       { label: 'Commissions cachées', body: 'Jamais. Tu paies la formule, point. Pas de % sur tes commandes.' },
@@ -457,7 +457,7 @@ const fr: ChinaDict = {
     items: [
       {
         q: 'Je ne parle pas chinois, je vais être perdu ?',
-        a: 'Non. On est avec toi 100% du temps. Marchés, usines, dîners, taxis. Mon associé parle chinois natif, moi je traduis en français à la volée. Tu ne lances pas une phrase chinoise seul si tu ne veux pas.',
+        a: 'Non. On est avec toi du matin au dîner, tous les jours. Marchés, usines, dîners, taxis. Mon associé parle chinois natif, moi je traduis en français à la volée. Tu ne lances pas une phrase chinoise seul si tu ne veux pas.',
       },
       {
         q: 'Vous venez tous les deux à chaque voyage ?',
@@ -485,7 +485,7 @@ const fr: ChinaDict = {
       },
       {
         q: 'Combien coûte un voyage complet (vol + hôtel + formule) ?',
-        a: 'Compter €1 490 à €6 990 pour la formule + environ €700-1 200 de vol + €80-150 / nuit d\'hôtel selon quartier. Total Builder complet : entre €5 000 et €6 500 tout compris pour 6 jours sur place.',
+        a: 'Compter €1 490 à €6 990 pour la formule + environ 700 € à 1 200 € de vol + 80 € à 150 € / nuit d\'hôtel selon quartier. Total Builder complet : entre €5 000 et €6 500 tout compris pour 6 jours sur place.',
       },
     ],
   },
@@ -569,11 +569,11 @@ const en: ChinaDict = {
   },
   pain: {
     eyebrow: 'Why most get burned',
-    title: 'Three reasons 9 out of 10 founders get China wrong.',
+    title: 'Three reasons a first China trip goes wrong.',
     cards: [
       {
         title: 'Alibaba is Russian roulette',
-        body: 'Beautiful listing, ghost factory, 40% scam rate. You find out on delivery day.',
+        body: 'Beautiful listing, ghost factory. You find out on delivery day.',
       },
       {
         title: 'You don\'t speak Chinese',
@@ -628,7 +628,7 @@ const en: ChinaDict = {
         eyebrow: 'Discovery',
         name: 'Discovery',
         duration: '3 days',
-        hook: 'Test China with zero risk.',
+        hook: 'Test China over three days.',
         bullets: [
           '1 day Guangzhou markets (Yide Lu, Shi San Hang, One Link Plaza)',
           '2 pre-vetted factory visits (your category)',
@@ -644,7 +644,7 @@ const en: ChinaDict = {
       },
       {
         id: 'builder',
-        eyebrow: 'Most chosen',
+        eyebrow: 'Builder',
         name: 'Builder',
         duration: '5 to 7 days',
         hook: 'Leave with your suppliers validated.',
@@ -662,7 +662,7 @@ const en: ChinaDict = {
         cta: 'Book my spot',
         ctaAlt: 'or book a call first',
         stripeUrl: STRIPE_LINK_BUILDER,
-        ribbon: 'Most chosen',
+        ribbon: 'Recommended',
       },
       {
         id: 'full',
@@ -706,7 +706,7 @@ const en: ChinaDict = {
       {
         day: 'Day 3',
         title: 'Shenzhen, Huaqiangbei',
-        body: 'World\'s largest electronics market. Components, prototyping, OEM partners.',
+        body: 'Tens of thousands of vendors across several blocks. Components, prototyping, OEM partners.',
         image: '/images/china/shenzhen.jpg',
       },
       {
@@ -733,7 +733,7 @@ const en: ChinaDict = {
         name: 'Guangzhou',
         coords: [23.1291, 113.2644],
         tag: 'Wholesale markets',
-        body: 'Yide Lu, Shi San Hang, One Link Plaza. Two days here, you\'ve seen 80% of categories.',
+        body: 'Yide Lu, Shi San Hang, One Link Plaza. Two days here covers most categories.',
       },
       {
         name: 'Foshan',
@@ -761,9 +761,9 @@ const en: ChinaDict = {
       { label: 'WhatsApp support', body: '7 / 30 / 90 days depending on package.' },
     ],
     notIncluded: [
-      { label: 'International flight', body: 'Europe → Canton: ~€700-1,200 depending on season.' },
-      { label: 'Hotel', body: '€80-150 / night. We recommend 3 tested neighborhoods.' },
-      { label: 'Meals outside welcome dinners', body: '€15-40 / day on the ground. We share the best addresses.' },
+      { label: 'International flight', body: 'Europe → Canton: ~€700 to €1,200 depending on season.' },
+      { label: 'Hotel', body: '€80 to €150 / night. We recommend 3 tested neighborhoods.' },
+      { label: 'Meals outside welcome dinners', body: '€15 to €40 / day on the ground. We share the best addresses.' },
       { label: 'Visa', body: '30-day business exemption for most EU/UK passports.' },
       { label: 'Post-order logistics', body: 'We introduce trusted freight forwarders, you deal direct.' },
       { label: 'Hidden commissions', body: 'Never. You pay the package, period. No % on your orders.' },
@@ -794,7 +794,7 @@ const en: ChinaDict = {
     items: [
       {
         q: 'I don\'t speak Chinese, will I be lost?',
-        a: 'No. We\'re with you 100% of the time. Markets, factories, dinners, taxis. My partner speaks native Chinese, I translate to French or English on the fly. You never throw a Chinese sentence solo if you don\'t want to.',
+        a: 'No. We are with you from morning to dinner, every day. Markets, factories, dinners, taxis. My partner speaks native Chinese, I translate to French or English on the fly. You never throw a Chinese sentence solo if you don\'t want to.',
       },
       {
         q: 'Do both of you come on every trip?',
@@ -822,7 +822,7 @@ const en: ChinaDict = {
       },
       {
         q: 'What\'s the full cost (flight + hotel + package)?',
-        a: 'Expect €1,490 to €6,990 for the package + roughly €700-1,200 for flights + €80-150/night for hotel. Full Builder total: between €5,000 and €6,500 all-in for 6 days on the ground.',
+        a: 'Expect €1,490 to €6,990 for the package + roughly €700 to €1,200 for flights + €80 to €150 a night for hotel. Full Builder total: between €5,000 and €6,500 all-in for 6 days on the ground.',
       },
     ],
   },

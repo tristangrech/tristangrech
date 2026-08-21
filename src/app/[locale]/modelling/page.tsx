@@ -14,22 +14,20 @@ const BASE_URL = 'https://tristangrech.com';
 const metadataByLocale: Record<Locale, { title: string; description: string }> =
   {
     en: {
-      title:
-        'Tristan Grech — Model · Athlete | 186cm · Based in Guangzhou, China',
+      title: 'Tristan Grech · Model and Athlete · 186cm · Guangzhou',
       description:
-        'French model and former national swim team athlete. 186cm, based in Guangzhou, China. Available for commercial, fitness, editorial, and fashion campaigns across Europe and Asia. Agencies and brands welcome.',
+        'French model and former national swim team athlete. 186cm, based in Guangzhou. Available for commercial, fitness, editorial and fashion campaigns across Europe and Asia.',
     },
     fr: {
-      title:
-        'Tristan Grech — Modèle · Athlète | 186cm · Basé à Canton, en Chine',
+      title: 'Tristan Grech · Modèle et athlète · 186cm · Canton',
       description:
-        'Modèle français et ancien membre de l\'équipe de France de natation. 186 cm, basé à Canton, en Chine. Disponible pour campagnes commerciales, fitness, éditoriales et mode en Europe et en Asie.',
+        'Modèle français et ancien nageur de l\'équipe de France. 186 cm, basé à Canton. Disponible pour campagnes commerciales, fitness, éditoriales et mode en Europe et en Asie.',
     },
+    // Russian keeps the em dash: mandatory grammar, not a stylistic break.
     ru: {
-      title:
-        'Тристан Греч — Модель · Спортсмен | 186см · Ницца, Франция',
+      title: 'Тристан Греч — Модель и спортсмен · 186см · Гуанчжоу',
       description:
-        'Французская модель и бывший член сборной по плаванию. 186 см, база в Гуанчжоу, Китай. Доступен для коммерческих, фитнес-, редакционных и модных кампаний в Европе и Азии.',
+        'Французская модель и бывший член сборной по плаванию. 186 см, база в Гуанчжоу. Доступен для коммерческих, фитнес-, редакционных и модных кампаний в Европе и Азии.',
     },
   };
 
@@ -63,12 +61,19 @@ export async function generateMetadata({
       '186cm model',
       'model booking Asia',
     ],
+    // Every portfolio slot on this page is still an empty placeholder: the
+    // components render zero <img> elements. A model's portfolio with no
+    // photographs is worse than no portfolio, so it stays out of the index
+    // until the images land. Flip index back to true in the same commit that
+    // adds them.
+    robots: { index: false, follow: true },
     alternates: {
       canonical: canonicalUrl,
       languages: {
         en: `${BASE_URL}/en/modelling`,
         fr: `${BASE_URL}/fr/modelling`,
         ru: `${BASE_URL}/ru/modelling`,
+        'x-default': `${BASE_URL}/en/modelling`,
       },
     },
     openGraph: {
