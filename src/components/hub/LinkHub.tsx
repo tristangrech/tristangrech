@@ -45,10 +45,10 @@ const PROJECTS: {
     desc: { fr: 'Voyages de sourcing et achats accompagnés en Chine du Sud.', en: 'Guided sourcing trips and buying in South China.', ru: 'Байер-туры и закупки в Южном Китае под сопровождением.' } },
 ];
 
-const C: Record<Locale, { role: string; tagline: string; work: string; note: string; contact: string; skip: string; langNav: string }> = {
-  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter', skip: 'Aller au contenu', langNav: 'Choix de la langue' },
-  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch', skip: 'Skip to content', langNav: 'Language' },
-  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка' },
+const C: Record<Locale, { role: string; tagline: string; work: string; note: string; contact: string; skip: string; langNav: string; cta: string; ctaSecondary: string }> = {
+  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter', skip: 'Aller au contenu', langNav: 'Choix de la langue', cta: 'Me contacter sur WhatsApp', ctaSecondary: 'Voir les projets' },
+  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch', skip: 'Skip to content', langNav: 'Language', cta: 'Message me on WhatsApp', ctaSecondary: 'See the projects' },
+  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка', cta: 'Написать в WhatsApp', ctaSecondary: 'Посмотреть проекты' },
 };
 
 const CONTACT: { icon: string; label: string; href: string }[] = [
@@ -255,6 +255,29 @@ export default function LinkHub({ locale }: { locale: Locale }) {
             <p className="hub-in text-sm text-ambr/90" style={{ animationDelay: '60ms' }}>{t.role}</p>
             <h1 className="hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
             <p className="hub-in mt-6 max-w-sm text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
+            {/* Above-the-fold action. Previously the only clickable things in
+                the hero were the three language links, and the sole contact
+                route was five icons at the very bottom of the page, past 6
+                project cards and 4 service blocks. Both targets here are
+                existing, verified destinations: the WhatsApp number already in
+                CONTACT, and the projects section on this page. */}
+            <div className="hub-in mt-8 flex flex-wrap items-center gap-3" style={{ animationDelay: '240ms' }}>
+              <a
+                href={CONTACT[0].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-bone px-6 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5"
+              >
+                {t.cta}
+                <span aria-hidden="true" className="h-4 w-4">{ICON.arrow}</span>
+              </a>
+              <a
+                href="#work"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-6 text-sm font-medium text-bone transition-colors hover:border-white/40"
+              >
+                {t.ctaSecondary}
+              </a>
+            </div>
           </div>
           <div ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave}
             className="hub-in order-1 relative mx-auto aspect-[3/4] w-full max-w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:order-2 lg:max-w-none lg:aspect-[4/5]"
