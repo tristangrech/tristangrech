@@ -378,7 +378,10 @@ function Hero({ lang }: Props) {
         >
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-outline shadow-2xl shadow-primary/10">
             <Image
-              src="/images/china/hero.jpg"
+              // WebP for the page render: 380KB jpg -> 119KB. The .jpg is kept
+              // and still used as the og:image, where JPEG is the safer format
+              // across social preview scrapers.
+              src="/images/china/hero.webp"
               alt={lang === 'fr' ? 'Tristan avec un client devant la Canton Tower' : 'Tristan with a client at Canton Tower'}
               fill
               priority
