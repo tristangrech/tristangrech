@@ -40,6 +40,7 @@ import {
   CAL_LINK,
   CAL_ORIGIN,
   CAL_NAMESPACE,
+  LEAD_API,
 } from '@/lib/china-i18n';
 
 // Data attributes applied to every booking CTA — Cal's global click
@@ -913,13 +914,40 @@ function Testimonials({ lang }: Props) {
 function LeadMagnet({ lang }: Props) {
   const t = chinaDict[lang].leadMagnet;
   const [email, setEmail] = useState('');
+  const [company, setCompany] = useState(''); // honeypot
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    // TODO: POST to n8n webhook N8N_LEAD_MAGNET_URL once workflow is deployed.
-    setSubmitted(true);
+
+    // Honeypot: invisible to people, so a value here means a bot. Show the
+    // success state and send nothing, so the bot learns nothing.
+    if (company) {
+      setSubmitted(true);
+      return;
+    }
+
+    // This used to be `setSubmitted(true)` with a TODO and no request at all:
+    // the page promised an 8-page PDF, showed "Guide sent", and discarded the
+    // address. Now it actually posts, and says so honestly either way.
+    setSending(true);
+    setFailed(false);
+    try {
+      const res = await fetch(LEAD_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: `china-guide-${lang}` }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setSubmitted(true);
+    } catch {
+      setFailed(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -948,22 +976,49 @@ function LeadMagnet({ lang }: Props) {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3">
                   <div className="flex flex-col sm:flex-row gap-2">
+                    <label htmlFor="guide-email" className="sr-only">
+                      {t.placeholder}
+                    </label>
                     <input
+                      id="guide-email"
+                      name="email"
                       type="email"
                       required
+                      autoComplete="email"
+                      inputMode="email"
+                      maxLength={254}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t.placeholder}
                       className="flex-1 rounded-full bg-surface-card border border-outline px-5 py-3 text-on-surface placeholder:text-on-surface-muted focus:outline-none focus:border-primary transition-colors"
                     />
+                    {/* Honeypot: off-screen, untabbable, hidden from AT. */}
+                    <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+                      <label htmlFor="guide-company">Company</label>
+                      <input
+                        id="guide-company"
+                        name="company"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={company}
+                        onChange={(e) => setCompany(e.target.value)}
+                      />
+                    </div>
                     <button
                       type="submit"
-                      className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-on-surface font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/25"
+                      disabled={sending}
+                      className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-on-surface font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/25 disabled:opacity-60"
                     >
                       {t.cta}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
+                  {failed && (
+                    <p role="alert" className="text-sm text-primary-text">
+                      {t.error}
+                    </p>
+                  )}
                   <div className="text-xs text-on-surface-muted">{t.small}</div>
                 </form>
               )}

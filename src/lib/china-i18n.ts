@@ -18,6 +18,9 @@ export const CAL_ORIGIN = 'https://cal.eu';
 export const CAL_NAMESPACE = 'china-discovery';
 
 // Stripe Payment Links (live, created via API on fullhaura Stripe account).
+// Lead capture endpoint (same service the /landing form posts to).
+export const LEAD_API = 'https://engine.tristangrech.com/stripe/capture-lead';
+
 export const STRIPE_LINK_DISCOVERY = 'https://buy.stripe.com/28E7sK89j04Ra1lh0W4c80s';
 export const STRIPE_LINK_BUILDER = 'https://buy.stripe.com/eVq8wOdtD6tfc9t2624c80t';
 export const STRIPE_LINK_FULL = 'https://buy.stripe.com/fZuaEW61b7xj2yTh0W4c80u';
@@ -89,6 +92,7 @@ export interface LeadMagnetCopy {
   cta: string;
   small: string;
   success: string;
+  error: string;
 }
 
 export interface MapCity {
@@ -449,7 +453,8 @@ const fr: ChinaDict = {
     placeholder: 'ton@email.com',
     cta: 'Envoyez-moi le guide',
     small: 'Aucun spam. Désinscription en un clic.',
-    success: 'Guide envoyé. Vérifie ta boîte (et les spams).',
+    success: 'C\'est noté. On envoie le guide à cette adresse, vérifie aussi les spams.',
+    error: 'L\'envoi a échoué. Réessaie dans un instant, ou écris à tristangrech.nat@gmail.com.',
   },
   faq: {
     eyebrow: 'Questions fréquentes',
@@ -786,7 +791,8 @@ const en: ChinaDict = {
     placeholder: 'your@email.com',
     cta: 'Send me the guide',
     small: 'No spam. One-click unsubscribe.',
-    success: 'Guide sent. Check your inbox (and spam).',
+    success: 'Got it. We are sending the guide to that address, check spam too.',
+    error: 'That did not go through. Try again in a moment, or email tristangrech.nat@gmail.com.',
   },
   faq: {
     eyebrow: 'Frequently asked',

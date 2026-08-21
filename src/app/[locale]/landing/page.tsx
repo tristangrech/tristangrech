@@ -38,23 +38,46 @@ function CheckIcon() {
   );
 }
 
+const FIELD_CLASS =
+  'w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30';
+
 function CheckoutForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [company, setCompany] = useState(''); // honeypot
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!email || !phone) return;
+
+    // Honeypot: a real person never sees this field, so a filled value means a
+    // bot. Behave exactly like success and send nothing, so the bot learns
+    // nothing from the response.
+    if (company) return;
+
     setSending(true);
+    setError('');
     try {
-      await fetch(LEAD_API, {
+      const res = await fetch(LEAD_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone }),
       });
-    } catch {}
+      if (!res.ok) throw new Error(String(res.status));
+    } catch {
+      // This used to be `catch {}` followed by an unconditional redirect, so a
+      // failed capture was invisible: the visitor moved on and the lead was
+      // gone with no signal to anyone. Now it surfaces, keeps every entered
+      // value, and lets them retry.
+      setSending(false);
+      setError(
+        'We could not save your details just now. Try again in a moment, or message +33 6 78 49 61 26 and we will set it up by hand.',
+      );
+      return;
+    }
     const params = new URLSearchParams({ prefilled_email: email });
     window.location.href = STRIPE_LINK + '?' + params.toString();
   }
@@ -62,38 +85,79 @@ function CheckoutForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-3 text-left">
       <div>
-        <label className="mb-1 block text-xs font-medium text-neutral-400">Full Name</label>
+        <label htmlFor="lead-name" className="mb-1 block text-xs font-medium text-neutral-400">
+          Full Name
+        </label>
         <input
+          id="lead-name"
+          name="name"
           type="text"
           required
+          autoComplete="name"
+          maxLength={120}
           placeholder="John Doe"
           value={name}
           onChange={e => setName(e.target.value)}
-          className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+          className={FIELD_CLASS}
         />
       </div>
       <div>
-        <label className="mb-1 block text-xs font-medium text-neutral-400">Email</label>
+        <label htmlFor="lead-email" className="mb-1 block text-xs font-medium text-neutral-400">
+          Email
+        </label>
         <input
+          id="lead-email"
+          name="email"
           type="email"
           required
+          autoComplete="email"
+          inputMode="email"
+          maxLength={254}
           placeholder="john@example.com"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+          className={FIELD_CLASS}
         />
       </div>
       <div>
-        <label className="mb-1 block text-xs font-medium text-neutral-400">WhatsApp Number</label>
+        <label htmlFor="lead-phone" className="mb-1 block text-xs font-medium text-neutral-400">
+          WhatsApp Number
+        </label>
         <input
+          id="lead-phone"
+          name="phone"
           type="tel"
           required
+          autoComplete="tel"
+          inputMode="tel"
+          maxLength={32}
           placeholder="+33 6 12 34 56 78"
           value={phone}
           onChange={e => setPhone(e.target.value)}
-          className="w-full rounded-lg border border-neutral-700 bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder-neutral-500 outline-none transition focus:border-[#FACC15]/50 focus:ring-1 focus:ring-[#FACC15]/30"
+          className={FIELD_CLASS}
         />
       </div>
+
+      {/* Honeypot. Hidden from sight and from assistive tech, skipped by tab. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="lead-company">Company</label>
+        <input
+          id="lead-company"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={company}
+          onChange={e => setCompany(e.target.value)}
+        />
+      </div>
+
+      {error && (
+        <p role="alert" className="rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-300">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
         disabled={sending}
