@@ -1,12 +1,18 @@
+# Canonical host. www must 301 to the apex, not error.
+# Requires www.tristangrech.com to be added as a custom domain on the Pages
+# project, otherwise Cloudflare never routes the request here and returns 522.
+https://www.tristangrech.com/* https://tristangrech.com/:splat 301
+
 # Naked domain → English homepage as a real HTTP redirect.
 # No index.html exists at the apex on purpose: a static asset at "/" would
 # win over this rule (Cloudflare Pages precedence), so we drop the old JS/
-# meta-refresh stub and let non-JS AI crawlers follow a real 302 to content.
+# meta-refresh stub and let non-JS AI crawlers follow a real 301 to content.
 # The apex is the exact URL form cited in llms.txt, so it must resolve cleanly.
-/ /en 302
+# 301 (not 302): permanent, so the signal consolidates on /en.
+/ /en 301
 
 # Dropped locales (old China-era identity) → English homepage
-/zh /en 302
-/ar /en 302
-/zh/* /en 302
-/ar/* /en 302
+/zh /en 301
+/ar /en 301
+/zh/* /en 301
+/ar/* /en 301

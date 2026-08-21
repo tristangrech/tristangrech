@@ -1,5 +1,6 @@
 import { ThemeProvider } from '@/components/ThemeProvider';
 import LenisProvider from '@/components/china/LenisProvider';
+import Analytics from '@/components/Analytics';
 
 interface Props {
   lang: 'fr' | 'en';
@@ -26,12 +27,15 @@ export default function ChinaShell({ lang, fontClassName, children }: Props) {
           }}
         />
         {/*
-          TODO pixels & analytics — add once GDPR consent wrapper is in place:
+          Cloudflare Web Analytics is cookieless, so it ships without a consent
+          banner. Any of the tags below WOULD set cookies and would require a
+          banner plus a refusal path as easy as acceptance before going live:
           - Meta Pixel (id TBD)
           - TikTok Pixel (id TBD)
           - Google Tag (id TBD)
-          - Plausible (self-hosted on VPS)
+          Treat adding one as a legal decision, not a checkbox.
         */}
+        <Analytics />
       </head>
       <body className={`${fontClassName} china-page`}>
         <ThemeProvider>

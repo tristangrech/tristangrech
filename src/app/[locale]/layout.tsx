@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit, Inter, JetBrains_Mono } from 'next/font/google';
 import { isValidLocale, defaultLocale, type Locale } from '@/lib/i18n';
 import { site } from '@/lib/site';
+import Analytics from '@/components/Analytics';
 import '../globals.css';
 
 // Fonts reworked 2026-08-04: Outfit (display) + Inter (body) + JetBrains Mono (labels).
@@ -402,6 +403,7 @@ export default function LocaleLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0A0C10" />
         <JsonLd locale={locale} />
+        <Analytics />
       </head>
       <body
         className={`${unbounded.variable} ${golos.variable} ${plexMono.variable} tg-monitor antialiased`}
