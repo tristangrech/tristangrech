@@ -224,6 +224,7 @@ function Navbar({ lang }: Props) {
 
   return (
     <nav
+      aria-label={lang === 'fr' ? 'Navigation principale' : 'Main'}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-surface-nav/90 backdrop-blur-xl border-b border-outline-faint shadow-sm' : 'bg-transparent'
       }`}
@@ -255,7 +256,7 @@ function Navbar({ lang }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             {...calAttrs}
-            className="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-light text-white text-sm font-medium rounded-full px-4 py-1.5 transition-colors cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-light text-on-surface text-sm font-medium rounded-full px-4 py-1.5 transition-colors cursor-pointer"
           >
             {t.nav.bookCta}
           </a>
@@ -318,7 +319,7 @@ function Hero({ lang }: Props) {
           className="lg:col-span-7 space-y-8"
         >
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-surface-card border border-outline">
-            <Sparkles className="w-3.5 h-3.5 text-primary flex-shrink-0" strokeWidth={2.5} />
+            <Sparkles className="w-3.5 h-3.5 text-primary-text flex-shrink-0" strokeWidth={2.5} />
             <span className="text-sm text-on-surface-secondary font-medium">{t.hero.badge}</span>
           </div>
 
@@ -337,7 +338,7 @@ function Hero({ lang }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 {...calAttrs}
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 cursor-pointer"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-on-surface font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 cursor-pointer"
               >
                 {t.hero.ctaPrimary}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -410,7 +411,7 @@ function Duo({ lang }: Props) {
           <div className="lg:col-span-7 space-y-5">
             <div className="inline-flex items-center gap-2">
               <Handshake className="w-5 h-5 text-primary" />
-              <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+              <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
                 {t.duo.eyebrow}
               </span>
             </div>
@@ -459,7 +460,7 @@ function DuoStat({ value, label, index }: { value: string; label: string; index:
       transition={{ delay: index * 0.08, duration: 0.5 }}
       className="rounded-2xl border border-outline bg-surface p-6 text-center card-hover"
     >
-      <div className="font-heading text-4xl md:text-5xl font-extrabold text-primary tabular-nums leading-none">
+      <div className="font-heading text-4xl md:text-5xl font-extrabold text-primary-text tabular-nums leading-none">
         {numeric !== null ? (
           <span className="inline-flex items-baseline">
             <NumberFlow value={inView ? numeric : 0} />
@@ -485,7 +486,7 @@ function Pain({ lang }: Props) {
     >
       <div className="section-container">
         <div className="max-w-2xl mb-12">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
             {t.pain.eyebrow}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-on-surface mt-3 text-balance">
@@ -523,7 +524,7 @@ function Who({ lang }: Props) {
     <motion.section id="who" {...reveal} className="py-20 md:py-28">
       <div className="section-container">
         <div className="max-w-3xl mb-14">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
             {t.who.eyebrow}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-on-surface mt-3 text-balance leading-tight">
@@ -546,7 +547,7 @@ function Who({ lang }: Props) {
                 <TeamPhoto photo={m.photo} alt={m.name} initial={m.fallbackInitial} />
                 <div className="flex-1 min-w-0">
                   <h3 className="font-heading font-bold text-xl text-on-surface">{m.name}</h3>
-                  <p className="text-sm text-primary font-medium mt-1">{m.role}</p>
+                  <p className="text-sm text-primary-text font-medium mt-1">{m.role}</p>
                 </div>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -593,7 +594,7 @@ function Offers({ lang }: Props) {
     >
       <div className="section-container">
         <div className="max-w-2xl mx-auto text-center mb-14">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
             {t.offers.eyebrow}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-on-surface mt-3 text-balance">
@@ -619,12 +620,12 @@ function Offers({ lang }: Props) {
                 }`}
               >
                 {tier.ribbon && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full shadow-lg shadow-primary/30">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-surface text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full shadow-lg shadow-primary/30">
                     {tier.ribbon}
                   </div>
                 )}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+                  <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
                     {tier.eyebrow}
                   </span>
                   <span className="text-sm text-on-surface-muted">{tier.duration}</span>
@@ -660,7 +661,7 @@ function Offers({ lang }: Props) {
                     href={tier.stripeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block text-center rounded-full px-6 py-3 font-medium text-sm bg-primary text-white hover:bg-primary-light transition-colors"
+                    className="group block text-center rounded-full px-6 py-3 font-medium text-sm bg-primary text-on-surface hover:bg-primary-light transition-colors"
                   >
                     <span className="inline-flex items-center gap-1.5">
                       {tier.cta}
@@ -672,7 +673,7 @@ function Offers({ lang }: Props) {
                     target="_blank"
                     rel="noopener noreferrer"
                     {...calAttrs}
-                    className="block text-center text-xs text-on-surface-muted hover:text-primary transition-colors cursor-pointer"
+                    className="flex min-h-[44px] items-center justify-center text-center text-xs text-on-surface-muted hover:text-primary-text transition-colors cursor-pointer"
                   >
                     {tier.ctaAlt} →
                   </a>
@@ -694,7 +695,7 @@ function Included({ lang }: Props) {
     <motion.section {...reveal} className="py-20 md:py-28">
       <div className="section-container">
         <div className="max-w-3xl mb-12">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">{t.eyebrow}</span>
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">{t.eyebrow}</span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-on-surface mt-3 text-balance">
             {t.title}
           </h2>
@@ -704,7 +705,7 @@ function Included({ lang }: Props) {
           <div className="rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/10 via-surface-card to-surface-card p-7">
             <div className="flex items-center gap-2 mb-5">
               <CheckCircle2 className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold text-primary uppercase tracking-wide">
+              <span className="text-sm font-semibold text-primary-text uppercase tracking-wide">
                 {lang === 'fr' ? 'Inclus' : 'Included'}
               </span>
             </div>
@@ -756,7 +757,7 @@ function Itinerary({ lang }: Props) {
     <motion.section {...reveal} id="itinerary" className="py-20 md:py-28 bg-surface-alt border-y border-outline-faint">
       <div className="section-container">
         <div className="max-w-2xl mb-12">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
             {t.itinerary.eyebrow}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-on-surface mt-3 text-balance">
@@ -784,7 +785,7 @@ function Itinerary({ lang }: Props) {
                   sizes="(max-width: 1024px) 50vw, 20vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-md">
+                <div className="absolute top-3 left-3 bg-primary text-on-surface text-xs font-semibold px-2.5 py-1 rounded-full shadow-md">
                   {stop.day}
                 </div>
               </div>
@@ -809,7 +810,7 @@ function MapSection({ lang }: Props) {
       <div className="section-container">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-6">
-            <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+            <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
               {t.eyebrow}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-on-surface text-balance leading-tight">
@@ -833,7 +834,7 @@ function MapSection({ lang }: Props) {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="font-heading font-bold text-on-surface">{city.name}</span>
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary-text font-medium">
                         {city.tag}
                       </span>
                     </div>
@@ -864,7 +865,7 @@ function Testimonials({ lang }: Props) {
     >
       <div className="section-container">
         <div className="max-w-2xl mb-12">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary inline-flex items-center gap-2">
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text inline-flex items-center gap-2">
             <Sparkles className="w-4 h-4" />
             {t.eyebrow}
           </span>
@@ -887,7 +888,7 @@ function Testimonials({ lang }: Props) {
                   : 'border border-outline bg-surface-card'
               }`}
             >
-              <div className={`text-4xl font-heading leading-none mb-4 ${item.placeholder ? 'text-on-surface-muted/30' : 'text-primary/40'}`}>
+              <div className={`text-4xl font-heading leading-none mb-4 ${item.placeholder ? 'text-on-surface-muted/30' : 'text-primary-text/40'}`}>
                 &ldquo;
               </div>
               <p className={`${item.placeholder ? 'text-on-surface-muted italic' : 'text-on-surface'} leading-relaxed flex-1`}>
@@ -930,7 +931,7 @@ function LeadMagnet({ lang }: Props) {
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2">
                 <Download className="w-5 h-5 text-primary" />
-                <span className="text-xs font-semibold tracking-widest uppercase text-primary">{t.eyebrow}</span>
+                <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">{t.eyebrow}</span>
               </div>
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-on-surface text-balance leading-tight">
                 {t.title}
@@ -957,7 +958,7 @@ function LeadMagnet({ lang }: Props) {
                     />
                     <button
                       type="submit"
-                      className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/25"
+                      className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-on-surface font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/25"
                     >
                       {t.cta}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -987,7 +988,7 @@ function Faq({ lang }: Props) {
     >
       <div className="section-container max-w-3xl">
         <div className="mb-12">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
             {t.faq.eyebrow}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-on-surface mt-3 text-balance">
@@ -1005,7 +1006,7 @@ function Faq({ lang }: Props) {
                   className="w-full flex items-center justify-between text-left px-6 py-5 group"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-heading font-semibold text-on-surface pr-6 group-hover:text-primary transition-colors">
+                  <span className="font-heading font-semibold text-on-surface pr-6 group-hover:text-primary-text transition-colors">
                     {item.q}
                   </span>
                   <ChevronDown
@@ -1060,7 +1061,7 @@ function Social({ lang }: Props) {
             <div className="flex-1 space-y-3">
               <div className="inline-flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-primary" />
-                <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+                <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
                   {t.social.eyebrow}
                 </span>
               </div>
@@ -1074,7 +1075,7 @@ function Social({ lang }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               {...calAttrs}
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 flex-shrink-0 cursor-pointer"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-surface font-medium text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20 flex-shrink-0 cursor-pointer"
             >
               {t.finalCta.cta}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -1125,7 +1126,7 @@ function FinalCta({ lang }: Props) {
       <div className="section-container max-w-3xl text-center space-y-8 relative">
         <div className="inline-flex items-center gap-2">
           <Languages className="w-5 h-5 text-primary" />
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-text">
             FR · ZH · EN · PT · RU
           </span>
         </div>
@@ -1139,7 +1140,7 @@ function FinalCta({ lang }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             {...calAttrs}
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:bg-primary-light transition-colors shadow-xl shadow-primary/25 cursor-pointer"
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-on-surface font-semibold text-base hover:bg-primary-light transition-colors shadow-xl shadow-primary/25 cursor-pointer"
           >
             {t.finalCta.cta}
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -1175,7 +1176,7 @@ function Footer({ lang }: Props) {
                   href={v.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-on-surface-secondary hover:text-primary transition-colors inline-flex items-center gap-1"
+                  className="text-sm text-on-surface-secondary hover:text-primary-text transition-colors inline-flex min-h-[24px] items-center gap-1 py-1"
                 >
                   {v.name}
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -1192,14 +1193,14 @@ function Footer({ lang }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="text-on-surface-secondary hover:text-on-surface transition-colors"
+              className="inline-flex h-11 w-11 items-center justify-center text-on-surface-secondary hover:text-on-surface transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
             <a
               href="mailto:tristangrech.nat@gmail.com"
               aria-label="Email"
-              className="text-on-surface-secondary hover:text-on-surface transition-colors"
+              className="inline-flex h-11 w-11 items-center justify-center text-on-surface-secondary hover:text-on-surface transition-colors"
             >
               <Mail className="w-5 h-5" />
             </a>
@@ -1208,14 +1209,14 @@ function Footer({ lang }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-on-surface-secondary hover:text-on-surface transition-colors"
+              className="inline-flex h-11 w-11 items-center justify-center text-on-surface-secondary hover:text-on-surface transition-colors"
             >
               <LinkedinIcon className="w-5 h-5" />
             </a>
           </div>
           <div className="flex md:justify-end items-center gap-3 text-xs text-on-surface-muted">
             {t.footer.legal.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-on-surface transition-colors">
+              <Link key={l.href} href={l.href} className="inline-flex min-h-[24px] items-center px-1 py-1 hover:text-on-surface transition-colors">
                 {l.label}
               </Link>
             ))}
@@ -1224,7 +1225,7 @@ function Footer({ lang }: Props) {
       </div>
       <div className="section-container mt-10 pt-6 border-t border-outline-faint flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-on-surface-muted">
         <span>{t.footer.copyright}</span>
-        <Link href={OTHER_PATH[lang]} className="hover:text-on-surface transition-colors">
+        <Link href={OTHER_PATH[lang]} className="inline-flex min-h-[24px] items-center px-1 py-1 hover:text-on-surface transition-colors">
           {lang === 'fr' ? 'English version →' : 'Version française →'}
         </Link>
       </div>
@@ -1269,7 +1270,7 @@ function StickyMobileCta({ lang }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               {...calAttrs}
-              className="inline-flex items-center gap-1.5 bg-primary text-white text-sm font-medium rounded-full px-4 py-2.5 flex-shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-primary text-on-surface text-sm font-medium rounded-full px-4 py-2.5 flex-shrink-0 cursor-pointer"
             >
               {t.stickyMobile.cta}
               <ArrowRight className="w-4 h-4" />

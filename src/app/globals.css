@@ -13,10 +13,11 @@
     --surface-nav: 240 238 229;
     --on-surface: 31 30 29;          /* #1F1E1D — warm ink */
     --on-surface-secondary: 74 72 68;
-    --on-surface-muted: 135 133 127;
+    --on-surface-muted: 100 98 93;    /* #64625D — was #87857F at 3.17:1, fails AA */
     --outline: 221 217 206;          /* #DDD9CE */
     --outline-faint: 232 229 218;
-    --accent: 204 120 92;            /* #cc785c */
+    --accent: 204 120 92;            /* #cc785c — brand, unchanged: fills, borders, glows */
+    --accent-text: 158 74 47;        /* #9E4A2F — accent as small text, 4.79:1 worst surface */
     --accent-soft: 235 199 184;      /* #ebc7b8 */
   }
 
@@ -252,4 +253,19 @@ html[lang="zh"] * {
 ::selection {
   background: rgb(var(--accent) / 0.85);
   color: #fffdf7;
+}
+
+/* Leaflet ships its attribution link at #0078A8, which measured 3.67:1 against
+   the dark map chrome and fails AA. Third-party markup we cannot restructure,
+   but the colour is ours to set. Attribution must stay visible and legible:
+   CARTO and OpenStreetMap both require it. */
+.leaflet-container .leaflet-control-attribution {
+  background: rgba(10, 12, 16, 0.85);
+}
+.leaflet-container .leaflet-control-attribution,
+.leaflet-container .leaflet-control-attribution a {
+  color: #C9D1DC;
+}
+.leaflet-container .leaflet-control-attribution a:hover {
+  color: #FFFFFF;
 }

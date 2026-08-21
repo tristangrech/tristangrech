@@ -51,6 +51,11 @@ const config: Config = {
           DEFAULT: '#cc785c',
           light: '#d97757',
           dark: '#b8694f',
+          // Accent as SMALL TEXT only. #cc785c reads at 2.60:1 to 3.11:1 on the
+          // cream surfaces, which fails AA. This darkened variant clears 4.5:1
+          // on all three. The brand accent above is unchanged and still used for
+          // fills, borders, glows and blobs.
+          text: '#9E4A2F',
         },
       },
       letterSpacing: {

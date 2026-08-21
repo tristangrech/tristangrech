@@ -45,10 +45,10 @@ const PROJECTS: {
     desc: { fr: 'Voyages de sourcing et achats accompagnés en Chine du Sud.', en: 'Guided sourcing trips and buying in South China.', ru: 'Байер-туры и закупки в Южном Китае под сопровождением.' } },
 ];
 
-const C: Record<Locale, { role: string; tagline: string; work: string; note: string; contact: string }> = {
-  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter' },
-  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch' },
-  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться' },
+const C: Record<Locale, { role: string; tagline: string; work: string; note: string; contact: string; skip: string; langNav: string }> = {
+  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter', skip: 'Aller au contenu', langNav: 'Choix de la langue' },
+  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch', skip: 'Skip to content', langNav: 'Language' },
+  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка' },
 };
 
 const CONTACT: { icon: string; label: string; href: string }[] = [
@@ -200,12 +200,17 @@ export default function LinkHub({ locale }: { locale: Locale }) {
   return (
     <main className="relative min-h-[100svh] overflow-hidden bg-[#050506] text-bone grain">
       <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes hubUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+        @keyframes hubUp { from { opacity: .01; transform: translateY(18px); } to { opacity: 1; transform: none; } }
         @keyframes hubShimmer { to { background-position: 200% center; } }
         @keyframes hubBlob { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(5%, -4%) scale(1.1); } }
         @keyframes hubRing { to { transform: rotate(360deg); } }
-        .hub-in { opacity: 0; animation: hubUp .8s cubic-bezier(.16,1,.3,1) forwards; }
-        .hub-name { opacity: 0; background: linear-gradient(100deg,#EFECE3 18%,#E3A84E 42%,#F23D30 58%,#EFECE3 82%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: hubUp .8s cubic-bezier(.16,1,.3,1) forwards, hubShimmer 7s linear infinite; }
+        /* opacity starts at .01, not 0. The browser discards opacity:0 elements
+           as LCP candidates, so a 0 here meant LCP could not resolve until the
+           .8s animation finished — measured 3,928ms on mobile, and 2 of 6 runs
+           recorded no LCP entry at all. .01 is visually identical and keeps the
+           element a candidate from first paint. */
+        .hub-in { opacity: .01; animation: hubUp .8s cubic-bezier(.16,1,.3,1) forwards; }
+        .hub-name { opacity: .01; background: linear-gradient(100deg,#EFECE3 18%,#E3A84E 42%,#F23D30 58%,#EFECE3 82%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: hubUp .8s cubic-bezier(.16,1,.3,1) forwards, hubShimmer 7s linear infinite; }
         .hub-card { transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .35s, background-color .35s, box-shadow .35s; transform-style: preserve-3d; will-change: transform; }
         .hub-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: 0 20px 50px -20px color-mix(in srgb, var(--accent) 45%, transparent); }
         .hub-card:hover .hub-icon { color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); box-shadow: 0 0 26px -6px color-mix(in srgb, var(--accent) 60%, transparent); }
@@ -218,10 +223,30 @@ export default function LinkHub({ locale }: { locale: Locale }) {
       <div aria-hidden="true" className="pointer-events-none absolute -bottom-48 left-1/4 h-[36rem] w-[36rem] rounded-full bg-[#E3A84E]/10 blur-[130px]" style={{ animation: 'hubBlob 23s ease-in-out infinite' }} />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col px-5 py-8 md:px-8 md:py-12">
+        <a
+          href="#work"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-bone focus:px-4 focus:py-2 focus:text-ink"
+        >
+          {t.skip}
+        </a>
+
         <div className="hub-in flex items-center justify-between">
           <span className="font-display text-lg font-semibold tracking-tight text-bone/90">Tristan Grech</span>
-          <nav className="flex items-center gap-3 text-[13px] uppercase text-dim">
-            {LOCALES.map((l) => (<a key={l} href={`/${l}`} className={`transition-colors ${l === locale ? 'text-bone' : 'hover:text-bone'}`}>{l}</a>))}
+          {/* Each link is padded to a 40px hit area: the bare glyphs measured
+              16x20 and 18x20, under the 24px WCAG 2.2 floor. -m-* keeps the
+              visual spacing identical. */}
+          <nav aria-label={t.langNav} className="flex items-center gap-1 text-[13px] uppercase text-dim">
+            {LOCALES.map((l) => (
+              <a
+                key={l}
+                href={`/${l}`}
+                lang={l}
+                aria-current={l === locale ? 'page' : undefined}
+                className={`inline-flex h-10 min-w-10 items-center justify-center rounded transition-colors ${l === locale ? 'text-bone' : 'hover:text-bone'}`}
+              >
+                {l}
+              </a>
+            ))}
           </nav>
         </div>
 
@@ -238,16 +263,19 @@ export default function LinkHub({ locale }: { locale: Locale }) {
               style={{ transform: 'scale(1.08)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
               className="absolute inset-0 h-full w-full object-cover object-center opacity-85" />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-[#050506]/20" />
-            <img ref={subjRef} src="/images/hero/hero-subject.webp" alt="Tristan Grech" loading="eager"
+            {/* No fetchPriority here: hero-bg above already carries high, and
+                §6.3 allows exactly one priority image. Two competing signals
+                help nothing. */}
+            <img ref={subjRef} src="/images/hero/hero-subject.webp" alt="Tristan Grech" loading="eager" decoding="async"
               style={{ transform: 'translateX(-50%)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
               className="absolute bottom-0 left-1/2 h-[97%] w-auto max-w-none drop-shadow-[0_18px_36px_rgba(0,0,0,0.55)]" />
           </div>
         </header>
 
-        <section aria-label={t.work} className="flex-1">
+        <section id="work" aria-label={t.work} className="flex-1">
           <div className="hub-in mb-6 flex items-baseline justify-between border-b border-white/10 pb-3" style={{ animationDelay: '270ms' }}>
             <h2 className="font-display text-xl font-semibold text-bone/90">{t.work}</h2>
-            <span className="hidden text-[13px] text-dim/70 sm:block">{t.note}</span>
+            <span className="hidden text-[13px] text-dim sm:block">{t.note}</span>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {PROJECTS.map((p, i) => (
@@ -273,7 +301,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
                   <span className="mt-4 text-xs font-medium" style={{ color: p.accent }}>{p.tag}</span>
                   <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-bone md:text-2xl">{p.name}</h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-dim">{p.desc[locale] ?? p.desc.en}</p>
-                  <span className="mt-5 font-plex text-[11px] text-dim/70 transition-colors group-hover:text-bone">{p.domain}</span>
+                  <span className="mt-5 font-plex text-[11px] text-dim transition-colors group-hover:text-bone">{p.domain}</span>
                 </div>
               </a>
             ))}

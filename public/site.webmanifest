@@ -1,6 +1,12 @@
 {
   "name": "Tristan Grech",
   "short_name": "TG",
+  "description": "Developer and filmmaker in Guangzhou. Multilingual websites, booking systems and 4K video.",
+  "lang": "en",
+  "start_url": "/en",
+  "display": "standalone",
+  "theme_color": "#0A0C10",
+  "background_color": "#0A0C10",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -11,9 +17,12 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ],
-  "theme_color": "#0A0C10",
-  "background_color": "#0A0C10",
-  "display": "standalone"
+  ]
 }
