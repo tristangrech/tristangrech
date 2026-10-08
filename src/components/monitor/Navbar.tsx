@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { locales, localeNames, type Locale } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
-import { site } from '@/lib/site';
+import { site, waLink, waGeneralText } from '@/lib/site';
 
 // The page is treated as a 4-minute reel at 25 fps: scrolling scrubs the timecode.
 const TOTAL_FRAMES = 4 * 60 * 25;
@@ -128,7 +128,7 @@ export default function Navbar({ locale }: { locale: Locale }) {
             ))}
           </div>
           <a
-            href={site.whatsapp}
+            href={waLink(waGeneralText[locale])}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 bg-rec text-bone text-sm font-medium rounded-sm hover:bg-[#d9352a] transition-colors"

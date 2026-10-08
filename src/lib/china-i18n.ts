@@ -15,6 +15,19 @@ export const OTHER_PATH: Record<ChinaLang, string> = { fr: '/china', en: '/chine
 export const CAL_URL = 'https://cal.eu/tristan-grech-bkirnq/china-discovery';
 export const CAL_LINK = 'tristan-grech-bkirnq/china-discovery';
 export const CAL_ORIGIN = 'https://cal.eu';
+
+// WhatsApp with a prefilled first message, so the chat opens knowing the
+// visitor came from the China page and what they want.
+export const CHINA_WA: Record<ChinaLang, { label: string; text: string }> = {
+  fr: {
+    label: 'Écrire sur WhatsApp',
+    text: 'Bonjour Tristan, je viens de votre page Chine et je voudrais organiser un voyage de sourcing.',
+  },
+  en: {
+    label: 'Message on WhatsApp',
+    text: 'Hello Tristan, I found you through your China page and I’d like to organise a sourcing trip.',
+  },
+};
 export const CAL_NAMESPACE = 'china-discovery';
 
 // Stripe Payment Links (live, created via API on fullhaura Stripe account).

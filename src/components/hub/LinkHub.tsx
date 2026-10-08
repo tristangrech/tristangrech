@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from 'react';
 import type { Locale } from '@/lib/i18n';
+import { waLink, waGeneralText } from '@/lib/site';
 
 type Desc = Record<Locale, string>;
 
@@ -51,8 +52,8 @@ const C: Record<Locale, { role: string; tagline: string; work: string; note: str
   ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка', cta: 'Написать в WhatsApp', ctaSecondary: 'Посмотреть проекты' },
 };
 
-const CONTACT: { icon: string; label: string; href: string }[] = [
-  { icon: 'whatsapp', label: 'WhatsApp', href: 'https://wa.me/33678496126' },
+const contactLinks = (locale: Locale): { icon: string; label: string; href: string }[] => [
+  { icon: 'whatsapp', label: 'WhatsApp', href: waLink(waGeneralText[locale] ?? waGeneralText.en) },
   { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/tristangrch/' },
   { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/fullhaura/' },
   { icon: 'telegram', label: 'Telegram', href: 'https://t.me/Fullhaura' },
@@ -80,6 +81,7 @@ const LOCALES: Locale[] = ['fr', 'en', 'ru'];
 
 export default function LinkHub({ locale }: { locale: Locale }) {
   const t = C[locale] ?? C.en;
+  const CONTACT = contactLinks(locale);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLImageElement>(null);

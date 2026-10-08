@@ -41,7 +41,9 @@ import {
   CAL_ORIGIN,
   CAL_NAMESPACE,
   LEAD_API,
+  CHINA_WA,
 } from '@/lib/china-i18n';
+import { waLink } from '@/lib/site';
 
 // Data attributes applied to every booking CTA — Cal's global click
 // listener intercepts clicks and opens an in-page modal. href is kept
@@ -345,6 +347,16 @@ function Hero({ lang }: Props) {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </MagneticButton>
+            <a
+              href={waLink(CHINA_WA[lang].text)}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="hero-whatsapp"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-primary/60 text-on-surface font-medium text-sm hover:border-primary hover:bg-primary/10 transition-all"
+            >
+              <MessageCircle className="w-4 h-4" />
+              {CHINA_WA[lang].label}
+            </a>
             <a
               href="#offers"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-outline text-on-surface-secondary font-medium text-sm hover:border-primary hover:text-on-surface transition-all"
@@ -1247,7 +1259,7 @@ function Footer({ lang }: Props) {
         <div className="space-y-3 md:text-right">
           <div className="flex md:justify-end items-center gap-4 text-sm">
             <a
-              href="https://wa.me/33678496126"
+              href={waLink(CHINA_WA[lang].text)}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

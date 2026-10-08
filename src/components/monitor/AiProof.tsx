@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
-import { site } from '@/lib/site';
+import { site, waLink, waGeneralText } from '@/lib/site';
 import Scene from './Scene';
 
 export default function AiProof({ locale }: { locale: Locale }) {
@@ -17,7 +17,7 @@ export default function AiProof({ locale }: { locale: Locale }) {
               </p>
             ))}
             <a
-              href={site.whatsapp}
+              href={waLink(waGeneralText[locale])}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-6 py-3 bg-rec text-bone font-medium text-sm rounded-sm hover:bg-[#d9352a] transition-colors"

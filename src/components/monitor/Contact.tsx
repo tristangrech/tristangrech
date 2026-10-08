@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
-import { site } from '@/lib/site';
+import { site, waLink, waGeneralText } from '@/lib/site';
 import Scene from './Scene';
 
 export default function Contact({ locale }: { locale: Locale }) {
@@ -11,7 +11,7 @@ export default function Contact({ locale }: { locale: Locale }) {
         <Scene scene={t.contact.scene} label={t.contact.label} title={t.contact.title} sub={t.contact.sub} />
         <div className="flex flex-wrap items-center gap-4">
           <a
-            href={site.whatsapp}
+            href={waLink(waGeneralText[locale])}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-rec text-bone font-medium text-sm rounded-sm hover:bg-[#d9352a] transition-colors"
