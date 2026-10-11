@@ -1047,10 +1047,11 @@ function LeadMagnet({ lang }: Props) {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3">
+                  {/* Visible label that says what the address is for. */}
+                  <label htmlFor="guide-email" className="block text-sm text-on-surface-secondary">
+                    {lang === 'fr' ? 'Ton email, pour recevoir le guide PDF' : 'Your email, to receive the PDF guide'}
+                  </label>
                   <div className="flex flex-col sm:flex-row gap-2">
-                    <label htmlFor="guide-email" className="sr-only">
-                      {lang === 'fr' ? 'Ton email, pour recevoir le guide PDF' : 'Your email, to receive the PDF guide'}
-                    </label>
                     <input
                       id="guide-email"
                       name="email"

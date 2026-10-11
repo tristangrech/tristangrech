@@ -47,9 +47,9 @@ const PROJECTS: {
 ];
 
 const C: Record<Locale, { role: string; tagline: string; intro: string; work: string; note: string; contact: string; skip: string; langNav: string; cta: string; ctaSecondary: string }> = {
-  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', intro: 'Sites multilingues, applications web, systèmes de réservation et vidéo 4K. Basé à Canton, en Chine. Je travaille en français, en anglais et en russe.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter', skip: 'Aller au contenu', langNav: 'Choix de la langue', cta: 'Me contacter sur WhatsApp', ctaSecondary: 'Voir les projets' },
-  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', intro: 'Multilingual websites, web apps, booking systems and 4K video. Based in Guangzhou, China. I work in French, English and Russian.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch', skip: 'Skip to content', langNav: 'Language', cta: 'Message me on WhatsApp', ctaSecondary: 'See the projects' },
-  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', intro: 'Многоязычные сайты, веб-приложения, системы бронирования и видео 4K. Живу в Гуанчжоу, Китай. Работаю на русском, английском и французском.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка', cta: 'Написать в WhatsApp', ctaSecondary: 'Посмотреть проекты' },
+  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', intro: 'Sites multilingues, applications web, systèmes de réservation, audits de visibilité IA et vidéo 4K. Basé à Canton, en Chine. Je travaille en français, en anglais et en russe.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter', skip: 'Aller au contenu', langNav: 'Choix de la langue', cta: 'Me contacter sur WhatsApp', ctaSecondary: 'Voir les projets' },
+  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', intro: 'Multilingual websites, web apps, booking systems, AI visibility audits and 4K video. Based in Guangzhou, China. I work in French, English and Russian.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch', skip: 'Skip to content', langNav: 'Language', cta: 'Message me on WhatsApp', ctaSecondary: 'See the projects' },
+  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', intro: 'Многоязычные сайты, веб-приложения, системы бронирования, аудит видимости в ИИ и видео 4K. Живу в Гуанчжоу, Китай. Работаю на русском, английском и французском.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка', cta: 'Написать в WhatsApp', ctaSecondary: 'Посмотреть проекты' },
 };
 
 const contactLinks = (locale: Locale): { icon: string; label: string; href: string }[] => [
@@ -159,6 +159,20 @@ export default function LinkHub({ locale }: { locale: Locale }) {
       window.removeEventListener('deviceorientation', onOrient);
       window.removeEventListener('touchend', onFirstTap);
     };
+  }, []);
+
+  // Cover posters: assigned when a card is within a screen of the viewport,
+  // for every visitor (reduced motion and data saver included), so they no
+  // longer compete with the hero image at load.
+  useEffect(() => {
+    const vids = videoRefs.current.filter(Boolean);
+    const show = (v: HTMLVideoElement) => { if (v.dataset.poster && !v.poster) v.poster = v.dataset.poster; };
+    if (!('IntersectionObserver' in window)) { vids.forEach(show); return; }
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { show(e.target as HTMLVideoElement); io.unobserve(e.target); }
+    }, { rootMargin: '600px 0px' });
+    vids.forEach((v) => io.observe(v));
+    return () => io.disconnect();
   }, []);
 
   // Cover videos: nothing downloads until a card nears the viewport, clips play only while
@@ -296,9 +310,9 @@ export default function LinkHub({ locale }: { locale: Locale }) {
             </div>
           </div>
           <div ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave}
-            className="hub-in order-1 relative mx-auto aspect-[3/4] w-full max-w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:order-2 lg:max-w-none lg:aspect-[4/5]"
+            className="hub-in order-1 relative mx-auto aspect-[3/4] w-full max-w-[14rem] sm:max-w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:order-2 lg:max-w-none lg:aspect-[4/5]"
             style={{ animationDelay: '160ms' }}>
-            <img ref={bgRef} src="/images/hero/hero-bg.webp" srcSet="/images/hero/hero-bg-600.webp 600w, /images/hero/hero-bg.webp 950w" sizes="(min-width: 1024px) 45vw, 22rem" alt="" aria-hidden="true" width={950} height={1425}
+            <img ref={bgRef} src="/images/hero/hero-bg.webp" srcSet="/images/hero/hero-bg-600.webp 600w, /images/hero/hero-bg.webp 950w" sizes="(min-width: 1024px) 45vw, (min-width: 640px) 22rem, 14rem" alt="" aria-hidden="true" width={950} height={1425}
               style={{ transform: 'scale(1.08)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
               className="absolute inset-0 h-full w-full object-cover object-center opacity-85" />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-[#050506]/20" />
@@ -324,7 +338,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
                 <div className="relative aspect-video w-full overflow-hidden">
                   <video
                     ref={(el) => { if (el) videoRefs.current[i] = el; }}
-                    poster={p.cover}
+                    data-poster={p.cover}
                     data-src={p.cover.replace('/images/covers/', '/videos/covers/').replace('.webp', '.mp4')}
                     muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} disablePictureInPicture
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
