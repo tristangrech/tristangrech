@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from 'react';
 import type { Locale } from '@/lib/i18n';
-import { waLink, waGeneralText } from '@/lib/site';
+import { site, waLink, waGeneralText } from '@/lib/site';
 
 type Desc = Record<Locale, string>;
 
@@ -30,37 +30,37 @@ const ICON: Record<string, ReactNode> = {
 };
 
 const PROJECTS: {
-  name: string; url: string; domain: string; tag: string; icon: string; accent: string; cover: string; desc: Desc; wide?: boolean;
+  name: string; url: string; domain: string; tag: Desc; icon: string; accent: string; cover: string; desc: Desc; wide?: boolean;
 }[] = [
-  { name: 'Sumera', url: 'https://sumera.io', domain: 'sumera.io', tag: 'AI · SaaS', icon: 'sparkle', accent: '#F23D30', cover: '/images/covers/sumera.webp', wide: true,
+  { name: 'Sumera', url: 'https://sumera.io', domain: 'sumera.io', tag: { fr: 'IA · SaaS', en: 'AI · SaaS', ru: 'ИИ · SaaS' }, icon: 'sparkle', accent: '#F23D30', cover: '/images/covers/sumera.webp', wide: true,
     desc: { fr: 'Générateur de scripts YouTube par IA, avec facturation Stripe.', en: 'AI YouTube script generator, with live Stripe billing.', ru: 'ИИ-генератор сценариев для YouTube с оплатой через Stripe.' } },
-  { name: 'Fullink', url: 'https://www.fullink.io', domain: 'fullink.io', tag: 'Creator tool', icon: 'link', accent: '#38BDF8', cover: '/images/covers/fullink.webp',
+  { name: 'Fullink', url: 'https://www.fullink.io', domain: 'fullink.io', tag: { fr: 'Outil créateurs', en: 'Creator tool', ru: 'Для авторов' }, icon: 'link', accent: '#38BDF8', cover: '/images/covers/fullink.webp',
     desc: { fr: 'Plateforme link in bio pour créateurs.', en: 'Link in bio platform for creators.', ru: 'Link in bio платформа для авторов.' } },
-  { name: 'Feu France', url: 'https://feufrance.fr', domain: 'feufrance.fr', tag: 'Service public', icon: 'flame', accent: '#FB923C', cover: '/images/covers/feufrance.webp',
+  { name: 'Feu France', url: 'https://feufrance.fr', domain: 'feufrance.fr', tag: { fr: 'Service public', en: 'Public service', ru: 'Общественный сервис' }, icon: 'flame', accent: '#FB923C', cover: '/images/covers/feufrance.webp',
     desc: { fr: 'La carte des feux de forêt en France, en direct.', en: 'Live wildfire map and alerts for France.', ru: 'Карта лесных пожаров Франции в реальном времени.' } },
-  { name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', domain: 'studionicepodcast.com', tag: 'Studio', icon: 'mic', accent: '#A78BFA', cover: '/images/covers/studionicepodcast.webp',
+  { name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', domain: 'studionicepodcast.com', tag: { fr: 'Studio', en: 'Studio', ru: 'Студия' }, icon: 'mic', accent: '#A78BFA', cover: '/images/covers/studionicepodcast.webp',
     desc: { fr: 'Studio de podcast vidéo 4K à Nice, réservation en ligne.', en: '4K video podcast studio in Nice, online booking.', ru: 'Студия видеоподкастов 4K в Ницце, онлайн-бронирование.' } },
-  { name: 'Polytaipe', url: 'https://polytaipe.com', domain: 'polytaipe.com', tag: 'Web app', icon: 'keyboard', accent: '#818CF8', cover: '/images/covers/polytaipe.webp',
+  { name: 'Polytaipe', url: 'https://polytaipe.com', domain: 'polytaipe.com', tag: { fr: 'Application web', en: 'Web app', ru: 'Веб-приложение' }, icon: 'keyboard', accent: '#818CF8', cover: '/images/covers/polytaipe.webp',
     desc: { fr: 'Entraîneur de frappe pour toute disposition clavier.', en: 'Typing trainer for any keyboard layout.', ru: 'Тренажёр печати для любой раскладки.' } },
-  { name: 'Source Canton', url: 'https://sourcecanton.com', domain: 'sourcecanton.com', tag: 'Sourcing', icon: 'box', accent: '#E11D48', cover: '/images/covers/sourcecanton.webp',
-    desc: { fr: 'Voyages de sourcing et achats accompagnés en Chine du Sud.', en: 'Guided sourcing trips and buying in South China.', ru: 'Байер-туры и закупки в Южном Китае под сопровождением.' } },
+  { name: 'Source Canton', url: 'https://sourcecanton.com', domain: 'sourcecanton.com', tag: { fr: 'Sourcing', en: 'Sourcing', ru: 'Закупки' }, icon: 'box', accent: '#E11D48', cover: '/images/covers/sourcecanton.webp',
+    desc: { fr: 'Marketplace de sourcing en Chine : un brief, un devis écrit.', en: 'China sourcing marketplace: one brief, a written quote.', ru: 'Маркетплейс закупок в Китае: один запрос, письменное предложение.' } },
 ];
 
-const C: Record<Locale, { role: string; tagline: string; work: string; note: string; contact: string; skip: string; langNav: string; cta: string; ctaSecondary: string }> = {
-  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter', skip: 'Aller au contenu', langNav: 'Choix de la langue', cta: 'Me contacter sur WhatsApp', ctaSecondary: 'Voir les projets' },
-  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch', skip: 'Skip to content', langNav: 'Language', cta: 'Message me on WhatsApp', ctaSecondary: 'See the projects' },
-  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка', cta: 'Написать в WhatsApp', ctaSecondary: 'Посмотреть проекты' },
+const C: Record<Locale, { role: string; tagline: string; intro: string; work: string; note: string; contact: string; skip: string; langNav: string; cta: string; ctaSecondary: string }> = {
+  fr: { role: 'Développeur et vidéaste', tagline: 'Je construis et j’exploite mes propres produits.', intro: 'Sites multilingues, applications web, systèmes de réservation et vidéo 4K. Basé à Canton, en Chine. Je travaille en français, en anglais et en russe.', work: 'Les projets', note: 'Tout est en production. Cliquez, ouvrez, vérifiez.', contact: 'Me contacter', skip: 'Aller au contenu', langNav: 'Choix de la langue', cta: 'Me contacter sur WhatsApp', ctaSecondary: 'Voir les projets' },
+  en: { role: 'Developer and filmmaker', tagline: 'I build and run my own products.', intro: 'Multilingual websites, web apps, booking systems and 4K video. Based in Guangzhou, China. I work in French, English and Russian.', work: 'The projects', note: 'Everything is in production. Click, open, check.', contact: 'Get in touch', skip: 'Skip to content', langNav: 'Language', cta: 'Message me on WhatsApp', ctaSecondary: 'See the projects' },
+  ru: { role: 'Разработчик и видеограф', tagline: 'Я создаю и веду собственные продукты.', intro: 'Многоязычные сайты, веб-приложения, системы бронирования и видео 4K. Живу в Гуанчжоу, Китай. Работаю на русском, английском и французском.', work: 'Проекты', note: 'Всё в продакшене. Кликните, откройте, проверьте.', contact: 'Связаться', skip: 'Перейти к содержимому', langNav: 'Выбор языка', cta: 'Написать в WhatsApp', ctaSecondary: 'Посмотреть проекты' },
 };
 
 const contactLinks = (locale: Locale): { icon: string; label: string; href: string }[] => [
   { icon: 'whatsapp', label: 'WhatsApp', href: waLink(waGeneralText[locale] ?? waGeneralText.en) },
-  { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/tristangrch/' },
+  { icon: 'instagram', label: 'Instagram', href: site.instagram },
   { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/fullhaura/' },
   { icon: 'telegram', label: 'Telegram', href: 'https://t.me/Fullhaura' },
   { icon: 'mail', label: 'Email', href: 'mailto:tristangrech.nat@gmail.com' },
 ];
 
-const SERVICES: { title: Record<Locale, string>; desc: Record<Locale, string> }[] = [
+const SERVICES: { title: Record<Locale, string>; desc: Record<Locale, string>; href?: Record<Locale, string> }[] = [
   { title: { fr: 'Sites web', en: 'Websites', ru: 'Сайты' },
     desc: { fr: 'Sites multilingues avec SEO et visibilité IA intégrés dès le départ.', en: 'Multilingual sites with SEO and AI visibility built in from the start.', ru: 'Многоязычные сайты с SEO и видимостью в ИИ с самого начала.' } },
   { title: { fr: 'Applications et réservation', en: 'Web apps and booking', ru: 'Веб-приложения и бронирование' },
@@ -69,6 +69,9 @@ const SERVICES: { title: Record<Locale, string>; desc: Record<Locale, string> }[
     desc: { fr: 'Pourquoi les assistants IA ne vous citent pas, et quoi corriger, sous 48 heures.', en: 'Why AI assistants skip you, and exactly what to fix, within 48 hours.', ru: 'Почему ИИ вас не упоминает и что именно исправить, за 48 часов.' } },
   { title: { fr: 'Vidéo et podcast', en: 'Video and podcast', ru: 'Видео и подкасты' },
     desc: { fr: 'Interviews 4K, événements, podcasts. Studio à Nice, tournage partout.', en: '4K interviews, events, podcasts. Studio in Nice, on location anywhere.', ru: 'Интервью 4K, съёмки, подкасты. Студия в Ницце, выезд куда угодно.' } },
+  { title: { fr: 'Voyages de sourcing en Chine', en: 'China sourcing trips', ru: 'Байер-туры в Китай' },
+    desc: { fr: 'Voyages guidés de 3 à 7 jours entre Guangzhou, Foshan et Shenzhen.', en: 'Guided 3 to 7 day trips across Guangzhou, Foshan and Shenzhen.', ru: 'Поездки с гидом от 3 до 7 дней: Гуанчжоу, Фошань и Шэньчжэнь.' },
+    href: { fr: '/chine', en: '/china', ru: '/china' } },
 ];
 
 const SERVICES_TEXT: Record<Locale, { title: string; intro: string }> = {
@@ -255,8 +258,9 @@ export default function LinkHub({ locale }: { locale: Locale }) {
         <header className="relative grid min-h-[84svh] grid-cols-1 items-center gap-8 py-6 lg:min-h-[78svh] lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative z-10 order-2 lg:order-1">
             <p className="hub-in text-sm text-ambr/90" style={{ animationDelay: '60ms' }}>{t.role}</p>
-            <h1 className="hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms' }}>Tristan<br />Grech</h1>
+            <h1 className="hub-name font-display font-black uppercase leading-[0.82] tracking-tighter text-6xl sm:text-7xl lg:text-8xl mt-3" style={{ animationDelay: '120ms' }}>Tristan{' '}<br />Grech</h1>
             <p className="hub-in mt-6 max-w-sm text-base text-dim md:text-lg" style={{ animationDelay: '200ms' }}>{t.tagline}</p>
+            <p className="hub-in mt-3 max-w-md text-sm leading-relaxed text-dim md:text-base" style={{ animationDelay: '220ms' }}>{t.intro}</p>
             {/* Above-the-fold action. Previously the only clickable things in
                 the hero were the three language links, and the sole contact
                 route was five icons at the very bottom of the page, past 6
@@ -284,14 +288,14 @@ export default function LinkHub({ locale }: { locale: Locale }) {
           <div ref={heroRef} onMouseMove={onHero} onMouseLeave={onHeroLeave}
             className="hub-in order-1 relative mx-auto aspect-[3/4] w-full max-w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:order-2 lg:max-w-none lg:aspect-[4/5]"
             style={{ animationDelay: '160ms' }}>
-            <img ref={bgRef} src="/images/hero/hero-bg.webp" alt="" aria-hidden="true" fetchPriority="high"
+            <img ref={bgRef} src="/images/hero/hero-bg.webp" srcSet="/images/hero/hero-bg-600.webp 600w, /images/hero/hero-bg.webp 950w" sizes="(min-width: 1024px) 45vw, 22rem" alt="" aria-hidden="true" width={950} height={1425}
               style={{ transform: 'scale(1.08)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
               className="absolute inset-0 h-full w-full object-cover object-center opacity-85" />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#050506] via-transparent to-[#050506]/20" />
-            {/* No fetchPriority here: hero-bg above already carries high, and
-                §6.3 allows exactly one priority image. Two competing signals
-                help nothing. */}
-            <img ref={subjRef} src="/images/hero/hero-subject.webp" alt="Tristan Grech" loading="eager" decoding="async"
+            {/* The subject is the measured LCP element on mobile (Lighthouse,
+                2026-10-11), so it carries the one high-priority hint and the bg
+                does not. It renders about 180 to 230px wide, hence the sizes. */}
+            <img ref={subjRef} src="/images/hero/hero-subject.webp" srcSet="/images/hero/hero-subject-400.webp 400w, /images/hero/hero-subject.webp 600w" sizes="(min-width: 1024px) 15rem, 12rem" alt="Tristan Grech" width={600} height={1490} loading="eager" fetchPriority="high"
               style={{ transform: 'translateX(-50%)', transition: 'transform .4s cubic-bezier(.16,1,.3,1)' }}
               className="absolute bottom-0 left-1/2 h-[97%] w-auto max-w-none drop-shadow-[0_18px_36px_rgba(0,0,0,0.55)]" />
           </div>
@@ -323,7 +327,7 @@ export default function LinkHub({ locale }: { locale: Locale }) {
                     <span className="hub-icon flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] p-2.5 text-dim transition-all duration-300">{ICON[p.icon]}</span>
                     <span aria-hidden="true" className="h-4 w-4 text-dim transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-bone">{ICON.arrow}</span>
                   </div>
-                  <span className="mt-4 text-xs font-medium" style={{ color: p.accent }}>{p.tag}</span>
+                  <span className="mt-4 text-xs font-medium" style={{ color: p.accent }}>{p.tag[locale] ?? p.tag.en}</span>
                   <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-bone md:text-2xl">{p.name}</h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-dim">{p.desc[locale] ?? p.desc.en}</p>
                   <span className="mt-5 font-plex text-[11px] text-dim transition-colors group-hover:text-bone">{p.domain}</span>
@@ -341,7 +345,15 @@ export default function LinkHub({ locale }: { locale: Locale }) {
           <div className="mt-7 grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
             {SERVICES.map((s, i) => (
               <div key={i} className="border-t border-white/[0.07] pt-4">
-                <h3 className="text-base font-semibold text-bone">{s.title[locale] ?? s.title.en}</h3>
+                <h3 className="text-base font-semibold text-bone">
+                  {s.href ? (
+                    <a href={s.href[locale] ?? s.href.en} className="underline decoration-white/25 underline-offset-4 transition-colors hover:decoration-ambr hover:text-ambr">
+                      {s.title[locale] ?? s.title.en}
+                    </a>
+                  ) : (
+                    s.title[locale] ?? s.title.en
+                  )}
+                </h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-dim">{s.desc[locale] ?? s.desc.en}</p>
               </div>
             ))}
