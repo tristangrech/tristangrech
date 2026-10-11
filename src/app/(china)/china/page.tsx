@@ -6,7 +6,8 @@ import ChinaJsonLd from '@/components/china/ChinaJsonLd';
 const BASE_URL = 'https://tristangrech.com';
 
 export const metadata: Metadata = {
-  title: chinaDict.en.meta.title,
+  // Brand last: if the title truncates, only the brand goes.
+  title: `${chinaDict.en.meta.title} | Tristan Grech`,
   description: chinaDict.en.meta.description,
   alternates: {
     canonical: `${BASE_URL}/china`,

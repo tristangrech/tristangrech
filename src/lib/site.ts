@@ -4,10 +4,10 @@
 export const site = {
   baseUrl: 'https://tristangrech.com',
   name: 'Tristan Grech',
-  legalName: 'GRECH Tristan Laurent (EI)',
-  siren: '843 305 996',
-  city: 'Nice',
-  country: 'France',
+  // Base per commit 733f366. No legal entity here: the French EI
+  // (SIREN 843 305 996) closed on 2025-12-31.
+  city: 'Guangzhou',
+  country: 'China',
   email: 'tristangrech.nat@gmail.com',
   phoneDisplay: '+33 6 78 49 61 26',
   // Bare profile link: only for the JSON-LD sameAs list. Every clickable

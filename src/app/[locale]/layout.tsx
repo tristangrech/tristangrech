@@ -19,6 +19,10 @@ const golos = Inter({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-golos',
   display: 'swap',
+  // Body text is never the LCP here (the hero image is), and preloading
+  // put the Cyrillic file on /en and /fr. Faces still load on demand by
+  // unicode-range, so /ru gets Cyrillic and the others never fetch it.
+  preload: false,
 });
 
 const plexMono = JetBrains_Mono({
@@ -39,13 +43,13 @@ const metadataByLocale: Record<
   en: {
     title: 'Tristan Grech · Websites, Web Apps and Video · Guangzhou',
     description:
-      'Developer and filmmaker in Guangzhou. Multilingual websites and booking systems that Google ranks and AI assistants recommend, plus 4K video. French, English and Russian.',
+      'Tristan Grech, developer and filmmaker in Guangzhou. Multilingual websites and booking systems that Google ranks and AI assistants cite, plus 4K video.',
     ogAlt: 'Tristan Grech, developer and filmmaker, Guangzhou',
   },
   fr: {
     title: 'Tristan Grech · Sites web, applications et vidéo · Canton',
     description:
-      'Développeur et vidéaste à Canton. Sites multilingues et systèmes de réservation référencés par Google et cités par les assistants IA, plus vidéo 4K. FR, EN, RU.',
+      'Tristan Grech, développeur et vidéaste à Canton. Sites multilingues et systèmes de réservation que Google référence et que les IA citent, plus vidéo 4K.',
     ogAlt: 'Tristan Grech, développeur et vidéaste, Canton',
   },
   ru: {
@@ -53,7 +57,7 @@ const metadataByLocale: Record<
     // construction, not a stylistic break. Do not strip it.
     title: 'Тристан Греч — Сайты, веб-приложения и видео · Гуанчжоу',
     description:
-      'Разработчик и видеограф в Гуанчжоу. Многоязычные сайты и системы бронирования, которые находит Google и цитируют ИИ-ассистенты, плюс видео 4K.',
+      'Тристан Греч, разработчик и видеограф в Гуанчжоу. Многоязычные сайты и системы бронирования, которые находит Google и цитирует ИИ, плюс видео 4K.',
     ogAlt: 'Тристан Греч, разработчик и видеограф, Гуанчжоу',
   },
 };
@@ -192,6 +196,8 @@ function JsonLd({ locale }: { locale: Locale }) {
         url: `${BASE_URL}/`,
         jobTitle: 'Developer and filmmaker',
         description: ENTITY_DESCRIPTION,
+        disambiguatingDescription:
+          'French developer and filmmaker based in Guangzhou, China, who builds multilingual websites and booking systems and runs the Studio Nice Podcast studio in Nice.',
         image: `${BASE_URL}/images/tristan-homepage.jpg`,
         nationality: { '@type': 'Country', name: 'France' },
         homeLocation: {

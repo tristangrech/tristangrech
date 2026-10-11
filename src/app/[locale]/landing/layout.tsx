@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/images/og-card.jpg`,
         width: 1200,
         height: 630,
-        alt: 'AI Voice Agent Coaching with Tristan Grech',
+        alt: 'Tristan Grech, developer and filmmaker, Guangzhou',
       },
     ],
   },
