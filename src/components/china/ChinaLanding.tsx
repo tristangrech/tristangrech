@@ -86,8 +86,21 @@ export default function ChinaLanding({ lang }: Props) {
   // Initialize the Cal embed once per page load. Brand color matches our
   // primary token (hsl(220 90% 50%)). cssVarsPerTheme lets us theme the
   // iframe's inner Cal UI to match the dark landing page.
+  // Loaded on the first sign of intent (pointer, touch, keyboard focus) or
+  // 4s after load, instead of competing with the hero. A click that lands
+  // before init still works: every CTA's href opens cal.eu directly.
   useEffect(() => {
-    (async () => {
+    let started = false;
+    const events = ['pointerover', 'touchstart', 'focusin'] as const;
+    const start = () => {
+      if (started) return;
+      started = true;
+      events.forEach((e) => window.removeEventListener(e, start));
+      void init();
+    };
+    events.forEach((e) => window.addEventListener(e, start, { once: true, passive: true }));
+    const timer = window.setTimeout(start, 4000);
+    const init = async () => {
       try {
         const cal = await getCalApi({
           namespace: CAL_NAMESPACE,
@@ -111,7 +124,11 @@ export default function ChinaLanding({ lang }: Props) {
         // Silent fallback: CTAs still work via their href to cal.eu
         console.warn('Cal embed init failed:', err);
       }
-    })();
+    };
+    return () => {
+      window.clearTimeout(timer);
+      events.forEach((e) => window.removeEventListener(e, start));
+    };
   }, []);
 
   return (
@@ -135,6 +152,42 @@ export default function ChinaLanding({ lang }: Props) {
       <Footer lang={lang} />
       <StickyMobileCta lang={lang} />
     </main>
+  );
+}
+
+/* ————————————————————————————————————— Lazy map ————————————————————————————————————— */
+
+// The Leaflet chunk (about 44 KB) and its tiles load only when the map is
+// about a screen away, not with the first view.
+function LazyChinaMap({ lang }: Props) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !('IntersectionObserver' in window)) {
+      setShow(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '600px 0px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className="w-full">
+      {show ? (
+        <ChinaMap lang={lang} />
+      ) : (
+        <div className="aspect-[16/10] md:aspect-[16/9] rounded-3xl border border-outline bg-surface-card" />
+      )}
+    </div>
   );
 }
 
@@ -325,7 +378,7 @@ function Hero({ lang }: Props) {
             </div>
           )}
 
-          <h1 className="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-balance">
+          <h1 className="font-heading font-extrabold text-5xl md:text-6xl leading-[1.02] tracking-tight text-balance">
             <span className="text-on-surface">{t.hero.headline1}</span>{' '}
             <br />
             <span className="gradient-text">{t.hero.headline2}</span>
@@ -866,7 +919,7 @@ function MapSection({ lang }: Props) {
           </div>
 
           <div className="lg:col-span-7">
-            <ChinaMap lang={lang} />
+            <LazyChinaMap lang={lang} />
           </div>
         </div>
       </div>
@@ -996,7 +1049,7 @@ function LeadMagnet({ lang }: Props) {
                 <form onSubmit={handleSubmit} className="space-y-3">
                   <div className="flex flex-col sm:flex-row gap-2">
                     <label htmlFor="guide-email" className="sr-only">
-                      {t.placeholder}
+                      {lang === 'fr' ? 'Ton email, pour recevoir le guide PDF' : 'Your email, to receive the PDF guide'}
                     </label>
                     <input
                       id="guide-email"

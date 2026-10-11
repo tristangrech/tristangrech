@@ -121,7 +121,13 @@ export default function LinkHub({ locale }: { locale: Locale }) {
     if (reduce) { draw(); cancelAnimationFrame(raf); } else raf = requestAnimationFrame(draw);
     const onResize = () => { resize(); init(); };
     window.addEventListener('resize', onResize);
-    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', onResize); };
+    // Stop the per-frame loop while the canvas is off screen.
+    const io = reduce || !('IntersectionObserver' in window) ? null : new IntersectionObserver(([e]) => {
+      cancelAnimationFrame(raf);
+      if (e.isIntersecting) raf = requestAnimationFrame(draw);
+    });
+    io?.observe(canvas);
+    return () => { cancelAnimationFrame(raf); io?.disconnect(); window.removeEventListener('resize', onResize); };
   }, []);
 
   // Gyroscope parallax on phones: tilt the iPhone to move the hero layers.
