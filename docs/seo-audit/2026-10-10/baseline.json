@@ -1,0 +1,1514 @@
+{
+ "site": "tristangrech.com",
+ "captured": "2026-10-11 (UTC), before any change in this run; production then at commit 0470c6a",
+ "sources_note": "Every value below is a live read on 2026-10-11 by the named tool. BLOCKED means the source could not be read and no value is claimed.",
+ "gsc": {
+  "tool": "VPS /opt/gsc-service (service account, Search Console API)",
+  "sitemap": {
+   "path": "https://tristangrech.com/sitemap.xml",
+   "submittedUrlCount": 5,
+   "lastSubmitted": "2026-08-23T05:40:34.147Z",
+   "lastDownloaded": "2026-10-10T15:23:22.319Z",
+   "errors": 0,
+   "warnings": 0
+  },
+  "url_inspection": {
+   "Submitted and indexed": [
+    "/en",
+    "/fr",
+    "/china",
+    "/chine"
+   ],
+   "Crawled - currently not indexed": [
+    "/ru"
+   ]
+  },
+  "performance_28d": {
+   "range": "2026-09-11 to 2026-10-09",
+   "clicks": 0,
+   "impressions": 17,
+   "ctr": 0,
+   "avg_position": 6.2,
+   "queries": [
+    {
+     "query": "tristan grech",
+     "impressions": 4,
+     "clicks": 0,
+     "position": 9.0
+    }
+   ],
+   "pages": [
+    {
+     "page": "/en",
+     "impressions": 16,
+     "clicks": 0,
+     "position": 5.5
+    },
+    {
+     "page": "/chine",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 17
+    }
+   ],
+   "countries": {
+    "nld": 4,
+    "usa": 3,
+    "fra": 2,
+    "are": 1,
+    "can": 1,
+    "sgp": 1
+   }
+  },
+  "performance_90d": {
+   "pages": [
+    {
+     "page": "/en",
+     "impressions": 92,
+     "clicks": 6,
+     "position": 6.4
+    },
+    {
+     "page": "/fr",
+     "impressions": 9,
+     "clicks": 1,
+     "position": 3.2
+    },
+    {
+     "page": "/china",
+     "impressions": 3,
+     "clicks": 0,
+     "position": 9.7
+    },
+    {
+     "page": "/ru",
+     "impressions": 3,
+     "clicks": 0,
+     "position": 53.7
+    },
+    {
+     "page": "/chine",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 17
+    },
+    {
+     "page": "/ar",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 3
+    }
+   ],
+   "queries": [
+    {
+     "query": "tristan grech",
+     "impressions": 6,
+     "clicks": 0,
+     "position": 8.3
+    }
+   ]
+  },
+  "quick_wins_pos_3_to_20": [
+   {
+    "query": "tristan grech",
+    "page": "/en",
+    "position": 9.0,
+    "impressions": 4
+   }
+  ],
+  "ai_assisted_queries_regex_7plus_words": [],
+  "bofu_regex_matches": [],
+  "service_seeker_regex_matches": [],
+  "informational_regex_matches": [],
+  "regex_note": "Only one non-anonymised query exists in 28 and 90 days ('tristan grech', 2 words), so every playbook regex split is empty. Most impressions are anonymised queries."
+ },
+ "bing_webmaster_tools": {
+  "status": "BLOCKED",
+  "reason": "No BING_WEBMASTER_API_KEY in any config checked; the site is not verified in BWT (lane L). Grounding queries not available."
+ },
+ "analytics": {
+  "tool": "Cloudflare Web Analytics",
+  "status": "BLOCKED",
+  "reason": "VPS API token: 'not authorized for that account' on the GraphQL RUM query; live beacon POST to cloudflareinsights.com/cdn-cgi/rum fails CORS on every page, so no data is being collected (TECH-2). AI referral sessions: not measurable."
+ },
+ "lighthouse_mobile_before": {
+  "tool": "Lighthouse 12.8.2 CLI, mobile, simulated throttling, median of 3",
+  "scores": {
+   "https://tristangrech.com/this-page-does-not-exist": {
+    "performance": 100,
+    "accessibility": 100,
+    "bestPractices": 79,
+    "seo": 45,
+    "lcp_ms": 786,
+    "cls": 0,
+    "tbt_ms": 1,
+    "fcp_ms": 786,
+    "si_ms": 943,
+    "lcp_element": "body > main > p | <p style=\"margin:0;max-width:32rem;color:#98A0AC;line-height:1.6\">",
+    "runs": 3
+   },
+   "https://tristangrech.com/en": {
+    "performance": 79,
+    "accessibility": 100,
+    "bestPractices": 79,
+    "seo": 100,
+    "lcp_ms": 4469,
+    "cls": 0,
+    "tbt_ms": 253,
+    "fcp_ms": 1466,
+    "si_ms": 3131,
+    "lcp_element": "div.relative > header.relative > div.hub-in > img.absolute | <img src=\"/images/hero/hero-subject.webp\" alt=\"Tristan Grech\" loading=\"eager\" decoding=\"async\" style=\"transform: translateX(-50%);\" class=\"absolute bottom-0 left-1/2 h-[97%] w-auto max-w-none drop-shadow-[0_18px_3…\">",
+    "runs": 3
+   },
+   "https://tristangrech.com/ru": {
+    "performance": 79,
+    "accessibility": 100,
+    "bestPractices": 79,
+    "seo": 100,
+    "lcp_ms": 5224,
+    "cls": 0,
+    "tbt_ms": 29,
+    "fcp_ms": 1570,
+    "si_ms": 3126,
+    "lcp_element": "div.relative > header.relative > div.hub-in > img.absolute | <img src=\"/images/hero/hero-bg.webp\" alt=\"\" aria-hidden=\"true\" fetchpriority=\"high\" style=\"transform:scale(1.08);transition:transform .4s cubic-bezier(.16,1,.3,1)\" class=\"absolute inset-0 h-full w-full object-cover object-center opacity-85",
+    "runs": 3
+   },
+   "https://tristangrech.com/china": {
+    "performance": 81,
+    "accessibility": 96,
+    "bestPractices": 57,
+    "seo": 100,
+    "lcp_ms": 4786,
+    "cls": 0,
+    "tbt_ms": 0,
+    "fcp_ms": 1848,
+    "si_ms": 2740,
+    "lcp_element": "section#top > div.section-container > div.lg:col-span-7 > h1.font-heading | <h1 class=\"font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.02…\">",
+    "runs": 3
+   },
+   "https://tristangrech.com/chine": {
+    "performance": 74,
+    "accessibility": 96,
+    "bestPractices": 57,
+    "seo": 100,
+    "lcp_ms": 6923,
+    "cls": 0,
+    "tbt_ms": 1,
+    "fcp_ms": 2137,
+    "si_ms": 3036,
+    "lcp_element": "section#top > div.section-container > div.lg:col-span-7 > h1.font-heading | <h1 class=\"font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.02…\">",
+    "runs": 3
+   }
+  }
+ },
+ "dataforseo": {
+  "status": "BLOCKED",
+  "evidence": "appendix/user_data 20000 Ok, balance -0.0127 USD"
+ },
+ "brand_serp": {
+  "tool": "treg (crawl4ai, serpapi)",
+  "google_fr": "tristangrech.com not in top 10; namesakes (instagram tristan.grech, tristangrech, soundcloud, facebook, flickr)",
+  "google_us": "tristangrech.com not in 22 rows; instagram.com/tristangrch #1; no Knowledge Panel",
+  "bing": "providers returned unrelated results; position unknown"
+ },
+ "backlinks": {
+  "tool": "Serpstat via treg",
+  "referring_domains": 3,
+  "backlinks": 15,
+  "ips": 1,
+  "dofollow": 15,
+  "domain_rank": 5,
+  "malicious": 0,
+  "domains": [
+   "revesdelite.com",
+   "backtomalta.com",
+   "xn--80akuon54c.com"
+  ],
+  "note": "All Tristan's own builds. None of the 6 hub portfolio sites links back with an <a>."
+ },
+ "ranked_keywords_dataforseo_labs": {
+  "status": "BLOCKED",
+  "reason": "DataForSEO balance negative; GSC shows one ranking query."
+ },
+ "ai_engines": {
+  "tool": "treg: cloro (ChatGPT, Gemini, Copilot, AI Mode, Perplexity UI), Perplexity API, DataForSEO Claude",
+  "captured": "2026-10-11 09:40 to 09:55 UTC",
+  "detail": "geo-baseline.md",
+  "summary": "Brand prompts 1 and 2: 8 of 10 successful answers name this Tristan. Service prompts 3 to 9: 0 of 35. Cannes Lions prompt: 2 of 5, via studionicepodcast.com only. Claude: BLOCKED (40200 Payment Required). Perplexity UI: errors on prompts 1 to 9.",
+  "rows": [
+   {
+    "engine": "aimode",
+    "n": 1,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 503 — the provider answered; treg relayed it unchanged; call id 6af905abc5124bb5920d113c1b92f11d (quote it to support; `treg calls` shows the record); charged $0\n{\n  \"engines\": [\n    {\n      \"engine\": \"google\",\n      \"err\": \"verification hold on every attempt \\u2014 retry shortly\",\n      \"fetch_ms\": 0,\n      \"ms\": 2774,\n      \"n\": 0,\n      \"parse_ms\": 0\n    }\n  ],\n  \"error\": \"google: verification hold on every attempt \\u2014 retry shortly\",\n  \"ms\": 3425,\n  \"usage\": {\n    \"boxes\": [\n      \"search\"\n    ],\n    \"remaining_before\": {\n      \"concurrent\": 46,\n      \"requests\": 195,\n      \"",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 1,
+    "ok": true,
+    "text": "**_Tristan Grech_** is a Maltese **footballer** who plays as a midfielder for [Sannat Lions FC](https://www.facebook.com/sannatlionsfc/posts/%EF%B8%8F-club-statementsannat-lions-fc-is-delighted-to-confirm-that-tristan-grech-will-/1568160251768646/) in the Gozo Football League in Malta. [Tristan Grech - Stats 26/27 - Transfermarkt](https://www.transfermarkt.com/tristan-grech/leistungsdaten/spieler/849167/saison/)[Sannat Lions FC - Facebook](https://www.facebook.com/sannatlionsfc/posts/%EF%B8%8F-club-statementsannat-lions-fc-is-delighted-to-confirm-that-tristan-grech-will-/1568160251768646/)\n\n  *   * **Position:** Midfielder\n\n  * **Nationality:** Maltese\n\n  * **Current Team:** Sannat Lions FC\n\n  * **Career Highlights:** He was an important part of Sannat Lions' double-winning campaign.\n\n  * \n\nIf you are looking for a different **Tristan Grech** (such as a professional engineer or private individual), please let me know any additional context or location details!",
+    "urls": [
+     "https://www.transfermarkt.com/tristan-grech/leistungsdaten/spieler/849167/saison/",
+     "https://www.facebook.com/sannatlionsfc/posts/%EF%B8%8F-club-statementsannat-lions-fc-is-delighted-to-confirm-that-tristan-grech-will-/1568160251768646/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": [
+     "tristan grech"
+    ]
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 10,
+    "ok": true,
+    "text": "Hiring a videographer for event interviews at the **_Cannes Lions International Festival of Creativity_** requires local expertise, quick turnaround times for social/daily recaps, and familiarity with high-paced activations around the Palais des Festivals, beach cabanas, or local hotels.\n\nOptions for local production teams, agencies, and technical support in Cannes include:\n\n  *   * [Images d’Azur](https://imagesdazur.com/en/cannes-film-festival-2026-photographer-videographer/): Frequently handles multi-day press coverage, interviews, red carpets, and social media content on the French Riviera. [Photographer & Videographer for the Cannes Film Festival 2026](https://imagesdazur.com/en/cannes-film-festival-2026-photographer-videographer/)\n\n  * [Space Visuals](https://spacevisuals.fr/en/): Based right in Cannes, offering local video production and event photography for brand activations and galas. [Cannes Film Services - Oneway Camera](https://www.google.com/searchviewer/10?svid=CAwSHBIaCgNwdnESE0Nnd3ZaeTh4TWpSME16WTBiR1EYCg)\n\n  * [Cannes Film Services / Oneway Camera](https://oneway-camera.com/): A hybrid production support and high-end gear rental house if you are bringing your own director/crew and need local equipment or live-transmission/streaming kits.\n\n  * [Agency Photos Sge](https://www.agency-sge.com/): Located on the Boulevard de la Croisette, specializing in luxury event reportage, mobile interview setups, and social media content.\n\n  * [Dreamwide Productions](https://dreamwide.fr/cannes-lions-videographer/): Offers specialized aftermovies and corporate interview capture specifically tailored around Cannes Lions. [Cannes Lions | Videographer](https://dreamwide.fr/cannes-lions-videographer/)\n\n  * \n\nIf you'd like to narrow this down, let me know:\n\n  * What kind of **interview setup** you need (e.g., quiet sit-down studio vs. fast-paced run-and-gun on the Croisette)\n  * Whether you need **daily same-day edits** for social channels\n  * Your expected **budget or daily coverage length**\n\nI can help tailor recommendations or outline what logistics to prepare for shooting during the festival.",
+    "urls": [
+     "https://dreamwide.fr/cannes-lions-videographer/",
+     "https://imagesdazur.com/en/cannes-film-festival-2026-photographer-videographer/",
+     "https://www.google.com/searchviewer/10?svid=CAwSHBIaCgNwdnESE0Nnd3ZaeTh4TWpSME16WTBiR1EYCg",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdwb2VUazRPSE14GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVc1bmFuSnNlbW81GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdzemNXTndkM1J1GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOdU1tMDFZakp1GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdJMk5tdHliRzEzGAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHBIaCgNwdnESE0Nnd3ZaeTh4Y0hoM09ITTBabmsYCg",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhvME56TjBNekUzGAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdjd2JEY3diakpxGAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhGd056VjNaR2M1GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhsaWJIaDVjMkpzGAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVd4ek5XUjRPVzEzGAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdoZk1YcHJZM0l6GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSGxIZCgNwdnESEkNnc3ZaeTh4ZEdRek5UTjJNdxgK",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhaM2NHNDRaamR0GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdSNE9GOXljWEV3GAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVc1dU16YzRlRGMxGAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHBIaCgNwdnESE0Nnd3ZaeTh4Y1RScmJuTjZYMnMYCg",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhaM2RubGZhR28yGAo",
+     "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVd4dU9XZHVhakJ3GAo",
+     "https://spacevisuals.fr/en/",
+     "https://oneway-camera.com/",
+     "https://www.agency-sge.com/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 2,
+    "ok": true,
+    "text": "**Tristan Grech** is a web developer and filmmaker based in **Guangzhou (Canton), China**. [Tristan Grech · Websites, Web Apps and Video · Guangzhou](https://tristangrech.com/en)[Tristan Grech · Sites web, applications et vidéo · Canton](https://tristangrech.com/fr)\n\nOverview of his professional background and services:\n\n  *   * **Web Development & Digital Solutions:** He specializes in creating multilingual websites and booking systems optimized for Google search rankings and AI assistant recommendations. He is also the founder of Fullhaura. [Tristan Grech - Founder @Fullhaura I Web solution ... - LinkedIn](https://fr.linkedin.com/in/fullhaura/en)\n\n  * **Filmmaking & Media Production:** He produces 4K digital video content, promotional media, and visual stories designed to increase brand visibility. [LinkedIn·Tristan Grech +1]\n\n  * **China Sourcing & Guided Trips:** Leveraging his on-the-ground experience as a French expat in China, he also offers guided 3- to 7-day business and sourcing trips across manufacturing hubs like Guangzhou, Foshan, and Shenzhen. [China buying trips led by a Frenchman who knows the ground](https://tristangrech.com/china)[Voyages sourcing en Chine avec un Français sur le terrain](https://tristangrech.com/chine)\n\n  * **Languages:** He operates in **French, English, and Russian**.\n\n  * \n\nYou can explore his professional portfolio and services directly on his [Tristan Grech Official Website](https://tristangrech.com/en) or connect via his [Tristan Grech LinkedIn Profile](https://fr.linkedin.com/in/fullhaura/en).\n\nWould you like to know more about his **web development services** , **China sourcing trips** , or how to **get in touch with him for a project**?",
+    "urls": [
+     "https://fr.linkedin.com/in/fullhaura/en",
+     "https://tristangrech.com/en",
+     "https://tristangrech.com/fr",
+     "https://tristangrech.com/china",
+     "https://tristangrech.com/chine"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [
+     "https://tristangrech.com/en",
+     "https://tristangrech.com/fr",
+     "https://tristangrech.com/china",
+     "https://tristangrech.com/chine"
+    ],
+    "names_in_text": [
+     "tristan grech",
+     "fullhaura"
+    ]
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 3,
+    "ok": true,
+    "text": "Finding a specifically French-speaking freelance web developer physically based in Guangzhou can be quite niche, as most locally based independent developers advertise in English or Chinese. However, you can successfully source and hire one by looking through the right international and regional talent pools.\n\n  *   * Professional Freelance Platforms: Search global talent networks like Upwork or Freelancer.com using location filters for Guangzhou combined with language filters or keywords like \"French\" and \"Développement Web\". [Hire the Best AI Freelancers in China](https://www.upwork.com/hire/ai-freelancers/cn/)[Développement web Jobs for October 2026](https://www.fr.freelancer.com/jobs/web-development)\n\n  * Remote & Regional Networks: Specialized developer networks like [Arc.dev](https://arc.dev/en-cn/hire-developers) feature vetted full-stack and frontend engineers based in China (UTC+8 timezone) who often handle cross-border communication fluently in English and French. [Hire the Best Freelance Developers in China (Sep 2026)](https://arc.dev/en-cn/hire-developers)\n\n  * Local Expat & Business Communities: Platforms like LinkedIn or local French chamber networks in South China often connect French-speaking digital nomads or local IT professionals handling freelance web design and e-commerce integration (such as WeChat mini-programs or bilingual WordPress sites).\n\n  * \n\nIf you'd like, I can help you with:\n\n  * **Drafting a project brief** (in French or English) to post on freelance platforms\n  * **Key technical requirements** to ask for (e.g., bilingual setup, WeChat integration, hosting inside or outside China)",
+    "urls": [
+     "https://arc.dev/en-cn/hire-developers",
+     "https://www.fr.freelancer.com/jobs/web-development",
+     "https://www.upwork.com/hire/ai-freelancers/cn/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 4,
+    "ok": true,
+    "text": "Un **développeur web freelance francophone basé à Canton (Guangzhou, Chine)** est un profil rare qui nécessite généralement de se tourner vers des réseaux d'expatriés locaux, des plateformes internationales d'indépendants ou des agences spécialisées pour trouver un intervenant disponible sur place ou familiers des contraintes techniques locales (comme l'écosystème numérique chinois, WeChat/Alipay, et le Grand Firewall).\n\nOù trouver et comment approcher ce type de profil ?\n\n  *   * **Plateformes de freelances internationales :** Des plateformes comme [Codeur.com](https://www.codeur.com/developpeur/web) ou [Upwork](https://www.upwork.com) permettent de filtrer des prestataires francophones qui possèdent des compétences techniques globales (WordPress, React, PHP, etc.) et qui résident parfois en Asie. [Trouvez un développeur web freelance sur Codeur.com](https://www.codeur.com/developpeur/web)[Missions développeur web : découvrez les dernières offres publiées | Freelance-Informatique](https://www.freelance-informatique.fr/mission-developpeur-web-n746)\n\n  * **Chambres de commerce et réseaux d'expatriés :** La [Chambre de Commerce et d'Industrie Française en Chine (CCIFC)](https://www.ccifc.org) dispose d'antennes à Canton et répertorie des prestataires de services, consultants et développeurs indépendants ou agences aptes à répondre aux besoins des entreprises francophones implantées en Chine.\n\n  * **Groupes professionnels et réseaux sociaux :** Les réseaux professionnels comme LinkedIn ou les groupes WeChat d'entrepreneurs francophones en Chine (Guangzhou/Canton) sont souvent le moyen le plus rapide d'obtenir une recommandation directe pour un profil indépendant bilingue ou francophone.\n\n  * \n\nCompétences clés à rechercher à Canton\n\n  *   * **Développement Full-stack / CMS :** Maîtrise des standards du web (HTML/CSS, JavaScript, PHP, WordPress, Shopify, React). [Freelance-Informatique +1]\n\n  * **Spécificités techniques locales :** Capacité à intégrer des passerelles de paiement chinoises (WeChat Pay, Alipay) ou à optimiser l'hébergement entre la Chine continentale et l'international (conformité ICP, contraintes du réseau chinois).\n\n  * **Communication :** Maîtrise du français pour la gestion de projet et l'expression des besoins, combinée si nécessaire à l'anglais ou au mandarin pour interagir avec l'écosystème local.\n\n  * \n\nSi vous cherchez un profil particulier, pouvez-vous me préciser :\n\n  * S'agit-il d'une **création de site web** , d'une **application mobile** ou d'un **projet e-commerce** spécifique ?\n  * Avez-vous besoin d'une présence physique à **Canton** ou un travail **à distance** convient-il ?",
+    "urls": [
+     "https://www.codeur.com/developpeur/web",
+     "https://www.freelance-informatique.fr/mission-developpeur-web-n746",
+     "https://www.upwork.com",
+     "https://www.ccifc.org"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 5,
+    "ok": true,
+    "text": "Audits for website and brand visibility in ChatGPT, Claude, Perplexity, and Gemini fall under **Answer Engine Optimization (AEO)** or **Generative Engine Optimization (GEO)**. [AI Search Grader: Free One-Time AEO Brand ... - HubSpot](https://www.hubspot.com/ai-search-grader)\n\nYou can audit your visibility using specialized **AEO/GEO software platforms** , dedicated **agencies** , or **free introductory tools**. [5 AI visibility tools for tracking brand mentions, citations, and](https://usa.inquirer.net/210862/5-ai-visibility-tools-for-tracking-brand-mentions-citations-and-traffic)\n\n1\\. Specialized AI Visibility & Tracking Platforms (Do-It-Yourself)\n\nThese platforms simulate user prompts across major LLMs to measure how often your brand is cited, your share of voice versus competitors, and the sentiment of the AI's responses: [INQUIRER.net USA]\n\n  *   * **[Otterly.ai](https://otterly.ai/)** — Tracks brand visibility, mentions, and website citations across ChatGPT, Perplexity, Claude, Gemini, and Copilot. [AI Search Monitoring Tool: Track ChatGPT, Perplexity & Google AIO](https://otterly.ai/)\n\n  * **Similarweb AI Search Intelligence** — Combines AI brand visibility, citation analysis, and competitive benchmarking with tracking for actual AI-referred traffic to your website. [INQUIRER.net USA]\n\n  * **[Profound](https://usa.inquirer.net/210862/5-ai-visibility-tools-for-tracking-brand-mentions-citations-and-traffic)** — Built for enterprise teams looking for granular Answer Engine Insights, tracking prompts, sentiment, and visibility gaps. [INQUIRER.net USA]\n\n  * **[HubSpot AI Search Grader](https://www.hubspot.com/ai-search-grader)** — Offers a free initial score evaluating your brand presence, recognition, sentiment, and market position across AI engines. [HubSpot]\n\n  * Other emerging tracking tools include **[Dageno AI](https://www.dageno.ai/)** , **Peec AI** , and **Otterly** alternatives used by marketing and SEO professionals. [Best AI Visibility Tracking Tools for Marketing Teams (2026](https://www.reddit.com/r/GEO__AI__SEO/comments/1r1t7zs/best_ai_visibility_tracking_tools_for_marketing/)\n\n  * \n\n2\\. Digital Marketing & SEO Agencies\n\nIf you prefer a human-led, comprehensive audit and strategy, a growing number of forward-thinking digital marketing agencies specialize explicitly in **AEO (Answer Engine Optimization)** and **GEO**. They evaluate:\n\n  *   * Your technical crawlability for LLM scrapers (like OpenAI's `OAI-SearchBot`).\n\n  * Your digital PR and third-party citation footprint (since AI models pull heavily from Reddit, G2, Wikipedia, and authoritative niche publications).\n\n  * Content structuring (schema markup, clear data tables, and direct Q&A formats that LLMs prefer to extract).\n\n  * \n\nIf you'd like, let me know:\n\n  * Your **industry or niche** (e.g., B2B SaaS, local ecommerce, healthcare)\n  * Whether you prefer a **software tool** to monitor this continuously or an **agency recommendation**\n\nI can narrow down the exact option that fits your setup.",
+    "urls": [
+     "https://www.reddit.com/r/GEO__AI__SEO/comments/1r1t7zs/best_ai_visibility_tracking_tools_for_marketing/",
+     "https://otterly.ai/",
+     "https://www.hubspot.com/ai-search-grader",
+     "https://usa.inquirer.net/210862/5-ai-visibility-tools-for-tracking-brand-mentions-citations-and-traffic",
+     "https://www.dageno.ai/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 6,
+    "ok": true,
+    "text": "Un **audit de visibilité IA** (ou GEO - _Generative Engine Optimization_) pour un site web est une analyse qui mesure la présence, la citation et la perception de votre marque ou de votre activité au sein des réponses générées par les moteurs conversationnels et les intelligences artificielles (ChatGPT, Perplexity, Google AI Overviews, Copilot). [Audit visibilité outils IA : comment mesurer et booster votre GEO](https://www.natural-net.fr/blog-agence-web/2025/11/20/audit-visibilite-outils-ia-comment-mesurer-votre-presence-dans-les-reponses-generees-par-les-llm.html)\n\nEn tant que **freance** , proposer ou réaliser cet audit implique de suivre une méthodologie précise pour évaluer comment les LLM perçoivent et recommandent un site web.\n\n* * *\n\nLes étapes clés d'un audit de visibilité IA\n\n  *   * Définition des **prompts de test** : Créer une liste de requêtes sectorielles (ex: _\"Quel est le meilleur freelance pour faire X ?\"_) que vos clients potentiels posent aux IA.\n\n  * Analyse de la **présence et des citations** : Tester ces requêtes sur les principaux moteurs IA pour voir si votre nom, votre marque ou votre site web apparaît dans les réponses. [Natural-net]\n\n  * Vérification des **sources et liens** : Regarder si l'IA cite votre URL en source cliquable ou si elle mentionne votre nom sans lien (citation textuelle). [Natural-net]\n\n  * Analyse du **sentiment et de l'e-réputation** : Évaluer si la description faite par l'IA de votre offre est positive, neutre, exacte ou erronée. [Natural-net]\n\n  * Audit des **fondations techniques et sémantiques** : Vérifier si le site est \"lisible\" par les robots d'indexation des IA (robots.txt, données structurées, clarté de l'expertise, sémantique riche et factuelle).\n\n  * \n\n* * *\n\nLes leviers pour améliorer la visibilité IA (GEO)\n\n  *   * **Multiplication des mentions externes** : Les IA se nourrissent du web global (avis, articles de presse, plateformes spécialisées, réseaux sociaux, forums comme Reddit ou LinkedIn). Plus on parle de vous en dehors de votre site, plus l'IA vous intègre.\n\n  * **Contenu structuré et factuel** : Utiliser un balisage propre, des FAQ claires, des données précises et des réponses directes aux questions fréquentes de votre cible.\n\n  * **E-réputation maîtrisée** : Traiter les avis et retours clients, car une image de marque fragile sera amplifiée par la synthèse des LLM. [Natural-net]\n\n  * \n\nSi vous le souhaitez, précisez-moi :\n\n  * Votre **secteur d'activité** ou domaine d'expertise en tant que freelance\n  * Le **type de site** (portfolio, site vitrine, blog)\n\nJe peux vous aider à rédiger une **liste de prompts de test** personnalisée ou structurer un **modèle de livrable** pour vos clients.",
+    "urls": [
+     "https://www.natural-net.fr/blog-agence-web/2025/11/20/audit-visibilite-outils-ia-comment-mesurer-votre-presence-dans-les-reponses-generees-par-les-llm.html"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 7,
+    "ok": true,
+    "text": "If you are looking to hire a freelance developer or need a roadmap to get a multilingual website (French, English, and Russian) built, here is a breakdown of how to approach the project, what skills to look for, and where to find the right talent.\n\nKey Requirements for a Multilingual Website\n\n  *   * Content Management / Framework: The site will need a robust localization architecture to handle Left-to-Right (LTR) languages and Cyrillic character sets for Russian without breaking layouts or SEO.\n\n  * URL Structure: Clean localized URL routing (e.g., `://domain.com`, `://domain.com`, `://domain.com`) for proper search engine indexing.\n\n  * Language Switcher: An intuitive, accessible UI component for users to toggle languages.\n\n  * Translation Management: Integration with translation plugins (if using WordPress) or localization frameworks like i18next (if using React/Next.js).\n\n  * \n\nRecommended Tech Stacks & Expertise\n\n  *   * **WordPress / CMS Approach (Best for content-heavy or client-managed sites):**\n    * Technologies: PHP, MySQL, WordPress.\n    * Plugins/Tools: WPML, Polylang, or TranslatePress.\n    * _Look for:_ A WordPress developer experienced with custom theme development and multi-language configuration.\n\n  * **Modern JavaScript Framework Approach (Best for high-performance, custom web apps):**\n    * Technologies: React, Next.js, or Vue/Nuxt.js.\n    * Libraries: `next-intl`, `i18next`, or `vue-i18n`.\n    * _Look for:_ A Full-Stack or Front-End developer experienced with headless CMS setups or internationalized routing.\n\n  * \n\nWhere to Find Freelance Developers\n\n  *   * Upwork: Excellent for finding vetted freelancers by filtering for specific tech stacks (e.g., \"Next.js localization\" or \"WPML expert\"). You can browse profiles on Upwork.\n\n  * Toptal: Best if you need top-tier, pre-vetted senior developers and want a more curated matching process via Toptal.\n\n  * Fiverr Pro: Good for fixed-scope website builds with verified professional freelancers on Fiverr.\n\n  * \n\nTo help narrow this down, could you tell me:\n\n  * Are you leaning toward a **CMS like WordPress** or a **custom framework (like Next.js/React)**?\n  * Do you already have the **translations ready** in French, English, and Russian?",
+    "urls": [],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 8,
+    "ok": true,
+    "text": "Building a booking website with Stripe integration for a small studio is a classic web project, but finding the right freelance developer requires knowing what stack, budget, and scope you need.\n\n1\\. Defining the Scope for a Studio Booking Site\n\nBefore hiring, outline these core requirements for your developer:\n\n  *   * **Booking & Calendar Engine:** Service selection, staff/resource availability, time-zone management, and automated email/SMS reminders.\n\n  * **Stripe Integration:** Secure checkout, deposit collection or full payment upfront, automated refunds/cancellations, and webhook handling for failed payments.\n\n  * **User Management:** Client accounts to view past/upcoming bookings, and an admin dashboard for the studio to manage schedules, block times, and track revenue.\n\n  * **Mobile Responsiveness:** A seamless experience for clients booking from their phones.\n\n  * \n\n2\\. Choosing the Right Tech Stack\n\nDifferent developers specialize in different ecosystems. Discuss these options with candidates:\n\n  *   * **No-Code / Low-Code (Fastest & Most Budget-Friendly):** Platforms like **Bubble** or using **WordPress (WooCommerce + Amelia/Bookly plugins)** or **Squarespace/Wix** with Stripe. Ideal if you want a quicker turnaround and easier self-management later.\n\n  * **Custom Code (Most Flexible):** React/Next.js or Node.js/Python backend integrated directly with the [Stripe API](https://stripe.com/docs). Best if your studio has unique workflow logic or heavy scaling needs.\n\n  * \n\n3\\. Where to Find Freelance Developers\n\n  *   * **Vetted Talent Networks:** Platforms like [Toptal](https://www.toptal.com) or [Arc.dev](https://arc.dev) feature pre-vetted developers who specialize in full-stack and payment integrations.\n\n  * **General Freelance Marketplaces:** [Upwork](https://www.upwork.com) or Fiverr Pro allow you to review portfolios of past booking and Stripe projects.\n\n  * **Community & Professional Boards:** Communities on Reddit (`r/forhire`) or LinkedIn where you can post a specific project brief. [What are the best platforms to hire developers remotely?](https://www.reddit.com/r/smallbusiness/comments/1cbzqx7/what_are_the_best_platforms_to_hire_developers/)[The Best Freelance Stripe Payments Developers for Hire in](https://arc.dev/hire-developers/stripe-payments)[Website Development Services by Freelance Web Developers | Fiverr](https://www.fiverr.com/categories/programming-tech/website-development)\n\n  * \n\n4\\. Estimated Costs & Timelines\n\n  *   * **Hourly Rates:** Range widely from $30–$50/hour for mid-level independent freelancers up to $75–$120+/hour for specialized full-stack engineers.\n\n  * **Project-Based Estimates:** A standard custom booking MVP with Stripe integration usually ranges from $1,500 to $5,000+ depending on complexity and design requirements.\n\n  * \n\nTo help narrow down the right developer profile or approach, tell me:\n\n  * Do you prefer a **fully custom-coded solution** or a **platform/plugin-based build** (like WordPress or Bubble)?\n  * What is your **approximate budget** and **target timeline** for launch?\n\nTo get more features, update your settings",
+    "urls": [
+     "https://www.reddit.com/r/smallbusiness/comments/1cbzqx7/what_are_the_best_platforms_to_hire_developers/",
+     "https://arc.dev/hire-developers/stripe-payments",
+     "https://www.fiverr.com/categories/programming-tech/website-development",
+     "https://stripe.com/docs",
+     "https://www.toptal.com",
+     "https://arc.dev",
+     "https://www.upwork.com"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "aimode_cloro",
+    "n": 9,
+    "ok": true,
+    "text": "Привет! Я профессиональный **разработчик многоязычных сайтов** , специализирующийся на создании качественных, адаптивных и SEO-оптимизированных веб-ресурсов на **русском, английском и французском языках**.\n\nМоя задача — сделать ваш проект понятным и удобным для аудитории из разных стран, настроить корректную локализацию, мультиязычное SEO и обеспечить безупречный пользовательский опыт (UX) на любом языке.\n\nЧто я предлагаю:\n\n  *   * **Разработка под ключ** (лендинги, корпоративные сайты, интернет-магазины, портфолио).\n\n  * **Настройка мультиязычности** (переключение языков, адаптация интерфейсов под особенности языков — например, разную длину текста на французском или английском).\n\n  * **SEO-оптимизация для каждого языка** (региональные теги `$hreflang$`, правильная структура URL, мета-теги).\n\n  * **Интеграция систем управления (CMS)** (WordPress, Webflow, Strapi или кастомная разработка на современных фреймворках).\n\n  * **Адаптивный дизайн** (корректное отображение на всех мобильных устройствах и десктопах).\n\n  * \n\nРасскажите немного о вашем проекте, чтобы я мог предложить лучшее решение:\n\n  * Какой у вас **тип сайта** (лендинг, магазин, портал)?\n  * Нужна ли помощь с **переводом контента** или у вас уже есть готовые тексты на всех трех языках?\n  * Какую **платформу или CMS** вы предпочитаете использовать?",
+    "urls": [],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "chatgpt",
+    "n": 1,
+    "ok": true,
+    "text": "There are several people named **Tristan Grech**, so the answer depends on which person you're looking for. Here are three people I found:\n\n### 1. Tristan Grech — Canadian aviation safety professional\nTristan Grech is the **Safety and Quality Manager at Cougar Helicopters Inc.** in Newfoundland and Labrador, Canada. He has nearly 35 years of aviation experience and previously served in the Royal Canadian Air Force.\n\nHis work includes aviation safety, regulatory compliance, fleet upgrades, and safety management systems. He also presented on aviation safety and innovation at the 2025 International Regulators' Forum Offshore Safety Conference.  \nSources: [Conference biography](https://irfoffshoresafety.com/wp-content/uploads/2026/02/IRF-Conference-2025_Speaker-Bios.pdf) · [LinkedIn profile](https://ca.linkedin.com/in/tristan-grech-a5976450)[International Regulators' Forum](https://irfoffshoresafety.com/wp-content/uploads/2026/02/IRF-Conference-2025_Speaker-Bios.pdf?utm_source=chatgpt.com)[LinkedIn](https://ca.linkedin.com/in/tristan-grech-a5976450?utm_source=chatgpt.com)\n\n### 2. Tristan Grech — Maltese footballer\nAnother Tristan Grech is a **Maltese football midfielder**, born on August 6, 2002. His player profiles list him with Sannat Lions FC in Malta.  \nSources: [Transfermarkt](https://www.transfermarkt.com/tristan-grech/profil/spieler/849167) · [Sofascore](https://www.sofascore.com/football/player/tristan-grech/1095322)[transfermarkt.com](https://www.transfermarkt.com/tristan-grech/profil/spieler/849167?utm_source=chatgpt.com)[sofascore.com](https://www.sofascore.com/football/player/tristan-grech/1095322?utm_source=chatgpt.com)\n\n### 3. Tristan Grech — Developer and filmmaker\nA third person using this name describes himself as a developer and filmmaker. His portfolio features web applications, AI tools, and digital products, alongside video production projects.  \nSource: [Personal website](https://tristangrech.com/en)[tristangrech.com](https://tristangrech.com/en?utm_source=chatgpt.com)\n\n---\n\n**Which Tristan Grech are you asking about?** For example, did you see the name on social media, in business, in sports, or somewhere else? If you share a little context, I can narrow it down to the right person.",
+    "urls": [
+     "https://irfoffshoresafety.com/wp-content/uploads/2026/02/IRF-Conference-2025_Speaker-Bios.pdf",
+     "https://ca.linkedin.com/in/tristan-grech-a5976450",
+     "https://www.transfermarkt.com/tristan-grech/profil/spieler/849167",
+     "https://www.sofascore.com/football/player/tristan-grech/1095322",
+     "https://tristangrech.com/en"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [
+     "https://tristangrech.com/en"
+    ],
+    "names_in_text": [
+     "tristan grech"
+    ]
+   },
+   {
+    "engine": "chatgpt",
+    "n": 10,
+    "ok": true,
+    "text": "If you’re looking for a videographer to film event interviews at Cannes Lions, I’d prioritize a team experienced in executive interviews, branded content, and fast-turnaround social videos—not just general event filming.\n\nHere are the strongest options I found around Cannes, including teams with specific Cannes Lions experience.\n\n## Recommended videographers and production teams\n\n## 1. Riviera Media\n\nBest for interview volume\n\nHas documented experience producing 40+ interviews for Business Insider at Cannes Lions 2023, featuring executives from major global brands. A strong starting point for professional, editorial-style interviews with senior leaders. [Video Production Company | French Riviera](https://fr.rivieramedia.com/)[vent Video Production in Cannes, Monaco & Europe](https://rivieramedia.com/event-video-production-in-cannes-europe)\n\nWebsite: [rivieramedia.com](https://rivieramedia.com/event-video-production-in-cannes-europe)\n\n## 2. Space Visuals\n\nCannes-based production agency · 5.0/5 (38 reviews)\n\nOffers corporate interviews, event coverage, conference filming and social-ready videos, with French- and English-language production and potential rapid delivery during the event. [Cannes Lions Audiovisual Production | Corporate Video & Photo](https://spacevisuals.fr/en/cannes-lions-international-festival-of-creativity/)\n\nContact: +33 6 87 19 03 75\n\nWebsite: [spacevisuals.fr](https://spacevisuals.fr/en/cannes-lions-international-festival-of-creativity/)\n\n## 3. DREAMWIDE Productions\n\nLocal event videographer\n\nSpecifically advertises videography during Cannes Lions, including scheduled or on-the-spot interviews, brand activations, event highlights and short-form social content. [Cannes Lions](https://dreamwide.fr/cannes-lions-videographer/)\n\nWebsite: [dreamwide.fr/cannes-lions-videographer](https://dreamwide.fr/cannes-lions-videographer/)\n\n## 4. Studio Nice Podcast\n\nBest for a dedicated interview setup\n\nProvides on-location 4K video, podcast and social-content production for brands and agencies, including setups in yachts, villas and hotel suites. Worth considering if you want a repeatable interview format with multiple guests. [Cannes Lions Video Production and Content Studio](https://studionicepodcast.com/en/services/cannes-lions)\n\nWebsite: [studionicepodcast.com](https://studionicepodcast.com/en/services/cannes-lions)\n\n## To narrow this down to the right crew\n\nThe most important question is: what kind of interview production do you need?\n\nI can then narrow the shortlist to the most relevant providers and their direct contact details, with priority given to teams that have actually filmed interviews at Cannes Lions.",
+    "urls": [
+     "https://fr.rivieramedia.com/",
+     "https://rivieramedia.com/event-video-production-in-cannes-europe",
+     "https://spacevisuals.fr/en/cannes-lions-international-festival-of-creativity/",
+     "https://dreamwide.fr/cannes-lions-videographer/",
+     "https://studionicepodcast.com/en/services/cannes-lions",
+     "https://spacevisuals.fr/",
+     "https://www.google.com/maps/dir/?api=1&destination=Space+Visuals+-+Production+vid%C3%A9o+%26+Photographe+%C3%A0+Cannes%2C+Nice%2C+Monaco%2C+33+Bd+de+la+R%C3%A9publique%2C+06400+Cannes%2C+France",
+     "https://www.businessinsider.com/cannes-lions-festival-of-creativity-2022-live-blog-2022-6",
+     "https://www.linkedin.com/posts/publicis-groupe_welcome-to-marcel-activity-6546772923863183360-EyTP",
+     "https://rivieramedia.com/",
+     "https://aslproductions.com/behind-the-scenes-at-sport-beach-how-we-captured-the-heart-of-cannes-lions/",
+     "https://dreamwide.fr/tfwa-videographer/",
+     "https://fr.rivieramedia.com/event-video-production-in-cannes-europe",
+     "https://jri-cameraman-cannes.fr/",
+     "https://spacevisuals.fr/cannes-lions-cannes/",
+     "https://spacevisuals.fr/en/cannes-lions-cannes/",
+     "https://www.bow-creativestudio.com/production-audiovisuelle-evenementiel-cannes/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [
+     "https://studionicepodcast.com/en/services/cannes-lions"
+    ],
+    "names_in_text": [
+     "studio nice podcast",
+     "studionice"
+    ]
+   },
+   {
+    "engine": "chatgpt",
+    "n": 2,
+    "ok": true,
+    "text": "## Tristan Grech — Developer and Filmmaker\n\nTristan Grech is an independent developer and filmmaker who builds digital products and creates video content. His official website describes his work across web development, SaaS products, AI tools, and video production. [Tristan Grech · Websites, Web Apps and Video](https://tristangrech.com/en)\n\nBased in France, with professional activity in Nice and international projects.\n\n### His work and projects\n\nAccording to his official portfolio, his projects include:\n\n- Sumera AI — An AI-powered YouTube script generator with Stripe billing.\n- Fullink — A link-in-bio platform for creators.\n- Feu France — A live wildfire map and alert service.\n- Studio Nice Podcast — A 4K video podcast studio with online booking.\n- Polytaipe — A typing trainer for different keyboard layouts.\n- Source Canton — A sourcing service focused on southern China. [Tristan Grech · Websites, Web Apps and Video](https://tristangrech.com/en)[CN Sourcing — source anything from China, handled end to end](https://cnsourcing.fr/)\n\n### Where to find him\n\n- Official website: [tristangrech.com](https://tristangrech.com/en)\n- Professional profile: [LinkedIn](https://fr.linkedin.com/in/fullhaura)\n- Creative portfolio: [Behance](https://www.behance.net/tristangrech)\n\nHis website presents him as someone who combines software development, business building, and filmmaking rather than working exclusively in one creative or technical discipline. [Tristan Grech · Websites, Web Apps and Video](https://tristangrech.com/en)[Tristan Grech - Fullhaura](https://fr.linkedin.com/in/fullhaura)[Tristan Grech - graphic designer in Cannes, France :: Behance](https://www.behance.net/tristangrech)\n\nAre you looking for his biography and career history, his films and video work, or his software projects and technical background? I can focus on whichever aspect interests you most.",
+    "urls": [
+     "https://tristangrech.com/en",
+     "https://cnsourcing.fr/",
+     "https://www.behance.net/tristangrech",
+     "https://fr.linkedin.com/in/fullhaura"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [
+     "https://tristangrech.com/en"
+    ],
+    "names_in_text": [
+     "tristan grech",
+     "studio nice podcast",
+     "source canton",
+     "sumera",
+     "fullink",
+     "feu france",
+     "polytaipe",
+     "fullhaura"
+    ]
+   },
+   {
+    "engine": "chatgpt",
+    "n": 3,
+    "ok": true,
+    "text": "If you're looking for a French-speaking freelance web developer in Guangzhou (广州), China, the best places to look are French-speaking professional networks, local expat communities, and Chinese freelance platforms.\n\nThe key is to find someone who can communicate fluently in French while also handling your technical needs, whether that's a business website, an e-commerce store, or a bilingual French–Chinese website.\n\n## Best leads to contact\n\n1. Yannick Rancillac — Guangzhou-based web developer\n\nStrong local lead\n\nA published CV identifies him as a French-speaking computer engineer in Guangzhou, with experience in web development, PHP, JavaScript, CSS and ERP systems. His CV lists contact details and a personal website.\n\nSource: [CV and professional background](https://yannick.rancillac.fr/cv/En_CV_Classique_-_Yannick_Rancillac.pdf) · [Personal website](https://yannick.rancillac.fr/)\n\n2. Romain Zhou — French, English and Mandarin\n\nA multilingual freelance web developer whose profile lists French at native or bilingual level and Mandarin at conversational level. He works remotely, so confirm whether he can support a project in Guangzhou.\n\n[View freelance profile](https://www.malt.com/profile/romainzhou)\n\n3. Qingjia Tsang — Guangzhou-based full-stack developer\n\nBased in Guangzhou, with Mandarin and Cantonese listed as native languages and professional English. French proficiency is not listed, so this is an alternative if French is negotiable.\n\n[View portfolio](https://www.qingjiatsang.top/)\n\nThese are leads to investigate, not confirmed endorsements. Yannick Rancillac is the most directly relevant starting point based on the publicly available combination of French-language background, Guangzhou location and web development experience. [| |\n--- | --- | ---\nYannick RANCILLAC |](https://yannick.rancillac.fr/cv/En_CV_Classique_-_Yannick_RANCILLAC.pdf)[Romain Zhou, Freelance Web Developer](https://www.malt.com/profile/romainzhou)[Qingjia Tsang](https://www.qingjiatsang.top/)\n\n## To narrow down the right person\n\nAre you looking to hire a developer for a project, or are you looking for freelance work as a French-speaking web developer in Guangzhou? I can tailor the next set of contacts accordingly.",
+    "urls": [
+     "https://www.malt.com/profile/romainzhou",
+     "https://www.qingjiatsang.top/",
+     "https://yannick.rancillac.fr/cv/En_CV_Classique_-_Yannick_RANCILLAC.pdf",
+     "https://yannick.rancillac.fr/",
+     "https://yannick.rancillac.fr/cv/En_CV_Classique_-_Yannick_Rancillac.pdf",
+     "https://alpha-hub.ai/authors/hunter-martin/",
+     "https://www.slideserve.com/quiana/remi-daviet",
+     "https://blog.jsy.tw/my-web/",
+     "https://en.malt.fr/profile/lauresouai1",
+     "https://laabidi.eu/en/",
+     "https://manoncostard-dev.com/en/web-developer/",
+     "https://mflasquin.fr/",
+     "https://semzen.fr/en/freelance-web-developer/",
+     "https://www.fr.freelancer.com/job-search/freelance-website-developer-guangzhou/",
+     "https://www.kevinbretecher.com/wp-content/uploads/2021/03/kevin-bretecher-resume.pdf",
+     "https://www.malt.com/profile/franckdemol1",
+     "https://www.malt.com/profile/lauresouai1",
+     "https://www.marknightingale.net/",
+     "https://www.truelancer.com/french-freelancers-in-guangzhou"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "chatgpt",
+    "n": 4,
+    "ok": true,
+    "text": "Vous cherchez un développeur web freelance francophone à Canton (Guangzhou), en Chine, pour créer un site internet, développer une application ou trouver un prestataire avec qui communiquer en français.\n\nVoici les pistes que j’ai trouvées.\n\n## Profils et contacts à explorer\n\n1. Romain Zhou\n\nFrançais / anglais / mandarin\n\nDéveloppeur web freelance full-stack, avec des compétences en TypeScript, React, Python et automatisation. Son profil indique qu’il travaille à distance, mais sa présence physique à Canton n’est pas confirmée. [Romain Zhou, Développeur Web Freelance](https://fr.malt.ch/profile/romainzhou)[Romainzhou](https://comeup.com/fr/%40romainzhou)\n\n[Profil Malt](https://fr.malt.ch/profile/romainzhou) · [Profil ComeUp](https://comeup.com/fr/%40romainzhou)\n\n2. Freelance Web Designer Hong Kong\n\nPrestataire de conception web basé à Hong Kong, une piste régionale si vous acceptez un professionnel situé hors de Canton. La maîtrise du français reste à vérifier.\n\nTéléphone : +852 9327 5023\n\nJe n’ai pas pu confirmer un profil réunissant avec certitude les trois critères : freelance, francophone et basé physiquement à Canton.\n\n## Pour trouver le bon prestataire\n\nPouvez-vous me préciser votre besoin ?",
+    "urls": [
+     "https://comeup.com/fr/%40romainzhou",
+     "https://fr.malt.ch/profile/romainzhou",
+     "https://comeup.com/fr/%40romain",
+     "https://www.flashdesigner.com.hk/",
+     "https://www.oberlo.com/ebooks/dropshipping-masters",
+     "https://www.behance.net/gallery/184327937/Web-Agency-homepage-design"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "chatgpt",
+    "n": 5,
+    "ok": true,
+    "text": "If you want an audit of your website’s visibility in ChatGPT and other AI assistants, look for providers that specialize in **AI visibility audits**, **Generative Engine Optimization (GEO)**, **AI Search Optimization**, or **Answer Engine Optimization (AEO)**. The right choice depends on whether you want a quick diagnostic, a technical SEO-style audit, or ongoing monitoring.\n\n## Self-serve AI visibility audit tools\n\n- [GoWP AI Visibility Audit](https://gowp.com/ai-visibility/?utm_source=chatgpt.com) — Checks how your business appears across AI assistants such as ChatGPT, Claude, Gemini, and Perplexity, including crawlability, content gaps, and business information signals. [GoWP](https://gowp.com/ai-visibility/?utm_source=chatgpt.com)\n- [Website Auditor AI Website Audit](https://website-auditor.io/ai-website-audit?utm_source=chatgpt.com) — Tests whether AI assistants mention your business and reviews technical factors such as content structure and AI readability. [Website Auditor](https://website-auditor.io/ai-website-audit?utm_source=chatgpt.com)\n- [AIO Free AI Visibility Report](https://aio.io/free-report/?utm_source=chatgpt.com) — Provides a quick AI visibility report focused on where a business appears in AI search results. [AIO](https://aio.io/free-report/?utm_source=chatgpt.com)\n- [WPWeb Free AI Visibility Audit](https://wpweb.org/audit?utm_source=chatgpt.com) — Focuses on AI crawler access, schema, content citability, and trust signals. [WPWeb](https://wpweb.org/audit?utm_source=chatgpt.com)\n\n## Agencies and consultants\n\nFor a deeper audit, hire a **GEO/AI SEO consultant** or a digital marketing agency that can do things automated tools usually cannot:\n\n- Test the actual prompts your customers use (“best dentist near me,” “best accounting software,” etc.).\n- Compare whether ChatGPT recommends you versus competitors.\n- Review why AI systems choose certain sources.\n- Improve structured data, entity signals, content formatting, and authority signals.\n- Track changes over time.\n\nExamples of agencies/tools in this space include:\n- [The AI Citation](https://theaicitation.com/?utm_source=chatgpt.com) — Offers AI visibility audits and GEO-focused optimization services. [The AI Citation](https://theaicitation.com/?utm_source=chatgpt.com)\n- [AIO Clicks AI Visibility Audit](https://aioclicks.com/ai-search-geo-generative-engine-optimization/ai-visibility-audit/?utm_source=chatgpt.com) — Provides audits focused on AI mentions, sources, and fixes. [AIO Clicks](https://aioclicks.com/ai-search-geo-generative-engine-optimization/ai-visibility-audit/?utm_source=chatgpt.com)\n- [Kanon Agency](https://kanon.agency/?utm_source=chatgpt.com) — Offers GEO audits with prompt testing and technical remediation recommendations. [Kanon Agency](https://kanon.agency/?utm_source=chatgpt.com)\n\n## What a good audit should include\n\nA solid audit should evaluate:\n\n- **AI crawler access**\n  - Can GPTBot, ClaudeBot, PerplexityBot, and other crawlers access your pages?\n  - Are robots.txt or firewall rules blocking discovery?\n\n- **Content citability**\n  - Does your content answer specific questions clearly?\n  - Are important facts easy for AI systems to quote?\n\n- **Entity and trust signals**\n  - Is your business clearly defined?\n  - Are your name, services, locations, authorship, and credentials consistent?\n\n- **Structured data**\n  - Schema markup for organizations, products, services, FAQs, reviews, and locations.\n\n- **AI answer testing**\n  - Whether ChatGPT, Claude, Gemini, and Perplexity actually mention your brand for relevant queries.\n\nBe cautious of anyone promising they can **guarantee** that ChatGPT will recommend your site. AI answers change, and no outside company controls those outputs. A good provider should show measurements, competitor comparisons, and specific fixes rather than guarantees.\n\nIf you share your website URL and industry, I can help you identify what type of audit provider would be most appropriate and what they should check.",
+    "urls": [
+     "https://wpweb.org/audit",
+     "https://website-auditor.io/ai-website-audit",
+     "https://gowp.com/ai-visibility/",
+     "https://aio.io/free-report/",
+     "https://theaicitation.com/",
+     "https://aioclicks.com/ai-search-geo-generative-engine-optimization/ai-visibility-audit/",
+     "https://kanon.agency/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "chatgpt",
+    "n": 6,
+    "ok": true,
+    "text": "# Audit de visibilité IA pour un site web : activité freelance\n\nSi tu souhaites proposer des audits de visibilité dans les moteurs d’IA en freelance, c’est un service qui consiste à analyser si une entreprise est visible, citée ou recommandée par des outils comme ChatGPT, Perplexity, Gemini ou Google AI Overviews, puis à identifier les améliorations à apporter à son site web.\n\nCette prestation se situe à la croisée du SEO, du référencement dans les moteurs génératifs (GEO, pour Generative Engine Optimization) et de l’optimisation des contenus pour les intelligences artificielles.\n\n## 1. Que comprend un audit de visibilité IA ?\n\n1. Diagnostic de visibilité\n\n- Le site apparaît-il dans les réponses générées par les IA ?\n- La marque est-elle citée ou recommandée ?\n- Quelles entreprises concurrentes ressortent ?\n\n2. Audit technique du site\n\n- Accessibilité des pages pour les robots d’exploration.\n- Indexation, données structurées et fichiers robots.txt.\n- Architecture du site, maillage interne et qualité des pages.\n\n3. Audit éditorial et sémantique\n\n- Les contenus répondent-ils aux questions des clients ?\n- Les informations sont-elles fiables, claires et faciles à exploiter ?\n- Le site démontre-t-il son expertise et sa crédibilité ?\n\n4. Plan d’action priorisé\n\n- Liste des problèmes détectés.\n- Recommandations techniques et éditoriales.\n- Plan d’amélioration sur 30 à 90 jours.\n\nPoint important : il faut distinguer les améliorations qui facilitent l’exploration et la compréhension du site des citations effectivement obtenues par les IA. Aucun audit sérieux ne peut garantir qu'une marque sera recommandée par ChatGPT ou un autre moteur.\n\n## 2. Combien facturer en freelance ?\n\nLes tarifs observés en France en 2026 varient fortement selon le nombre de moteurs testés, le volume de pages et le niveau d’analyse humaine. Les offres publiées vont de quelques centaines d’euros pour un audit ciblé à plusieurs milliers d’euros pour un audit stratégique complet. [Combien coûte un audit de visibilité IA en 2026 ?](https://www.biencite.fr/fr/blog/combien-coute-audit-visibilite-ia-2026)[Consultant GEO freelance : missions et tarifs (2026)](https://tedchan.fr/blog/consultant-geo-freelance)[Agence GEO · Visibilité IA dans ChatGPT & Gemini](https://www.areta.fr/agence-geo)\n\nVoici une grille de départ possible si tu souhaites vendre cette prestation.\n\n| Offre | Contenu | Tarif indicatif |\n| --- | --- | --- |\n| Audit express | 1 site, vérifications essentielles, premières recommandations | 150–300 € |\n| Audit standard | Tests sur plusieurs IA, analyse concurrentielle, rapport détaillé | 400–800 € |\n| Audit stratégique | Analyse approfondie, benchmark, priorités SEO/GEO et feuille de route | 900–1 500 € |\n| Accompagnement mensuel | Suivi des citations, recommandations et optimisations | 300–900 €/mois |\n\nCes montants sont des prix de lancement suggérés, et non des moyennes officielles du marché.\n\nPour commencer, une offre à 390–490 € peut être intéressante si elle comprend un véritable travail d’analyse, des tests documentés sur plusieurs IA et un plan d’action exploitable. Il faut éviter de vendre simplement un rapport automatique généré par un outil.\n\n## 3. Comment trouver des clients ?\n\n- Agences SEO et web : proposer l’audit en marque blanche ou en sous-traitance.\n- TPE et PME : cibler les entreprises dont les clients recherchent des recommandations via les IA.\n- Freelances SEO et développeurs web : nouer des partenariats complémentaires.\n- Prospection directe sur LinkedIn : montrer un exemple concret d’entreprise citée par ses concurrents, sans prétendre garantir un résultat futur.\n\nLe livrable qui fait la différence est un rapport PDF professionnel, accompagné d'une restitution orale et de recommandations classées par priorité.\n\n## Pour que je t'aide précisément\n\nTu recherches quelle situation ?",
+    "urls": [
+     "https://www.areta.fr/agence-geo",
+     "https://www.biencite.fr/fr/blog/combien-coute-audit-visibilite-ia-2026",
+     "https://tedchan.fr/blog/consultant-geo-freelance",
+     "https://ai-visibility-index.semrush.com/downloads",
+     "https://techpullers.com/seo-audit-service/",
+     "https://www.slideteam.net/digital-marketing-strategy-dashboard-with-total-traffic-visit.html",
+     "https://rodricamacho.com/",
+     "https://enovseo.fr/tarifs-geo/",
+     "https://redback-optimisation.fr/",
+     "https://robz.fr/blog/cout-plan-daction-geo",
+     "https://thibaultfayol.com/services/geo/",
+     "https://wecomm.fr/tarifs-geo/",
+     "https://www.agencegeofrance.com/prix-referencement-ia/",
+     "https://www.areta.fr/visibilite-ia-hotel-restaurant",
+     "https://www.audit-geo.com/pricing",
+     "https://www.storyzee.com/fr/blog/combien-coute-audit-visibilite-ia/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "chatgpt",
+    "n": 7,
+    "ok": true,
+    "text": "If you're looking to hire a freelance developer to build a website in French, English and Russian, I'd recommend finding someone with experience in multilingual website development, international SEO, and content management—not just general web design.\n\nThe key is to build one website that supports all three languages, with a language switcher and a way for you to update content without needing a developer every time.\n\n## Freelance developers worth considering\n\n1. Aliaskar Malabaev\n\nStrong language match\n\nFrance · Remote · French, English and Russian\n\nHis website confirms that he works in all three languages and builds websites and custom web applications. A good candidate to contact for a multilingual project. [Freelance web developer — websites & applications](https://amalabaev.com/en/)[Freelance full-stack developer](https://amalabaev.com/en/freelance-full-stack-developer/)\n\n[Portfolio and contact](https://amalabaev.com/en/)\n\n2. Timour S.\n\nLyon, France · French, English and Russian\n\nListed on Malt, with experience in showcase websites, e-commerce, redesigns and technical SEO. Worth enquiring about availability and a three-language build. [S Timour S., Freelance Web Developer in Lyon](https://www.malt.com/profile/stimoursayfoutdinov)\n\n[View Malt profile](https://www.malt.com/profile/stimoursayfoutdinov)\n\n3. Dmitry Z.\n\nRemote · Russian native, English fluent, French intermediate\n\nHas experience with multilingual applications, full-stack development and software localization. His profile is on Upwork; check current availability and fit for your project. [Dmitry Z. - Full Stack Developer & Translator](https://www.upwork.com/freelancers/~01e6282c55f3cd80cc)\n\n[View Upwork profile](https://www.upwork.com/freelancers/~01e6282c55f3cd80cc)\n\n## What should your website cost?\n\nThese are rough planning estimates, not quotes from the developers above.\n\n| Website type | Estimated budget |\n| --- | --- |\n| Simple landing page in 3 languages | $800–$2,000 |\n| Professional business website, 5–10 pages | $2,000–$6,000 |\n| Custom website with bookings, payments or user accounts | $6,000–$15,000+ |\n\nTranslation, copywriting, hosting and ongoing maintenance may cost extra.\n\n## A few details to help me find the right person\n\nWhat kind of website do you need? For example, a company website, online store, tourism website, portfolio, or a more complex platform.\n\nAlso, what is your approximate budget? I can narrow the shortlist to freelancers who are a better fit for your project and price range.",
+    "urls": [
+     "https://amalabaev.com/en/freelance-full-stack-developer/",
+     "https://amalabaev.com/en/",
+     "https://www.malt.com/profile/stimoursayfoutdinov",
+     "https://www.upwork.com/freelancers/~01e6282c55f3cd80cc",
+     "https://medium.com/%40vitddnv/followers",
+     "https://nico-jour.github.io/Visiter-Lyon/index.html",
+     "https://www.fiverr.com/disson_dmitry/develop-a-responsive-web-application",
+     "https://adelinelefebvre.com/en",
+     "https://amalabaev.com/",
+     "https://by-aks.com/",
+     "https://hiregora.com/web-developer",
+     "https://ilya.is-a.dev/",
+     "https://maxime-danic.com/Maxime_Danic-CV_2026.pdf",
+     "https://portfolio-denis-web.vercel.app/",
+     "https://webcraftdev.com/en/web-developer-france",
+     "https://www.awattsdev.eu/en",
+     "https://www.freelancer.com.au/u/apla1",
+     "https://www.freelancer.com/projects/html/multilingual-service-platform",
+     "https://www.freelancer.com/u/yous5eef/portfolio/5eefonline-developer-portfolio-14133809",
+     "https://www.freelancer.ec/projects/html/multilingual-service-platform",
+     "https://www.marknightingale.net/",
+     "https://www.reddit.com/r/B2BForHire/comments/1wowc00/for_hire_fullstack_web_developer/",
+     "https://www.reddit.com/r/ForHireFreelance/comments/1wowbo0/for_hire_fullstack_web_developer/",
+     "https://www.reddit.com/r/freelance_forhire/comments/1uv4caq/for_hire_multilingual_freelancer_translation/",
+     "https://www.upwork.com/freelance-jobs/apply/WordPress-Multilingual-Website-Developer_~022095481750351669003/",
+     "https://www.upwork.com/freelance-jobs/apply/WordPress-Website-Development_~022090739359813949049/",
+     "https://www.upwork.com/hire/website-translation-freelancers/fr/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "chatgpt",
+    "n": 8,
+    "ok": true,
+    "text": "If you're looking for a freelance developer to build a booking website for a small studio, I'd recommend a simple, mobile-friendly booking system with Stripe payments, rather than an expensive custom platform built from scratch.\n\nThe best solution depends on what kind of studio you run — for example, a photography studio, yoga or Pilates studio, dance studio, creative space, or beauty studio.\n\n## What the website should include\n\n- Online booking: Customers choose a service, date, and available time slot.\n- Stripe payments: Accept card payments, deposits, or full payment at booking.\n- Availability management: Set opening hours, booking durations, buffers, and unavailable dates.\n- Automated emails: Send booking confirmations, payment receipts, and reminders.\n- Admin dashboard: Manage appointments, cancellations, and refunds.\n- Mobile-friendly design: Make it easy for customers to book from their phones.\n\n## Freelance developers worth contacting\n\nHere are some live listings that specifically advertise booking websites with payment integration.\n\n1. [Dmytro V. — Upwork](https://www.upwork.com/services/product/development-it-a-booking-website-that-takes-payments-live-and-yours-keep-2082417461928920352)\n\nListed packages: $600–$2,400\n\nOffers a booking website with Stripe, configurable availability, deposits, notifications, and source code. A promising starting point for a small studio. [A booking website that takes payments, live and yours to keep](https://www.upwork.com/services/product/development-it-a-booking-website-that-takes-payments-live-and-yours-to-keep-2082417461928920352)\n\n2. [Emmanuel A. — Upwork](https://www.upwork.com/services/product/development-it-complete-business-platformwebsite-admin-booking-payments-2035966193244854448)\n\nListed packages: $3,500–$8,000\n\nOffers a more extensive custom platform, including a client portal, booking calendar, Stripe or PayPal, and an admin dashboard. Better suited to a studio needing more advanced features. [Complete Business PlatformWebsite, Admin, Booking & Payments](https://www.upwork.com/services/product/development-it-complete-business-platformwebsite-admin-booking-payments-2035966193244854448)\n\n3. [M. Umer — Fiverr](https://www.fiverr.com/muhammadumer125/build-a-full-stack-nextjs-web-application)\n\nAdvertised starter package: $80\n\nAdvertises a booking calendar, Stripe integration, email confirmations, and an admin dashboard. Check the exact package scope carefully: the starter price may not cover the complete website you need. [Build an appointment booking site with stripe payments by Muhammadumer125](https://www.fiverr.com/muhammadumer125/build-a-full-stack-nextjs-web-application?imp_id=dcf0b712-41b9-49b1-b5d2-f24950155f00&pckg_id=1&pos=32)[Build an appointment booking site with stripe payments by Muhammadumer125](https://www.fiverr.com/muhammadumer125/build-a-full-stack-nextjs-web-application?imp_id=af31fb21-44f9-4f07-9a32-6ec67609ebfc&pckg_id=1&pos=2)\n\nThese are advertised services, not independently verified endorsements. Confirm recent examples, reviews, total costs, and what each package actually includes.\n\n## What budget should you plan for?\n\n| Type of solution | Indicative budget |\n| --- | --- |\n| Basic booking page and payment integration | $300–$800 |\n| Custom branded website with bookings and Stripe | $800–$2,500 |\n| Advanced custom booking platform | $3,000+ |\n\nThese are planning estimates, not guaranteed quotes. Hosting, domain registration, booking software, and Stripe transaction fees may be additional. Stripe offers a hosted checkout option that can simplify development. [Stripe Checkout documentation](https://docs.stripe.com/payments/checkout/quickstarts).\n\n## Let’s narrow it down\n\nWhat kind of studio is it, and what do you need customers to book?",
+    "urls": [
+     "https://www.upwork.com/services/product/development-it-a-booking-website-that-takes-payments-live-and-yours-to-keep-2082417461928920352",
+     "https://www.upwork.com/services/product/development-it-complete-business-platformwebsite-admin-booking-payments-2035966193244854448",
+     "https://www.fiverr.com/muhammadumer125/build-a-full-stack-nextjs-web-application?imp_id=af31fb21-44f9-4f07-9a32-6ec67609ebfc&pckg_id=1&pos=2",
+     "https://www.fiverr.com/muhammadumer125/build-a-full-stack-nextjs-web-application?imp_id=dcf0b712-41b9-49b1-b5d2-f24950155f00&pckg_id=1&pos=32",
+     "https://www.upwork.com/services/product/de**",
+     "https://www.upwork.com/services/product/development-it-a-booking-website-that-takes-payments-live-and-yours-keep-2082417461928920352**",
+     "https://tentary.com/en/changelog",
+     "https://www.upwork.com/services/product/development-it-a-booking-website-that-takes-payments-live-and-yours-keep-2082417461928920352",
+     "https://pilatesjournal.com/articles/5-ways-arketa-is-changing-the-game-for-boutique-pilates-studios",
+     "https://docs.stripe.com/payments/checkout/quickstarts",
+     "https://www.fiverr.com/muhammadumer125/build-a-full-stack-nextjs-web-application",
+     "https://www.halth.com/halth-secure",
+     "https://stripe.com/payments/checkout",
+     "https://stripe.dev/",
+     "https://www.fiverr.com/moustafa_shayeb/build-a-modern-business-website-with-booking-and-payments",
+     "https://www.fiverr.com/moustafa_shayeb/build-a-modern-business-website-with-booking-and-payments?pckg_id=1",
+     "https://www.fiverr.com/muhammadumer125/build-a-full-stack-nextjs-web-application?imp_id=3d0f9432-9fb6-40c6-aaa0-c168765bdf67&pckg_id=1&pos=7",
+     "https://www.fiverr.com/seemab_naaz/create-a-wordpress-ecommerce-website-with-online-store?imp_id=67a7eb75-ae22-467c-a86b-39b729430aee&pckg_id=1&pos=35",
+     "https://www.upwork.com/resources/upwork-vs-fiverr"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "chatgpt",
+    "n": 9,
+    "ok": true,
+    "text": "Если вам нужен разработчик многоязычных сайтов на русском, английском и французском языках, я могу помочь найти специалиста или подготовить техническое задание для создания сайта.\n\nТакой разработчик может создать сайт с переключением языков, адаптивным дизайном, SEO для каждой языковой версии и удобной системой управления контентом.\n\n## Уточните, пожалуйста: кого именно вы ищете?\n\nПри выборе разработчика важно проверить, умеет ли он создавать полноценные языковые версии с отдельными URL-адресами и настройками SEO, а не только подключать автоматический перевод. [Управление мультирегиональными и многоязычными сайтами | Центр Google Поиска  |  Documentation  |  Google for Developers](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites?hl=ru&hlrm=en&rd=1&visit_id=639268628597557195-2722653572)",
+    "urls": [
+     "https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites?hl=ru&hlrm=en&rd=1&visit_id=639268628597557195-2722653572",
+     "https://a-lux.kz/en/",
+     "https://alixan.kz/",
+     "https://alty.kz/?lang=en",
+     "https://applications.kz/en/web-development-almaty/",
+     "https://blumango.be/ru/faq-items/%D0%BA%D0%B0%D0%BA%D0%BE%D0%B2-%D0%B2%D0%B0%D1%88-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D1%8F%D0%B7%D1%8B%D1%87/",
+     "https://competent.kz/blog/web-development/tpost/kmo2cdxzv1-multiyazichnoe-seo",
+     "https://competent.kz/services/website-development/",
+     "https://dak.consulting/ru/blog/razrabotka-saitov-dlia-biznesa-vo-francii",
+     "https://dev.kko.kz/",
+     "https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites",
+     "https://glonin.kz/blog/stati/mnogoyazychnyj-sajt-ru-kz-en-arhitektura-i-zapusk/",
+     "https://habr.com/ru/articles/767438/",
+     "https://knor.kz/",
+     "https://learn.microsoft.com/ru-ru/power-pages/configure/enable-multiple-language-support",
+     "https://netcat.ru/developers/docs/tools/multi-lingual/",
+     "https://nomaddos.com/razrabotka-sajtov-kazakhstan/",
+     "https://parasat-development.kz/",
+     "https://pozhidayev.kz/",
+     "https://ru.wikipedia.org/wiki/Bologna_Translation_Service",
+     "https://ru.wikipedia.org/wiki/Webasyst",
+     "https://ru.wikipedia.org/wiki/Webnode",
+     "https://ru.wikipedia.org/wiki/Wix.com",
+     "https://studio.qbix.kz/",
+     "https://www.bandziuk.com/ru/uslugi/razrabotka-multiyazychnogo-saita",
+     "https://www.gooetranslate.com/ru",
+     "https://www.seonews.ru/analytics/sozdaem-multiyazychnyy-veb-sayt-osobennosti-razrabotki-dlya-kitaya-i-drugikh-regionov/",
+     "https://xn--b1afr.org/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0036,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "claude",
+    "n": 1,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 402 — the provider answered; treg relayed it unchanged; call id 6ffd80e15984448bbbd28a63173103e2 (quote it to support; `treg calls` shows the record)\n{\n  \"version\": \"0.1.20260917\",\n  \"status_code\": 20000,\n  \"status_message\": \"Ok.\",\n  \"time\": \"0 sec.\",\n  \"cost\": 0,\n  \"tasks_count\": 1,\n  \"tasks_error\": 1,\n  \"tasks\": [\n    {\n      \"id\": \"10110946-2330-0612-0000-5fa2f7169218\",\n      \"status_code\": 40200,\n      \"status_message\": \"Payment Required.\",\n      \"time\": \"0 sec.\",\n      \"cost\": 0,\n      \"result_count\": 0,\n      \"path\": [\n        \"v3\",\n        \"ai_optimization\",\n        \"claude\",",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "claude",
+    "n": 2,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 402 — the provider answered; treg relayed it unchanged; call id 20106dd9a1e3466a9f98dda9600afae4 (quote it to support; `treg calls` shows the record)\n{\n  \"version\": \"0.1.20260917\",\n  \"status_code\": 20000,\n  \"status_message\": \"Ok.\",\n  \"time\": \"0 sec.\",\n  \"cost\": 0,\n  \"tasks_count\": 1,\n  \"tasks_error\": 1,\n  \"tasks\": [\n    {\n      \"id\": \"10110946-2330-0612-0000-3737eddc2b0e\",\n      \"status_code\": 40200,\n      \"status_message\": \"Payment Required.\",\n      \"time\": \"0 sec.\",\n      \"cost\": 0,\n      \"result_count\": 0,\n      \"path\": [\n        \"v3\",\n        \"ai_optimization\",\n        \"claude\",",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "claude",
+    "n": 5,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 402 — the provider answered; treg relayed it unchanged; call id 3074bc3b092741c5ad081fec9a8e95df (quote it to support; `treg calls` shows the record)\n{\n  \"version\": \"0.1.20260917\",\n  \"status_code\": 20000,\n  \"status_message\": \"Ok.\",\n  \"time\": \"0 sec.\",\n  \"cost\": 0,\n  \"tasks_count\": 1,\n  \"tasks_error\": 1,\n  \"tasks\": [\n    {\n      \"id\": \"10110946-2330-0612-0000-d1a3c84c4221\",\n      \"status_code\": 40200,\n      \"status_message\": \"Payment Required.\",\n      \"time\": \"0 sec.\",\n      \"cost\": 0,\n      \"result_count\": 0,\n      \"path\": [\n        \"v3\",\n        \"ai_optimization\",\n        \"claude\",",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 1,
+    "ok": true,
+    "text": "Tristan Grech could refer to two different individuals depending on the context:\n\n  * 🎯 **Sports** : Tristan Grech is a Maltese footballer, born on August 6, 2002. He plays as a midfielder for **Sannat Lions FC** in the Gozo League. He joined the club in July 2025, with his contract running until June 2027. He previously played for Xewkija Tigers FC and has participated in competitions such as the Gozo Football League, Maltese FA Trophy, and National Amateur Cup.[Tristan Grech - Player profile 26/27 | Transfermarkt](https://www.transfermarkt.us/tristan-grech/profil/spieler/849167)[Tristan Grech - Detailed stats | Transfermarkt](https://www.transfermarkt.co.uk/tristan-grech/leistungsdatendetails/spieler/849167)[Tristan Grech - Profil du joueur 26/27 | Transfermarkt](https://www.transfermarkt.fr/tristan-grech/profil/spieler/849167)\n\n  * 🎬 **Film Industry** : Tristan Grech also appears in the entertainment world, working behind the scenes in film and television. He is credited in the **art department, camera and electrical department, and property department** for productions such as _The Count of Monte Cristo_ (2024), _For Love & Honey_ (2024), and _Caught by Love_ (2026).[Tristan Grech - IMDb](https://www.imdb.com/name/nm16689968/)\n\nWould you like me to focus on the **footballer’s career stats** or the **film crew member’s projects**?",
+    "urls": [
+     "https://www.transfermarkt.us/tristan-grech/profil/spieler/849167",
+     "https://www.transfermarkt.co.uk/tristan-grech/leistungsdatendetails/spieler/849167",
+     "https://www.transfermarkt.fr/tristan-grech/profil/spieler/849167",
+     "https://www.imdb.com/name/nm16689968/"
+    ],
+    "queries": [
+     "Tristan Grech"
+    ],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": [
+     "tristan grech"
+    ]
+   },
+   {
+    "engine": "copilot",
+    "n": 10,
+    "ok": true,
+    "text": "**Top videographers for event interviews at Cannes Lions include Space Visuals, Images d’Azur, and MFvideo — all highly rated production companies based in Cannes with experience in corporate and festival coverage.**\n\n### 🎥 Recommended Videographers for Cannes Lions Event Interviews\n\nCompany| Location| Rating| Specialty| Contact  \n---|---|---|---|---  \n**Space Visuals**| 33 Bd de la République, Cannes| ⭐ 5.0 (38 reviews)| Video production & photography, available 24/7| 06 87 19 03 75  \n**Images d’Azur**| 29 Bd de la Ferrage, Cannes| ⭐ 5.0 (62 reviews)| Corporate video, event coverage, photography| 04 93 93 83 29  \n**MFvideo**|  41 Rue Léon Noël, Cannes| ⭐ 5.0 (6 reviews)| Event videography, interviews, corporate shoots| 06 67 09 11 43  \n**Cannes Film Services – Oneway Camera**| Le Cannet (near Cannes)| ⭐ 4.9 (44 reviews)| Video production, equipment rental| 07 86 71 64 93  \n**DREAMWIDE Productions**| Nice (near Cannes)| ⭐ 5.0 (55 reviews)| Corporate videography, business interviews| 06 21 77 13 56  \n  \n### ✅ Key Considerations for Choosing a Videographer\n\n  * **Experience with Cannes Lions**: Look for teams familiar with fast-paced festival environments and brand interviews.\n\n  * **Availability** : Many agencies (like Space Visuals and Sphera Agency) operate 24/7, which is crucial during the busy Cannes Lions schedule.\n\n  * **Style & Equipment**: Some companies also provide high-end gear rental (e.g., Oneway Camera), useful if you want cinematic quality.\n\n  * **Language & Communication**: Since Cannes Lions is international, ensure the videographer can handle English interviews smoothly.\n\n  * **Turnaround Time**: Ask about editing speed — festival interviews often need same-day or next-day delivery for social media.\n\n### ⚠️ Risks & Challenges\n\n  * **High Demand During Cannes Lions**: Videographers book out months in advance. Secure your team early to avoid last-minute compromises.\n\n  * **Pricing Variability**: Rates can spike during the festival. Request detailed quotes upfront to avoid hidden costs.\n\n  * **Logistics** : Cannes is crowded during Lions week; confirm your videographer has access badges or experience navigating festival venues.\n\n📌 **Recommendation:** If you want a local, highly rated team with proven festival experience, **Space Visuals** and **Images d’Azur** stand out. For smaller, more personalized interview setups, **MFvideo** is a strong choice. If you need gear rental plus crew, **Cannes Film Services** is ideal.\n\nWould you like me to shortlist **English-speaking videographers with same-day editing services** specifically for Cannes Lions interviews? That would narrow down the options to the most practical choices for festival coverage.",
+    "urls": [],
+    "queries": [
+     "videographer services for event interviews Cannes Lions"
+    ],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 2,
+    "ok": true,
+    "text": "Tristan Grech is a developer and filmmaker based between Guangzhou and Nice. He builds multilingual websites, web apps with booking/payment systems, and also runs video production projects. His work spans AI-powered tools (like **Sumera AI**, a YouTube script generator), creator platforms (**Fullink**), public service apps (**Feu France**, a wildfire alert map), and creative studios (**Studio Nice Podcast**, a 4K video podcast studio). He works in French, English, and Russian, and his projects are designed with SEO and AI visibility in mind.[Tristan Grech · Websites, Web Apps and Video · Guangzhou](https://tristangrech.com/en)[Tristan Grech — Sites web, applications & production vidéo · Nice](https://tristangrech.com/fr)\n\nOn the filmmaking side, he has credits in the art department and camera/electrical teams for productions such as _The Count of Monte Cristo_ (2024), _For Love & Honey_ (2024), and _Caught by Love_ (2026).[Tristan Grech - IMDb](https://www.imdb.com/name/nm16689968/)\n\nSo, Tristan Grech is a multidisciplinary creator: he develops digital products and platforms while also contributing to film and video production. Would you like me to focus more on his **tech projects** (apps, AI tools, websites) or on his **film career** (credits, productions, showreel)?",
+    "urls": [
+     "https://tristangrech.com/en",
+     "https://tristangrech.com/fr",
+     "https://www.imdb.com/name/nm16689968/"
+    ],
+    "queries": [
+     "Tristan Grech developer filmmaker"
+    ],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [
+     "https://tristangrech.com/en",
+     "https://tristangrech.com/fr"
+    ],
+    "names_in_text": [
+     "tristan grech",
+     "studio nice podcast",
+     "sumera",
+     "fullink",
+     "feu france"
+    ]
+   },
+   {
+    "engine": "copilot",
+    "n": 3,
+    "ok": true,
+    "text": "Here are some options if you’re looking for a **French-speaking freelance web developer in Guangzhou**:\n\n### 👨‍💻 Freelancers with French skills in China\n\n  * **Chao W.** – Full-stack developer based in China (UTC+8).\n\n    * Languages: English, French, Mandarin\n\n    * Skills: React, Java, HTML/CSS, TypeScript, Python, NestJS, SQL, Next.js, Node.js\n\n    * Experience: Worked in multinationals and startups in the UK and China, previously at Tesla.\n\n    * Available for both freelance and full-time work.[Hire the Best Freelance Developers in China (Oct 2026)](https://arc.dev/en-cn/hire-developers)[Hire Top Freelance Full Stack Developers in China (Jul 2026)](https://arc.dev/en-cn/hire-developers/full-stack)\n\n### 🌍 Platforms to find French-speaking developers\n\n  * **Arc.dev** – A vetted network of top freelance developers in China, including bilingual (French/English/Mandarin) professionals.[Hire the Best Freelance Developers in China (Oct 2026)](https://arc.dev/en-cn/hire-developers)\n\n  * **Upwork** – Global freelance marketplace where you can filter for French-speaking web developers. For example, agencies and freelancers regularly post jobs requiring fluent French for WordPress/Elementor projects.[WordPress / Elementor developer (fluent French) – long-term partner for an industrial web agency - Freelance Job in Web & Mobile Design - $100.00 Fixed Price, posted September 25, 2026 - Upwork](https://www.upwork.com/freelance-jobs/apply/WordPress-Elementor-developer-fluent-French-long-term-partner-for-industrial-web-agency_~022103456409650191100/)\n\n### 🏢 Local IT staffing in Guangzhou\n\n  * **NETK5** – An IT staffing agency in Guangzhou that places bilingual engineers (including French/English) with international companies. They specialize in matching technical talent who can communicate with both European HQs and Chinese teams.[IT staffing in Guangzhou | NETK5](https://netk5.com.cn/it-staffing/it-staffing-in-guangzhou/)\n\n✅ **Recommendation:** If you specifically need a **freelance web developer in Guangzhou who speaks French**, I suggest starting with **Arc.dev** to connect with vetted bilingual developers like _Chao W._, and also checking **Upwork** for freelancers who list French fluency. If you prefer a more structured arrangement (contracts, local compliance), **NETK5** can help with bilingual IT staffing in Guangzhou.\n\nWould you like me to **compile a shortlist of available French-speaking freelancers in Guangzhou with direct contact links** from these platforms?",
+    "urls": [
+     "https://arc.dev/en-cn/hire-developers",
+     "https://arc.dev/en-cn/hire-developers/full-stack",
+     "https://www.upwork.com/freelance-jobs/apply/WordPress-Elementor-developer-fluent-French-long-term-partner-for-industrial-web-agency_~022103456409650191100/",
+     "https://netk5.com.cn/it-staffing/it-staffing-in-guangzhou/"
+    ],
+    "queries": [
+     "French-speaking freelance web developer in Guangzhou"
+    ],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 4,
+    "ok": true,
+    "text": "Tu es basé à Canton et tu travailles comme développeur web freelance francophone — c’est une combinaison intéressante ! Canton est un hub économique majeur en Chine, avec beaucoup d’opportunités liées au commerce international et à la tech. Être francophone peut aussi te donner un avantage pour collaborer avec des entreprises européennes ou africaines qui cherchent à s’implanter en Asie.\n\n👉 Quelques pistes qui pourraient t’être utiles :\n\n  * **Networking local** : Les meetups tech et événements startup à Canton sont nombreux. Participer peut t’aider à trouver des clients ou partenaires.\n\n  * **Marché francophone** : Tu pourrais cibler des entreprises francophones qui veulent une présence digitale en Chine, ou des sociétés chinoises qui veulent communiquer avec des marchés francophones.\n\n  * **Compétences différenciantes** : Si tu maîtrises des frameworks modernes (React, Vue, Next.js, etc.) et que tu peux aussi proposer du SEO multilingue, tu deviens particulièrement attractif.\n\n  * **Plateformes freelances** : Upwork, Malt, ou même des plateformes locales comme ZBJ (猪八戒网) peuvent être des canaux pour trouver des missions.\n\nTu veux que je t’aide à explorer des **opportunités de missions freelances francophones à Canton**, ou plutôt à identifier des **secteurs porteurs** où tes compétences web pourraient être particulièrement demandées ?",
+    "urls": [],
+    "queries": [],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 5,
+    "ok": true,
+    "text": "**You can hire specialized “AI visibility audit” firms or use dedicated tools that check how well your website appears in ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews. Leading providers include AY Rank, Cite Solutions, iPullRank, and Avante Visibility, each catering to different business sizes and needs.**\n\n## 🔎 Who Offers AI Visibility Audits\n\nHere are some of the most recognized services in 2026:\n\nService| Best For| Coverage| Pricing Model| Strengths  \n---|---|---|---|---  \n**AY Rank**| B2B teams| ChatGPT, Claude, Gemini, Perplexity, Google AI Overviews| Flat fee, 1–2 week engagement| Full multi-engine audit with prioritized fixes [Best AI Visibility Audit Services (2026) | AY Rank](https://www.ayrank.com/blog/best-ai-visibility-audit-services-2026)  \n**Cite Solutions**| Senior-led B2B audits| All major AI assistants| Custom, low five figures| Deep competitor benchmarking, roadmap delivery [Best AI Visibility Audit Services 2026](https://cite.solutions/best-ai-visibility-audit-services-2026)  \n**iPullRank**|  Enterprise marketing teams| AI \\+ SEO integration| Project pricing| Strong technical SEO \\+ AI visibility blend [Best AI Visibility Audit Services (2026) | AY Rank](https://www.ayrank.com/blog/best-ai-visibility-audit-services-2026)  \n**Avante Visibility**| Small businesses & agencies| AI assistants \\+ GEO| Flat fee, one-time| Done-for-you audit with prioritized fix plan [Best AI Visibility & GEO Audit Services (2026): An Honest Comparison | Avante Visibility](https://avantevisibility.com/best-ai-visibility-audit-services)  \n**BrightEdge Consulting**| Large enterprises| AI Overviews| Bundled with BrightEdge platform| Enterprise-grade reporting [Best AI Visibility Audit Services (2026) | AY Rank](https://www.ayrank.com/blog/best-ai-visibility-audit-services-2026)  \n**GoFishDigital**|  Any size| Free baseline audit| Free, upsell to services| Quick entry point for visibility checks [Best AI Visibility Audit Services 2026](https://cite.solutions/best-ai-visibility-audit-services-2026)  \n  \n## ✅ What a Real AI Visibility Audit Should Include\n\nA proper audit goes beyond traditional SEO. According to industry experts, it should cover:\n\n  * **Technical SEO** (speed, crawlability, indexing)\n\n  * **Content quality & extractability** (AI systems need structured, authoritative text)\n\n  * **Schema markup & entity signals** (organization, FAQ, product schemas)\n\n  * **AI discoverability infrastructure** (robots.txt for AI crawlers, llms.txt)\n\n  * **Earned visibility** (citations in third-party sites, directories, reviews)\n\n  * **Social SEO signals** (cross-platform presence) [Best AI Visibility Audit Services: Who Actually Delivers | Lesli Rose](https://lesli.com/insights/ai-discoverability/best-ai-visibility-audit-services)\n\n## ⚠️ Risks & Considerations\n\n  * **Not all “AI audits” are equal**: Many SEO agencies rebrand basic audits without checking AI citation visibility. Ensure the provider explicitly tests ChatGPT, Claude, Gemini, and Perplexity.\n\n  * **Cost vs. value**: Free tools give directional signals but lack depth. Paid audits (low five figures for enterprise, flat fee for SMBs) provide actionable roadmaps.\n\n  * **Rapidly evolving field**: AI search engines update frequently. Visibility today doesn’t guarantee tomorrow—ongoing monitoring may be necessary.\n\n  * **Scam risk**: Be wary of agencies promising guaranteed placement in ChatGPT answers. No one can guarantee this; audits only measure and improve likelihood.\n\n## 📌 Next Steps\n\n  1. **Start with a free quick-check tool** (like Avante’s AI Visibility Score) to see if your site is cited at all.\n\n  2. **Choose audit type based on your size**:\n\n     * Small business → Avante Visibility or GoFishDigital.\n\n     * Enterprise → Cite Solutions, iPullRank, BrightEdge.\n\n     * SaaS teams → Minuttia or Flying Cat Marketing.\n\n  3. **Ask providers about methodology**: Ensure they cover schema, citations, and AI-specific signals—not just SEO basics.\n\nWould you like me to **recommend the best-fit audit provider for your website type** (e.g., local business, SaaS, enterprise)? That way, I can narrow down the options to the most relevant ones.",
+    "urls": [
+     "https://www.ayrank.com/blog/best-ai-visibility-audit-services-2026",
+     "https://cite.solutions/best-ai-visibility-audit-services-2026",
+     "https://avantevisibility.com/best-ai-visibility-audit-services",
+     "https://lesli.com/insights/ai-discoverability/best-ai-visibility-audit-services"
+    ],
+    "queries": [
+     "website audit services for AI assistant visibility"
+    ],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 6,
+    "ok": true,
+    "text": "**Un audit de visibilité IA pour un site web freelance consiste à mesurer comment votre marque ou vos services apparaissent dans les réponses générées par des modèles comme ChatGPT, Gemini, Perplexity ou Claude, puis à identifier les actions pour améliorer cette présence.** C’est devenu aussi crucial que le SEO classique, car les IA influencent directement les recommandations et le trafic qualifié.\n\n## 🔎 Pourquoi un audit de visibilité IA est essentiel\n\n  * **Conversion élevée** : le trafic issu des IA convertit en moyenne 5 fois mieux que celui de Google Search (14,2% vs 2,8%).\n\n  * **Invisibilité fréquente** : près de 78% des sites ne sont pas cités par les IA, ce qui signifie qu’ils n’existent pas dans ce nouvel écosystème[Comment réaliser un audit de visibilité IA complet en 2026](https://radarllm.ai/fr/blog/ai-visibility-audit-guide-2026).\n\n  * **Pas de “page 2”** : contrairement à Google, une IA ne propose pas une liste infinie de résultats. Soit vous êtes cité, soit vous êtes absent[Outils abordables de visibilité IA pour freelances | Am I Cited](https://www.amicited.com/fr/blog/affordable-ai-visibility-tools-freelancers/).\n\n## 🛠️ Méthodologie d’un audit IA\n\nUn audit complet combine plusieurs volets :\n\n  1. **Performance technique** : Core Web Vitals, vitesse, sécurité HTTPS. Les IA privilégient les sources rapides et fiables[Comment réaliser un audit de visibilité IA complet en 2026](https://radarllm.ai/fr/blog/ai-visibility-audit-guide-2026).\n\n  2. **SEO classique** : balises meta, Hn, alt, sitemap, robots.txt (autorisation des bots IA), Schema.org, fichier `llms.txt`.\n\n  3. **Visibilité LLM** : tester des requêtes sectorielles sur ChatGPT, Gemini, Perplexity, Claude et analyser si votre site est cité.\n\n  4. **AEO(Answer Engine Optimization)** : structurer vos contenus pour les réponses directes (FAQ JSON-LD, listes, définitions).\n\n  5. **GEO(Generative Engine Optimization)** : optimiser la citabilité par les IA (schémas complets, blocs thématiques, mentions externes).\n\n  6. **EEAT(Expertise, Expérience, Autorité, Fiabilité)** : pages auteur, témoignages, mentions légales, presse[Comment réaliser un audit de visibilité IA complet en 2026](https://radarllm.ai/fr/blog/ai-visibility-audit-guide-2026).\n\n## 📊 Outils et options pour freelances\n\nOutil / Méthode| Prix| Points forts| Limites  \n---|---|---|---  \n**Audit manuel (consultant)**| 500–2500 €| Analyse personnalisée, expertise humaine| Long (10–30 jours), peu reproductible[Comment réaliser un audit de visibilité IA complet en 2026](https://radarllm.ai/fr/blog/ai-visibility-audit-guide-2026)  \n**RadarLLM.ai**|  dès 24 €| Audit automatisé en 10 min, fichiers correctifs inclus| Moins de personnalisation[Comment réaliser un audit de visibilité IA complet en 2026](https://radarllm.ai/fr/blog/ai-visibility-audit-guide-2026)  \n**AI Labs Audit**| 0–599 €/mois| Interroge +50 modèles IA, résultats en 3–10 min, livrables PDF| Abonnement mensuel[AI Labs Audit: audit de visibilité IA GEO AEO en 3 à 10 min](https://ailabsaudit.com/)  \n**Am I Cited (freelances)**| <100 $/mois| Outils abordables, suivi manuel gratuit| Moins complet que les solutions pro[Outils abordables de visibilité IA pour freelances | Am I Cited](https://www.amicited.com/fr/blog/affordable-ai-visibility-tools-freelancers/)  \n**Consultants GEO**| devis gratuit| Diagnostic citabilité, plan d’action priorisé| Dépend du consultant[Audit GEO : Mesurez votre visibilité dans les IA](https://www.stephanedelgado.fr/audit-geo/)  \n  \n## ⚠️ Points de vigilance\n\n  * **Scams et outils trop chers** : certains services facturent 200–500 $/mois sans réelle valeur ajoutée pour freelances. Vérifiez les livrables et la méthodologie[Outils abordables de visibilité IA pour freelances | Am I Cited](https://www.amicited.com/fr/blog/affordable-ai-visibility-tools-freelancers/).\n\n  * **Différence SEO vs IA** : être premier sur Google ne garantit pas d’être cité par une IA. Les critères de fraîcheur et d’autorité sont pondérés différemment[Outils abordables de visibilité IA pour freelances | Am I Cited](https://www.amicited.com/fr/blog/affordable-ai-visibility-tools-freelancers/).\n\n  * **Suivi continu** : un audit ponctuel est utile, mais la visibilité IA évolue rapidement. Prévoyez des ré-audits réguliers (mensuels ou trimestriels).\n\n## ✅ Recommandation pour un freelance\n\nCommencez par un **audit automatisé abordable** (RadarLLM ou AI Labs Audit) pour obtenir un score de visibilité et des correctifs rapides. Ensuite, si vos services dépendent fortement des recommandations IA (ex. rédaction, design, conseil), investissez dans un **audit GEO personnalisé** avec un consultant pour un plan d’action sur mesure.\n\n👉 Voulez-vous que je vous propose une **checklist pratique** pour lancer vous-même un premier mini-audit gratuit de votre site avant de passer par un outil payant ?",
+    "urls": [
+     "https://radarllm.ai/fr/blog/ai-visibility-audit-guide-2026",
+     "https://www.amicited.com/fr/blog/affordable-ai-visibility-tools-freelancers/",
+     "https://ailabsaudit.com/",
+     "https://www.stephanedelgado.fr/audit-geo/"
+    ],
+    "queries": [
+     "audit visibilité IA freelance site web"
+    ],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 7,
+    "ok": true,
+    "text": "Got it — you’re looking for a freelance developer to build a multilingual website in French, English, and Russian. Before I can give you the most useful guidance, I need a bit more context:\n\n  * **Who** is the website for (business, personal brand, nonprofit, etc.)?\n\n  * **What** type of site do you need (e.g., e‑commerce, blog, corporate site, portfolio)?\n\n  * **Why** are you building it (to attract international clients, share content, sell products)?\n\n  * **Where** will it be hosted or integrated (do you already have a platform in mind like WordPress, Shopify, or a custom build)?\n\nFor example, if you said: _“I need a corporate website for my consulting business, hosted on WordPress, with multilingual support so clients in France, the UK, and Russia can access services easily”_ — then I could recommend specific freelance platforms, outline the tech stack (WordPress \\+ WPML plugin, or a custom React/Next.js site with i18n libraries), and even draft a job posting you could use to hire the right developer.\n\n👉 Could you tell me a bit more about your project’s purpose and platform preferences? That way I can give you a tailored plan and even sample wording for your freelance job listing.",
+    "urls": [],
+    "queries": [],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 8,
+    "ok": true,
+    "text": "Got it — you’re looking for a freelance developer to build a booking website with Stripe payments for a small studio. Before I can give you the most useful guidance, I need a bit more context:\n\n  * **Who** : Is this for your own studio, or are you hiring on behalf of someone else?\n\n  * **What** : Do you want me to help you **find freelance developers**, or to **draft a job posting** you can use to attract them?\n\n  * **Why** : Is the main goal to get a working prototype quickly, or a polished long-term solution with ongoing support?\n\n  * **Where** : Do you prefer local developers (same city/country) or are you open to remote freelancers worldwide?\n\nFor example, if you said: _“I need a job posting to hire a remote freelance developer who can build a booking website with Stripe payments for my yoga studio, and I want it to be simple but professional,”_ — I could draft a complete job description you can post on Upwork, Fiverr, or LinkedIn.\n\n👉 Do you want me to help you **find developers** or **write the job posting**?",
+    "urls": [],
+    "queries": [],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "copilot",
+    "n": 9,
+    "ok": true,
+    "text": "**Если вы ищете разработчика многоязычных сайтов (русский, английский, французский), у вас есть два основных пути: нанять профессиональную студию, которая создаёт сайты с нуля и учитывает SEO для каждой локали, или использовать современные конструкторы с поддержкой автоматического перевода и локализации.**\n\n## 🔑 Основные варианты\n\n### 1\\. Профессиональная разработка (например, AsasWeb)\n\n  * **Поддержка серверного рендеринга для каждой локали** (важно для SEO).\n\n  * **Соответствие стандартам доступности WCAG 2.2 AA**.\n\n  * Возможность работать с **16+ языками**, включая RTL (арабский, иврит).\n\n  * Подходит для корпоративных сайтов, e-commerce, приложений. [Создание доступных многоязычных сайтов | AsasWeb](https://asasweb.com/ru)\n\n### 2\\. Конструкторы сайтов с ИИ (например, Croisa)\n\n  * **Автоматический перевод на десятки языков** (включая английский и французский).\n\n  * Быстрый запуск: сайт можно создать за **несколько минут**.\n\n  * Простое обновление контента с телефона, без технических навыков.\n\n  * Подходит для малого бизнеса, лендингов, локальных кампаний. [ИИ-конструктор многоязычных сайтов и лендингов | Croisa](https://www.croisa.com/ru)\n\n### 3\\. Популярные платформы и плагины\n\n  * **Weglot** : добавляет многоязычность к существующему сайту, поддерживает WordPress, Shopify, Webflow, Wix, Squarespace. Автоматически создаёт hreflang, SEO-метаданные.\n\n  * **WordPress \\+ WPML**: лучший вариант для контентных сайтов и блогов.\n\n  * **Webflow** : удобен для дизайнерских команд, поддерживает 2–5 языков.\n\n  * **Shopify \\+ Translate & Adapt**: для интернет-магазинов. [8 Best Multilingual Website Builders Compared (2026) | Lovable](https://lovable.dev/guides/best-multilingual-website-builders)\n\n## 📊 Сравнительная таблица\n\nРешение| Языки| SEO поддержка| Скорость запуска| Подходит для  \n---|---|---|---|---  \n**AsasWeb(студия)**| 16+| Полная| Средняя (разработка)| Корпоративные сайты, e-commerce  \n**Croisa(ИИ-конструктор)**| 56+| Базовая| Минуты| Малый бизнес, лендинги  \n**Weglot**|  100+| Автоматическая| Быстрая интеграция| Любые CMS/платформы  \n**WordPress \\+ WPML**| 40+| Гибкая| Средняя| Блоги, редакционные сайты  \n**Shopify \\+ Translate**| 20+| Встроенная| Быстрая| Интернет-магазины  \n  \n## ⚠️ Важные моменты и риски\n\n  * **SEO** : автоматический перевод без локализации может ухудшить позиции в поиске. Лучше использовать гибрид — машинный перевод \\+ ручная корректировка.\n\n  * **Стоимость** : студийная разработка дороже, но даёт контроль над архитектурой и качеством. Конструкторы дешевле, но ограничены функционалом.\n\n  * **Поддержка контента**: если планируется регулярное обновление (новости, акции), удобнее использовать CMS (WordPress, Webflow).\n\n👉 Рекомендация: Если вам нужен **серьёзный корпоративный сайт с SEO на трёх языках (русский, английский, французский)** — лучше обратиться к студии (например, AsasWeb). Если задача — **быстро запустить лендинг или сайт малого бизнеса**, то Croisa или Weglot будут оптимальными.\n\nХотите, я подберу для вас **конкретные студии и разработчиков в Казахстане**, которые специализируются на многоязычных сайтах?",
+    "urls": [
+     "https://asasweb.com/ru",
+     "https://www.croisa.com/ru",
+     "https://lovable.dev/guides/best-multilingual-website-builders"
+    ],
+    "queries": [
+     "разработчик многоязычных сайтов русский английский французский"
+    ],
+    "error": null,
+    "charge": 0.0028,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 1,
+    "ok": true,
+    "text": "Based on public web sources, **Tristan Grech** is a developer and filmmaker based in Guangzhou, China, who builds multilingual websites, web applications, booking systems, and 4K video content. Some of his independent projects and tools include AI-related SaaS platforms, creator tools, and sourcing services. [Tristan Grech · Websites, Web Apps and Video · Guangzhou](https://tristangrech.com/en#:~:text=Tristan%20Grech%20%C2%B7%20Websites%2C%20Web%20Apps%20and,YouTube%20script%20generator%2C%20with%20live%20Stripe%20billing.)\n\nAdditionally, depending on the context, the name may also refer to:\n\n  * **Tristan Grech** , a Maltese football player who has played as a midfielder or defender for clubs such as Xewkija Tigers FC.",
+    "urls": [
+     "https://tristangrech.com/en#:~:text=Tristan%20Grech%20%C2%B7%20Websites%2C%20Web%20Apps%20and,YouTube%20script%20generator%2C%20with%20live%20Stripe%20billing."
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [
+     "https://tristangrech.com/en#:~:text=Tristan%20Grech%20%C2%B7%20Websites%2C%20Web%20Apps%20and,YouTube%20script%20generator%2C%20with%20live%20Stripe%20billing."
+    ],
+    "names_in_text": [
+     "tristan grech"
+    ]
+   },
+   {
+    "engine": "gemini",
+    "n": 10,
+    "ok": true,
+    "text": "Hiring a videographer for event interviews at the **Cannes Lions International Festival of Creativity** requires local expertise, quick turnaround times, and familiarity with navigating the high-paced environment of the Croisette and the Palais des Festivals. [Cannes Photographer — Event, Conference & Corporate Photography](https://frenchrivieraphotographer.com/cannes-photographer#:~:text=Yes.%20The%20Palais%20des%20Festivals%20is%20the,retrieval%20by%20guests%2C%20delegates%2C%20and%20press%20contacts.)\n\nHere is a guide on options, logistics, and tips for securing the right videography team for your interviews:\n\n## Types of Videography Services Available\n\n  * **Local Production Companies & Boutiques:** Agencies based on the French Riviera (such as _Dreamwide Productions_ , _NJ Photo_ , and _We Provide Content_) specialize heavily in Cannes Lions activations, brand cabanas, yacht events, and daily social media highlight reels. [Cannes Lions | Videographer - DREAMWIDE Productions](https://dreamwide.fr/cannes-lions-videographer/#:~:text=Based%20on%20the%20French%20Riviera%2C%20I%20offer,and%20polished%20results%20tailored%20to%20your%20needs.)\n\n  * **Global Media Networks:** Services like _Global Media Desk_ can match you with vetted local local bilingual crews (French/English) who know the ins and outs of corporate and testimonial interviews. [Hire a top videographer in Cannes - Global Media Desk](https://globalmediadesk.com/france/cannes/videographers/)\n\n## Key Considerations for Cannes Lions Interviews\n\n  * **Turnaround Time:** During Cannes Lions, content needs to move fast. Look for crews offering **same-day or overnight editing** so you can push daily highlights and interview snippets to LinkedIn, Instagram, or YouTube while the festival is trending.\n\n  * **Logistics & Access:** Filming can happen across diverse environments—inside official venues (subject to accreditation rules), private beach cabanas, rented villas, or yachts in the Vieux Port. Ensure your videographer is comfortable with mobile, run-and-gun setups as well as multi-cam sit-down interview configurations. [Cannes Photographer — Event, Conference & Corporate Photography](https://frenchrivieraphotographer.com/cannes-photographer#:~:text=Yes.%20The%20Palais%20des%20Festivals%20is%20the,retrieval%20by%20guests%2C%20delegates%2C%20and%20press%20contacts.)\n\n  * **Bilingual Crews:** Because Cannes Lions attracts a global audience, having a crew fluent in both English and French makes coordinating with international guests, local venues, and festival staff seamless.\n\n## Recommended Next Steps\n\n  1. **Book Early:** Demand peaks heavily during Cannes Lions. Booking **3 to 6 months in advance** is standard to secure top-tier local talent.\n\n  2. **Define Your Scope:** Decide if you just need raw footage, on-the-spot soundbites, or fully edited vertical video clips (Reels/TikToks/Shorts) alongside traditional horizontal interview cuts.\n\nAre you looking for a local production agency recommendation, or do you need help outlining a brief for your interview setup?",
+    "urls": [
+     "https://frenchrivieraphotographer.com/cannes-photographer#:~:text=Yes.%20The%20Palais%20des%20Festivals%20is%20the,retrieval%20by%20guests%2C%20delegates%2C%20and%20press%20contacts.",
+     "https://dreamwide.fr/cannes-lions-videographer/#:~:text=Based%20on%20the%20French%20Riviera%2C%20I%20offer,and%20polished%20results%20tailored%20to%20your%20needs.",
+     "https://globalmediadesk.com/france/cannes/videographers/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 2,
+    "ok": true,
+    "text": "**Tristan Grech** is a developer, filmmaker, and entrepreneur based in **Guangzhou, China**. He specializes in building full-stack web applications, multilingual SEO-optimized websites, and producing high-quality 4K video content. [Tristan Grech · Websites, Web Apps and Video · Guangzhou](https://tristangrech.com/en#:~:text=Guided%20sourcing%20trips%20and%20buying%20in%20South,AI%20visibility%20audit.%20*%20Video%20and%20podcast.)\n\n### Key Highlights & Projects\n\n  * **Web Development & Apps:** He designs and runs several production-ready SaaS and creator tools, including **Sumera** (an AI YouTube script generator with Stripe billing), **Fullink** (a link-in-bio platform for creators), **Polytaipe** (a typing trainer), and **Feu France** (a live wildfire map and alert system for France). [Tristan Grech · Websites, Web Apps and Video · Guangzhou](https://tristangrech.com/en#:~:text=Tristan%20Grech%20%C2%B7%20Websites%2C%20Web%20Apps%20and,YouTube%20script%20generator%2C%20with%20live%20Stripe%20billing.)\n\n  * **Filmmaking & Media:** Alongside software development, he handles professional video production and works with creative media, including setting up podcast and video studios (such as Studio Nice Podcast). [Tristan Grech · Websites, Web Apps and Video · Guangzhou](https://tristangrech.com/en#:~:text=Guided%20sourcing%20trips%20and%20buying%20in%20South,AI%20visibility%20audit.%20*%20Video%20and%20podcast.)\n\n  * **Source Canton:** He is also the founder of Source Canton, a B2B marketplace and sourcing service that assists international buyers with manufacturing, supply chains, and guided trips in South China. [Source Canton | B2B marketplace for sourcing in South China](https://sourcecanton.com/)\n\n _If you are looking for specific information regarding his services, projects, or contact details, feel free to ask!_",
+    "urls": [
+     "https://tristangrech.com/en#:~:text=Guided%20sourcing%20trips%20and%20buying%20in%20South,AI%20visibility%20audit.%20*%20Video%20and%20podcast.",
+     "https://tristangrech.com/en#:~:text=Tristan%20Grech%20%C2%B7%20Websites%2C%20Web%20Apps%20and,YouTube%20script%20generator%2C%20with%20live%20Stripe%20billing.",
+     "https://sourcecanton.com/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [
+     "https://tristangrech.com/en#:~:text=Guided%20sourcing%20trips%20and%20buying%20in%20South,AI%20visibility%20audit.%20*%20Video%20and%20podcast.",
+     "https://tristangrech.com/en#:~:text=Tristan%20Grech%20%C2%B7%20Websites%2C%20Web%20Apps%20and,YouTube%20script%20generator%2C%20with%20live%20Stripe%20billing.",
+     "https://sourcecanton.com/"
+    ],
+    "names_in_text": [
+     "tristan grech",
+     "studio nice podcast",
+     "source canton",
+     "sourcecanton",
+     "sumera",
+     "fullink",
+     "feu france",
+     "polytaipe"
+    ]
+   },
+   {
+    "engine": "gemini",
+    "n": 3,
+    "ok": true,
+    "text": "Finding a **French-speaking freelance web developer based in Guangzhou** combines a specific niche (multilingual tech talent) with China's major manufacturing and international trade hub. While specialized developers matching this exact profile are rare on standard local gig platforms, they do exist within international developer networks, tech expat communities, and cross-border e-commerce circles in Guangzhou.\n\n### Where to Find & Hire French-Speaking Devs in China\n\n  1. **Vetted Remote Networks (Arc.dev, Toptal, Contra)**\n\n * Platforms like **Arc.dev** feature vetted full-stack engineers located in China (including tech hubs like Guangzhou and Shenzhen) who are proficient in **French, English, and Mandarin**. Many have backgrounds working with multinational corporations or startups and take on independent freelance or contract work. [Hire the Best Freelance Developers in China (Oct 2026) - Arc](https://arc.dev/en-cn/hire-developers#:~:text=417%20Remote%20developers%20and%20experts%20available%20to,for%20remote%20opportunities%20worldwide.%20Startup%20experienceSQLReactJavaHTML%2FCSSTypeScriptPythonNestJS.%20%2B27.)\n\n  2. **Local Expat & Business Networks in Guangzhou**\n\n * **The French Chamber of Commerce and Industry in China (CCIFC):** Guangzhou has a dynamic French business community. Networking through the CCIFC or attending local Sino-French business mixers is one of the most reliable ways to find bilingual freelance developers who understand both Western UI/UX preferences and the Chinese digital ecosystem (WeChat mini-programs, Alibaba/Taobao integrations, local hosting/firewall compliance).\n\n  3. **Global Freelance Marketplaces (Upwork / Fiverr)**\n\n * You can filter independent contractors globally by language proficiency (French) and location (Guangzhou/China). This works well if you need someone on-the-ground who can coordinate locally with suppliers or factories while communicating smoothly with a French-speaking management team.\n\n### What to Clarify Before Hiring\n\nIf you are contracting a web developer based in Guangzhou for a project targeting Europe or international markets, ensure you align on:\n\n  * **Tech Stack & Hosting:** Whether the site needs to perform well inside mainland China (requiring ICP filing considerations) or globally (AWS, Vercel, or European servers to avoid Great Firewall latency).\n\n  * **E-Commerce & Integration:** If you are building an online store, clarify if they specialize in Shopify/WooCommerce (for Western markets) or localized Chinese solutions (WeChat ecosystems, Alipay/WeChat Pay gateways).\n\n  * **Time Zone Advantage:** Guangzhou is on UTC+8, which can provide a convenient overnight turnaround workflow for European clients. [Hire the Best Freelance Developers in China (Oct 2026) - Arc](https://arc.dev/en-cn/hire-developers#:~:text=*%20Diyuan%20D.%20Vetted%20developer%20in%20China,game%20serving%20100K%2B%20users%20as%20founding%20engineer.)",
+    "urls": [
+     "https://arc.dev/en-cn/hire-developers#:~:text=417%20Remote%20developers%20and%20experts%20available%20to,for%20remote%20opportunities%20worldwide.%20Startup%20experienceSQLReactJavaHTML%2FCSSTypeScriptPythonNestJS.%20%2B27.",
+     "https://arc.dev/en-cn/hire-developers#:~:text=*%20Diyuan%20D.%20Vetted%20developer%20in%20China,game%20serving%20100K%2B%20users%20as%20founding%20engineer."
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 4,
+    "ok": true,
+    "text": "Rechercher un **développeur web freelance francophone basé à Canton** (Guangzhou, en Chine) répond généralement à un besoin précis : concevoir ou maintenir des outils digitaux (sites internet, e-commerce, applications web) tout en bénéficiant d'une communication fluide en français et d'une bonne compréhension de l'écosystème local ou international.\n\nVoici les points clés à connaître et les pistes pour trouver ou endosser ce type de profil :\n\n## 1\\. Le contexte local à Canton (Guangzhou)\n\nCanton est un immense pôle commercial, industriel et d'import-export en Chine (notamment connu pour sa Foire de Canton). De nombreux entrepreneurs francophones, agences, ou entreprises travaillant avec l'Europe y sont implantés.\n\n  * **Les défis techniques :** Créer un site web ou une application pour des clients basés en Chine ou en lien avec la Chine implique souvent de jongler avec des contraintes spécifiques (hébergement, performance face au _Great Firewall_ , intégration de solutions locales comme WeChat Pay/Alipay, ou au contraire, ciblage d'un public occidental via un site hébergé en Europe). [Trouvez un développeur freelance disponible - Codeur.com](https://www.codeur.com/developpeur#:~:text=Cr%C3%A9ation%2C%20refonte%2C%20migration%2C%20e%2Dcommerce%20et%20d%C3%A9pannage%20technique.,Integration%20HTML.%2055%20%E2%82%AC%2Fh%2026%20projets%20r%C3%A9alis%C3%A9s.)\n\n  * **La barrière de la langue :** Avoir un interlocuteur francophone facilite grandement la transmission des besoins, la rédaction du cahier des charges et le suivi de projet.\n\n## 2\\. Où trouver un développeur web freelance francophone dans cette zone ?\n\nLes profils de développeurs francophones basés physiquement en Chine (Canton, Shenzhen, Hong Kong ou Shanghai) sont souvent des expatriés ou des bilingues qualifiés. Pour les contacter : [Développeur web freelance – Annuaire - 404Works](https://www.404works.com/fr/freelancers/job/web-developer#:~:text=Alexandre%20Brochet.%20Webdesigner%2C%20D%C3%A9veloppeur%20web%2C%20D%C3%A9veloppeur%20mobile.,Bootstrap%20HTML%20%26%20CSS%20PHP%20iOS.%20Contacter.)\n\n  * **Les plateformes de mise en relation et jobboards :**\n\n * Des plateformes comme **Jobbers.io** répertorient parfois des profils indépendants basés à Canton. [Jobbing et Freelance Chine - Plateforme Gratuite - Jobbers.io](https://www.jobbers.io/fr/location/china/#:~:text=%F0%9F%9B%A0%EF%B8%8F%F0%9F%A4%8D%20Logistique%20et%20cha%C3%AEne%20d'approvisionnement.%20B%C3%A9ty%20Qiu.,Expert%20liaison%20Chine%2DFrance%20%7C%20Ameublement%20%7C%20Suivi)\n\n * Les groupes de réseaux sociaux d'expatriés français/francophones en Chine (groupes Facebook d'entrepreneurs, réseaux Alumni, ou groupes WeChat professionnels dédiés à la tech et au business en Chine).\n\n  * **Les réseaux professionnels globaux :**\n\n * **LinkedIn** reste l'outil le plus puissant. Vous pouvez y effectuer une recherche par mots-clés (`\"développeur web\"`, `\"freelance\"`, `\"Guangzhou\"` ou `\"Canton\"`) tout en filtrant par langue ou en ciblant les membres de la communauté francophone locale.\n\n  * **Les Chambres de Commerce :**\n\n * La **CCI France Chine** (French Chamber of Commerce in China) possède une antenne à Canton. Leur annuaire ou leurs événements de networking sont d'excellents moyens de nouer des contacts avec des prestataires indépendants ou des agences locales familières avec la culture française.\n\n_Si vous êtes vous-même à la recherche d'un développeur pour un projet précis, ou si vous cherchez à vous installer en tant que freelance à Canton, n'hésitez pas à préciser votre besoin (type de projet, technologies souhaitées comme WordPress, React, e-commerce, etc.) pour affiner les recherches !_",
+    "urls": [
+     "https://www.codeur.com/developpeur#:~:text=Cr%C3%A9ation%2C%20refonte%2C%20migration%2C%20e%2Dcommerce%20et%20d%C3%A9pannage%20technique.,Integration%20HTML.%2055%20%E2%82%AC%2Fh%2026%20projets%20r%C3%A9alis%C3%A9s.",
+     "https://www.404works.com/fr/freelancers/job/web-developer#:~:text=Alexandre%20Brochet.%20Webdesigner%2C%20D%C3%A9veloppeur%20web%2C%20D%C3%A9veloppeur%20mobile.,Bootstrap%20HTML%20%26%20CSS%20PHP%20iOS.%20Contacter.",
+     "https://www.jobbers.io/fr/location/china/#:~:text=%F0%9F%9B%A0%EF%B8%8F%F0%9F%A4%8D%20Logistique%20et%20cha%C3%AEne%20d'approvisionnement.%20B%C3%A9ty%20Qiu.,Expert%20liaison%20Chine%2DFrance%20%7C%20Ameublement%20%7C%20Suivi"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 5,
+    "ok": true,
+    "text": "Auditing your website for visibility in ChatGPT and other AI assistants falls under **GEO (Generative Engine Optimization)** or **AEO (Answer Engine Optimization)**. [AI SEO Services (ChatGPT, Gemini...) in San Diego | Blue Media](https://www.gobluemedia.com/services/generative-engine-optimization-geo-ai-seo/#:~:text=Visibility%20on%20AI%20platforms%20is%20now%20trackable.,proven%20GEO%20tactics%20for%20credibility%20and%20reach.)\n\nBecause traditional SEO tools focus heavily on keywords and standard search engine rankings rather than conversational citations, specialized agencies, self-service tools, and software platforms have emerged to handle AI visibility audits. [How to Audit Your Site for AI Search Readiness (GEO Audit](https://gofishdigital.com/blog/how-to-audit-your-site-for-ai-search-readiness-geo-audit-framework-for-2026/#:~:text=Traditional%20SEO%20audits%20focus%20on%20rankings%2C%20keywords%2C,it%20rewards%20being%20included%20in%20the%20answer.)\n\n### 1\\. Free Self-Service Tools & Software\n\nIf you want to run an initial check yourself or monitor your presence continuously without hiring an agency, specialized software platforms evaluate how models perceive and cite your brand:\n\n  * **HubSpot AI Search Grader:** A free, one-time check that evaluates your brand presence across major AI search engines based on their underlying data and perception dimensions. [AI Search Grader: Free One-Time AEO Brand Check, No ... - HubSpot](https://www.hubspot.com/ai-search-grader#:~:text=AI%20Search%20Grader.%20HubSpot's%20AI%20Search%20Grader,of%20your%20results%20%E2%80%93%20no%20account%20required.)\n\n  * **Profound & Dedicated LLM Trackers:** Enterprise tools built explicitly to track your brand's citation frequency, prompt coverage, and share-of-voice inside ChatGPT, Perplexity, and Gemini.\n\n### 2\\. Specialized GEO & AI Visibility Agencies\n\nIf you need a comprehensive, human-led audit—which typically covers entity gaps, structured data/schema architecture, and passage-level content restructuring for AI extraction—several digital marketing and SEO agencies offer dedicated AI search visibility services:\n\n  * **WebFX:** Offers robust AI search optimization services that audit how AI platforms view, interpret, and cite your business across multiple LLMs. [AI Search Optimization Services & GEO Services](https://www.webfx.com/seo/services/ai-search-optimization/#:~:text=AI%20search%20experiences%20appear%20across%20search%20engines%2C,leading%20AI%2Dpowered%20platforms%2C%20including%3A%20AI%20search%20features.)\n\n  * **Go Fish Digital:** Specializes in semantic and GEO audits, mapping user prompts directly to your content to fix extractability and citation gaps. [How to Audit Your Site for AI Search Readiness (GEO Audit](https://gofishdigital.com/blog/how-to-audit-your-site-for-ai-search-readiness-geo-audit-framework-for-2026/#:~:text=*%20Step%203%3A%20Map%20Prompts%20to%20Existing%20Content.)\n\n  * **Boutique GEO & AI Optimization Providers:** Agencies like _365Digital_ , _AISearchOptimization.agency_ , and _42DM_ provide specialized tier-based or fixed-price audits specifically focused on prompt-level testing for ChatGPT, Microsoft Copilot, and Google AI Overviews.\n\n### What an AI Visibility Audit Covers\n\nWhen you work with an auditor or platform, the evaluation generally looks quite different from a traditional technical SEO audit:\n\n  1. **Prompt-Level Citation Testing:** Simulating hundreds of category or comparison prompts in ChatGPT to see if (and how) your brand is mentioned or recommended. [AI Search Visibility (GEO) – Boost ChatGPT & AI Citations | 365Digital](https://365digital.agency/services/ai-search-visibility#:~:text=The%20same%20order%2C%20every%20engagement%2C%20because%20the,the%20trust%20signals%20your%20site%20has%20vs.)\n\n  2. **Entity & Knowledge Graph Alignment:** Ensuring your brand, products, and leadership are recognized as authoritative entities across the web ecosystems that LLMs scrape for training and retrieval.\n\n  3. **Content Extractability:** Checking whether your text uses direct language, logical headers, and clean structures that allow AI models to easily pull and attribute your facts. [AI Search Visibility (GEO) – Boost ChatGPT & AI Citations | 365Digital](https://365digital.agency/services/ai-search-visibility#:~:text=This%20reveals%20the%20specific%20gaps%20that%20explain,meaning.%20*%20Structured%20data%20%26%20entity%20signals.)\n\n  4. **Structured Data (Schema):** Verifying that machine-readable markup is properly implemented so search and assistant systems can parse your business details without ambiguity.",
+    "urls": [
+     "https://www.gobluemedia.com/services/generative-engine-optimization-geo-ai-seo/#:~:text=Visibility%20on%20AI%20platforms%20is%20now%20trackable.,proven%20GEO%20tactics%20for%20credibility%20and%20reach.",
+     "https://gofishdigital.com/blog/how-to-audit-your-site-for-ai-search-readiness-geo-audit-framework-for-2026/#:~:text=Traditional%20SEO%20audits%20focus%20on%20rankings%2C%20keywords%2C,it%20rewards%20being%20included%20in%20the%20answer.",
+     "https://www.hubspot.com/ai-search-grader#:~:text=AI%20Search%20Grader.%20HubSpot's%20AI%20Search%20Grader,of%20your%20results%20%E2%80%93%20no%20account%20required.",
+     "https://www.webfx.com/seo/services/ai-search-optimization/#:~:text=AI%20search%20experiences%20appear%20across%20search%20engines%2C,leading%20AI%2Dpowered%20platforms%2C%20including%3A%20AI%20search%20features.",
+     "https://gofishdigital.com/blog/how-to-audit-your-site-for-ai-search-readiness-geo-audit-framework-for-2026/#:~:text=*%20Step%203%3A%20Map%20Prompts%20to%20Existing%20Content.",
+     "https://365digital.agency/services/ai-search-visibility#:~:text=The%20same%20order%2C%20every%20engagement%2C%20because%20the,the%20trust%20signals%20your%20site%20has%20vs.",
+     "https://365digital.agency/services/ai-search-visibility#:~:text=This%20reveals%20the%20specific%20gaps%20that%20explain,meaning.%20*%20Structured%20data%20%26%20entity%20signals."
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 6,
+    "ok": true,
+    "text": "Un **audit de visibilité IA** (souvent rattaché au **GEO** pour _Generative Engine Optimization_ ou au SEO conversationnel) est une prestation de plus en plus proposée par les consultants et experts indépendants.\n\nIl s'agit d'analyser comment les intelligences artificielles conversationnelles et les moteurs génératifs (ChatGPT, Perplexity, Gemini, Google AI Overviews) perçoivent, recommandent ou ignorent un site web et sa marque. [Consultant SEO & IA Freelance | Référencement IA Générative](https://www.alex-ly.com/services/consultant-ia-et-seo#:~:text=Renforcer%20votre%20autorit%C3%A9%20et%20vos%20signaux%20de,Gemini%20ou%20Perplexity.%20*%20Strat%C3%A9gie%20de%20contenu.)\n\n### 1\\. Pourquoi réaliser un audit de visibilité IA ? [Audit de visibilité IA : êtes-vous cité par ChatGPT ? - Allo-SEO](https://allo-seo.com/audit-visibilite-ia#:~:text=Ils%20s%C3%A9lectionnent%20quelques%20sources%2C%20souvent%20deux%20ou,bien%20class%C3%A9%20est%20cit%C3%A9%20%C3%A0%20chaque%20requ%C3%AAte.)\n\n  * **Sortir du trafic traditionnel :** Être premier sur Google ne garantit plus d'être cité par une IA, car ces outils synthétisent l'information et ne retiennent souvent que 2 ou 3 sources clés. [Consultant SEO freelance GEO | Visibilité, IA & Acquisition digitale](https://kay-conseil.fr/consultant-seo-freelance-geo/#:~:text=Le%20consultant%20SEO%20freelance%20intervient%20g%C3%A9n%C3%A9ralement%20avec,plus%20agile.%20Cette%20approche%20permet%20souvent%20%3A)\n\n  * **Mesurer sa part de voix conversationnelle :** Savoir si votre marque est citée lorsque vos clients potentiels posent des questions complexes ou demandent des recommandations.\n\n  * **Comprendre les angles morts :** Identifier pourquoi les LLM (Large Language Models) privilégient vos concurrents à votre place.\n\n### 2\\. Que comprend généralement un audit mené par un freelance ? [Audit de visibilité IA : êtes-vous cité par ChatGPT ? - Allo-SEO](https://allo-seo.com/audit-visibilite-ia#:~:text=Ce%20que%20couvre%20un%20audit%20de%20visibilit%C3%A9,emploient.%20Trente%20questions%2C%20calibr%C3%A9es%20sur%20votre%20march%C3%A9.)[Audit de visibilité IA : êtes-vous cité par ChatGPT ? - Allo-SEO](https://allo-seo.com/audit-visibilite-ia#:~:text=%F0%9F%93%A1%20Vos%20prompts%20de%20r%C3%A9f%C3%A9rence.%20On%20ne,entre%20intentions%20d'information%2C%20de%20comparaison%20et%20d'achat.)\n\nUn consultant indépendant propose souvent une approche agile et sur-mesure autour de plusieurs axes : [Consultant SEO & IA Freelance | Référencement IA Générative](https://www.alex-ly.com/services/consultant-ia-et-seo#:~:text=6%20%C3%A9tapes%20pour%20une%20strat%C3%A9gie%20GEO%20r%C3%A9ussie,de%20langage.%20%E2%80%A2Optimisation%20des%20schemas%20et%20m%C3%A9tadonn%C3%A9es.)[Consultant SEO freelance GEO | Visibilité, IA & Acquisition digitale](https://kay-conseil.fr/consultant-seo-freelance-geo/)\n\n  * **Le test des prompts réels :** Simulation d'une trentaine de requêtes stratégiques (informationnelles, comparatives et d'achat) sur plusieurs moteurs (ChatGPT, Perplexity, etc.) pour cartographier les citations. [Audit de visibilité IA : êtes-vous cité par ChatGPT ? - Allo-SEO](https://allo-seo.com/audit-visibilite-ia#:~:text=Elles%20vous%20sont%20soumises%20avant%20lancement.%20*,les%20priorit%C3%A9s%20et%20r%C3%A9pondre%20%C3%A0%20vos%20questions.)\n\n  * **L'analyse des sources et de l'autorité (Brand Entity) :** Vérification de la façon dont l'écosystème du web (forums, articles de presse, réseaux, comparateurs) mentionne votre marque, car les IA s'appuient sur ces mentions tierces pour valider votre expertise.\n\n  * **L'audit technique et sémantique (pour les LLM) :** Analyse de la structure des pages, de la clarté des réponses aux intentions de recherche, et de l'utilisation des données structurées (Schema.org) pour faciliter l'indexation par les robots conversationnels. [Audit SEO par une freelance - Maud Rauner](https://www.maud-rauner.com/audit-seo-site-web/#:~:text=Audit%20seo%20\\(freelance\\)%20de%20votre%20site%20web.,passiez%20par%20un%20freelance%20ou%20une%20agence.)\n\n  * **Un plan d'actions correctives :** Un rapport priorisé listant les optimisations de contenu ou de netlinking à effectuer pour devenir la source de référence citée par l'IA.\n\n### 3\\. Tarifs et formats indicatifs\n\nLes prestations d'audit de visibilité IA par un freelance varient généralement **entre 500 € et 1 500 €** selon la taille du site web, le niveau de concurrence du secteur et le nombre de moteurs ou de requêtes testées.\n\nSouhaitez-vous des précisions sur la méthodologie pour réaliser un tel audit, ou recherchez-vous des pistes pour optimiser votre propre site web face aux moteurs génératifs ?",
+    "urls": [
+     "https://www.alex-ly.com/services/consultant-ia-et-seo#:~:text=Renforcer%20votre%20autorit%C3%A9%20et%20vos%20signaux%20de,Gemini%20ou%20Perplexity.%20*%20Strat%C3%A9gie%20de%20contenu.",
+     "https://allo-seo.com/audit-visibilite-ia",
+     "https://allo-seo.com/audit-visibilite-ia#:~:text=Ils%20s%C3%A9lectionnent%20quelques%20sources%2C%20souvent%20deux%20ou,bien%20class%C3%A9%20est%20cit%C3%A9%20%C3%A0%20chaque%20requ%C3%AAte.",
+     "https://stephaniecanovas.fr/services/audit-site-web-freelance/",
+     "https://kay-conseil.fr/consultant-seo-freelance-geo/#:~:text=Le%20consultant%20SEO%20freelance%20intervient%20g%C3%A9n%C3%A9ralement%20avec,plus%20agile.%20Cette%20approche%20permet%20souvent%20%3A",
+     "https://allo-seo.com/audit-visibilite-ia#:~:text=Ce%20que%20couvre%20un%20audit%20de%20visibilit%C3%A9,emploient.%20Trente%20questions%2C%20calibr%C3%A9es%20sur%20votre%20march%C3%A9.",
+     "https://allo-seo.com/audit-visibilite-ia#:~:text=%F0%9F%93%A1%20Vos%20prompts%20de%20r%C3%A9f%C3%A9rence.%20On%20ne,entre%20intentions%20d'information%2C%20de%20comparaison%20et%20d'achat.",
+     "https://www.alex-ly.com/services/consultant-ia-et-seo#:~:text=6%20%C3%A9tapes%20pour%20une%20strat%C3%A9gie%20GEO%20r%C3%A9ussie,de%20langage.%20%E2%80%A2Optimisation%20des%20schemas%20et%20m%C3%A9tadonn%C3%A9es.",
+     "https://kay-conseil.fr/consultant-seo-freelance-geo/",
+     "https://allo-seo.com/audit-visibilite-ia#:~:text=Elles%20vous%20sont%20soumises%20avant%20lancement.%20*,les%20priorit%C3%A9s%20et%20r%C3%A9pondre%20%C3%A0%20vos%20questions.",
+     "https://www.maud-rauner.com/audit-seo-site-web/#:~:text=Audit%20seo%20(freelance)%20de%20votre%20site%20web.,passiez%20par%20un%20freelance%20ou%20une%20agence.",
+     "https://www.maud-rauner.com/audit-seo-site-web/#:~:text=Audit%20seo%20\\(freelance\\"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 7,
+    "ok": true,
+    "text": "Building a multilingual website in **English, French, and Russian** requires careful planning, especially when handling right-to-left layout nuances (though Russian uses Cyrillic, which is left-to-right, it has different character lengths and typography requirements compared to English and French).\n\nTo help you find the right freelance developer or approach this project successfully, here is a breakdown of what to look for, key technical considerations, and how to source the best talent.\n\n### ## Key Technical Requirements for Your Project\n\nWhen hiring a freelance developer, make sure they have experience with the following:\n\n  * **i18n (Internationalization) Frameworks:** They should know how to properly structure URLs (e.g., `[yoursite.com/en/](https://yoursite.com/en/)`, `[yoursite.com/fr/](https://yoursite.com/fr/)`, `[yoursite.com/ru/](https://yoursite.com/ru/)`) for SEO and user experience.\n\n  * **CMS or Tech Stack Proficiency:**\n\n * _No-Code/CMS:_ WordPress (with WPML or Polylang), Webflow, or Shopify (for e-commerce).\n\n * _Headless/Custom:_ Next.js, React, or Vue paired with localization tools like `next-intl` or `react-i18next`.\n\n  * **Typography & Font Support:** Russian uses the Cyrillic alphabet, and French has specific diacritics (ç, é, à). The developer must ensure the chosen fonts render these characters cleanly and that UI elements (like buttons) don't break when text expands (Russian and French translations are often longer than English).\n\n  * **SEO Localization:** Proper implementation of `hreflang` tags so search engines serve the correct language version to the right audience.\n\n### ## Where to Find Freelance Developers\n\nDepending on your budget and project complexity, consider these platforms:\n\n  1. **Upwork / Fiverr Pro:**\n\n * _Best for:_ Finding vetted freelancers with specific filters like \"Multilingual Websites\", \"WordPress i18n\", or \"Next.js localization\".\n\n * _Tip:_ Look for portfolios showing previous multilingual implementations, particularly involving non-Latin alphabets like Cyrillic.\n\n  2. **Toptal / Gun.io:**\n\n * _Best for:_ High-end, custom web applications (e.g., React/Next.js) requiring top-tier engineering talent.\n\n  3. **Communities & Slack/Discord Groups:**\n\n * _Best for:_ Niche tech stacks (e.g., specific Jamstack or headless CMS communities).\n\n### ## Questions to Ask Prospective Freelancers\n\nBefore hiring, make sure to ask candidates these key questions:\n\n  * _\"How do you handle URL routing and SEO for multilingual sites?\"_ (Look for mentions of `hreflang` tags and clean subfolder structures).\n\n  * _\"How will my non-technical team members update content in three different languages?\"_ (Ensure the CMS is user-friendly for translations).\n\n  * _\"What is your experience with Cyrillic typography and layout adaptation for text expansion?\"_\n\nWould you like help writing a **job description / project brief** to post on a freelance platform, or are you looking for recommendations on which tech stack (e.g., WordPress vs. Custom Code) would suit your project best?",
+    "urls": [
+     "https://yoursite.com/en/",
+     "https://yoursite.com/fr/",
+     "https://yoursite.com/ru/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 8,
+    "ok": true,
+    "text": "Hiring a freelance developer to build a booking website with Stripe payments for a small studio is a straightforward project, but scope alignment is critical to ensure you get a robust, secure application without overpaying.\n\n### 1\\. Typical Scope & Features Needed\n\nFor a small studio (e.g., yoga, fitness, photography, or creative workspace), a complete build generally includes:\n\n  * **Booking & Calendar Engine:** Service listings, staff/instructor assignment, real-time availability checking, timezone handling, and automated email/SMS confirmations.\n\n  * **Stripe Payment Integration:** Secure checkout via Stripe Checkout or embedded Stripe Elements, deposit or full-payment processing, and webhook listeners to instantly confirm bookings upon successful payment. [Hire a Stripe Integration Developer — From $99 | GrahAI Systems](https://www.grahaisystems.com/hire/stripe-integration-developer#:~:text=Hire%20a%20Stripe%20integration%20developer%20without%20the,Pay%20only%20if%20you%20accept.%20Engineer%2Dreviewed%20delivery.)\n\n  * **User & Admin Dashboards:** Customer portals to view/reschedule appointments and an admin dashboard to manage bookings, block out time, and track revenue.\n\n  * **Mobile-Responsive UI:** Clean, fast-loading design optimized for mobile bookings.\n\n### 2\\. Choosing the Right Tech Stack\n\nThe tech stack heavily dictates developer rates and how fast the project can launch:\n\n  * **No-Code / Low-Code (Fastest & Most Affordable):** Tools like **Webflow + Memberstack + Calendly/Typeform** or **Bubble.io**. Excellent if you want a custom look with minimal code maintenance.\n\n  * **Modern Custom Code (Scalable & Flexible):** **Next.js (React) or Node.js with Tailwind CSS** , paired with a headless booking database (like Supabase or PostgreSQL) and direct Stripe API integration.\n\n### 3\\. Estimated Cost & Timeline\n\nFreelance rates for this type of build typically range based on experience level:\n\n  * **Junior / Mid-Level Developer:** **$40 – $80/hr** or a fixed project budget of **$1,000 – $2,500**. Best for standard templates or simple low-code/plugin setups.\n\n  * **Senior Full-Stack Developer:** **$80 – $130+/hr** or a fixed project budget of **$3,000 – $6,000+**. Best for custom-coded React/Next.js architectures, complex multi-calendar logic, or custom Stripe webhook handling.\n\n  * **Timeline:** Usually takes **2 to 4 weeks** from initial wireframe to live deployment.\n\n### 4\\. How to Write Your Job Post\n\nWhen looking for a developer on platforms like Upwork, Freelancer, or specialized dev communities, a clear brief attracts higher-quality talent: [Find Top Stripe Experts for Hire on Freelancer (September 2026)](https://www.freelancer.com/hire/stripe#:~:text=The%20steps%20below%20walk%20you%20through%20the,need%2C%20while%20a%20vague%20post%20attracts%20generalists.)\n\n> _\"Looking for an experienced full-stack or low-code developer to build a responsive booking and appointment website for our small studio, integrated with Stripe for secure payments and deposits. Must include automated booking confirmations, a basic admin dashboard for schedule management, and reliable webhook error handling. Please share examples of past booking systems or Stripe integrations you've built.\"_",
+    "urls": [
+     "https://www.grahaisystems.com/hire/stripe-integration-developer#:~:text=Hire%20a%20Stripe%20integration%20developer%20without%20the,Pay%20only%20if%20you%20accept.%20Engineer%2Dreviewed%20delivery.",
+     "https://www.freelancer.com/hire/stripe#:~:text=The%20steps%20below%20walk%20you%20through%20the,need%2C%20while%20a%20vague%20post%20attracts%20generalists."
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "gemini",
+    "n": 9,
+    "ok": true,
+    "text": "Привет! Как разработчик многоязычных сайтов, работающий с русским, английским и французским языками, вы отлично понимаете, что создание такого проекта — это не просто перевод текстов, а глубокая техническая и культурная адаптация.\n\nЧтобы сайт успешно работал на международную аудиторию, важно учитывать целый комплекс задач:\n\n## Ключевые аспекты разработки многоязычных сайтов\n\n  * **Архитектура и структура URL:** Выбор оптимальной схемы (поддомены: `fr.site.com`, подкаталоги: `[site.com/fr/](https://site.com/fr/)`, или параметры) с учетом SEO и удобства администрирования.\n\n  * **Техническая оптимизация (SEO):** Настройка тегов `hreflang` для поисковых систем (Google, Яндекс), локализованные карты сайтов (`sitemap.xml`) и правильные метатеги для каждого языка.\n\n  * **Локализация контента и интерфейса (i18n):** Организация файлов переводов (JSON, PO/POT), работа с динамическим контентом и адаптация под разную длину слов (например, французский текст часто длиннее английского).\n\n  * **Форматы данных и RTL/LTR:** Корректный вывод дат, времени, валют, чисел и единиц измерения в зависимости от выбранной языковой зоны.\n\n  * **Производительность:** Использование кэширования и легковесных библиотек локализации для быстрой загрузки сайта из любой точки мира.\n\n_Чем я могу вам помочь в вашем проекте? Нужна ли помощь с написанием кода на конкретном фреймворке (React, Vue, Next.js, WordPress), проектированием базы данных для многоязычного контента или настройкой SEO-структуры?_",
+    "urls": [
+     "https://site.com/fr/"
+    ],
+    "queries": [],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 1,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 500 — the provider answered; treg relayed it unchanged; call id 1e3b50a6240c4f9cb788e710a347e483 (quote it to support; `treg calls` shows the record); charged $0\n{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"INTERNAL_SERVER_ERROR\",\n    \"message\": \"Maximum retries exceeded\",\n    \"timestamp\": \"2026-10-11T09:50:05.603Z\"\n  }\n}",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 10,
+    "ok": true,
+    "text": "Yes—several production companies offer dedicated videographers and interview crews for Cannes Lions, including local French Riviera teams and international crews that travel in for the festival. For executive interviews, prioritize a compact multi-camera setup, broadcast-quality wireless audio, fast lighting, and same-day or rapid file delivery.[1][2]\n\n## Strong options\n\n| Provider | Fit for Cannes Lions interviews | Notable capability |\n|---|---|---|\n| **Riviera Media** | Local, English-speaking full-service video production; suitable for single-day or full-week coverage | Produced 40+ executive interviews for Business Insider at Cannes Lions; offers wireless audio, lighting, editing, subtitles, and same-day turnaround. [1] |\n| **Get Camera Crew** | Best example for polished executive/podcast-style interviews | Used a two-person crew with three Sony FX3 cameras and portable lighting for Fast Company’s back-to-back Cannes Lions interviews. [2][3] |\n| **Studio Nice Podcast** | Local Nice/Cannes/Monaco crew; good for founder, executive, and yacht/suite content studios | Offers 4K interview setups, teleprompter support, same-day files, and no travel costs for local crews. [4] |\n| **ASL Productions** | Large-scale brand activations and high-volume interview programs | Covered 193 content-studio interviews and 41 panels at Sport Beach during Cannes Lions, with daily social assets and sizzle reels. [5] |\n| **Raccoon Event Photography** | Combined photo/video coverage for brand events and activations | Cannes-based videographers provide interviews, highlight films, branded content, and same-day edits. [6] |\n| **STS Photo Video** | Content capture and B-roll teams during Cannes Lions | Covers interviews, testimonials, panels, and main-stage content, with on-site delivery or post-event upload. [7] |\n\n## What to request\n\nFor a professional interview shoot, ask for:\n\n- **Crew:** At minimum a videographer plus audio operator; a second camera operator or producer is useful for back-to-back executive interviews.[2]\n- **Cameras:** Two or three 4K camera angles—wide two-shot plus close-ups—so edits have flexibility.[2]\n- **Audio:** Lavalier or wireless lavs for each speaker, plus a backup recorder; clean sound matters more than extra camera angles.[1]\n- **Lighting:** Compact 2–3 point lighting that can be rigged and struck quickly between venues.[2]\n- **Deliverables:** Full-resolution files, social cutdowns, captions/subtitles, branded graphics, and same-day selects if you need content during the festival.[1][4]\n- **Logistics:** Confirm venue access, power, interview schedule, backdrop, teleprompter needs, and whether the crew can move between the Palais, hotels, beaches, or private activations.[1][4]\n\n## Practical recommendation\n\nFor a **small number of high-profile interviews**, contact **Get Camera Crew** or **Riviera Media** and request a two-person, multi-camera interview package. For **many interviews across several days**, **ASL Productions** or a local team such as **Studio Nice Podcast** may be more efficient because they can sustain high-volume capture and rapid content delivery.[1][2][4][5]\n\nCannes Lions crews book early, so share your dates, number of interviews, interview length, venue(s), required turnaround, and desired deliverables when requesting quotes.[4][8]",
+    "urls": [
+     "https://rivieramedia.com/event-video-production-in-cannes-europe",
+     "https://getcameracrew.com/video-production-insights/fast-company-at-cannes-lions-shooting-brand-new-world-on-location",
+     "https://getcameracrew.com/case-studies",
+     "https://studionicepodcast.com/en/services/cannes-lions",
+     "https://aslproductions.com/sports-video-production-nyc/",
+     "https://www.raccoonlondon.com/cannes-photographer-for-events",
+     "https://stsphotovideo.com/cannes/",
+     "https://studionicepodcast.com/en/services/event-filming",
+     "https://www.linkedin.com/posts/get-camera-crew_filming-executive-interviews-at-cannes-lions-activity-7491080138865061888-SoGw",
+     "https://www.raccoonlondon.com/case-study/billion-dollar-boy-cannes",
+     "https://frenchrivieraphotographer.com/",
+     "https://www.linkedin.com/posts/get-camera-crew_fast-company-at-cannes-lions-shooting-brand-activity-7488160141608058880-bgz0",
+     "https://loadout.media/portfolio/cannes-lions",
+     "https://bulbulagency.com/events/cannes-lions/",
+     "https://imagesdazur.com/en/event-photographer-in-cannes-monaco-st-tropez/"
+    ],
+    "queries": [
+     "Cannes Lions event interview videographer hire",
+     "Cannes Lions video production interview crew",
+     "Cannes Lions videographer event coverage"
+    ],
+    "error": null,
+    "charge": 0.0024,
+    "prop_urls": [
+     "https://studionicepodcast.com/en/services/cannes-lions",
+     "https://studionicepodcast.com/en/services/event-filming"
+    ],
+    "names_in_text": [
+     "studio nice podcast"
+    ]
+   },
+   {
+    "engine": "perplexity",
+    "n": 2,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 500 — the provider answered; treg relayed it unchanged; call id 116cd7e68a574e4980a181a738933651 (quote it to support; `treg calls` shows the record); charged $0\n{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"INTERNAL_SERVER_ERROR\",\n    \"message\": \"Maximum retries exceeded\",\n    \"timestamp\": \"2026-10-11T09:49:57.817Z\"\n  }\n}",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 3,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 500 — the provider answered; treg relayed it unchanged; call id 094ae2c619ff41d997edfb6c5467e331 (quote it to support; `treg calls` shows the record); charged $0\n{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"INTERNAL_SERVER_ERROR\",\n    \"message\": \"Maximum retries exceeded\",\n    \"timestamp\": \"2026-10-11T09:50:00.356Z\"\n  }\n}",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 4,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "Traceback (most recent call last):\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpx/_transports/default.py\", line 101, in map_httpcore_exceptions\n    yield\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpx/_transports/default.py\", line 250, in handle_request\n    resp = self._pool.handle_request(req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py\", line 256, in handle_reques",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 5,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "Traceback (most recent call last):\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpx/_transports/default.py\", line 101, in map_httpcore_exceptions\n    yield\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpx/_transports/default.py\", line 250, in handle_request\n    resp = self._pool.handle_request(req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py\", line 256, in handle_reques",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 6,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "Traceback (most recent call last):\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpx/_transports/default.py\", line 101, in map_httpcore_exceptions\n    yield\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpx/_transports/default.py\", line 250, in handle_request\n    resp = self._pool.handle_request(req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tristangrech/.local/share/uv/tools/tools-registry/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py\", line 256, in handle_reques",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 7,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 500 — the provider answered; treg relayed it unchanged; call id b42a385caa7543d0888ea8c2a7a95a7f (quote it to support; `treg calls` shows the record); charged $0\n{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"INTERNAL_SERVER_ERROR\",\n    \"message\": \"Maximum retries exceeded\",\n    \"timestamp\": \"2026-10-11T09:53:46.924Z\"\n  }\n}",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 8,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 500 — the provider answered; treg relayed it unchanged; call id 00884978b47a4a51b0a583684fec86ae (quote it to support; `treg calls` shows the record); charged $0\n{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"INTERNAL_SERVER_ERROR\",\n    \"message\": \"Maximum retries exceeded\",\n    \"timestamp\": \"2026-10-11T09:53:56.208Z\"\n  }\n}",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "perplexity",
+    "n": 9,
+    "ok": false,
+    "text": "",
+    "urls": [],
+    "queries": [],
+    "error": "treg: HTTP 500 — the provider answered; treg relayed it unchanged; call id a23aa0a4f1cd4258a1550c4274730053 (quote it to support; `treg calls` shows the record); charged $0\n{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"INTERNAL_SERVER_ERROR\",\n    \"message\": \"Maximum retries exceeded\",\n    \"timestamp\": \"2026-10-11T09:53:52.203Z\"\n  }\n}",
+    "charge": 0.0,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "pplxapi",
+    "n": 1,
+    "ok": true,
+    "text": "Tristan Grech is a French entrepreneur with Maltese roots, currently based in China. He describes his work as building SaaS and AI products and helping companies operate in the Chinese market; he also has experience in competitive swimming, including on France’s national team.[1]\n\nThere may be more than one person with that name. A LinkedIn profile, for example, describes a Tristan Grech in France who founded the web-design agency Fullhaura and crypto platform Kruptos.io.[2]",
+    "urls": [
+     "https://tristangrech.com/en",
+     "https://www.linkedin.com/in/fullhaura",
+     "https://wnmumustangs.com/news/2020/12/8/meet-the-mustangs-football-coaching-staff.aspx",
+     "https://www.abc.net.au/news/2026-08-09/victims-of-australia-s-1980s-tainted-blood-donation-scandal/106898666",
+     "https://irfoffshoresafety.com/wp-content/uploads/2025/11/Safety-and-Compliance_Tristan-Grech-A1282294.pptx",
+     "https://orcid.org/0000-0003-2026-7813",
+     "https://shows.acast.com/gregoiredossier/episodes/on-parle-loi-de-lattraction-questions-dintrospection-et-reus",
+     "https://www.sofascore.com/football/team/marsaxlokk-fc/7704",
+     "https://www.parkeselvisfestival.com.au/events/",
+     "https://www.sofascore.com/football/team/sk-victoria-wanderers/58329"
+    ],
+    "queries": [
+     "Who is Tristan Grech?"
+    ],
+    "error": null,
+    "charge": 0.00131,
+    "prop_urls": [
+     "https://tristangrech.com/en"
+    ],
+    "names_in_text": [
+     "tristan grech",
+     "fullhaura"
+    ]
+   },
+   {
+    "engine": "pplxapi",
+    "n": 2,
+    "ok": true,
+    "text": "There appear to be several people named Tristan Grech. The profile that specifically combines **web development and filmmaking** describes a French entrepreneur who founded **Fullhaura**, a web-design and digital-content agency, and **Kruptos.io**. Fullhaura’s services include websites, social-media content, and SEO.[1]\n\nA separate site for a French-Maltese entrepreneur named Tristan Grech describes his work in full-stack development, AI integrations, and SaaS products, with Fullhaura presented as an AI and web-solutions agency.[2] The search results don’t clearly establish whether he is also the filmmaker mentioned in the first profile, or identify specific films.",
+    "urls": [
+     "https://www.linkedin.com/in/fullhaura",
+     "https://tristangrech.com/en",
+     "https://extricate.org/",
+     "https://tristan.st/build",
+     "http://www.tristanmcshepherd.com/about",
+     "https://digital-film-services.com/filmography/",
+     "https://tristanweb.com/",
+     "https://wearetilt.com/team/",
+     "https://steamdb.info/developer/Tristan/",
+     "https://www.tristan.fyi/info"
+    ],
+    "queries": [
+     "Tristan Grech developer and filmmaker"
+    ],
+    "error": null,
+    "charge": 0.00136,
+    "prop_urls": [
+     "https://tristangrech.com/en"
+    ],
+    "names_in_text": [
+     "tristan grech",
+     "fullhaura"
+    ]
+   },
+   {
+    "engine": "pplxapi",
+    "n": 3,
+    "ok": true,
+    "text": "I couldn’t verify a single profile that clearly combines **French-speaking**, **freelance web developer**, and **based in Guangzhou**. The most practical options are to search Upwork’s French-specialist listings for Guangzhou and Twine’s Guangzhou web-developer listings, then confirm language ability and location directly.[4][5]\n\nOne possible lead is **Benjamin Roger**, whose profile describes French-speaking work and freelance web development experience, but it lists him in Paris—not Guangzhou.[6]",
+    "urls": [
+     "https://www.upwork.com/hire/web-application-freelancers/cn/",
+     "https://www.freelancer.de/job-search/freelance-international/",
+     "https://www.freelancer.com/projects/french/looking-for-french-native-customer",
+     "https://www.upwork.com/hire/french-translators-writers/cn/guangzhou/",
+     "https://www.twine.net/find/web-developers/cn/guangzhou",
+     "https://www.linkedin.com/in/b-roger",
+     "https://www.upwork.com/hire/web-services-freelancers/cn/",
+     "https://www.fr.freelancer.com/freelancers/china",
+     "https://www.twine.net/find/web-designers/cn/guangzhou",
+     "https://contra.com/hire/french-speaking-web-developers"
+    ],
+    "queries": [
+     "French-speaking freelance web developer in Guangzhou"
+    ],
+    "error": null,
+    "charge": 0.0014,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "pplxapi",
+    "n": 4,
+    "ok": true,
+    "text": "Vous cherchez un développeur web freelance francophone à **Canton (Guangzhou, Chine)** ? Je n’ai pas trouvé de profil clairement établi sur place dans les résultats disponibles. Vous pouvez toutefois élargir à des freelances francophones travaillant à distance, par exemple via Codeur.com, qui met en relation avec des professionnels français et francophones[8].\n\nPour recevoir des propositions pertinentes, précisez votre besoin (site vitrine, e-commerce, application), les technologies souhaitées et votre fuseau horaire.",
+    "urls": [
+     "https://developpeurfreelance.com/en/web-development-france/",
+     "https://www.justincappelle.ch/creation-site-internet-suisse",
+     "https://www.codeur.com/developpeur/web",
+     "https://www.lesbonsfreelances.com/freelances/developpeur-web",
+     "https://bizme.fr/freelancer/developpeur-web-afrique",
+     "https://freelancer-projekte.com/freelancer/entwickler/",
+     "https://plateforme.freelance.com/projets/creation-de-site-web-ou-dapplication",
+     "https://www.codeur.com/",
+     "https://www.codeur.com/users",
+     "https://www.freelance.ca/fr/pigiste/1888"
+    ],
+    "queries": [
+     "Développeur web freelance francophone à Canton"
+    ],
+    "error": null,
+    "charge": 0.00164,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "pplxapi",
+    "n": 5,
+    "ok": true,
+    "text": "You can hire an **AI-search / GEO (generative engine optimization) consultant or digital-marketing agency** for a human-reviewed audit, or start with a self-serve audit tool.\n\n- **For a detailed, expert-led audit:** Pilot Digital lists a one-time audit covering ChatGPT, Claude, Perplexity, and Gemini, including prompt tests, competitor analysis, and citation review; it starts at **$3,950**.[6]\n- **For a lower-cost specialist audit:** ProfileTree lists a full audit at **£800–£1,200**, or a shorter check at **£300–£600**.[3]\n- **For a free first pass:** GoWP offers a free audit testing your site and responses across ChatGPT, Claude, Gemini, and Perplexity.[8] CitedAI Search also advertises a free AI-visibility report.[5]\n- **For a quick automated scan:** RankMeter offers a free scan and scores AI visibility alongside technical and content issues.[10]\n\nWhen comparing providers, ask them to test real customer questions across multiple assistants, check whether AI crawlers can access and read your pages, identify which URLs get cited, compare competitors, and provide prioritized fixes. These audits measure a changing snapshot—not a guarantee that an assistant will recommend your business.",
+    "urls": [
+     "https://theresanaiforthat.com/s/website+audit/",
+     "https://theresanaiforthat.com/task/website-analysis/",
+     "https://profiletree.com/ai-visibility-audit/",
+     "https://claude.com/marketplace/connectors/website-auditor",
+     "https://www.citedaisearch.com/audit",
+     "https://pilotdigital.com/services/ai-search-optimization/ai-search-visibility-audit/",
+     "https://webteqno.com/ai-visibility-audit",
+     "https://gowp.com/ai-visibility/",
+     "https://bemodesign.com/free-geo-ai-seo-audit/",
+     "https://rankmeter.ai/"
+    ],
+    "queries": [
+     "Who can audit my website for visibility in ChatGPT and other AI assistants?"
+    ],
+    "error": null,
+    "charge": 0.00171,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "pplxapi",
+    "n": 6,
+    "ok": true,
+    "text": "Vous cherchez un **freelance pour auditer la visibilité de votre site dans les IA** (ChatGPT, Perplexity, Gemini, Claude, etc.). Cette prestation est généralement appelée **audit GEO** ou **audit de visibilité IA**.\n\nUn audit sérieux devrait inclure :\n- des tests de requêtes réellement posées par vos clients et la mesure des mentions de votre marque face aux concurrents ;\n- un diagnostic technique : accessibilité, indexabilité, structure et données structurées ;\n- une analyse des contenus, des preuves d’expertise et des sources externes qui renforcent votre crédibilité ;\n- un rapport avec constats et recommandations priorisées, idéalement accompagné d’une méthode de suivi.\n\nPour comparer les offres, vérifiez que le freelance précise **quelles IA et quelles requêtes sont testées**, comment les résultats sont mesurés et ce qui est livré. Les prix trouvés varient fortement : une offre d’audit flash est affichée à 1 240 € HT, tandis qu’un audit complet SEO classique est annoncé à partir d’environ 990 € pour un site vitrine ; le périmètre n’est pas nécessairement comparable.[6][3]\n\nPour trouver le bon prestataire, cherchez « consultant GEO freelance » ou « audit visibilité IA freelance », puis demandez un exemple de rapport anonymisé et un devis détaillant le périmètre. Certains prestataires proposent un audit de visibilité IA accompagné d’un plan d’action et d’un suivi des citations.[2][7]",
+    "urls": [
+     "https://comeup.com/fr/@tristan75",
+     "https://www.conversion-boosters.com/consultant-geo/",
+     "https://www.clickdev.fr/seo",
+     "https://audit.ideai.fr/",
+     "https://indhack.com/consultant-seo",
+     "https://www.stafe.fr/landing/audit-geo/",
+     "https://www.yoannuzan.com/freelance-geo/",
+     "https://www.mindandmarket.com/les-projets/inspect-ai-29396/",
+     "https://julien-gourdon.fr/consultant-seo-freelance",
+     "https://www.seoptimer.com/fr/blog/meilleur-logiciel-visibilite-recherche-ia/"
+    ],
+    "queries": [
+     "Audit de visibilité IA pour un site web, freelance"
+    ],
+    "error": null,
+    "charge": 0.00174,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "pplxapi",
+    "n": 7,
+    "ok": true,
+    "text": "For a website in **French, English, and Russian**, these are promising leads:\n\n- **Mark Nightingale** — Freelance web developer in France offering multilingual site planning, design, development, localization, and multilingual SEO; he works with WordPress/WPML and PrestaShop.[1]\n- **Magalie Castaing (Kasutan)** — Freelance WordPress and WooCommerce developer who builds multilingual websites, but her listed working languages are French, English, and Spanish—not Russian.[4]\n\nThe search results didn’t verify a freelancer who explicitly covers all three languages. When contacting candidates, confirm whether they can handle Russian-language localization (including Cyrillic, URL structure, and SEO) or whether you’ll supply approved Russian translations.",
+    "urls": [
+     "https://www.marknightingale.net/building-multilingual-websites/",
+     "https://www.freelancer.com/projects/documentation/multilingual-ngo-website-development-40669973",
+     "https://www.fr.freelancer.com/job-search/russian-speaking-web-developer/",
+     "https://www.linkedin.com/in/magaliecastaing",
+     "https://www.linkedin.com/in/dmitry-hrustalev-175358329",
+     "https://www.freelancer.com/job-search/russian-speaking-web-developer/",
+     "https://www.freelancer.com/jobs/website-design",
+     "https://www.upwork.com/freelance-jobs/apply/assisted-multilingual-website-redesign-Claude-Code-OpenAI-Gemini-corporate-services-site_~022104676087783838184/",
+     "https://www.freelancer.com/projects/php/hotel-website-with-online-booking",
+     "https://www.freelancer.com.bd/job-search/russian-speaking-web-developer/"
+    ],
+    "queries": [
+     "Freelance developer to build a multilingual website in French, English and Russian"
+    ],
+    "error": null,
+    "charge": 0.00149,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "pplxapi",
+    "n": 8,
+    "ok": true,
+    "text": "For a small studio, **WordPress with a booking plugin and Stripe** is often a practical, owner-manageable setup; a custom-built site may be better if your booking rules are unusual. A recent comparable WordPress project was listed at **US$1,400 fixed-price**, though scope and location can change the cost substantially.[8]\n\nWhen hiring, look for a developer who can show **live booking sites with Stripe**, and ask them to include:\n- Service selection, live availability, and booking on mobile\n- Stripe checkout, tested end to end, with clear handling for failed or canceled payments\n- Booking and payment confirmation emails\n- An easy way for you to manage appointments and block time\n- A walkthrough and written handover instructions\n\nYou can post the project on a freelance marketplace and compare proposals and portfolios; Freelancer, for example, lists Stripe specialists and booking-related projects.[1] Share your existing website (if any), studio type, services, booking rules, budget, and preferred launch date to get more useful recommendations.",
+    "urls": [
+     "https://www.freelancer.com/hire/stripe",
+     "https://www.freelancer.com/projects/stripe/complete-motopress-booking-setup",
+     "https://www.freelancer.com/projects/stripe/integrate-stripe-payment-system",
+     "https://www.freelancer.com/projects/php/website-update-stripe-integration",
+     "https://www.vollna.com/freelance-stripe-jobs",
+     "https://www.freelancer.com/projects/stripe/finish-stripe-booking-website-asap",
+     "https://www.freelancer.com/jobs/website-development/",
+     "https://www.upwork.com/freelance-jobs/apply/WordPress-Developer-Designer-Needed-Booking-Stripe-for-New-Canadian-Business_~022094534413062546677/",
+     "https://www.br.freelancer.com/job-search/stripe/",
+     "https://www.freelancer.com/hire/wix"
+    ],
+    "queries": [
+     "Freelance developer to build a booking website with Stripe payments for a small studio"
+    ],
+    "error": null,
+    "charge": 0.00169,
+    "prop_urls": [],
+    "names_in_text": []
+   },
+   {
+    "engine": "pplxapi",
+    "n": 9,
+    "ok": true,
+    "text": "Если вы ищете **разработчика многоязычного сайта на русском, английском и французском**, рассмотрите Voronkin Studio: команда работает на всех трёх языках и разрабатывает сайты и веб-платформы для клиентов в Европе и Северной Америке[1].\n\nТакже можно обратиться в Codefactura: студия делает мультиязычные сайты под ключ и может работать с вашими переводами либо привлечь переводчиков[4]. Для точной оценки подготовьте краткое описание проекта, число страниц и языков, желаемые функции и сроки.",
+    "urls": [
+     "https://voronkin.com/ru/",
+     "https://asasweb.com/ru",
+     "https://vivastudio.ru/",
+     "https://codefactura.ru/services/multilingual/",
+     "https://privetparis.fr/business-news/adevcode/",
+     "https://xstudio.pro/unk-en-v",
+     "https://umi.ru/gotovye_resheniya/sozdat_multiyazychnyj_sajt/",
+     "https://www.bandziuk.com/ru/razrabotka-multiyazychnogo-saita",
+     "https://sma-seo.ru/sozdanie-saytov/razrabotka-multiyazychnogo-sajta/",
+     "https://rm-syst.ru/catalog/multigeografiya"
+    ],
+    "queries": [
+     "Разработчик многоязычных сайтов на русском, английском и французском"
+    ],
+    "error": null,
+    "charge": 0.00157,
+    "prop_urls": [],
+    "names_in_text": []
+   }
+  ]
+ }
+}
