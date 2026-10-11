@@ -326,7 +326,7 @@ function Hero({ lang }: Props) {
           )}
 
           <h1 className="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-balance">
-            <span className="text-on-surface">{t.hero.headline1}</span>
+            <span className="text-on-surface">{t.hero.headline1}</span>{' '}
             <br />
             <span className="gradient-text">{t.hero.headline2}</span>
           </h1>

@@ -224,7 +224,7 @@ const fr: ChinaDict = {
     // "limited spots" line is fake urgency. The badge hides when empty.
     badge: '',
     headline1: 'Venez en Chine avec un Français qui connaît le terrain.',
-    headline2: 'Repars avec tes fournisseurs.',
+    headline2: 'Repartez avec vos fournisseurs.',
     subhead:
       'Voyages guidés de 3 à 7 jours entre Guangzhou, Foshan et Shenzhen. Un Français sur place, un associé bilingue français-chinois. Marchés, usines, négociation en direct.',
     ctaPrimary: 'Réserver un appel découverte',
@@ -328,7 +328,7 @@ const fr: ChinaDict = {
         eyebrow: 'Builder',
         name: 'Builder',
         duration: '5 à 7 jours',
-        hook: 'Repars avec tes fournisseurs validés.',
+        hook: 'Repartez avec vos fournisseurs validés.',
         bullets: [
           'Marchés Guangzhou en profondeur',
           'District usines de Foshan (meuble, luminaire, céramique)',
@@ -350,7 +350,7 @@ const fr: ChinaDict = {
         eyebrow: 'Full Launch',
         name: 'Full Launch',
         duration: '7 jours + post-trip',
-        hook: 'Rentre avec tes fournisseurs ET ton business en ligne.',
+        hook: 'Rentrez avec vos fournisseurs ET votre business en ligne.',
         bullets: [
           'Tout le programme Builder',
           'Fullhaura construit / refait ton site (identité + site + automatisation de base)',
