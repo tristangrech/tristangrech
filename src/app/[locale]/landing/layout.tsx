@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${BASE_URL}/images/og-card.jpg`,
+        url: `${BASE_URL}/images/og-tristan-grech.jpg`,
         width: 1200,
         height: 630,
         alt: 'Tristan Grech, developer and filmmaker, Guangzhou',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'AI Voice Agent Coaching | Private 1:1 Session',
     description:
       'Learn to build, deploy, and monetize AI voice agents. Private coaching with Tristan Grech. €367 one time.',
-    images: [`${BASE_URL}/images/og-card.jpg`],
+    images: [`${BASE_URL}/images/og-tristan-grech.jpg`],
   },
 };
 

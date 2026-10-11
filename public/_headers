@@ -11,8 +11,9 @@
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Images and cover videos keep stable names, so a month, not immutable.
+# Images and cover videos keep stable names and are sometimes replaced in
+# place, and the zone edge honours this header: one day, not a month.
 /images/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=86400
 /videos/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=86400

@@ -102,7 +102,7 @@ export async function generateMetadata({
       alternateLocale: ['en_US', 'fr_FR', 'ru_RU'].filter((l) => l !== ogLocale),
       images: [
         {
-          url: `${BASE_URL}/images/og-card.jpg`,
+          url: `${BASE_URL}/images/og-tristan-grech.jpg`,
           width: 1200,
           height: 630,
           alt: ogAlt,
@@ -114,7 +114,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [`${BASE_URL}/images/og-card.jpg`],
+      images: [`${BASE_URL}/images/og-tristan-grech.jpg`],
       creator: '@tristangrch',
     },
     robots: {
