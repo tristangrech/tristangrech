@@ -11,7 +11,6 @@ const AI_BOTS = [
   'ClaudeBot',
   'Claude-SearchBot',
   'Claude-User',
-  'anthropic-ai',
   // Perplexity
   'PerplexityBot',
   'Perplexity-User',
@@ -31,7 +30,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
+        // /_next/ is not disallowed: it holds the CSS and JS a renderer needs.
+        disallow: ['/api/'],
       },
       ...AI_BOTS.map((userAgent) => ({
         userAgent,

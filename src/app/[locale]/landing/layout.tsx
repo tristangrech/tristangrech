@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   description:
     'Private one on one coaching session with Tristan Grech. Build, deploy, and monetize your own AI voice agent that handles real phone calls. €367 one time.',
   robots: { index: false, follow: true },
+  // Child metadata replaces the parent's alternates object, so this drops the
+  // hub canonical and hreflang that this noindex page used to inherit.
+  alternates: {},
   openGraph: {
     title: 'AI Voice Agent Coaching | Private 1:1 Session',
     description:
@@ -21,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${BASE_URL}/images/tristan-homepage.jpg`,
+        url: `${BASE_URL}/images/og-card.jpg`,
         width: 1200,
         height: 630,
         alt: 'AI Voice Agent Coaching with Tristan Grech',
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
     title: 'AI Voice Agent Coaching | Private 1:1 Session',
     description:
       'Learn to build, deploy, and monetize AI voice agents. Private coaching with Tristan Grech. €367 one time.',
-    images: [`${BASE_URL}/images/tristan-homepage.jpg`],
+    images: [`${BASE_URL}/images/og-card.jpg`],
   },
 };
 
