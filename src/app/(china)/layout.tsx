@@ -7,6 +7,7 @@ const BASE_URL = 'https://tristangrech.com';
 // that `lang` is correct per route.
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  manifest: '/site.webmanifest',
   robots: {
     index: true,
     follow: true,

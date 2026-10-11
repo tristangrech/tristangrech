@@ -220,9 +220,11 @@ const fr: ChinaDict = {
     langSwitch: 'EN',
   },
   hero: {
-    badge: 'Nouvelles dates ouvertes. Places limitées.',
+    // Empty until a real next-trip date and seat count exist: an unbacked
+    // "limited spots" line is fake urgency. The badge hides when empty.
+    badge: '',
     headline1: 'Venez en Chine avec un Français qui connaît le terrain.',
-    headline2: 'Repartez avec vos fournisseurs.',
+    headline2: 'Repars avec tes fournisseurs.',
     subhead:
       'Voyages guidés de 3 à 7 jours entre Guangzhou, Foshan et Shenzhen. Un Français sur place, un associé bilingue français-chinois. Marchés, usines, négociation en direct.',
     ctaPrimary: 'Réserver un appel découverte',
@@ -273,7 +275,7 @@ const fr: ChinaDict = {
       {
         name: 'Tristan Grech',
         role: 'Français · Fondateur · Chef de voyage',
-        photo: '/images/china/portrait.jpg',
+        photo: '/images/china/portrait.webp',
         fallbackInitial: 'T',
         bullets: [
           'Français, il conduit chaque voyage en personne',
@@ -326,7 +328,7 @@ const fr: ChinaDict = {
         eyebrow: 'Builder',
         name: 'Builder',
         duration: '5 à 7 jours',
-        hook: 'Repartez avec vos fournisseurs validés.',
+        hook: 'Repars avec tes fournisseurs validés.',
         bullets: [
           'Marchés Guangzhou en profondeur',
           'District usines de Foshan (meuble, luminaire, céramique)',
@@ -348,7 +350,7 @@ const fr: ChinaDict = {
         eyebrow: 'Full Launch',
         name: 'Full Launch',
         duration: '7 jours + post-trip',
-        hook: 'Rentrez avec vos fournisseurs ET votre business en ligne.',
+        hook: 'Rentre avec tes fournisseurs ET ton business en ligne.',
         bullets: [
           'Tout le programme Builder',
           'Fullhaura construit / refait ton site (identité + site + automatisation de base)',
@@ -375,31 +377,31 @@ const fr: ChinaDict = {
         day: 'Jour 1',
         title: 'Marchés de Guangzhou',
         body: 'Yide Lu, Shi San Hang, One Link Plaza. Panorama complet. On relève prix, qualités, fournisseurs de gros.',
-        image: '/images/china/market.jpg',
+        image: '/images/china/market.webp',
       },
       {
         day: 'Jour 2',
         title: 'Foshan, district usines',
         body: 'Meuble, luminaire, céramique. Deux usines visitées, rencontre directe avec les patrons.',
-        image: '/images/china/foshan.jpg',
+        image: '/images/china/foshan.webp',
       },
       {
         day: 'Jour 3',
         title: 'Shenzhen, Huaqiangbei',
         body: 'Plus grand marché d\'électronique au monde. Composants, prototypage, OEM.',
-        image: '/images/china/shenzhen.jpg',
+        image: '/images/china/shenzhen.webp',
       },
       {
         day: 'Jour 4',
         title: 'Négociation en direct',
         body: 'On retourne voir les 2 meilleurs candidats. Mon associé négocie en mandarin natif, tu apprends en regardant.',
-        image: '/images/china/negotiation.jpg',
+        image: '/images/china/negotiation.webp',
       },
       {
         day: 'Jour 5',
         title: 'Shortlist, départ',
         body: 'Document écrit des fournisseurs retenus, conditions, prochains pas. Tu rentres avec un plan.',
-        image: '/images/china/shortlist.jpg',
+        image: '/images/china/shortlist.webp',
         imageAlt: 'Atelier de production en Chine, visite de fin de voyage',
       },
     ],
@@ -513,12 +515,12 @@ const fr: ChinaDict = {
     earlyBird:
       'On ouvre les premières sessions maintenant. Les 5 premiers entrepreneurs qui partent avec nous bénéficient de -30% sur la formule de leur choix, en échange d\'un témoignage vidéo filmé pendant le voyage.',
     gallery: [
-      { src: '/images/china/negotiation.jpg', alt: 'Rencontre avec un patron d\'usine chinois' },
-      { src: '/images/china/foshan.jpg', alt: 'Usine de meuble à Foshan' },
-      { src: '/images/china/shortlist.jpg', alt: 'Atelier de couture' },
-      { src: '/images/china/market.jpg', alt: 'Marché de Guangzhou' },
-      { src: '/images/china/shenzhen.jpg', alt: 'Huaqiangbei Shenzhen' },
-      { src: '/images/china/gallery-1.jpg', alt: 'Guangzhou' },
+      { src: '/images/china/negotiation.webp', alt: 'Rencontre avec un patron d\'usine chinois' },
+      { src: '/images/china/foshan.webp', alt: 'Usine de meuble à Foshan' },
+      { src: '/images/china/shortlist.webp', alt: 'Atelier de couture' },
+      { src: '/images/china/market.webp', alt: 'Marché de Guangzhou' },
+      { src: '/images/china/shenzhen.webp', alt: 'Huaqiangbei Shenzhen' },
+      { src: '/images/china/gallery-1.webp', alt: 'Guangzhou' },
     ],
   },
   finalCta: {
@@ -534,7 +536,7 @@ const fr: ChinaDict = {
     tagline: 'On emmène les entrepreneurs européens dans le triangle manufacturier de Chine du Sud.',
     otherVentures: 'Nos autres projets',
     ventures: [
-      { name: 'Tristan Grech · studio web & vidéo', href: 'https://tristangrech.com' },
+      { name: 'Tristan Grech · studio web & vidéo', href: '/fr' },
       { name: 'Studio Nice Podcast', href: 'https://studionicepodcast.com' },
     ],
     legal: [
@@ -559,7 +561,9 @@ const en: ChinaDict = {
     langSwitch: 'FR',
   },
   hero: {
-    badge: 'New dates open. Limited spots.',
+    // Empty until a real next-trip date and seat count exist: an unbacked
+    // "limited spots" line is fake urgency. The badge hides when empty.
+    badge: '',
     headline1: 'Come to China with a Frenchman who knows the ground.',
     headline2: 'Leave with your suppliers.',
     subhead:
@@ -612,7 +616,7 @@ const en: ChinaDict = {
       {
         name: 'Tristan Grech',
         role: 'French · Founder · Trip lead',
-        photo: '/images/china/portrait.jpg',
+        photo: '/images/china/portrait.webp',
         fallbackInitial: 'T',
         bullets: [
           'French, leads every trip in person',
@@ -713,31 +717,31 @@ const en: ChinaDict = {
         day: 'Day 1',
         title: 'Guangzhou markets',
         body: 'Yide Lu, Shi San Hang, One Link Plaza. Full sweep. We log prices, quality, wholesale suppliers.',
-        image: '/images/china/market.jpg',
+        image: '/images/china/market.webp',
       },
       {
         day: 'Day 2',
         title: 'Foshan, factory district',
         body: 'Furniture, lighting, ceramics. Two factories visited, direct meeting with owners.',
-        image: '/images/china/foshan.jpg',
+        image: '/images/china/foshan.webp',
       },
       {
         day: 'Day 3',
         title: 'Shenzhen, Huaqiangbei',
         body: 'Tens of thousands of vendors across several blocks. Components, prototyping, OEM partners.',
-        image: '/images/china/shenzhen.jpg',
+        image: '/images/china/shenzhen.webp',
       },
       {
         day: 'Day 4',
         title: 'Live negotiation',
         body: 'We return to the top 2 candidates. My partner negotiates in native Mandarin, you learn by watching.',
-        image: '/images/china/negotiation.jpg',
+        image: '/images/china/negotiation.webp',
       },
       {
         day: 'Day 5',
         title: 'Shortlist, departure',
         body: 'Written document of selected suppliers, terms, next steps. You leave with a plan.',
-        image: '/images/china/shortlist.jpg',
+        image: '/images/china/shortlist.webp',
         imageAlt: 'Production workshop in China, end-of-trip visit',
       },
     ],
@@ -851,12 +855,12 @@ const en: ChinaDict = {
     earlyBird:
       'We\'re opening the first trips now. The first 5 founders who travel with us get -30% on the package of their choice, in exchange for a video testimonial filmed during the trip.',
     gallery: [
-      { src: '/images/china/negotiation.jpg', alt: 'Meeting with a Chinese factory owner' },
-      { src: '/images/china/foshan.jpg', alt: 'Foshan furniture factory' },
-      { src: '/images/china/shortlist.jpg', alt: 'Sewing workshop' },
-      { src: '/images/china/market.jpg', alt: 'Guangzhou market' },
-      { src: '/images/china/shenzhen.jpg', alt: 'Huaqiangbei Shenzhen' },
-      { src: '/images/china/gallery-1.jpg', alt: 'Guangzhou' },
+      { src: '/images/china/negotiation.webp', alt: 'Meeting with a Chinese factory owner' },
+      { src: '/images/china/foshan.webp', alt: 'Foshan furniture factory' },
+      { src: '/images/china/shortlist.webp', alt: 'Sewing workshop' },
+      { src: '/images/china/market.webp', alt: 'Guangzhou market' },
+      { src: '/images/china/shenzhen.webp', alt: 'Huaqiangbei Shenzhen' },
+      { src: '/images/china/gallery-1.webp', alt: 'Guangzhou' },
     ],
   },
   finalCta: {
@@ -872,7 +876,7 @@ const en: ChinaDict = {
     tagline: 'We take European founders into South China\'s manufacturing triangle.',
     otherVentures: 'Our other ventures',
     ventures: [
-      { name: 'Tristan Grech · web & video studio', href: 'https://tristangrech.com' },
+      { name: 'Tristan Grech · web & video studio', href: '/en' },
       { name: 'Studio Nice Podcast', href: 'https://studionicepodcast.com' },
     ],
     legal: [

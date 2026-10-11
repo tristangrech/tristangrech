@@ -18,7 +18,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  ChevronDown,
   Languages,
   MapPin,
   ShieldCheck,
@@ -315,16 +314,16 @@ function Hero({ lang }: Props) {
       <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="section-container relative z-10 grid lg:grid-cols-12 gap-10 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="lg:col-span-7 space-y-8"
-        >
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-surface-card border border-outline">
-            <Sparkles className="w-3.5 h-3.5 text-primary-text flex-shrink-0" strokeWidth={2.5} />
-            <span className="text-sm text-on-surface-secondary font-medium">{t.hero.badge}</span>
-          </div>
+        {/* No entrance animation on the hero: it started at opacity 0, so the
+            LCP h1 could not paint until framer-motion hydrated (measured LCP
+            4.8s /china, 6.9s /chine, render delay over 90% of it). */}
+        <div className="lg:col-span-7 space-y-8">
+          {t.hero.badge && (
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-surface-card border border-outline">
+              <Sparkles className="w-3.5 h-3.5 text-primary-text flex-shrink-0" strokeWidth={2.5} />
+              <span className="text-sm text-on-surface-secondary font-medium">{t.hero.badge}</span>
+            </div>
+          )}
 
           <h1 className="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-balance">
             <span className="text-on-surface">{t.hero.headline1}</span>
@@ -367,24 +366,18 @@ function Hero({ lang }: Props) {
 
           <div className="grid grid-cols-2 gap-3 pt-4 max-w-xl">
             {t.hero.credentials.map((c, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 + i * 0.08, duration: 0.5 }}
                 className="flex items-center gap-2 text-sm text-on-surface-secondary"
               >
                 <Check className="w-4 h-4 text-primary flex-shrink-0" strokeWidth={3} />
                 {c}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
           className="lg:col-span-5"
           style={{ y: heroImageY }}
         >
@@ -455,12 +448,23 @@ function DuoStat({ value, label, index }: { value: string; label: string; index:
   const suffix = match ? match[2] : '';
 
   const ref = useRef<HTMLDivElement | null>(null);
-  const [inView, setInView] = useState(false);
+  // true on the server and first render, so the static HTML carries the real
+  // number; the observer resets it to 0 only while the card is off screen.
+  const [inView, setInView] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // The first callback reports the current position: off screen drops the
+    // number to 0, and entering the viewport later counts it up once.
     const io = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setInView(true),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        } else {
+          setInView(false);
+        }
+      },
       { threshold: 0.4 }
     );
     io.observe(el);
@@ -1049,7 +1053,9 @@ function LeadMagnet({ lang }: Props) {
 
 function Faq({ lang }: Props) {
   const t = chinaDict[lang];
-  const [open, setOpen] = useState<number | null>(0);
+  // Every answer is plain visible text in the HTML. The old accordion only
+  // rendered the open answer, so 7 of 8 answers were missing from the page
+  // source that search engines and AI answer engines read.
   return (
     <motion.section
       {...reveal}
@@ -1067,42 +1073,12 @@ function Faq({ lang }: Props) {
         </div>
 
         <div className="space-y-3">
-          {t.faq.items.map((item, i) => {
-            const isOpen = open === i;
-            return (
-              <div key={i} className="rounded-2xl border border-outline bg-surface-card overflow-hidden">
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between text-left px-6 py-5 group"
-                  aria-expanded={isOpen}
-                >
-                  <span className="font-heading font-semibold text-on-surface pr-6 group-hover:text-primary-text transition-colors">
-                    {item.q}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-on-surface-muted flex-shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: 'easeOut' }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-5">
-                        <p className="text-on-surface-muted leading-relaxed">{item.a}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+          {t.faq.items.map((item, i) => (
+            <div key={i} className="rounded-2xl border border-outline bg-surface-card px-6 py-5">
+              <h3 className="font-heading font-semibold text-on-surface">{item.q}</h3>
+              <p className="mt-2 text-on-surface-muted leading-relaxed">{item.a}</p>
+            </div>
+          ))}
         </div>
       </div>
     </motion.section>
@@ -1244,8 +1220,8 @@ function Footer({ lang }: Props) {
               <li key={v.href}>
                 <a
                   href={v.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={v.href.startsWith('http') ? '_blank' : undefined}
+                  rel={v.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="text-sm text-on-surface-secondary hover:text-primary-text transition-colors inline-flex min-h-[24px] items-center gap-1 py-1"
                 >
                   {v.name}

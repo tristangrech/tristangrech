@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ChinaLanding from '@/components/china/ChinaLanding';
 import { chinaDict } from '@/lib/china-i18n';
+import ChinaJsonLd from '@/components/china/ChinaJsonLd';
 
 const BASE_URL = 'https://tristangrech.com';
 
@@ -25,9 +26,11 @@ export const metadata: Metadata = {
     alternateLocale: ['en_US'],
     images: [
       {
-        url: `${BASE_URL}/images/china/hero.jpg`,
-        width: 1920,
-        alt: 'Tristan Grech, voyages business en Chine',
+        url: `${BASE_URL}/images/china/og-china.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Tristan Grech, voyages sourcing en Chine à Guangzhou',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -35,11 +38,16 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: chinaDict.fr.meta.title,
     description: chinaDict.fr.meta.description,
-    images: [`${BASE_URL}/images/china/hero.jpg`],
+    images: [`${BASE_URL}/images/china/og-china.jpg`],
     creator: '@fullhaura',
   },
 };
 
 export default function ChinePage() {
-  return <ChinaLanding lang="fr" />;
+  return (
+    <>
+      <ChinaJsonLd lang="fr" />
+      <ChinaLanding lang="fr" />
+    </>
+  );
 }
