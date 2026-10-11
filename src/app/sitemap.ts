@@ -1,14 +1,14 @@
 import type { MetadataRoute } from 'next';
+import { contentDates } from '@/lib/content-dates';
 
 const BASE_URL = 'https://tristangrech.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ['en', 'fr', 'ru'];
-  const lastModified = new Date();
 
   const pages = locales.map((locale) => ({
     url: `${BASE_URL}/${locale}`,
-    lastModified,
+    lastModified: contentDates.hub,
     changeFrequency: 'weekly' as const,
     priority: 1.0,
     alternates: {
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const chinaPages = [
     {
       url: `${BASE_URL}/chine`,
-      lastModified,
+      lastModified: contentDates.china,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
       alternates: {
@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/china`,
-      lastModified,
+      lastModified: contentDates.china,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
       alternates: {

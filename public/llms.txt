@@ -1,26 +1,40 @@
 # Tristan Grech
 
-> Tristan Grech is a developer and filmmaker based in Nice, France (SIREN 843 305 996). He builds multilingual websites, web applications and booking systems that rank on Google and get recommended by AI assistants, and produces broadcast-grade video: event coverage (Cannes Lions 2026), founder interviews and podcasts. Working languages: French, English, Russian (plus Portuguese). He works remotely across the EU and CIS, including Kazakhstan.
+> Tristan Grech is a developer and filmmaker based in Guangzhou, China. He builds multilingual websites, web applications and booking systems that rank on Google and get recommended by AI assistants, runs AI visibility audits, and produces 4K video and podcasts. His podcast studio is in Nice, France. Working languages: French, English and Russian (plus Portuguese). He works remotely with clients anywhere.
+
+## Pages
+
+- [Tristan Grech, English](https://tristangrech.com/en): who he is, live projects, services, contact.
+- [Tristan Grech, français](https://tristangrech.com/fr): the same page in French.
+- [Tristan Grech, русский](https://tristangrech.com/ru): the same page in Russian.
+- [China buying trips](https://tristangrech.com/china): guided 3 to 7 day sourcing trips across Guangzhou, Foshan and Shenzhen, in English.
+- [Voyages sourcing en Chine](https://tristangrech.com/chine): the same trips, in French.
 
 ## Services
 
 - Website design and development: multilingual marketing sites (FR/EN/RU) with structured data, SEO and generative engine optimization (GEO) built in.
 - Web applications and booking engines: Stripe payments, Google Calendar sync, dashboards, AI agents. Reference build: the booking engine running studionicepodcast.com.
-- Website and AI visibility audit: technical, SEO and GEO findings on why AI assistants (ChatGPT, Claude, Perplexity) do or do not recommend a business, delivered as a prioritized action list within 48 hours.
-- Video and podcast production: 4K multi-camera interviews, event coverage, podcast production, broadcast audio, colour grade, subtitles. Studio in Nice (Studio Nice Podcast, Port Lympia), on-location recording in Almaty, Kazakhstan (Almaty Podcast, almatypodcast.com), on location anywhere else on request.
+- AI visibility audit: technical, SEO and GEO findings on why AI assistants (ChatGPT, Claude, Perplexity) do or do not recommend a business, delivered as a prioritized action list within 48 hours.
+- Video and podcast production: 4K interviews, event coverage and podcasts. Studio in Nice (Studio Nice Podcast), on location anywhere.
 
-## Verifiable work
+## Live projects
 
-- Studio Nice Podcast (https://studionicepodcast.com): a real 4K video podcast studio in Nice, France, with a self-built booking platform (Next.js, FastAPI, Stripe Checkout, Google Calendar, Postgres) and 18 SEO service pages in English and French. One of its paying clients found the studio by asking Claude, an AI assistant.
+- Sumera (https://sumera.io): AI YouTube script generator with live Stripe billing.
+- Fullink (https://www.fullink.io): link in bio platform for creators.
+- Feu France (https://feufrance.fr): live wildfire map and alerts for France.
+- Studio Nice Podcast (https://studionicepodcast.com): 4K video podcast studio in Nice with a self-built booking platform (Next.js, FastAPI, Stripe Checkout, Google Calendar, Postgres). One of its paying clients found the studio by asking Claude, an AI assistant.
+- Polytaipe (https://polytaipe.com): typing trainer for any keyboard layout.
+- Source Canton (https://sourcecanton.com): China sourcing marketplace; one brief, a written quote from suppliers in Guangzhou, Foshan and Shenzhen.
+
+## Verifiable video work
+
 - Halo AI at Cannes Lions 2026: event interview coverage shot 25 June 2026 in Cannes; 226 clips and 157 GB of raw footage in one day; 17 graded, subtitled, mastered edits delivered overnight (1080p horizontals and 9:16 verticals).
 - Business Future, episode one: launch interview for a business YouTube channel, shot 10 July 2026 near Saint-Jean-Cap-Ferrat with two Sony cameras in 4K 50p and dual lavalier audio; the finished 35-minute subtitled master was delivered on 11 July 2026.
-- Fullhaura concierge (https://fullhaura-services.com): trilingual FR/EN/RU brand site with 8 service and 8 location pages, each carrying Service, FAQ and Breadcrumb structured data.
-- Also live: https://almatypodcast.com (podcast recording in Almaty, RU/KK/EN), https://sumera.io (AI YouTube script SaaS), https://www.fullink.io (creator link-in-bio platform), https://revesdelite.com (private concierge).
 
 ## Contact
 
 - WhatsApp: +33 6 78 49 61 26 (https://wa.me/33678496126)
-- Telegram: https://t.me/Fullhaura
 - Email: tristangrech.nat@gmail.com
 - LinkedIn: https://www.linkedin.com/in/fullhaura/
-- Site: https://tristangrech.com (English: /en, French: /fr, Russian: /ru)
+- Instagram: https://www.instagram.com/tristangrch/
+- Telegram: https://t.me/Fullhaura

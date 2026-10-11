@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit, Inter, JetBrains_Mono } from 'next/font/google';
 import { isValidLocale, defaultLocale, type Locale } from '@/lib/i18n';
 import { site } from '@/lib/site';
+import { contentDates } from '@/lib/content-dates';
 import Analytics from '@/components/Analytics';
 import '../globals.css';
 
@@ -25,54 +26,27 @@ const plexMono = JetBrains_Mono({
   weight: ['400', '500', '700'],
   variable: '--font-plex-mono',
   display: 'swap',
+  // Label font, never the LCP: no preload, so it stops competing with the hero image.
+  preload: false,
 });
 
 const BASE_URL = site.baseUrl;
 
 const metadataByLocale: Record<
   Locale,
-  { title: string; description: string; keywords: string[] }
+  { title: string; description: string; ogAlt: string }
 > = {
   en: {
     title: 'Tristan Grech · Websites, Web Apps and Video · Guangzhou',
     description:
       'Developer and filmmaker in Guangzhou. Multilingual websites and booking systems that Google ranks and AI assistants recommend, plus 4K video. French, English and Russian.',
-    keywords: [
-      'Tristan Grech',
-      'web developer Nice',
-      'website developer France',
-      'web app developer',
-      'booking system developer',
-      'website audit',
-      'AI visibility audit',
-      'GEO generative engine optimization',
-      'SEO Nice',
-      'video production Nice',
-      'Cannes Lions video production',
-      'podcast studio Nice',
-      'interview filming French Riviera',
-      'веб разработчик Ницца',
-      'разработка сайтов Алматы',
-    ],
+    ogAlt: 'Tristan Grech, developer and filmmaker, Guangzhou',
   },
   fr: {
     title: 'Tristan Grech · Sites web, applications et vidéo · Canton',
     description:
       'Développeur et vidéaste à Canton. Sites multilingues et systèmes de réservation référencés par Google et cités par les assistants IA, plus vidéo 4K. FR, EN, RU.',
-    keywords: [
-      'Tristan Grech',
-      'développeur web Nice',
-      'création site internet Nice',
-      'application web réservation',
-      'audit de site web',
-      'audit visibilité IA',
-      'GEO optimisation moteurs génératifs',
-      'SEO Nice',
-      'production vidéo Nice',
-      'vidéo Cannes Lions',
-      'studio podcast Nice',
-      'tournage interview Côte d\'Azur',
-    ],
+    ogAlt: 'Tristan Grech, développeur et vidéaste, Canton',
   },
   ru: {
     // Russian keeps the em dash: it is mandatory grammar in a copular
@@ -80,20 +54,7 @@ const metadataByLocale: Record<
     title: 'Тристан Греч — Сайты, веб-приложения и видео · Гуанчжоу',
     description:
       'Разработчик и видеограф в Гуанчжоу. Многоязычные сайты и системы бронирования, которые находит Google и цитируют ИИ-ассистенты, плюс видео 4K.',
-    keywords: [
-      'Тристан Греч',
-      'Tristan Grech',
-      'разработка сайтов',
-      'веб разработчик Ницца',
-      'создание сайта Алматы',
-      'аудит сайта',
-      'видимость в ИИ',
-      'GEO оптимизация',
-      'видеопродакшн Ницца',
-      'студия подкастов',
-      'съёмка интервью',
-      'сайт для бизнеса Казахстан',
-    ],
+    ogAlt: 'Тристан Греч, разработчик и видеограф, Гуанчжоу',
   },
 };
 
@@ -105,7 +66,7 @@ export async function generateMetadata({
   const locale: Locale = isValidLocale(params.locale)
     ? params.locale
     : defaultLocale;
-  const { title, description, keywords } = metadataByLocale[locale];
+  const { title, description, ogAlt } = metadataByLocale[locale];
   const canonicalUrl = `${BASE_URL}/${locale}`;
   const ogLocaleMap: Record<Locale, string> = {
     en: 'en_US',
@@ -117,7 +78,6 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords,
     metadataBase: new URL(BASE_URL),
     alternates: {
       canonical: canonicalUrl,
@@ -141,7 +101,7 @@ export async function generateMetadata({
           url: `${BASE_URL}/images/og-card.jpg`,
           width: 1200,
           height: 630,
-          alt: 'Tristan Grech, developer and filmmaker, Guangzhou',
+          alt: ogAlt,
           type: 'image/jpeg',
         },
       ],
@@ -175,9 +135,16 @@ export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'fr' }, { locale: 'ru' }];
 }
 
+// One entity description, shared by every locale. The @id nodes below are the
+// same entity on /en, /fr and /ru, so their facts must not vary by page.
+// Base: Guangzhou (commit 733f366). The podcast studio stays in Nice because
+// it is physically there. Every fact here is visible on the hub or verifiable
+// at the linked URL; nothing is markup-only.
+const ENTITY_DESCRIPTION =
+  'Tristan Grech is a developer and filmmaker based in Guangzhou, China. He builds multilingual websites, web apps and booking systems, runs AI visibility audits, and produces 4K video and podcasts. He works in French, English and Russian.';
+
 function JsonLd({ locale }: { locale: Locale }) {
   const { title, description } = metadataByLocale[locale];
-  const currentDate = new Date().toISOString().split('T')[0];
 
   const services = [
     {
@@ -185,32 +152,32 @@ function JsonLd({ locale }: { locale: Locale }) {
       name: 'Website design and development',
       description:
         'Multilingual marketing websites with structured data, SEO and AI visibility (GEO) built in. French, English and Russian.',
-      provider: { '@id': `${BASE_URL}/#business` },
-      areaServed: ['France', 'Monaco', 'European Union', 'China', 'Worldwide (remote)'],
+      provider: { '@id': `${BASE_URL}/#person` },
+      areaServed: 'Worldwide (remote)',
     },
     {
       '@type': 'Service',
       name: 'Web applications and booking engines',
       description:
         'Custom web applications with Stripe payments, calendar sync, dashboards and AI agents, like the booking engine running Studio Nice Podcast.',
-      provider: { '@id': `${BASE_URL}/#business` },
-      areaServed: ['Worldwide (remote)'],
+      provider: { '@id': `${BASE_URL}/#person` },
+      areaServed: 'Worldwide (remote)',
     },
     {
       '@type': 'Service',
-      name: 'Website and AI visibility audit',
+      name: 'AI visibility audit',
       description:
-        'A 48-hour audit of technical health, SEO and AI assistant visibility (ChatGPT, Claude, Perplexity), delivered as a prioritized action list.',
-      provider: { '@id': `${BASE_URL}/#business` },
-      areaServed: ['Worldwide (remote)'],
+        'A website audit of technical health, SEO and AI assistant visibility (ChatGPT, Claude, Perplexity), delivered as a prioritized action list within 48 hours.',
+      provider: { '@id': `${BASE_URL}/#person` },
+      areaServed: 'Worldwide (remote)',
     },
     {
       '@type': 'Service',
       name: 'Video and podcast production',
       description:
-        '4K multi-camera interviews, event coverage and podcast production with broadcast audio, colour grading and subtitles. Studio in Nice, on location anywhere. Cannes Lions 2026 event coverage delivered overnight.',
-      provider: { '@id': `${BASE_URL}/#business` },
-      areaServed: ['Nice', 'Cannes', 'Monaco', 'French Riviera', 'Guangzhou', 'On location worldwide'],
+        '4K interviews, event coverage and podcast production. Studio in Nice (Studio Nice Podcast), on location anywhere.',
+      provider: { '@id': `${BASE_URL}/#person` },
+      areaServed: ['Nice', 'Guangzhou', 'On location worldwide'],
     },
   ];
 
@@ -221,14 +188,15 @@ function JsonLd({ locale }: { locale: Locale }) {
         '@type': 'Person',
         '@id': `${BASE_URL}/#person`,
         name: 'Tristan Grech',
-        url: BASE_URL,
-        jobTitle: 'Developer & Filmmaker',
-        description,
+        alternateName: 'Тристан Греч',
+        url: `${BASE_URL}/`,
+        jobTitle: 'Developer and filmmaker',
+        description: ENTITY_DESCRIPTION,
         image: `${BASE_URL}/images/tristan-homepage.jpg`,
         nationality: { '@type': 'Country', name: 'France' },
         homeLocation: {
           '@type': 'Place',
-          name: 'Nice, France',
+          name: 'Guangzhou, China',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Guangzhou',
@@ -246,50 +214,6 @@ function JsonLd({ locale }: { locale: Locale }) {
           'Podcast production',
           'Stripe payment integration',
         ],
-        memberOf: {
-          '@type': 'SportsTeam',
-          name: 'French National Swimming Team',
-        },
-        sameAs: [
-          site.linkedin,
-          site.whatsapp,
-          site.telegram,
-          'https://studionicepodcast.com',
-          'https://sumera.io',
-          'https://www.fullink.io',
-          'https://sourcecanton.com',
-          'https://revesdelite.com',
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/#business`,
-        name: 'Tristan Grech',
-        legalName: site.legalName,
-        identifier: {
-          '@type': 'PropertyValue',
-          propertyID: 'SIREN',
-          value: '843305996',
-        },
-        url: BASE_URL,
-        description:
-          'Web development and video production studio in Nice, France: multilingual websites, web apps with payments and booking, website and AI visibility audits, and 4K video production. Remote work across the EU and CIS, in French, English and Russian.',
-        founder: { '@id': `${BASE_URL}/#person` },
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Guangzhou',
-          addressCountry: 'CN',
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Nice' },
-          { '@type': 'City', name: 'Cannes' },
-          { '@type': 'City', name: 'Monaco' },
-          { '@type': 'Country', name: 'France' },
-          { '@type': 'Country', name: 'Kazakhstan' },
-          { '@type': 'AdministrativeArea', name: 'European Union (remote)' },
-        ],
-        availableLanguage: ['French', 'English', 'Russian'],
-        priceRange: '€€',
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'business inquiries',
@@ -297,46 +221,34 @@ function JsonLd({ locale }: { locale: Locale }) {
           telephone: '+33678496126',
           availableLanguage: ['French', 'English', 'Russian'],
         },
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Services',
-          itemListElement: services.map((s) => ({
-            '@type': 'Offer',
-            itemOffered: s,
-          })),
-        },
-        sameAs: [site.linkedin, 'https://studionicepodcast.com', 'https://sourcecanton.com'],
+        makesOffer: services.map((s) => ({ '@type': 'Offer', itemOffered: s })),
+        // Profiles that are Tristan himself, as linked from the visible page.
+        // Product sites live in the portfolio ItemList, not here.
+        sameAs: [site.linkedin, site.instagram],
       },
       {
         '@type': 'WebSite',
         '@id': `${BASE_URL}/#website`,
-        name: title,
-        url: BASE_URL,
-        description,
+        name: 'Tristan Grech',
+        alternateName: 'Тристан Греч',
+        url: `${BASE_URL}/`,
         publisher: { '@id': `${BASE_URL}/#person` },
-        inLanguage: [
-          { '@type': 'Language', name: 'English', alternateName: 'en' },
-          { '@type': 'Language', name: 'French', alternateName: 'fr' },
-          { '@type': 'Language', name: 'Russian', alternateName: 'ru' },
-        ],
+        inLanguage: ['en', 'fr', 'ru'],
       },
       {
-        '@type': 'WebPage',
+        '@type': 'ProfilePage',
         '@id': `${BASE_URL}/${locale}#webpage`,
         url: `${BASE_URL}/${locale}`,
         name: title,
         description,
         isPartOf: { '@id': `${BASE_URL}/#website` },
-        about: { '@id': `${BASE_URL}/#person` },
-        datePublished: '2026-01-15',
-        dateModified: currentDate,
+        mainEntity: { '@id': `${BASE_URL}/#person` },
+        dateCreated: contentDates.hubPublished,
+        datePublished: contentDates.hubPublished,
+        dateModified: contentDates.hub,
         inLanguage: locale,
-        speakable: {
-          '@type': 'SpeakableSpecification',
-          cssSelector: ['h1', 'h2'],
-        },
       },
-      ...(site.showreel.available
+      ...(site.showreel.available && site.showreel.uploadDate
         ? [
             {
               '@type': 'VideoObject',
@@ -345,7 +257,7 @@ function JsonLd({ locale }: { locale: Locale }) {
                 'Showreel: websites, web apps and video production by Tristan Grech.',
               contentUrl: `${BASE_URL}${site.showreel.src}`,
               thumbnailUrl: `${BASE_URL}${site.showreel.poster}`,
-              uploadDate: currentDate,
+              uploadDate: site.showreel.uploadDate,
             },
           ]
         : []),
@@ -354,13 +266,23 @@ function JsonLd({ locale }: { locale: Locale }) {
         '@id': `${BASE_URL}/#portfolio`,
         name: 'Live projects',
         itemListElement: [
-          { '@type': 'WebSite', position: 1, name: 'Sumera', url: 'https://sumera.io', description: 'AI YouTube script generator with live Stripe billing.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 2, name: 'Fullink', url: 'https://www.fullink.io', description: 'Link in bio platform for creators.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 3, name: 'Feu France', url: 'https://feufrance.fr', description: 'Live wildfire map and alerts for France.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 4, name: 'Studio Nice Podcast', url: 'https://studionicepodcast.com', description: '4K video podcast studio in Nice with online booking.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 5, name: 'Polytaipe', url: 'https://polytaipe.com', description: 'Typing trainer for any keyboard layout.', creator: { '@id': `${BASE_URL}/#person` } },
-          { '@type': 'WebSite', position: 6, name: 'Source Canton', url: 'https://sourcecanton.com', description: 'Guided China sourcing trips and buying across Guangzhou, Foshan and Shenzhen.', creator: { '@id': `${BASE_URL}/#person` } },
-        ],
+          ['Sumera', 'https://sumera.io', 'AI YouTube script generator with live Stripe billing.'],
+          ['Fullink', 'https://www.fullink.io', 'Link in bio platform for creators.'],
+          ['Feu France', 'https://feufrance.fr', 'Live wildfire map and alerts for France.'],
+          ['Studio Nice Podcast', 'https://studionicepodcast.com', '4K video podcast studio in Nice with online booking.'],
+          ['Polytaipe', 'https://polytaipe.com', 'Typing trainer for any keyboard layout.'],
+          ['Source Canton', 'https://sourcecanton.com', 'China sourcing marketplace: one brief, a written quote from suppliers in Guangzhou, Foshan and Shenzhen.'],
+        ].map(([name, url, desc], i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'WebSite',
+            name,
+            url,
+            description: desc,
+            creator: { '@id': `${BASE_URL}/#person` },
+          },
+        })),
       },
     ],
   };

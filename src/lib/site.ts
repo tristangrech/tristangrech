@@ -16,12 +16,16 @@ export const site = {
   whatsappNumber: '33678496126',
   telegram: 'https://t.me/Fullhaura',
   linkedin: 'https://www.linkedin.com/in/fullhaura/',
+  instagram: 'https://www.instagram.com/tristangrch/',
   // Showreel: drop the file at public/video/showreel.mp4 (+ showreel-poster.jpg),
   // then set available: true and redeploy. Encoding notes: public/video/README.md.
   showreel: {
     available: false,
     src: '/video/showreel.mp4',
     poster: '/video/showreel-poster.jpg',
+    // The real publication date, set by hand with the file. The VideoObject
+    // markup stays off until it exists, so the build never invents one.
+    uploadDate: null as string | null,
   },
 } as const;
 
