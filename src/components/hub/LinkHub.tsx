@@ -60,7 +60,7 @@ const contactLinks = (locale: Locale): { icon: string; label: string; href: stri
   { icon: 'mail', label: 'Email', href: 'mailto:tristangrech.nat@gmail.com' },
 ];
 
-const SERVICES: { title: Record<Locale, string>; desc: Record<Locale, string>; href?: Record<Locale, string> }[] = [
+const SERVICES: { title: Record<Locale, string>; desc: Record<Locale, string>; href?: Record<Locale, string>; proof?: { text: Record<Locale, string>; href: Record<Locale, string> } }[] = [
   { title: { fr: 'Sites web', en: 'Websites', ru: 'Сайты' },
     desc: { fr: 'Sites multilingues avec SEO et visibilité IA intégrés dès le départ.', en: 'Multilingual sites with SEO and AI visibility built in from the start.', ru: 'Многоязычные сайты с SEO и видимостью в ИИ с самого начала.' } },
   { title: { fr: 'Applications et réservation', en: 'Web apps and booking', ru: 'Веб-приложения и бронирование' },
@@ -68,7 +68,11 @@ const SERVICES: { title: Record<Locale, string>; desc: Record<Locale, string>; h
   { title: { fr: 'Audit de visibilité IA', en: 'AI visibility audit', ru: 'Аудит видимости в ИИ' },
     desc: { fr: 'Pourquoi les assistants IA ne vous citent pas, et quoi corriger, sous 48 heures.', en: 'Why AI assistants skip you, and exactly what to fix, within 48 hours.', ru: 'Почему ИИ вас не упоминает и что именно исправить, за 48 часов.' } },
   { title: { fr: 'Vidéo et podcast', en: 'Video and podcast', ru: 'Видео и подкасты' },
-    desc: { fr: 'Interviews 4K, événements, podcasts. Studio à Nice, tournage partout.', en: '4K interviews, events, podcasts. Studio in Nice, on location anywhere.', ru: 'Интервью 4K, съёмки, подкасты. Студия в Ницце, выезд куда угодно.' } },
+    desc: { fr: 'Interviews 4K, événements, podcasts. Studio à Nice, tournage partout.', en: '4K interviews, events, podcasts. Studio in Nice, on location anywhere.', ru: 'Интервью 4K, съёмки, подкасты. Студия в Ницце, выезд куда угодно.' },
+    proof: {
+      text: { fr: 'Cannes Lions 2026 : 17 montages livrés en une nuit', en: 'Cannes Lions 2026: 17 edits delivered overnight', ru: 'Cannes Lions 2026: 17 роликов за одну ночь' },
+      href: { fr: 'https://studionicepodcast.com/fr/services/cannes-lions', en: 'https://studionicepodcast.com/en/services/cannes-lions', ru: 'https://studionicepodcast.com/en/services/cannes-lions' },
+    } },
   { title: { fr: 'Voyages de sourcing en Chine', en: 'China sourcing trips', ru: 'Байер-туры в Китай' },
     desc: { fr: 'Voyages guidés de 3 à 7 jours entre Guangzhou, Foshan et Shenzhen.', en: 'Guided 3 to 7 day trips across Guangzhou, Foshan and Shenzhen.', ru: 'Поездки с гидом от 3 до 7 дней: Гуанчжоу, Фошань и Шэньчжэнь.' },
     href: { fr: '/chine', en: '/china', ru: '/china' } },
@@ -355,6 +359,11 @@ export default function LinkHub({ locale }: { locale: Locale }) {
                   )}
                 </h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-dim">{s.desc[locale] ?? s.desc.en}</p>
+                {s.proof && (
+                  <a href={s.proof.href[locale] ?? s.proof.href.en} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm text-bone/80 underline decoration-white/25 underline-offset-4 transition-colors hover:text-ambr hover:decoration-ambr">
+                    {s.proof.text[locale] ?? s.proof.text.en}
+                  </a>
+                )}
               </div>
             ))}
           </div>
