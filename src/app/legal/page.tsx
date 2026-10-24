@@ -12,6 +12,8 @@ import type { Metadata } from 'next';
 // noindex until the content is real.
 export const metadata: Metadata = {
   title: 'Mentions légales · Tristan Grech',
+  description:
+    'Mentions légales du site tristangrech.com : éditeur, hébergeur et conditions de vente des voyages sourcing en Chine. Page en cours de rédaction.',
   robots: { index: false, follow: false },
 };
 

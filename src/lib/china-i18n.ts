@@ -208,7 +208,7 @@ export interface ChinaDict {
 
 const fr: ChinaDict = {
   meta: {
-    title: 'Voyages sourcing en Chine avec un Français sur le terrain',
+    title: 'Voyages sourcing en Chine avec un Français',
     description:
       'Voyages business guidés à Guangzhou, Foshan, Shenzhen pour entrepreneurs français. Un Français sur place, un associé franco-chinois natif.',
   },
@@ -549,7 +549,7 @@ const fr: ChinaDict = {
 
 const en: ChinaDict = {
   meta: {
-    title: 'China buying trips led by a Frenchman who knows the ground',
+    title: 'China buying trips led by a Frenchman',
     description:
       'Guided 3 to 7-day trips to Guangzhou, Foshan, Shenzhen. A Frenchman on the ground plus a native Franco-Chinese partner. Leave with suppliers.',
   },

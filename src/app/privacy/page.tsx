@@ -13,6 +13,8 @@ import type { Metadata } from 'next';
 // noindex until the content is real.
 export const metadata: Metadata = {
   title: 'Confidentialité · Tristan Grech',
+  description:
+    'Politique de confidentialité de tristangrech.com : outils chargés par le site, mesure d\'audience sans cookie et données envoyées via les formulaires.',
   robots: { index: false, follow: false },
 };
 
